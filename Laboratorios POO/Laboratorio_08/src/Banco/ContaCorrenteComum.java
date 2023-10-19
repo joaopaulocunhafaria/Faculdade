@@ -53,6 +53,8 @@ public class ContaCorrenteComum {
             this.saldo = this.saldo - saque;
             Transaçoes t = new Transaçoes(dtf.format(LocalDateTime.now()), (-1 * saque), "saque");
 
+            listaTransaçoes.add(t);
+
             System.out.println("Saque realizado!\nTransaçao:" + t);
         } else {
             System.out.println("Saldo insuficiente");
@@ -78,7 +80,7 @@ public class ContaCorrenteComum {
 
     public void Extrato() {
         System.out.println("Extrato[\n Numero Da Conta =" + numeroDaConta + "\nNome Do Titular=" + nomeDoTitular
-                + "\nSaldo =" + saldo + "Lista De transaçoes:\n");
+                + "\nSaldo =" + saldo + "\nLista De transaçoes:\n");
         imprimirTransaçoes();
     }
 

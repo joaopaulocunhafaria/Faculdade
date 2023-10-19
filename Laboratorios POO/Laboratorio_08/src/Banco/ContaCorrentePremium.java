@@ -1,5 +1,7 @@
 package Banco;
 
+import java.time.LocalDateTime;
+
 public class ContaCorrentePremium extends ContaCorrenteComum {
 
     private float limiteCredito;
@@ -13,7 +15,7 @@ public class ContaCorrentePremium extends ContaCorrenteComum {
         if (!getListaTransaçoes().isEmpty()) {
             for (int i = 0; i < getListaTransaçoes().size(); i++) {
 
-                System.out.println(getListaTransaçoes().get(i) + "\nLimite de credito:" + limiteCredito+"\n\n");
+                System.out.println(getListaTransaçoes().get(i) + "\nLimite de credito:" + limiteCredito + "\n\n");
 
             }
         } else {
@@ -23,10 +25,20 @@ public class ContaCorrentePremium extends ContaCorrenteComum {
     }
 
 
-
     @Override
-    public void saque(float saque) {
-        System.out.println("..............");
+    public void saque(float valorSaque) {
+
+        if ((this.limiteCredito + this.getSaldo()) == valorSaque) {
+            setSaldo(getSaldo() - valorSaque);
+
+            Transaçoes t = new Transaçoes(dtf.format(LocalDateTime.now()), (-1 * valorSaque), "Saque");
+
+            getListaTransaçoes().add(t);
+
+
+        } else {
+            System.out.println("Valor de saque ultrapasa o limite de credito ");
+        }
     }
 
 

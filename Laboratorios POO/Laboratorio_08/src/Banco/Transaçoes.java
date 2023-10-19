@@ -34,9 +34,9 @@ public class Transaçoes {
     }
     @Override
     public String toString() {
-        return "Transaçoes [data=" + data
-                + ", \nvalor=" + valor
-                + ", \ndescriçao=" + descriçao
+        return "\nTransaçao \nDescriçao:" + descriçao
+                + ", \nValor:" + valor
+                + ", \nData:" + data
                 ;
     }
 

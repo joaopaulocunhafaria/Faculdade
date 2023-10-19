@@ -19,7 +19,7 @@ public class Main {
         Locale.setDefault(Locale.US);
         try {
 
-            FileReader arquivoReader = new FileReader("TesteDeAplicaçao.txt");
+            FileReader arquivoReader = new FileReader("Teste1.txt");
 
             BufferedReader leitor = new BufferedReader(arquivoReader);
 
