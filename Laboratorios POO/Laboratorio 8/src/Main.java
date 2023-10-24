@@ -17,11 +17,7 @@ public class Main {
         BancoGerente banco = new BancoGerente();
 
         Locale.setDefault(Locale.US);
-        try {
-
-            FileReader arquivoReader = new FileReader("Teste1.txt");
-
-            BufferedReader leitor = new BufferedReader(arquivoReader);
+        try (BufferedReader leitor = new BufferedReader(new FileReader("TesteDeAplicaçao.txt"))) {
 
             String linha;
 
@@ -29,53 +25,64 @@ public class Main {
                 System.out.println(linha);
 
                 switch (linha) {
-                    case "Conta Corrente Comum": {
 
-                        int numeroConta = Integer.parseInt(leitor.readLine());
-                        String nome = leitor.readLine();
-                        float saldo = Float.parseFloat(leitor.readLine());
+                    case "Criar Conta": {
 
-                        ContaCorrenteComum c = new ContaCorrenteComum(numeroConta, nome, saldo);
-                        banco.getContaComum().add(c);
-                        System.out.println(c);
-                        break;
-                    }
-                    case "Conta Corrente Premium": {
-                        int numeroConta = Integer.parseInt(leitor.readLine());
-                        String nome = leitor.readLine();
-                        float saldo = Float.parseFloat(leitor.readLine());
-                        float limiteCredito = Float.parseFloat(leitor.readLine());
+                        linha = leitor.readLine();
+                        switch (linha) {
+                            case "Conta Corrente Comum": {
 
-                        ContaCorrentePremium contaPremium = new ContaCorrentePremium(numeroConta, nome, saldo,
-                                limiteCredito);
+                                int numeroConta = Integer.parseInt(leitor.readLine());
+                                String nome = leitor.readLine();
+                                float saldo = Float.parseFloat(leitor.readLine());
 
-                        banco.getContaPremium().add(contaPremium);
-                        break;
-                    }
-                    case "Conta Investimento": {
+                                ContaCorrenteComum c = new ContaCorrenteComum(numeroConta, nome, saldo);
+                                banco.getContaComum().add(c);
+                                System.out.println(c);
+                                break;
+                            }
+                            case "Conta Corrente Premium": {
+                                int numeroConta = Integer.parseInt(leitor.readLine());
+                                String nome = leitor.readLine();
+                                float saldo = Float.parseFloat(leitor.readLine());
+                                float limiteCredito = Float.parseFloat(leitor.readLine());
 
-                        int numeroConta = Integer.parseInt(leitor.readLine());
-                        String nome = leitor.readLine();
-                        float saldo = Float.parseFloat(leitor.readLine());
-                        String taxaDeRendimento = leitor.readLine();
+                                ContaCorrentePremium contaPremium = new ContaCorrentePremium(numeroConta, nome, saldo,
+                                        limiteCredito);
 
-                        ContaInvestimento contaInvestimento = new ContaInvestimento(numeroConta, nome, saldo,
-                                taxaDeRendimento);
+                                banco.getContaPremium().add(contaPremium);
+                                break;
+                            }
+                            case "Conta Investimento": {
 
-                        banco.getContaInvestimento().add(contaInvestimento);
+                                int numeroConta = Integer.parseInt(leitor.readLine());
+                                String nome = leitor.readLine();
+                                float saldo = Float.parseFloat(leitor.readLine());
+                                String taxaDeRendimento = leitor.readLine();
 
-                        break;
-                    }
-                    case "Conta Poupança": {
+                                ContaInvestimento contaInvestimento = new ContaInvestimento(numeroConta, nome, saldo,
+                                        taxaDeRendimento);
 
-                        int numeroConta = Integer.parseInt(leitor.readLine());
-                        String nome = leitor.readLine();
-                        float saldo = Float.parseFloat(leitor.readLine());
-                        String aniversario = leitor.readLine();
+                                banco.getContaInvestimento().add(contaInvestimento);
 
-                        ContaPoupança contaPoupança = new ContaPoupança(numeroConta, nome, saldo, aniversario);
-                        banco.getContaPoupança().add(contaPoupança);
-                        System.out.println(contaPoupança);
+                                break;
+                            }
+                            case "Conta Poupança": {
+
+                                int numeroConta = Integer.parseInt(leitor.readLine());
+                                String nome = leitor.readLine();
+                                float saldo = Float.parseFloat(leitor.readLine());
+                                String aniversario = leitor.readLine();
+
+                                ContaPoupança contaPoupança = new ContaPoupança(numeroConta, nome, saldo, aniversario);
+                                banco.getContaPoupança().add(contaPoupança);
+                                System.out.println(contaPoupança);
+                                break;
+                            }
+                            default:
+                                break;
+                        }
+
                         break;
                     }
                     case "Deposito": {
@@ -177,8 +184,6 @@ public class Main {
                     }
                     case "Extrato": {
 
-
-
                         System.out.println("\n\n");
                         linha = leitor.readLine();
 
@@ -232,7 +237,6 @@ public class Main {
             }
 
             leitor.close();
-            arquivoReader.close();
 
         } catch (IOException e) {
             e.printStackTrace();
