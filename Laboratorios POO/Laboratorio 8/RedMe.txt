@@ -1,0 +1,9 @@
+Para facilitar testes na aplicação, eu a desenvolvi de forma que os parâmetros de input são lidos através de um arquivo, sendo ele formatado da seguinte forma:
+1 - Nome da operação. Exemplo: Criar Conta, Depósito.
+2 - Tipo de conta a ser realizada a operação. Exemplo: Conta Corrente Comum.
+3 - Em seguida, os parâmetros que cada operação exige, sendo cada um em uma linha:
+    Para criar conta: Número da conta, Nome do titular, valor inicial da conta.
+    Em seguida, os parâmetros necessários caso a conta seja de um tipo específico.
+    Para realizar um saque ou depósito: Número da conta e o valor de saque ou depósito.
+    Para imprimir o extrato: Número da conta.
+4 - Por fim, em uma linha separada, escreva "sair" para finalizar a aplicação.

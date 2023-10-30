@@ -17,7 +17,7 @@ public class Main {
         BancoGerente banco = new BancoGerente();
 
         Locale.setDefault(Locale.US);
-        try (BufferedReader leitor = new BufferedReader(new FileReader("TesteDeAplicaçao.txt"))) {
+        try (BufferedReader leitor = new BufferedReader(new FileReader("Teste.txt"))) {
 
             String linha;
 
@@ -138,7 +138,6 @@ public class Main {
                     case "Saque": {
 
                         linha = leitor.readLine();
-                        System.out.println("teste 1");
                         switch (linha) {
                             case "Conta Corrente Comum": {
                                 int numeroConta = Integer.parseInt(leitor.readLine());

@@ -1,0 +1,14 @@
+1 passo- criar uma funçao que ira ler um arquivo binario com o conteudo baseado em cadastros
+de pessoas contedendo seus nome, endereços, telefone, cpf e idade
+2 passo- criar uma funçao que recebe uma struct do tipo "pessoas" e de 100 posiçoes
+como parametro e coleta seus dados, retornando a mesma struct porem com seus dados coletados
+3 passo- criar uma funçao que recebe como parametro uma struct tambem do tipo pessoa, pede
+ao usuario o nome cpf do cadastro que ele deseja apagar, roda todaa struct ate encontrar 
+este cpf, apos achar o cadastro colocar o cpf o cadastro como '\0'
+na primeira possiçao.
+4 passo- uma funçao que recebe uma struct do tipo pessoa como parametro, peded ao usuario
+o nomumero do cpf do cadastro que deseja ser alterado, apos achar a posiçao da struct que 
+condiz com o cpf fornecido pelo usuario, pedir ao usuario para refazer o cadastro com as 
+informaçoes alteradas
+5 passo- criar uma funçao que escreve a struct em um arquivo binario para quando o usuario selecionar 
+a opçao 5, que fecha o programa e salva as informaçoes no arquivo

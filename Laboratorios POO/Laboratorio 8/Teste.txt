@@ -1,0 +1,17 @@
+Criar Conta
+Conta Corrente Comum
+1
+Joao
+6000.0
+Saque
+Conta Corrente Comum
+1
+600.0
+Saque
+Conta Corrente Comum
+1
+1000.9
+Extrato
+Conta Corrente Comum
+1
+Sair
