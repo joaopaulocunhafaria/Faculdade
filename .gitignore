@@ -1,6 +1,17 @@
+#Vs code
 .vscode
+
+#Executable
 *.exe
 makefile
 *.o
+
+#Winrar
 *.rar
+
+#Diagrams
 .iml
+
+#replit web Programing 
+*.replit
+*.inix
