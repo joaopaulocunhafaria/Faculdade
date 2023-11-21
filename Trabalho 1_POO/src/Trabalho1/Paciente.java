@@ -11,13 +11,16 @@ public class Paciente extends Pessoa {
 
 
 	public Paciente(String nome, String endereço, String cpf, char sexo, int telefone, int identidade, String relato,
-			String medicacaoConsumidaRegularmente) {
+			String medicacaoConsumidaRegularmente) throws ExcecaoSexoInvalido {
 		super(nome, endereço, cpf, sexo, telefone, identidade);
 		this.relato = relato;
 		this.medicacaoConsumidaRegularmente = medicacaoConsumidaRegularmente;
 	}
 
 
+	public Paciente() {
+		super();
+	}
 	
 	
 	public void Imprimir() {

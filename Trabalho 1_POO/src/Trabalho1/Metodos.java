@@ -9,7 +9,7 @@ public class Metodos {
 	Scanner sc = new Scanner(System.in);
 
 	public String PedirNome() {
-		sc.nextLine();
+
 		System.out.println("Nome: ");
 		String nome = sc.nextLine();
 		return nome;
@@ -70,9 +70,13 @@ public class Metodos {
 
 	public int PedirCrmMedico() {
 		System.out.println("CRM do Médico: ");
-		int crmMedico = sc.nextInt();
 
-		return crmMedico;
+		String crmMedico = sc.nextLine();
+		char crmMedicoChar = crmMedico.charAt(0);
+		crmMedico = Character.toString(crmMedicoChar);
+		int crm = Integer.parseInt(crmMedico);
+
+		return crm;
 	}
 
 	public String PedirRelato() {

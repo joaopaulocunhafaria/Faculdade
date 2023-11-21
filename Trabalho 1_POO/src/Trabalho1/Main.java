@@ -1,6 +1,7 @@
 package Trabalho1;
 
 import java.util.Scanner;
+import Trabalho1.ExcecaoSexoInvalido;
 
 public class Main {
 
@@ -23,120 +24,171 @@ public class Main {
 			System.out.println("10 remover consulta");
 			System.out.println("11 sair");
 			String opçao = metodos.sc.nextLine();
+            Integer op = Integer.parseInt(opçao); 
+           
 
-			switch (opçao) {
-			case "1": {
+			switch (op) {
+				case 1: {
 
-				String nome = metodos.PedirNome();
-				String endereco = metodos.PedirEndereço();
-				String cpf = metodos.PedirCpf();
-				String especialidade = metodos.PedirEspecialidade();
-				char sexo = metodos.PedirSexo();
-				int telefone = metodos.PedirTelefone();
-				int identidade = metodos.PedirIdentidade();
-				int crm = metodos.PedirCrm();
+					Medico medico = new Medico();
+					String nome;
+					medico.setNome(nome = metodos.PedirNome());
+					String endereco = metodos.PedirEndereço();
+					medico.setEndereço(endereco);
+					String cpf = metodos.PedirCpf();
+					medico.setCpf(cpf);
+					String especialidade = metodos.PedirEspecialidade();
+					medico.setEspecialidade(especialidade);
+                   boolean sexoValido = false;
+					
+					do {
+					char sexo = metodos.PedirSexo();
+					try {
+						medico.setSexo(sexo);
+						sexoValido = true;
+					} catch (ExcecaoSexoInvalido e) {
+						System.out.println(e.getMessage());
+					}
+						
+					} while (!sexoValido);
 
-				Medico medico = new Medico(nome, endereco, cpf, sexo, telefone, identidade, crm, especialidade);
+					int telefone = metodos.PedirTelefone();
+					medico.setTelefone(telefone);
+					int identidade = metodos.PedirIdentidade();
+					medico.setIdentidade(identidade);
+					int crm = metodos.PedirCrmMedico();
+					medico.setCrm(crm);
 
-				consultorio.cadastrarMedico(medico);
-
-				break;
-			}
-
-			case "2":
-
-			{
-				String nome = metodos.PedirNome();
-				String endereco = metodos.PedirEndereço();
-				String cpf = metodos.PedirCpf();
-				char sexo = metodos.PedirSexo();
-				int telefone = metodos.PedirTelefone();
-				int identidade = metodos.PedirIdentidade();
-				String relato = metodos.PedirRelato();
-				String medicacao = metodos.PedirMedicacaoConsumidaRegularmente();
-
-				Paciente paciente = new Paciente(nome, endereco, cpf, sexo, telefone, identidade, relato, medicacao);
-
-				consultorio.cadastrarPaciente(paciente);
-
-				break;
-			}
-
-			case "3": {
-				String data = metodos.PedirData();
-				String hora = metodos.PedirHora();
-				String cpf = metodos.PedirCpf();
-				int crmMedico = metodos.PedirCrm();
-
-				Consulta consulta = new Consulta(data, hora, cpf, crmMedico);
-
-				consultorio.cadastrarConsulta(consulta);
-				break;
-			}
-
-			case "4": {
-				int crmConsulta = metodos.PedirCrm();
-
-				consultorio.procurarMedico(crmConsulta);
-				break;
-			}
-
-			case "5": {
-				consultorio.imprimirListaCosultas();
-
-				break;
-			}
-
-			case "6": {
-				String cpf = metodos.PedirCpf();
-				consultorio.procuraPaciente(cpf);
-
-				break;
-			}
-
-			case "7": {
-				String cpf = metodos.PedirCpfPaciente();
-				int crm = metodos.PedirCrmMedico();
-
-				consultorio.imprimirConsulta(crm, cpf);
-
-				break;
-			}
-
-			case "8": {
-
-				{
-					int crm = metodos.PedirCrm();
-					consultorio.removerMedico(crm);
+					consultorio.cadastrarMedico(medico);
+					break;
 				}
 
-				break;
-			}
+			
+					case 2: {
+						Paciente paciente = new Paciente();
+						String nome;
+						paciente.setNome(nome = metodos.PedirNome());
+						String endereco = metodos.PedirEndereço();
+						paciente.setEndereço(endereco);
+						String cpf = metodos.PedirCpf();
+						paciente.setCpf(cpf);
+						boolean sexoValido = false;
+						
+						do {
+							char sexo = metodos.PedirSexo();
+							try {
+								paciente.setSexo(sexo);
+								sexoValido = true;
+							} catch (ExcecaoSexoInvalido e) {
+								System.out.println(e.getMessage());
+							}
+						} while (!sexoValido);
+						
+						int telefone = metodos.PedirTelefone();
+						paciente.setTelefone(telefone);
+						int identidade = metodos.PedirIdentidade();
+						paciente.setIdentidade(identidade);
+						String relato = metodos.PedirRelato();
+						paciente.setRelato(relato);
+						String medicacao = metodos.PedirMedicacaoConsumidaRegularmente();
+						paciente.setMedicacaoConsumidaRegularmente(medicacao);
+						
+						consultorio.cadastrarPaciente(paciente);
+						
+						break;
+					}
+				case 3: {
+					String data = metodos.PedirData();
+					String hora = metodos.PedirHora();
+					String cpf = metodos.PedirCpf();
+					int crmMedico = metodos.PedirCrm();
 
-			case "9": {
-				String cpf = metodos.PedirCpf();
-				consultorio.removerPaciente(cpf);
-				break;
-			}
+					Consulta consulta = new Consulta(data, hora, cpf, crmMedico);
 
-			case "10": {
-				String cpf = metodos.PedirCpfPaciente();
-				int crm = metodos.PedirCrmMedico();
+					consultorio.cadastrarConsulta(consulta);
+					break;
+				}
 
-				consultorio.removerConsulta(cpf, crm);
+				case 4: {
+					int crmConsulta = metodos.PedirCrm();
 
-				break;
-			}
-			case "11": {
+					consultorio.procurarMedico(crmConsulta);
+					break;
+				}
 
-				consultorio.apagarDados();
-				metodos.closeScanner();
-				System.out.println("Saindo...");
-				return;
-			}
+				case 5: {
+					consultorio.imprimirListaCosultas();
 
-			default:
-				System.out.println("Opçao invalida!");
+					break;
+				}
+
+				case 6: {
+					String cpf = metodos.PedirCpf();
+					consultorio.procuraPaciente(cpf);
+
+					break;
+				}
+
+				case 7: {
+					String cpf = metodos.PedirCpfPaciente();
+					int crm = metodos.PedirCrmMedico();
+
+					consultorio.imprimirConsulta(crm, cpf);
+
+					break;
+				}
+
+				case 8: {
+
+					{
+						int crm = metodos.PedirCrmMedico();
+
+						try {
+							consultorio.removerMedico(crm);
+
+						} catch (ExcecaoMedicoInexistente e) {
+							System.err.println(e.getMessage());
+						}
+					}
+
+					break;
+				}
+
+				case 9: {
+					String cpf = metodos.PedirCpf();
+					try {
+						consultorio.removerPaciente(cpf);
+
+					} catch (ExcecaoPacienteInexistente e) {
+						System.err.println(e.getMessage());
+					}
+
+					break;
+				}
+
+				case 10: {
+					String cpf = metodos.PedirCpfPaciente();
+					String data = metodos.PedirData();
+
+					try {
+
+						consultorio.removerConsulta(cpf, data);
+
+					} catch (ExcecaoConsultaInexistente e) {
+						System.err.println(e.getMessage());
+					}
+					break;
+				}
+				case 11: {
+
+					consultorio.apagarDados();
+					metodos.closeScanner();
+					System.out.println("Saindo...");
+					return;
+				}
+
+				default:
+					System.out.println("Opçao invalida!");
 			}
 
 		}

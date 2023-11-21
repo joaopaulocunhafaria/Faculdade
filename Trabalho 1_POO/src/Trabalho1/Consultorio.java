@@ -28,7 +28,7 @@ public class Consultorio {
 
 	}
 
-	public void removerPaciente(String cpf) {
+	public void removerPaciente(String cpf) throws ExcecaoPacienteInexistente {
 
 		Paciente p = null;
 		for (int i = 0; i < listaPaciente.size(); i++) {
@@ -48,8 +48,10 @@ public class Consultorio {
 
 		}
 
-		System.out.println("O cpf informado não corresponde a nenhum paciente cadastrado!");
-		return;
+		if (p == null) {
+			throw new ExcecaoPacienteInexistente();
+		}
+
 	}
 
 	public void cadastrarMedico(Medico m) {
@@ -59,7 +61,7 @@ public class Consultorio {
 
 	}
 
-	public void removerMedico(int crm) {
+	public void removerMedico(int crm) throws ExcecaoMedicoInexistente {
 
 		Medico m = null;
 
@@ -77,8 +79,9 @@ public class Consultorio {
 
 		}
 
-		System.out.println("O CRM informado nao pertence a um medico cadastrado!");
-
+		if (m == null) {
+			throw new ExcecaoMedicoInexistente();
+		}
 	}
 
 	public void cadastrarConsulta(Consulta C) {
@@ -88,13 +91,13 @@ public class Consultorio {
 
 	}
 
-	public void removerConsulta(String cpfPaciente, int crmMedico) {
+	public void removerConsulta(String cpfPaciente, String data) throws ExcecaoConsultaInexistente {
 
-		Consulta c;
+		Consulta c = null;
 		for (int i = 0; i < listaConsulta.size(); i++) {
 
 			if (listaConsulta.get(i).getCpfPaciente() == cpfPaciente
-					&& listaConsulta.get(i).getCrmMedico() == crmMedico) {
+					&& listaConsulta.get(i).getData() == data) {
 			}
 
 			c = listaConsulta.get(i);
@@ -104,9 +107,11 @@ public class Consultorio {
 			System.out.println("Consulta removida com sucesso!");
 
 		}
-
+		if (c == null) {
+			throw new ExcecaoConsultaInexistente(cpfPaciente, data);
+		}
 	}
-//	
+	//
 
 	public void imprimirListaPacientes() {
 
@@ -215,25 +220,24 @@ public class Consultorio {
 		}
 
 	}
-	
-	public void apagarDados()
-	{
-	   if(!listaConsulta.isEmpty()) {
-		   for(int i=0; i <  listaConsulta.size();i++) {
-			  listaConsulta.remove(i);
-		   } 
-	   }
-	   
-	   if(!listaMedicos.isEmpty()) {
-		   for(int i=0; i <  listaMedicos.size();i++) {
-			  listaMedicos.remove(i);
-		   }
-	    }
-	   
-	   if(!listaPaciente.isEmpty()) {
-		   for(int i=0; i <  listaPaciente.size();i++) {
-			   listaPaciente.remove(i);
-		   }
-	   }
+
+	public void apagarDados() {
+		if (!listaConsulta.isEmpty()) {
+			for (int i = 0; i < listaConsulta.size(); i++) {
+				listaConsulta.remove(i);
+			}
+		}
+
+		if (!listaMedicos.isEmpty()) {
+			for (int i = 0; i < listaMedicos.size(); i++) {
+				listaMedicos.remove(i);
+			}
+		}
+
+		if (!listaPaciente.isEmpty()) {
+			for (int i = 0; i < listaPaciente.size(); i++) {
+				listaPaciente.remove(i);
+			}
+		}
 	}
 }
