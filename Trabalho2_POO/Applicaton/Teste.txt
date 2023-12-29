@@ -1,8 +1,0 @@
-Aviao para aterrissar numero 1 minutos de combustivel 12 
-Aviao para aterrissar numero 3 minutos de combustivel 10
-Aviao para aterrissar numero 5 minutos de combustivel 2
-Aviao para aterrissar numero 7 minutos de combustivel 6
-Aviao para aterrissar numero 9 minutos de combustivel 9
-Aviao para aterrissar numero 11 minutos de combustivel 11
-Aviao para decolar numero 2 minutos de combustivel 14
-Aviao para decolar numero 4 minutos de combustivel 14

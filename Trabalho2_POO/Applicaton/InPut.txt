@@ -1,0 +1,500 @@
+aterrissar LATAM 181 313 6
+aterrissar AZUL 53 325 11
+decolar AMERICAAIRLINES 121 30
+aterrissar AMERICAAIRLINES 187 121 5
+aterrissar AMERICAAIRLINES 21 207 11
+decolar LATAM 66 82
+aterrissar AZUL 53 75 2
+aterrissar AMERICAAIRLINES 52 293 8
+decolar AMERICAAIRLINES 104 180
+aterrissar LATAM 80 341 7
+aterrissar AZUL 9 371 3
+decolar AZUL 99 20
+aterrissar GOL 72 11 4
+aterrissar AMERICAAIRLINES 123 147 7
+decolar LATAM 107 10
+aterrissar AMERICAAIRLINES 108 247 4
+aterrissar AZUL 158 11 10
+decolar LATAM 137 20
+aterrissar LATAM 68 149 4
+aterrissar GOL 189 255 3
+decolar LATAM 195 168
+aterrissar GOL 130 237 8
+aterrissar AMERICAAIRLINES 184 371 5
+decolar LATAM 139 164
+aterrissar AMERICAAIRLINES 90 217 11
+aterrissar GOL 174 193 2
+decolar AZUL 43 30
+aterrissar AMERICAAIRLINES 49 115 10
+aterrissar AZUL 45 29 6
+decolar AMERICAAIRLINES 82 72
+aterrissar AMERICAAIRLINES 70 265 1
+aterrissar AMERICAAIRLINES 10 243 10
+decolar AMERICAAIRLINES 95 108
+aterrissar GOL 119 393 12
+aterrissar LATAM 124 261 4
+decolar LATAM 193 54
+aterrissar GOL 131 41 11
+aterrissar LATAM 84 25 10
+decolar LATAM 36 126
+aterrissar AMERICAAIRLINES 84 29 8
+aterrissar AMERICAAIRLINES 154 383 7
+decolar AMERICAAIRLINES 56 74
+aterrissar LATAM 44 185 4
+aterrissar AMERICAAIRLINES 184 87 4
+decolar GOL 175 186
+aterrissar AZUL 170 61 3
+aterrissar GOL 141 311 9
+decolar GOL 127 172
+aterrissar AZUL 12 75 8
+aterrissar AMERICAAIRLINES 38 123 10
+decolar GOL 114 12
+aterrissar AMERICAAIRLINES 191 175 1
+aterrissar LATAM 195 183 6
+decolar AZUL 17 74
+aterrissar AZUL 39 329 7
+aterrissar GOL 164 133 3
+decolar AZUL 31 26
+aterrissar AZUL 42 319 2
+aterrissar AMERICAAIRLINES 71 379 12
+decolar LATAM 84 134
+aterrissar LATAM 25 309 6
+aterrissar AZUL 159 59 9
+decolar LATAM 125 14
+aterrissar GOL 63 219 1
+aterrissar LATAM 56 195 13
+decolar LATAM 126 2
+aterrissar LATAM 51 343 11
+aterrissar LATAM 40 393 6
+decolar LATAM 74 100
+aterrissar AMERICAAIRLINES 155 319 13
+aterrissar AZUL 182 391 7
+decolar AMERICAAIRLINES 198 34
+aterrissar LATAM 121 331 5
+aterrissar LATAM 126 131 5
+decolar AMERICAAIRLINES 32 144
+aterrissar LATAM 72 289 5
+aterrissar AZUL 144 105 13
+decolar LATAM 35 40
+aterrissar AZUL 6 307 9
+aterrissar AZUL 76 189 13
+decolar GOL 25 152
+aterrissar AZUL 104 197 6
+aterrissar LATAM 113 103 8
+decolar LATAM 97 34
+aterrissar LATAM 3 163 7
+aterrissar AMERICAAIRLINES 124 83 14
+decolar AMERICAAIRLINES 196 128
+aterrissar AZUL 26 173 9
+aterrissar GOL 93 79 0
+decolar LATAM 165 60
+aterrissar LATAM 3 189 1
+aterrissar LATAM 102 165 2
+decolar GOL 138 6
+aterrissar LATAM 147 79 13
+aterrissar AZUL 180 385 9
+decolar LATAM 157 168
+aterrissar GOL 77 139 13
+aterrissar AMERICAAIRLINES 99 147 7
+decolar AMERICAAIRLINES 166 106
+aterrissar AMERICAAIRLINES 130 235 8
+aterrissar AMERICAAIRLINES 117 375 7
+decolar LATAM 2 112
+aterrissar GOL 71 297 11
+aterrissar AZUL 183 141 8
+decolar GOL 2 182
+aterrissar AZUL 75 85 6
+aterrissar LATAM 192 91 10
+decolar LATAM 62 68
+aterrissar GOL 194 289 8
+aterrissar LATAM 4 277 4
+decolar GOL 107 146
+aterrissar LATAM 117 307 6
+aterrissar LATAM 198 383 12
+decolar LATAM 187 176
+aterrissar LATAM 158 9 3
+aterrissar AZUL 11 147 4
+decolar LATAM 97 196
+aterrissar LATAM 108 335 3
+aterrissar AZUL 6 209 5
+decolar AMERICAAIRLINES 45 6
+aterrissar AZUL 64 47 1
+aterrissar LATAM 172 359 1
+decolar AZUL 124 134
+aterrissar LATAM 62 279 6
+aterrissar AMERICAAIRLINES 163 135 4
+decolar AMERICAAIRLINES 38 194
+aterrissar AZUL 3 233 0
+aterrissar LATAM 36 95 9
+decolar AMERICAAIRLINES 71 118
+aterrissar GOL 13 393 5
+aterrissar LATAM 112 33 11
+decolar GOL 188 106
+aterrissar AMERICAAIRLINES 163 329 0
+aterrissar AMERICAAIRLINES 26 259 4
+decolar LATAM 51 88
+aterrissar LATAM 184 367 1
+aterrissar AZUL 173 227 7
+decolar AMERICAAIRLINES 23 62
+aterrissar GOL 154 239 3
+aterrissar AMERICAAIRLINES 36 299 14
+decolar LATAM 120 150
+aterrissar AMERICAAIRLINES 147 177 3
+aterrissar LATAM 152 23 1
+decolar AMERICAAIRLINES 119 64
+aterrissar AZUL 114 323 9
+aterrissar LATAM 80 45 10
+decolar LATAM 153 186
+aterrissar AMERICAAIRLINES 86 321 6
+aterrissar LATAM 170 21 3
+decolar LATAM 102 46
+aterrissar AMERICAAIRLINES 139 349 8
+aterrissar AZUL 5 31 9
+decolar GOL 121 38
+aterrissar LATAM 51 155 0
+aterrissar LATAM 138 305 6
+decolar GOL 14 174
+aterrissar LATAM 149 37 2
+aterrissar GOL 125 171 10
+decolar GOL 33 64
+aterrissar GOL 54 263 4
+aterrissar LATAM 146 211 8
+decolar AZUL 59 4
+aterrissar LATAM 141 9 7
+aterrissar LATAM 190 349 5
+decolar AMERICAAIRLINES 174 152
+aterrissar AZUL 100 303 10
+aterrissar LATAM 5 285 11
+decolar GOL 135 96
+aterrissar AMERICAAIRLINES 129 67 1
+aterrissar AMERICAAIRLINES 124 217 7
+decolar LATAM 45 182
+aterrissar GOL 29 347 2
+aterrissar GOL 72 239 8
+decolar AZUL 68 30
+aterrissar AMERICAAIRLINES 196 223 10
+aterrissar LATAM 52 189 0
+decolar GOL 17 94
+aterrissar LATAM 11 223 1
+aterrissar GOL 103 63 0
+decolar AZUL 153 62
+aterrissar GOL 17 119 2
+aterrissar LATAM 51 149 4
+decolar GOL 44 72
+aterrissar AZUL 149 309 13
+aterrissar LATAM 100 119 7
+decolar AMERICAAIRLINES 136 188
+aterrissar AMERICAAIRLINES 32 131 8
+aterrissar GOL 138 187 4
+decolar LATAM 80 28
+aterrissar LATAM 0 145 12
+aterrissar LATAM 126 377 14
+decolar LATAM 107 46
+aterrissar GOL 40 321 3
+aterrissar LATAM 34 225 4
+decolar AZUL 13 182
+aterrissar GOL 131 329 1
+aterrissar AMERICAAIRLINES 102 345 3
+decolar LATAM 125 96
+aterrissar LATAM 44 299 9
+aterrissar GOL 46 351 11
+decolar AMERICAAIRLINES 148 186
+aterrissar LATAM 54 219 11
+aterrissar AZUL 67 93 13
+decolar GOL 162 170
+aterrissar AZUL 135 17 10
+aterrissar AMERICAAIRLINES 86 249 13
+decolar GOL 91 86
+aterrissar LATAM 45 187 10
+aterrissar GOL 166 27 10
+decolar AMERICAAIRLINES 174 196
+aterrissar AMERICAAIRLINES 119 285 5
+aterrissar AZUL 105 297 4
+decolar GOL 153 12
+aterrissar LATAM 143 235 4
+aterrissar LATAM 33 91 2
+decolar LATAM 25 190
+aterrissar AMERICAAIRLINES 176 209 12
+aterrissar AMERICAAIRLINES 170 241 4
+decolar AMERICAAIRLINES 181 86
+aterrissar LATAM 135 133 9
+aterrissar AMERICAAIRLINES 151 73 9
+decolar LATAM 167 36
+aterrissar GOL 105 391 13
+aterrissar LATAM 170 233 3
+decolar LATAM 70 54
+aterrissar LATAM 54 281 14
+aterrissar AZUL 91 3 12
+decolar LATAM 139 92
+aterrissar GOL 118 9 0
+aterrissar AZUL 90 309 12
+decolar AZUL 193 196
+aterrissar GOL 101 203 11
+aterrissar AMERICAAIRLINES 51 351 4
+decolar GOL 50 128
+aterrissar GOL 53 301 4
+aterrissar AMERICAAIRLINES 79 199 6
+decolar LATAM 106 34
+aterrissar LATAM 71 383 4
+aterrissar LATAM 27 277 2
+decolar LATAM 165 38
+aterrissar AZUL 58 63 2
+aterrissar AMERICAAIRLINES 163 283 5
+decolar LATAM 190 82
+aterrissar AZUL 68 91 9
+aterrissar GOL 33 233 10
+decolar AZUL 139 60
+aterrissar GOL 95 293 1
+aterrissar GOL 65 29 1
+decolar GOL 89 196
+aterrissar AZUL 105 341 2
+aterrissar AMERICAAIRLINES 184 365 12
+decolar LATAM 79 48
+aterrissar LATAM 146 203 6
+aterrissar AMERICAAIRLINES 123 379 12
+decolar LATAM 163 154
+aterrissar LATAM 114 59 1
+aterrissar LATAM 18 123 4
+decolar LATAM 102 134
+aterrissar AZUL 27 215 3
+aterrissar AZUL 59 13 10
+decolar LATAM 18 172
+aterrissar LATAM 44 3 11
+aterrissar LATAM 143 333 6
+decolar LATAM 185 46
+aterrissar LATAM 49 373 14
+aterrissar AMERICAAIRLINES 89 335 11
+decolar AMERICAAIRLINES 72 150
+aterrissar AZUL 197 29 6
+aterrissar LATAM 82 267 13
+decolar LATAM 137 128
+aterrissar GOL 186 387 9
+aterrissar LATAM 14 359 5
+decolar AMERICAAIRLINES 22 190
+aterrissar LATAM 133 293 12
+aterrissar AMERICAAIRLINES 18 169 12
+decolar GOL 10 34
+aterrissar AMERICAAIRLINES 190 57 1
+aterrissar AMERICAAIRLINES 177 381 11
+decolar GOL 168 198
+aterrissar GOL 56 85 5
+aterrissar LATAM 11 149 13
+decolar GOL 133 4
+aterrissar AZUL 120 269 10
+aterrissar LATAM 76 19 3
+decolar LATAM 182 38
+aterrissar AMERICAAIRLINES 70 215 11
+aterrissar AZUL 134 155 5
+decolar AZUL 155 122
+aterrissar AMERICAAIRLINES 123 391 13
+aterrissar AZUL 199 181 3
+decolar LATAM 168 114
+aterrissar GOL 137 221 3
+aterrissar LATAM 109 319 8
+decolar LATAM 103 190
+aterrissar LATAM 166 93 14
+aterrissar AZUL 198 301 8
+decolar AMERICAAIRLINES 193 164
+aterrissar GOL 91 171 3
+aterrissar AMERICAAIRLINES 46 223 8
+decolar LATAM 34 102
+aterrissar AMERICAAIRLINES 35 307 12
+aterrissar AZUL 30 233 5
+decolar AMERICAAIRLINES 127 52
+aterrissar AMERICAAIRLINES 32 393 8
+aterrissar AZUL 169 249 2
+decolar LATAM 116 182
+aterrissar AMERICAAIRLINES 41 139 9
+aterrissar AZUL 27 267 7
+decolar AZUL 16 136
+aterrissar GOL 80 121 7
+aterrissar GOL 61 367 0
+decolar GOL 59 112
+aterrissar GOL 191 249 9
+aterrissar LATAM 141 91 11
+decolar AMERICAAIRLINES 122 92
+aterrissar LATAM 177 247 3
+aterrissar GOL 124 107 2
+decolar AZUL 67 82
+aterrissar LATAM 165 391 0
+aterrissar AMERICAAIRLINES 64 393 10
+decolar AZUL 135 92
+aterrissar GOL 70 3 12
+aterrissar LATAM 81 227 9
+decolar GOL 25 184
+aterrissar AZUL 166 385 12
+aterrissar GOL 53 121 14
+decolar AMERICAAIRLINES 34 122
+aterrissar AMERICAAIRLINES 49 281 0
+aterrissar LATAM 103 363 13
+decolar GOL 187 88
+aterrissar AMERICAAIRLINES 145 153 5
+aterrissar LATAM 62 385 11
+decolar LATAM 170 144
+aterrissar AMERICAAIRLINES 59 395 4
+aterrissar AMERICAAIRLINES 27 265 14
+decolar LATAM 11 112
+aterrissar AZUL 111 101 13
+aterrissar AMERICAAIRLINES 18 317 14
+decolar AMERICAAIRLINES 141 32
+aterrissar GOL 173 103 2
+aterrissar GOL 107 285 13
+decolar AMERICAAIRLINES 52 168
+aterrissar AMERICAAIRLINES 183 23 14
+aterrissar AZUL 12 197 8
+decolar AZUL 34 184
+aterrissar AMERICAAIRLINES 121 25 14
+aterrissar GOL 83 131 0
+decolar AZUL 42 84
+aterrissar GOL 76 31 12
+aterrissar AZUL 108 383 0
+decolar LATAM 120 100
+aterrissar LATAM 23 31 4
+aterrissar AZUL 196 63 1
+decolar AMERICAAIRLINES 146 126
+aterrissar AMERICAAIRLINES 96 187 9
+aterrissar LATAM 10 69 1
+decolar GOL 10 132
+aterrissar GOL 167 265 11
+aterrissar LATAM 40 305 9
+decolar LATAM 150 108
+aterrissar LATAM 61 375 0
+aterrissar AMERICAAIRLINES 177 111 14
+decolar GOL 77 168
+aterrissar GOL 124 95 13
+aterrissar AZUL 84 83 12
+decolar LATAM 158 170
+aterrissar AZUL 42 7 3
+aterrissar LATAM 30 225 5
+decolar LATAM 154 88
+aterrissar LATAM 140 399 6
+aterrissar LATAM 197 111 0
+decolar AZUL 56 188
+aterrissar AMERICAAIRLINES 88 45 1
+aterrissar AZUL 137 371 11
+decolar LATAM 117 162
+aterrissar AMERICAAIRLINES 183 115 10
+aterrissar LATAM 15 381 11
+decolar AMERICAAIRLINES 6 38
+aterrissar AMERICAAIRLINES 143 369 14
+aterrissar AMERICAAIRLINES 118 343 1
+decolar LATAM 167 110
+aterrissar AMERICAAIRLINES 131 345 8
+aterrissar GOL 120 207 0
+decolar LATAM 42 22
+aterrissar AZUL 193 131 4
+aterrissar GOL 54 91 6
+decolar LATAM 67 24
+aterrissar AMERICAAIRLINES 89 273 1
+aterrissar LATAM 6 111 13
+decolar LATAM 107 156
+aterrissar LATAM 75 309 12
+aterrissar LATAM 51 165 14
+decolar AMERICAAIRLINES 100 134
+aterrissar GOL 24 207 5
+aterrissar LATAM 140 57 7
+decolar AZUL 27 96
+aterrissar LATAM 34 317 13
+aterrissar AZUL 39 251 12
+decolar LATAM 10 30
+aterrissar AZUL 74 323 10
+aterrissar LATAM 132 131 13
+decolar AMERICAAIRLINES 154 174
+aterrissar AMERICAAIRLINES 161 139 3
+aterrissar AMERICAAIRLINES 118 397 14
+decolar LATAM 153 30
+aterrissar LATAM 168 225 13
+aterrissar AMERICAAIRLINES 71 273 10
+decolar LATAM 31 192
+aterrissar AZUL 8 157 6
+aterrissar AZUL 129 73 2
+decolar LATAM 69 138
+aterrissar LATAM 7 391 8
+aterrissar LATAM 101 247 10
+decolar LATAM 131 46
+aterrissar AMERICAAIRLINES 25 85 10
+aterrissar LATAM 113 373 13
+decolar GOL 62 128
+aterrissar GOL 31 45 14
+aterrissar LATAM 93 105 13
+decolar AZUL 163 118
+aterrissar GOL 32 87 13
+aterrissar LATAM 49 149 5
+decolar LATAM 82 56
+aterrissar GOL 30 339 10
+aterrissar LATAM 110 143 13
+decolar AZUL 151 82
+aterrissar AZUL 26 347 0
+aterrissar AZUL 100 101 14
+decolar GOL 172 168
+aterrissar AMERICAAIRLINES 11 129 5
+aterrissar GOL 155 139 2
+decolar AMERICAAIRLINES 38 66
+aterrissar AZUL 197 365 2
+aterrissar LATAM 80 185 8
+decolar AMERICAAIRLINES 75 116
+aterrissar LATAM 55 333 14
+aterrissar AMERICAAIRLINES 94 297 10
+decolar AZUL 134 86
+aterrissar LATAM 56 235 7
+aterrissar LATAM 50 335 4
+decolar GOL 16 168
+aterrissar LATAM 62 75 11
+aterrissar LATAM 104 127 8
+decolar AZUL 155 170
+aterrissar AZUL 191 375 4
+aterrissar LATAM 92 371 7
+decolar LATAM 50 46
+aterrissar AMERICAAIRLINES 121 61 13
+aterrissar LATAM 147 185 14
+decolar AMERICAAIRLINES 197 102
+aterrissar AZUL 193 205 1
+aterrissar GOL 175 345 10
+decolar LATAM 60 166
+aterrissar LATAM 65 323 11
+aterrissar AMERICAAIRLINES 109 399 10
+decolar LATAM 67 2
+aterrissar LATAM 98 35 8
+aterrissar GOL 40 17 1
+decolar LATAM 135 190
+aterrissar GOL 189 23 8
+aterrissar LATAM 193 241 10
+decolar LATAM 102 102
+aterrissar AZUL 18 35 12
+aterrissar AZUL 152 117 7
+decolar LATAM 35 92
+aterrissar LATAM 3 121 3
+aterrissar AZUL 46 181 5
+decolar AZUL 159 182
+aterrissar LATAM 1 157 2
+aterrissar LATAM 160 219 6
+decolar LATAM 95 26
+aterrissar LATAM 39 71 7
+aterrissar AZUL 140 361 10
+decolar AZUL 96 10
+aterrissar GOL 136 25 14
+aterrissar GOL 126 47 13
+decolar LATAM 152 130
+aterrissar AMERICAAIRLINES 9 273 8
+aterrissar AMERICAAIRLINES 81 235 14
+decolar AMERICAAIRLINES 68 102
+aterrissar GOL 110 61 9
+aterrissar AZUL 131 151 10
+decolar LATAM 106 182
+aterrissar LATAM 15 121 3
+aterrissar LATAM 197 1 1
+decolar LATAM 86 120
+aterrissar LATAM 86 107 6
+aterrissar LATAM 168 185 5
+decolar LATAM 196 16
+aterrissar AMERICAAIRLINES 168 285 3
+aterrissar LATAM 139 83 12
+decolar AZUL 135 54
+aterrissar LATAM 32 361 10
+aterrissar GOL 94 167 12
+decolar LATAM 162 76
+aterrissar AMERICAAIRLINES 191 97 13
+aterrissar AMERICAAIRLINES 194 61 8
+decolar AZUL 109 174
+aterrissar LATAM 74 163 1
+aterrissar GOL 76 91 8

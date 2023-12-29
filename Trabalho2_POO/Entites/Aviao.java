@@ -1,31 +1,47 @@
 package Entites;
 
-import java.util.HashMap;
+import java.util.Random;
 
 public class Aviao {
 
-private Integer  numeroAviao;
-private Integer tempoEspera;
+    public Random random = new Random();
 
-public Aviao(Integer numeroAviao, Integer tempoEspera) {
-    this.numeroAviao = numeroAviao;
-    this.tempoEspera = tempoEspera;
-}
-public Integer getNumeroAviao() {
-    return numeroAviao;
-}
-public void setNumeroAviao(Integer numeroAviao) {
-    this.numeroAviao = numeroAviao;
-}
-public Integer getTempoEspera() {
-    return tempoEspera;
-}
-public void setTempoEspera(Integer tempoEspera) {
-    this.tempoEspera = tempoEspera;
-}
+    private int  numeroAviao;
 
-   
+    private int passageiros;
+
+    private String companhiaAerea;
+
+    public Aviao(int numeroAviao, int passageiros, String companhiaAerea) {
+
+        this.numeroAviao = numeroAviao;
+        this.passageiros = passageiros;
+        this.companhiaAerea = companhiaAerea;
+       
+    }
 
 
+    public Integer getNumeroAviao() {
+        return numeroAviao;
+    }
+ 
+    public int getPassageiros() {
+        return passageiros;
+    }
+    
+    
+    public void setNumeroAviao(Integer numeroAviao) {
+        this.numeroAviao = numeroAviao;
+    }
 
+
+    @Override
+    public String toString() {
+        return "Aviao [numeroAviao=" + numeroAviao + ", passageiros=" + passageiros
+                +", companhiaAerea=" + companhiaAerea + "]";
+    }
+
+    public String getCompanhiaAerea() {
+        return companhiaAerea;
+    }
 }

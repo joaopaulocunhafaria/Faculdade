@@ -3,75 +3,64 @@ package Applicaton;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-
+import java.util.ArrayList;
 import Entites.AviaoAterrissagem;
 import Entites.AviaoDecolagem;
+import Entites.GerenciadorDePista;
+import Entites.Aeroporto;
+import Entites.Aviao;
+import java.util.List;
 
 public class aplicationUsingFiles {
 
-    public void openFile() {
+    public Aeroporto aeroporto = new Aeroporto();
+    private String filePath;
 
-        try (BufferedReader rd = new BufferedReader(new FileReader("/home/joao/Desktop/faculdade/Faculdade/Trabalho2_POO/Applicaton/Teste.txt"))) {
+    public aplicationUsingFiles(String filePath) {
+        this.filePath = filePath;
+
+    }
+
+    public ArrayList<Aviao> openFile() {
+ArrayList<Aviao> avioes = new ArrayList<>();
+        try (BufferedReader rd = new BufferedReader(
+                new FileReader("/home/joao/Desktop/Trabalho2_POO/Applicaton/InPut.txt"))) {
 
             String line = rd.readLine();
 
-            while (line != null) {
+            Integer numAvioes = aeroporto.getGerrenciadorDePista().randomizaNumAvioes();
+
+            for (int i = 0; i < numAvioes; i++) {
 
                 String[] words = line.split(" ");
-                if (words[2].equals("aterrisar")) {
-                     
-                if (Integer.parseInt(words[8])>5) {
-                    AviaoAterrissagem aviao = new AviaoAterrissagem(Integer.parseInt(words[4]),
-                                                                    Integer.parseInt(words[8]));
-                    
-                }
-                if (Integer.parseInt(words[8])<5) {
-                    AviaoAterrissagem aviao = new AviaoAterrissagem(Integer.parseInt(words[4]),
-                                                                    Integer.parseInt(words[8]),
-                                                                    true);
-                    
+                if (words[0].equals("aterrissar")) {
+                    int numeroAviao = Integer.parseInt(words[3]);
+                    int passageiros = Integer.parseInt(words[2]);
+                    int combustivel = Integer.parseInt(words[4]);
+                    String companhiaAerea = words[1];
+                    AviaoAterrissagem aviao = new AviaoAterrissagem(numeroAviao, companhiaAerea, passageiros,
+                            combustivel);
+                    avioes.add(aviao);
                 }
 
-                //aqui deve atribuir o aviao a uma pista de aterrissagem de forma que fiquem todas bem
-                
+                if (words[0].equals("decolar")) {
+
+                    int numeroAviao = Integer.parseInt(words[3]);
+                    int passageiros = Integer.parseInt(words[2]);
+                    String companhiaAerea = words[1];
+                    AviaoDecolagem aviao = new AviaoDecolagem(numeroAviao, passageiros, companhiaAerea);
+                    avioes.add(aviao);
                 }
-
-
-
-
-                if (words[2].equals("decolar")) {
-
-                    //se o tempo de espera for menor que 5 minutos ele chama o construtor que seta o atributo emergencia como true
-                   if (Integer.parseInt(words[8]) < 5) {
-                    AviaoDecolagem aviao = new AviaoDecolagem(Integer.parseInt(words[4]),
-                                                              Integer.parseInt(words[8]),
-                                                              true);    
-                   }
-
-                     //se o tempo de espera for maior que 5 minutos ele chama o construtor que seta o atributo emergencia como false
-                   if (Integer.parseInt(words[8]) > 5) {
-                    AviaoDecolagem aviao = new AviaoDecolagem(Integer.parseInt(words[4]),
-                                                              Integer.parseInt(words[8]));    
-                    
-                   }
-                    
-                    
-                    
-                    
-                    //aqui deve atribuir o aviao a uma pista de decolagem de forma que fiquem todas bem 
-                    //distribuidas 
-                }
-
-                System.out.println(words[2]+" "+words[4]+" "+words[8]);
                 line = rd.readLine();
+
             }
 
-        } catch (IOException e ) {
+        } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
-        }catch (NumberFormatException e) {
+        } catch (NumberFormatException e) {
             System.out.println("Error: " + e.getMessage());
         }
-
+        return avioes;
     }
 
 }

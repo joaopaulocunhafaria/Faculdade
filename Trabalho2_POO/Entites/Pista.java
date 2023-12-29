@@ -1,60 +1,77 @@
 package Entites;
 
 import java.util.ArrayList;
+import java.util.PriorityQueue;
 
 public class Pista {
 
-    private ArrayList<Aviao> filaAterrissagem = new ArrayList<Aviao>();
+    public Integer quantidadeGeralDeAvioes;
 
-    private ArrayList<Aviao> filaDecolagem = new ArrayList<Aviao>();
+    private ArrayList<AviaoAterrissagem> filaAterrissagem1 = new ArrayList<AviaoAterrissagem>();
+
+    private ArrayList<AviaoAterrissagem> filaAterrissagem2 = new ArrayList<AviaoAterrissagem>();
+
+    private PriorityQueue<AviaoAterrissagem> filaAterrissagemEmergencial = new PriorityQueue<>();
+
+    private ArrayList<AviaoDecolagem> filaDecolagem = new ArrayList<AviaoDecolagem>();
 
     private String nome;
 
-    public ArrayList<Aviao> getFilaAterrissagem() {
-        return filaAterrissagem;
+    public Integer getQuantidadeGeralDeAvioes() {
+        return filaAterrissagem2.size() + filaAterrissagem1.size();
     }
 
-    public void setFilaAterrissagem(ArrayList<Aviao> filaAterrissagem) {
-        this.filaAterrissagem = filaAterrissagem;
+    public Integer getQuantidadedeAviaoAterrissagemFila1() {
+        return filaAterrissagem1.size();
     }
 
-    public ArrayList<Aviao> getFilaDecolagem() {
+    public Integer getQuantidadedeAviaoAterrissagemFila2() {
+        return filaAterrissagem2.size();
+    }
+
+    public Integer getQuantidadedeAviaoDecolagem() {
+        return filaDecolagem.size();
+    }
+
+    public ArrayList<AviaoAterrissagem> getFilaAterrissagem1() {
+        return filaAterrissagem1;
+    }
+
+    public ArrayList<AviaoAterrissagem> getFilaAterrissagem2() {
+        return filaAterrissagem2;
+    }
+
+    public PriorityQueue<AviaoAterrissagem> getFilaAterrissagemEmergencial() {
+        return filaAterrissagemEmergencial;
+    }
+
+    public ArrayList<AviaoDecolagem> getFilaDecolagem() {
         return filaDecolagem;
-    }
-
-    public void setFilaDecolagem(ArrayList<Aviao> filaDecolagem) {
-        this.filaDecolagem = filaDecolagem;
     }
 
     public Pista() {
     }
 
-    public Pista(String nome, ArrayList<Aviao> filaAterrissagem, ArrayList<Aviao> filaDecolagem) {
-        this.filaAterrissagem = filaAterrissagem;
-        this.filaDecolagem = filaDecolagem;
+    public Pista(String nome) {
+        this.filaAterrissagem1 = new ArrayList<AviaoAterrissagem>();
+        this.filaAterrissagem2 = new ArrayList<AviaoAterrissagem>();
+        this.filaDecolagem = new ArrayList<AviaoDecolagem>();
         this.nome = nome;
+        this.filaAterrissagemEmergencial = new PriorityQueue<>();
     }
 
-    public void addAviaoAterrissagem(Aviao aviao) {
-        this.filaAterrissagem.add(aviao);
+    public void addAviaoAterrissagemFila1(AviaoAterrissagem aviao) {
+        this.filaAterrissagem1.add(aviao);
+
     }
 
-    public void addAviaoDecolagem(Aviao aviao) {
+    public void addAviaoAterrissagemFila2(AviaoAterrissagem aviao) {
+        this.filaAterrissagem2.add(aviao);
+
+    }
+
+    public void addAviaoDecolagem(AviaoDecolagem aviao) {
         this.filaDecolagem.add(aviao);
-    }
-
-    public void removeAviaoAterrissagem(Aviao aviao) {
-        this.filaAterrissagem.remove(aviao);
-    }
-
-    public void removeAviaoDecolagem(Aviao aviao) {
-        this.filaDecolagem.remove(aviao);
-    }
-
-    public void printFilaAterrissagem() {
-        for (Aviao aviao : filaAterrissagem) {
-            System.out.println(aviao.getNumeroAviao());
-        }
     }
 
 }
