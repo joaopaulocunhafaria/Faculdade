@@ -39,7 +39,14 @@ public class Metodos {
 
 	public int PedirTelefone() {
 		System.out.println("Telefone: ");
-		int telefone = sc.nextInt();
+		int telefone = 0;
+		try {
+			telefone = sc.nextInt();
+		} catch (Exception e) {
+			System.err.println("Error: Caracter invalido");
+		} finally {
+			sc.nextLine(); // Consume the remaining newline character
+		}
 		return telefone;
 	}
 
@@ -104,9 +111,9 @@ public class Metodos {
 	}
 
 	public void closeScanner() {
-	
-	sc.close();
-	
+
+		sc.close();
+
 	}
 
 }

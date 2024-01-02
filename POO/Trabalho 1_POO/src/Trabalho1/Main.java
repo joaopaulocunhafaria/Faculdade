@@ -51,8 +51,9 @@ public class Main {
 					}
 						
 					} while (!sexoValido);
-
+                   
 					int telefone = metodos.PedirTelefone();
+					
 					medico.setTelefone(telefone);
 					int identidade = metodos.PedirIdentidade();
 					medico.setIdentidade(identidade);
