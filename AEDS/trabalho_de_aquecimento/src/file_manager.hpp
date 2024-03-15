@@ -16,12 +16,10 @@ private:
 public:
     file_manager();
     file_manager(string file_path, int table_size);
-    void  write_table( char **table );    
+    void  write_table( char **table,string path, int i );    
     char ** read_table();
     
-    ~file_manager();
 };
  
 
-
-#endif
+ #endif

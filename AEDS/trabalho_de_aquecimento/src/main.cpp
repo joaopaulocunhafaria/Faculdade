@@ -1,17 +1,24 @@
 #include <iostream>
 #include "table_manager.hpp"
-#define N 8
-#define FILE_PATH "table.txt"
+
+#define FILE_PATH "datasets/input.mps"
 
 using namespace std;
 
-int main(){
-    
-    table_manager m =   table_manager(N,FILE_PATH);
+int main()
+{
+
+    int executions = 0;
+    cout << endl << "Starting execution" << endl;
+
+    cout << "Type the amount of executions: " << endl;
+    cin >> executions;
+
+    table_manager m = table_manager(FILE_PATH, executions);
 
     m.initializer();
 
-    cout << "Hello world";
+    cout << endl << "Ending execution" << endl;
 
     return 0;
 }

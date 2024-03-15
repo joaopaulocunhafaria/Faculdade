@@ -6,11 +6,16 @@ file_manager::file_manager(string file_path, int table_size)
     this->table_size = table_size;
 }
 
-file_manager::file_manager(){}
-
-void file_manager::write_table(char **table)
+file_manager::file_manager()
 {
-    ofstream output(this->file_path);
+    ofstream output("geracoes.mps");
+    output.close();
+  
+}
+
+void file_manager::write_table(char **table, string path, int i)
+{
+    ofstream output(path, ofstream::app);
 
     if (!output)
     {
@@ -18,53 +23,63 @@ void file_manager::write_table(char **table)
         return;
     }
 
+    output << "Geracao: " << i << endl;
+
     for (int i = 0; i < this->table_size; i++)
     {
         for (int j = 0; j < this->table_size; j++)
         {
-             
+
             output << table[i][j];
         }
-      // output << "\n";
+        output << "\n";
     }
+    output << "**********" << endl;
 
     output.close();
 }
 
 char **file_manager::read_table()
 {
-    ifstream input(this->file_path);
+    ifstream input("datasets/input.mps");
 
     if (!input)
     {
         cout << "File not found when trying to read. 404";
-        return  0;
+        return 0;
     }
 
     char **table;
-    
-    table = new char*[this->table_size];
-    
+
+    table = new char *[this->table_size];
+
     for (int i = 0; i < this->table_size; i++)
     {
-         table[i] = new char[this->table_size];
+        table[i] = new char[this->table_size];
     }
 
- 
+    char aux;
+    string aux1;
+    getline(input, aux1);
 
     for (int i = 0; i < this->table_size; i++)
     {
         for (int j = 0; j < this->table_size; j++)
-        {   
-            table[i][j] = input.get();
+        {
+            input.get(aux);
+
+            if (aux != '\n')
+            {
+                table[i][j] = aux;
+            }
+            if (aux == '\n')
+
+            {
+                table[i][j] = input.get();
+            }
         }
     }
 
     input.close();
     return table;
-}
- 
-
-file_manager::~file_manager(){
-    
 }
