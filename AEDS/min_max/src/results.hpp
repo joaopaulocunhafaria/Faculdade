@@ -11,9 +11,8 @@ class results
 public:
     results();
 
-    void write_results(int methodoNumber, int size, string type, int time);
+   void  write_results(int methodoNumber,int size, string type,double time, string path);
 
-    ~results();
 };
 
 #endif
