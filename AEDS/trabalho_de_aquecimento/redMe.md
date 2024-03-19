@@ -3,7 +3,7 @@
 <ul>
   <li >Objetivos</li>
   <p>O objetivo deste trabalho é revisar os conceitos de manipulação de matrizes, controle
-   de fluxo e lógica de jogo para reforcar e exercitar, tambem, conceitos de logica de programacao.</p>
+   de fluxo e lógica de jogo para reforcar e exercitar conceitos de logica de programacao.</p>
   <li>Descricao</li>
   <p>O Jogo da Vida é um autômato celular que evolui de acordo com regras simples, mas
 gera padrões complexos. Ele é representado por uma matriz 2D de células, cada uma
@@ -49,10 +49,24 @@ e fora da pasta src, armazenando ela como input.mps.</li>
   </ul>
    <li>Organizacao e fluxo de Codigo</li>
    <ul>
-     <li> <p>Na pasta input.mps esta disposta a matriz de entrada com a qual o codigo ira trabalhar e acima desta esta sua dimensao. No codigo como esta disposto o tamanho da matriz e de 10x10. </p></li>
-     <li>Apos a primeira execucao o programa escreve a matriz de entrada no arquivo geracoes.mps, assim como as demais geracaoes.</li>
-     <li>Apos fazer o calculo da proxima geracao o programa a imprimi tambem no arquivo geracoes.mps, e assim a quantidade de vezes desejada pelo usuario.</li>
-   </ul>
+     <li style="display:inline;">    <img style="height:25px;" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/822c4da5-2aff-4013-b26f-a3aea03cff0a"></li>
+      <p>Dentro da pasta datasets, no arquivo input.mps, esta disposta a dimensao da matriz de entrada do programa assim como os caracterer que a compoe. A organizacao do arquivo se da da seguinte forma. </p>
+      <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/8a83331a-df50-474a-8a1b-c791f2673197" style="height:200px">
+     <li><img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/e5d96fed-1227-4aa9-8a12-28e29b1bba2e" style="height:25px;" ></li>
+     <p>O arquivo geracoes.mps eh o responsavel por armazenar os resultados de cada iteracao do codigo e registrar a evolucao da matriz seguindo as regras do jogo. Um exemplo de uma execucao onde ocorreram 3 interacoes.</p>
+     <li></li>
+     <div>
+       <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/c24e6e4d-23b5-4d9b-b7fe-b3abf630c2b0" style="height:400px">
+       <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/6836a49d-b379-4e24-b33b-ce5407990273" style="height:400px">
+        
+</div>
+      <li><img style="height:25px;" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/523ce255-ec5a-43a9-a2fa-945cffddb7e7"></li>
+      <p>A pasta src eh onde esta toda a estruturacao e a organizacao do programa. Dividindo-se da seguinte forma</p>
+    <img style="height:50px;" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/d01eaee6-a613-4492-9d03-e9ea280f0871">
+    <p>Os arquivos file_manager.hpp e file_manager.cpp sao onde estao escrito todo os processos referente ao gerenciamento da leitura e escrita de dados nos arquivos, ficando responsaveis exclusivamente por lidar com o arquivo e, dessa forma, construir uma boa relacao de desaclopamento de funcao onde cada classe tem suas funcoes especificas.</p>
+    <img style="height:50px;" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/54627e62-b039-4344-98e7-c6adb2e0b0de">
+    
+         </ul>
 
    <li>Resolucoes finais</li>
    <p>Para a construcao de um programa que realize de maneira eficiente o exercicio proposto foram necessarios conhecimentos precissos da linguagem de programacao utilizada, uma boa compreensao logica do problema exposto, abstracao e manipulacao de estruturas de dados bidimensionais, previsao de erros  e uma boa organizacao de codigo para facilitar a escrita do programa.</p>
