@@ -49,22 +49,7 @@ char **table_manager::create_table()
     this->table_aux = table;
     return table;
 }
-
-void table_manager::print_table()
-{
-    cout << "##########" << endl;
-
-    for (int i = 0; i < this->table_size; i++)
-    {
-        for (int j = 0; j < this->table_size; j++)
-        {
-            cout << this->table[i][j];
-        }
-
-        cout << "\n";
-    }
-    cout << "##########" << endl;
-}
+ 
 
 void table_manager::next_table()
 {
@@ -192,7 +177,7 @@ void table_manager::initializer()
     for (int i = 0; i < executions + 1; i++)
     {
 
-        print_table();
+         
 
         fileManager.write_table(this->table, "geracoes.mps", i);
 

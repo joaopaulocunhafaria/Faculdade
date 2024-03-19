@@ -24,7 +24,7 @@ public:
     table_manager(  string  file_path, int executions);
     char **create_table();
     void next_table();
-    void  print_table();
+    
     void initializer();
     void alive(int i,int j);
     void dead(int i,int j);
