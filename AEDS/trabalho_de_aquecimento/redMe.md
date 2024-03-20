@@ -73,10 +73,13 @@ e fora da pasta src, armazenando ela como input.mps.</li>
     <li><img style="width:400px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/db8fe5bd-4b91-4cd6-b157-307b87ae330b" ><p>Primeiramente instancia um objeto do tipo table_manager passando o caminho do arquivo de entrada e a quantidade de execucoes</p></li>
     <li><img style="width:150px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/b3a82dda-34bd-48f6-b01b-84ffb59c47ff"> <p>Logo apos chama a funcao initializer da classe table_manager </p></li>
     
-   <li> <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/5dbf727a-f10f-4cb4-993d-8198c139d0a4">
+   <li> <img style="height:150px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/5dbf727a-f10f-4cb4-993d-8198c139d0a4">
      <p>A funcao initializer roda uma serie de codigo a quantidade de vezes que foram passadas na instanciacao do objeto</p></li>
-     <li><img src=""> </li>
+     <li><img style="width:300px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/417ff647-7586-4226-8109-d8f53d32aad3"> <p>O primeiro passo do bloco de codigo eh chamar a funcao write_table da classe file_manager que foi instanciada na construcao do objeto, passando a matriz, o caminho do arquivo onde sera escrita e qual eh a interacao. Na primeira interacao sera escrita a matriz da forma que ela esta no arquivo de entrada. </p> </li>
+     <li><img style="width:150px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/3e68ab2d-1ac4-43d0-8573-c66f2f5157ee"> <p>A funcao next_table faz os calculos e altera a matriz this->table para que ela possa ser escrita no arquivo de saida ja com as alteracoes feitas na proxima interacao.</p></li>
+     <li><img style="width:150px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/9bcfc58b-3cca-4ed4-8830-7eec757b7490"><p>E por fim quando fecha o ciclo da interacao toda memoria que foi alocada durante a execucao do codigo eh liberada para que na haja vazamento de memoria.</p></li>
   </ul>
+   
       
 </ul>
    <li>Resolucoes finais</li>
