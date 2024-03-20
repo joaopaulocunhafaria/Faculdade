@@ -65,9 +65,22 @@ e fora da pasta src, armazenando ela como input.mps.</li>
     <img style="height:50px;" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/d01eaee6-a613-4492-9d03-e9ea280f0871">
     <p>Os arquivos file_manager.hpp e file_manager.cpp sao onde estao escrito todo os processos referente ao gerenciamento da leitura e escrita de dados nos arquivos, ficando responsaveis exclusivamente por lidar com o arquivo e, dessa forma, construir uma boa relacao de desaclopamento de funcao onde cada classe tem suas funcoes especificas.</p>
     <img style="height:50px;" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/54627e62-b039-4344-98e7-c6adb2e0b0de">
-    
-         </ul>
+    <p>Os arquivos table_manager.cpp e table_manager.hpp sao responsaveis por lidar com a parte logica do problema e realizar as manipulacoes na matriz,e depois envia-las para a classe que eh responsavel por escrever no arquivo</p>
 
+  <li>Fluxo de codigo</li>
+  <p>Para construir uma boa organizacao de codigo onde cada classe tem suas respectivas funcoes a estrutura seguida foi a seguinte: Uma classe responsavel por lidar com o processo de leitura e escrita no arquivo, outra responsavel por lidar com a parte logica de manipulacao de matrizes e regras de jogo e por fim o arquivo main que tem a funcao apenas de chamar as funcoes das classes que compoe o programa</p>
+  <ul>
+    <li><img style="width:400px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/db8fe5bd-4b91-4cd6-b157-307b87ae330b" ><p>Primeiramente instancia um objeto do tipo table_manager passando o caminho do arquivo de entrada e a quantidade de execucoes</p></li>
+    <li><img style="width:150px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/b3a82dda-34bd-48f6-b01b-84ffb59c47ff"> <p>Logo apos chama a funcao initializer da classe table_manager </p></li>
+    <li><img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/5dbf727a-f10f-4cb4-993d-8198c139d0a4"></li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+    <li>1</li>
+  </ul>
+      
+</ul>
    <li>Resolucoes finais</li>
    <p>Para a construcao de um programa que realize de maneira eficiente o exercicio proposto foram necessarios conhecimentos precissos da linguagem de programacao utilizada, uma boa compreensao logica do problema exposto, abstracao e manipulacao de estruturas de dados bidimensionais, previsao de erros  e uma boa organizacao de codigo para facilitar a escrita do programa.</p>
 </ul>
