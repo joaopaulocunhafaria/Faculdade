@@ -1,14 +1,13 @@
-<h1>Trabalho de Aquecimento AEDS 1</h1>
-<h2>Jogo da Vida</h2>
+<h1 align="center">Trabalho de Aquecimento AEDS 1</h1>
+<h2  align="center">JOGO DA VIDA</h2>
 <ul>
-  <li >Objetivos</li>
-  <p>O objetivo deste trabalho é revisar os conceitos de manipulação de matrizes, controle
-   de fluxo e lógica de jogo para reforcar e exercitar conceitos de logica de programacao.</p>
-  <li>Descricao</li>
+  <li >📌 OBJETIVOS</li>
+  <p>O objetivo deste trabalho é revisar os conceitos de manipulação de matrizes, controle de fluxo e lógica de jogo para reforçar e exercitar conceitos de lógica de programação.</p>
+    <li>✒️ DESCRICAO</li>
   <p>O Jogo da Vida é um autômato celular que evolui de acordo com regras simples, mas
 gera padrões complexos. Ele é representado por uma matriz 2D de células, cada uma
 podendo estar viva ou morta.</p>
-  <li>Implementacao e regras</li>
+  <li>📄 IMPLEMENTAÇÃO E REGRAS</li>
    <ul>
      <li>1. Crie uma matriz N x N para representar o tabuleiro do Jogo da Vida.</li>
      <li>2. Inicialize o tabuleiro com células vivas (1) e mortas (0) aleatoriamente.</li>
@@ -27,7 +26,7 @@ nas seguintes regras:</li>
      <li><img style="height:200px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/78afcedc-c5ca-4b7b-82e8-dc6739d56029"> 
 </li>
    </ul>
-  <li>Condicoes</li>
+  <li>💻 CONDIÇÕES</li>
   <ul>
     <li> Ler a matriz de entrada de um arquivo, considerando um tamanho mínimo de
 5x5.</li>
@@ -47,13 +46,13 @@ e fora da pasta src, armazenando ela como input.mps.</li>
    
     
   </ul>
-   <li>Organizacao e fluxo de Codigo</li>
+   <li>🔨 ORGANIZAÇÃO E FLUXO DE CÓDIGO</li>
    <ul>
      <li style="display:inline;">    <img style="height:25px;" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/822c4da5-2aff-4013-b26f-a3aea03cff0a"></li>
-      <p>Dentro da pasta datasets, no arquivo input.mps, esta disposta a dimensao da matriz de entrada do programa assim como os caracterer que a compoe. A organizacao do arquivo se da da seguinte forma. </p>
+      <p>Dentro da pasta "datasets", no arquivo "input.mps", está disposta a dimensão da matriz de entrada do programa, assim como os caracteres que a compõem. A organização do arquivo se dá da seguinte forma. </p>
       <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/8a83331a-df50-474a-8a1b-c791f2673197" style="height:200px">
      <li><img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/e5d96fed-1227-4aa9-8a12-28e29b1bba2e" style="height:25px;" ></li>
-     <p>O arquivo geracoes.mps eh o responsavel por armazenar os resultados de cada iteracao do codigo e registrar a evolucao da matriz seguindo as regras do jogo. Um exemplo de uma execucao onde ocorreram 3 interacoes.</p>
+     <p>O arquivo "geracoes.mps" é responsável por armazenar os resultados de cada iteração do código e registrar a evolução da matriz seguindo as regras do jogo. Um exemplo de uma execução onde ocorreram 3 iterações.</p>
      <li></li>
      <div>
        <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/c24e6e4d-23b5-4d9b-b7fe-b3abf630c2b0" style="height:400px">
@@ -61,27 +60,39 @@ e fora da pasta src, armazenando ela como input.mps.</li>
         
 </div>
       <li><img style="height:25px;" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/523ce255-ec5a-43a9-a2fa-945cffddb7e7"></li>
-      <p>A pasta src eh onde esta toda a estruturacao e a organizacao do programa. Dividindo-se da seguinte forma</p>
+      <p>A pasta "src" é onde está toda a estruturação e organização do programa, dividindo-se da seguinte forma.</p>
     <img style="height:50px;" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/d01eaee6-a613-4492-9d03-e9ea280f0871">
-    <p>Os arquivos file_manager.hpp e file_manager.cpp sao onde estao escrito todo os processos referente ao gerenciamento da leitura e escrita de dados nos arquivos, ficando responsaveis exclusivamente por lidar com o arquivo e, dessa forma, construir uma boa relacao de desaclopamento de funcao onde cada classe tem suas funcoes especificas.</p>
+    <p>Os arquivos "file_manager.hpp" e "file_manager.cpp" são onde está escrito todo o processo referente ao gerenciamento da leitura e escrita de dados nos arquivos, ficando responsáveis exclusivamente por lidar com o arquivo e, dessa forma, construir uma boa relação de desacoplamento de função onde cada classe tem suas funções específicas.</p>
     <img style="height:50px;" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/54627e62-b039-4344-98e7-c6adb2e0b0de">
-    <p>Os arquivos table_manager.cpp e table_manager.hpp sao responsaveis por lidar com a parte logica do problema e realizar as manipulacoes na matriz,e depois envia-las para a classe que eh responsavel por escrever no arquivo</p>
+    <p>Os arquivos "table_manager.cpp" e "table_manager.hpp" são responsáveis por lidar com a parte lógica do problema e realizar as manipulações na matriz, e depois enviá-las para a classe que é responsável por escrever no arquivo.</p>
 
   <li>Fluxo de codigo</li>
-  <p>Para construir uma boa organizacao de codigo onde cada classe tem suas respectivas funcoes a estrutura seguida foi a seguinte: Uma classe responsavel por lidar com o processo de leitura e escrita no arquivo, outra responsavel por lidar com a parte logica de manipulacao de matrizes e regras de jogo e por fim o arquivo main que tem a funcao apenas de chamar as funcoes das classes que compoe o programa</p>
+  <p>Para construir uma boa organização de código, onde cada classe tem suas respectivas funções, a estrutura seguida foi a seguinte: uma classe responsável por lidar com o processo de leitura e escrita no arquivo, outra responsável por lidar com a parte lógica de manipulação de matrizes e regras de jogo, e por fim o arquivo main, que tem a função apenas de chamar as funções das classes que compõem o programa.</p>
   <ul>
-    <li><img style="width:400px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/db8fe5bd-4b91-4cd6-b157-307b87ae330b" ><p>Primeiramente instancia um objeto do tipo table_manager passando o caminho do arquivo de entrada e a quantidade de execucoes</p></li>
-    <li><img style="width:150px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/b3a82dda-34bd-48f6-b01b-84ffb59c47ff"> <p>Logo apos chama a funcao initializer da classe table_manager </p></li>
+    <li><img style="width:400px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/db8fe5bd-4b91-4cd6-b157-307b87ae330b" ><p>Primeiramente, instancia-se um objeto do tipo table_manager, passando o caminho do arquivo de entrada e a quantidade de execuções.</p></li>
+    <li><img style="width:150px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/b3a82dda-34bd-48f6-b01b-84ffb59c47ff"> <p>Logo após, chama-se a função initializer da classe table_manager. </p></li>
     
    <li> <img style="height:150px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/5dbf727a-f10f-4cb4-993d-8198c139d0a4">
-     <p>A funcao initializer roda uma serie de codigo a quantidade de vezes que foram passadas na instanciacao do objeto</p></li>
-     <li><img style="width:300px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/417ff647-7586-4226-8109-d8f53d32aad3"> <p>O primeiro passo do bloco de codigo eh chamar a funcao write_table da classe file_manager que foi instanciada na construcao do objeto, passando a matriz, o caminho do arquivo onde sera escrita e qual eh a interacao. Na primeira interacao sera escrita a matriz da forma que ela esta no arquivo de entrada. </p> </li>
-     <li><img style="width:150px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/3e68ab2d-1ac4-43d0-8573-c66f2f5157ee"> <p>A funcao next_table faz os calculos e altera a matriz this->table para que ela possa ser escrita no arquivo de saida ja com as alteracoes feitas na proxima interacao.</p></li>
-     <li><img style="width:150px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/9bcfc58b-3cca-4ed4-8830-7eec757b7490"><p>E por fim quando fecha o ciclo da interacao toda memoria que foi alocada durante a execucao do codigo eh liberada para que na haja vazamento de memoria.</p></li>
+     <p>A função initializer executa uma série de códigos a quantidade de vezes que foi passada na instanciação do objeto.</p></li>
+     <li><img style="width:300px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/417ff647-7586-4226-8109-d8f53d32aad3"> <p>O primeiro passo do bloco de código é chamar a função write_table da classe file_manager, que foi instanciada na construção do objeto, passando a matriz, o caminho do arquivo onde será escrita e qual é a iteração. Na primeira iteração, será escrita a matriz da forma como está no arquivo de entrada. </p> </li>
+     <li><img style="width:150px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/3e68ab2d-1ac4-43d0-8573-c66f2f5157ee"> <p>A função next_table realiza os cálculos e altera a matriz "this->table" para que ela possa ser escrita no arquivo de saída com as alterações feitas na próxima iteração. Este processo é repetido a quantidade de vezes fornecida pelo usuário.</p></li>
+     <li><img style="width:150px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/9bcfc58b-3cca-4ed4-8830-7eec757b7490"><p>E por fim, quando o ciclo da iteração é concluído, toda a memória que foi alocada durante a execução do código é liberada para evitar vazamento de memória.</p></li>
+     <li>Após a realização de todos esses passos, o programa retorna para a função main e retorna 0 se tudo tiver ocorrido corretamente.</li>
   </ul>
    
       
 </ul>
-   <li>Resolucoes finais</li>
-   <p>Para a construcao de um programa que realize de maneira eficiente o exercicio proposto foram necessarios conhecimentos precissos da linguagem de programacao utilizada, uma boa compreensao logica do problema exposto, abstracao e manipulacao de estruturas de dados bidimensionais, previsao de erros  e uma boa organizacao de codigo para facilitar a escrita do programa.</p>
+<li>👾 COMPILAÇÃO E EXECUÇÃO</li>
+    <table border="1" align="center">
+      <tr>
+        <td>Comando</td>
+        <td>Função</td>
+      </tr>
+      <tr>
+        <td>./make.sh</td>
+        <td>Executa o  arquivo make.sh onde esta o script de execucao do programa</td>
+      </tr>
+    </table>
+   <li>🎯 RESOLUÇÕES FINAIS</li>
+   <p>Para a construção de um programa que realize de maneira eficiente o exercício proposto, foram necessários conhecimentos precisos da linguagem de programação utilizada, uma boa compreensão lógica do problema exposto, abstração e manipulação de estruturas de dados bidimensionais, previsão de erros e uma boa organização de código para facilitar a escrita do programa.</p>
 </ul>
