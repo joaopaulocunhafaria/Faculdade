@@ -173,19 +173,15 @@ int table_manager::count_neighbors(int i, int j)
 
 void table_manager::initializer()
 {
-
     for (int i = 0; i < executions + 1; i++)
     {
-
-         
-
         fileManager.write_table(this->table, "geracoes.mps", i);
 
         next_table();
     }
     free_memory();
 }
-
+        
 void table_manager::free_memory()
 {
     for (int i = 0; i < this->table_size; i++)

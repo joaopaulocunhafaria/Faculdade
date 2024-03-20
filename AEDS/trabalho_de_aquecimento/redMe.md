@@ -72,12 +72,10 @@ e fora da pasta src, armazenando ela como input.mps.</li>
   <ul>
     <li><img style="width:400px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/db8fe5bd-4b91-4cd6-b157-307b87ae330b" ><p>Primeiramente instancia um objeto do tipo table_manager passando o caminho do arquivo de entrada e a quantidade de execucoes</p></li>
     <li><img style="width:150px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/b3a82dda-34bd-48f6-b01b-84ffb59c47ff"> <p>Logo apos chama a funcao initializer da classe table_manager </p></li>
-    <li><img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/5dbf727a-f10f-4cb4-993d-8198c139d0a4"></li>
-    <li>1</li>
-    <li>1</li>
-    <li>1</li>
-    <li>1</li>
-    <li>1</li>
+    
+   <li> <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/5dbf727a-f10f-4cb4-993d-8198c139d0a4">
+     <p>A funcao initializer roda uma serie de codigo a quantidade de vezes que foram passadas na instanciacao do objeto</p></li>
+     <li><img src=""> </li>
   </ul>
       
 </ul>
