@@ -179,6 +179,7 @@ void table_manager::initializer()
 
         next_table();
     }
+    
     free_memory();
 }
         
