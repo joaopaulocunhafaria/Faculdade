@@ -89,9 +89,17 @@ e fora da pasta src, armazenando ela como input.mps.</li>
         <td>Função</td>
       </tr>
       <tr>
-        <td>./make.sh</td>
-        <td>Executa o  arquivo make.sh onde esta o script de execucao do programa</td>
+        <td>make clean</td>
+        <td>Apaga a última compilação realizada contida na pasta build</td>
       </tr>
+      <tr>
+        <td>make</td>
+        <td>Executa a compilação do programa utilizando o gcc, e o resultado vai para a pasta build</td>  
+      </tr>
+      <tr>
+        <td>make run</td>
+        <td>Executa o programa da pasta build após a realização da compilação</td>
+      </tr>  
     </table>
    <li>🎯 RESOLUÇÕES FINAIS</li>
    <p>Para a construção de um programa que realize de maneira eficiente o exercício proposto, foram necessários conhecimentos precisos da linguagem de programação utilizada, uma boa compreensão lógica do problema exposto, abstração e manipulação de estruturas de dados bidimensionais, previsão de erros e uma boa organização de código para facilitar a escrita do programa.</p>
