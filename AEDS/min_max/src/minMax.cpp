@@ -162,16 +162,13 @@ void minMax::manage_executions()
 
             array = creat_random_array(n);
 
-            for (int i = 0; i < 3; i++)
-            {
+            time = minMax1(array, n);
+            // r.write_results(1, n, "random", time, "results.txt");
+            time = minMax2(array, n);
+            // r.write_results(2, n, "random", time, "results.txt");
+            time = minMax3(array, n);
+            // r.write_results(3, n, "random", time, "results.txt");
 
-                time = minMax1(array, n);
-                r.write_results(1, n, "random", time, "results.txt");
-                time = minMax2(array, n);
-                //r.write_results(2, n, "random", time, "results.txt");
-                time = minMax3(array, n);
-                //r.write_results(3, n, "random", time, "results.txt");
-            }
             delete[] array;
 
             array = create_crescent_sort_array(n);
@@ -180,27 +177,26 @@ void minMax::manage_executions()
             {
                 time = minMax1(array, n);
                 r.write_results(1, n, "crescent", time, "results.txt");
-
-                time = minMax2(array, n);
-                //r.write_results(2, n, "crescent", time, "results.txt");
-
-                time = minMax3(array, n);
-               // r.write_results(3, n, "crescent", time, "results.txt");
             }
+            time = minMax2(array, n);
+            // r.write_results(2, n, "crescent", time, "results.txt");
+
+            time = minMax3(array, n);
+            // r.write_results(3, n, "crescent", time, "results.txt");
+
             delete[] array;
 
             array = create_decrescent_sort_array(n);
-            for (int i = 0; i < 3; i++)
-            {
-                time = minMax1(array, n);
-                r.write_results(1, n, "decrescent", time, "results.txt");
 
-                time = minMax2(array, n);
-                //r.write_results(2, n, "decrescent", time, "results.txt");
+            time = minMax1(array, n);
+            // r.write_results(1, n, "decrescent", time, "results.txt");
 
-                time = minMax3(array, n);
-                //r.write_results(3, n, "decrescent", time, "results.txt");
-            }
+            time = minMax2(array, n);
+            // r.write_results(2, n, "decrescent", time, "results.txt");
+
+            time = minMax3(array, n);
+            //  r.write_results(3, n, "decrescent", time, "results.txt");
+
             delete[] array;
 
             break;
@@ -209,16 +205,13 @@ void minMax::manage_executions()
 
             array = creat_random_array(n);
 
-            for (int i = 0; i < 3; i++)
-            {
+            time = minMax1(array, n);
+            // r.write_results(1, n, "random", time, "results.txt");
+            time = minMax2(array, n);
+            // r.write_results(2, n, "random", time, "results.txt");
+            time = minMax3(array, n);
+            // r.write_results(3, n, "random", time, "results.txt");
 
-                time = minMax1(array, n);
-                r.write_results(1, n, "random", time, "results.txt");
-                time = minMax2(array, n);
-                //r.write_results(2, n, "random", time, "results.txt");
-                time = minMax3(array, n);
-               // r.write_results(3, n, "random", time, "results.txt");
-            }
             delete[] array;
 
             array = create_crescent_sort_array(n);
@@ -226,24 +219,25 @@ void minMax::manage_executions()
             for (int i = 0; i < 3; i++)
             {
                 time = minMax1(array, n);
-                  r.write_results(1, n, "crescent", time, "results.txt");
-                time = minMax2(array, n);
-               //   r.write_results(2, n, "crescent", time, "results.txt");
-                time = minMax3(array, n);
-               //   r.write_results(3, n, "crescent", time, "results.txt");
+                r.write_results(1, n, "crescent", time, "results.txt");
             }
+            time = minMax2(array, n);
+            // r.write_results(2, n, "crescent", time, "results.txt");
+
+            time = minMax3(array, n);
+            // r.write_results(3, n, "crescent", time, "results.txt");
+
             delete[] array;
 
             array = create_decrescent_sort_array(n);
-            for (int i = 0; i < 3; i++)
-            {
-                time = minMax1(array, n);
-                  r.write_results(1, n, "decrescent", time, "results.txt");
-                time = minMax2(array, n);
-               //   r.write_results(2, n, "decrescent", time, "results.txt");
-                time = minMax3(array, n);
-               //   r.write_results(3, n, "decrescent", time, "results.txt");
-            }
+
+            time = minMax1(array, n);
+            //  r.write_results(1, n, "decrescent", time, "results.txt");
+            time = minMax2(array, n);
+            // r.write_results(2, n, "decrescent", time, "results.txt");
+            time = minMax3(array, n);
+            //  r.write_results(3, n, "decrescent", time, "results.txt");
+
             delete[] array;
             break;
         case 3:
@@ -251,15 +245,13 @@ void minMax::manage_executions()
 
             array = creat_random_array(n);
 
-            for (int i = 0; i < 3; i++)
-            {
-                time = minMax1(array, n);
-               // r.write_results(1, n, "random", time, "results.txt");
-                time = minMax2(array, n);
-               //   r.write_results(2, n, "random", time, "results.txt");
-                time = minMax3(array, n);
-               //   r.write_results(3, n, "random", time, "results.txt");
-            }
+            time = minMax1(array, n);
+            // r.write_results(1, n, "random", time, "results.txt");
+            time = minMax2(array, n);
+            // r.write_results(2, n, "random", time, "results.txt");
+            time = minMax3(array, n);
+            //  r.write_results(3, n, "random", time, "results.txt");
+
             delete[] array;
 
             array = create_crescent_sort_array(n);
@@ -267,24 +259,25 @@ void minMax::manage_executions()
             for (int i = 0; i < 3; i++)
             {
                 time = minMax1(array, n);
-                  r.write_results(1, n, "crescent", time, "results.txt");
-                time = minMax2(array, n);
-                //  r.write_results(2, n, "crescent", time, "results.txt");
-                time = minMax3(array, n);
-                //  r.write_results(3, n, "crescent", time, "results.txt");
+                r.write_results(1, n, "crescent", time, "results.txt");
             }
+            time = minMax2(array, n);
+            // r.write_results(2, n, "crescent", time, "results.txt");
+
+            time = minMax3(array, n);
+            //  r.write_results(3, n, "crescent", time, "results.txt");
+
             delete[] array;
 
             array = create_decrescent_sort_array(n);
-            for (int i = 0; i < 3; i++)
-            {
-                time = minMax1(array, n);
-                  r.write_results(1, n, "decrescent", time, "results.txt");
-                time = minMax2(array, n);
-               //   r.write_results(2, n, "decrescent", time, "results.txt");
-                time = minMax3(array, n);
-               //   r.write_results(3, n, "decrescent", time, "results.txt");
-            }
+
+            time = minMax1(array, n);
+            //  r.write_results(1, n, "decrescent", time, "results.txt");
+            time = minMax2(array, n);
+            // r.write_results(2, n, "decrescent", time, "results.txt");
+            time = minMax3(array, n);
+            // r.write_results(3, n, "decrescent", time, "results.txt");
+
             delete[] array;
             break;
         case 4:
@@ -292,17 +285,15 @@ void minMax::manage_executions()
 
             array = creat_random_array(n);
 
-            for (int i = 0; i < 3; i++)
-            {
-                time = minMax1(array, n);
-                r.write_results(1, n, "random", time, "results.txt");
+            time = minMax1(array, n);
+            // r.write_results(1, n, "random", time, "results.txt");
 
-                time = minMax2(array, n);
-               //   r.write_results(2, n, "random", time, "results.txt");
+            time = minMax2(array, n);
+            //  r.write_results(2, n, "random", time, "results.txt");
 
-                time = minMax3(array, n);
-               //   r.write_results(3, n, "random", time, "results.txt");
-            }
+            time = minMax3(array, n);
+            // r.write_results(3, n, "random", time, "results.txt");
+
             delete[] array;
 
             array = create_crescent_sort_array(n);
@@ -310,28 +301,28 @@ void minMax::manage_executions()
             for (int i = 0; i < 3; i++)
             {
                 time = minMax1(array, n);
-                  r.write_results(1, n, "crescent", time, "results.txt");
-
-                time = minMax2(array, n);
-               //   r.write_results(2, n, "crescent", time, "results.txt");
-
-                time = minMax3(array, n);
-                //  r.write_results(3, n, "crescent", time, "results.txt");
+                r.write_results(1, n, "crescent", time, "results.txt");
             }
+
+            time = minMax2(array, n);
+            // r.write_results(2, n, "crescent", time, "results.txt");
+
+            time = minMax3(array, n);
+            //   r.write_results(3, n, "crescent", time, "results.txt");
+
             delete[] array;
 
             array = create_decrescent_sort_array(n);
-            for (int i = 0; i < 3; i++)
-            {
-                time = minMax1(array, n);
-                   r.write_results(1, n, "decrescent", time, "results.txt");
 
-                time = minMax2(array, n);
-                //  r.write_results(2, n, "decrescent", time, "results.txt");
+            time = minMax1(array, n);
+            //  r.write_results(1, n, "decrescent", time, "results.txt");
 
-                time = minMax3(array, n);
-                //   r.write_results(3, n, "decrescent", time, "results.txt");
-            }
+            time = minMax2(array, n);
+            // r.write_results(2, n, "decrescent", time, "results.txt");
+
+            time = minMax3(array, n);
+            // r.write_results(3, n, "decrescent", time, "results.txt");
+
             delete[] array;
             break;
 
