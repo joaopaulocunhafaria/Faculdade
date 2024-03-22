@@ -95,4 +95,5 @@ e fora da pasta src, armazenando ela como input.mps.</li>
     </table>
    <li>🎯 RESOLUÇÕES FINAIS</li>
    <p>Para a construção de um programa que realize de maneira eficiente o exercício proposto, foram necessários conhecimentos precisos da linguagem de programação utilizada, uma boa compreensão lógica do problema exposto, abstração e manipulação de estruturas de dados bidimensionais, previsão de erros e uma boa organização de código para facilitar a escrita do programa.</p>
+   <p>PErgunta: o numero de uns se mantem o msm a partir de uma geracao qualquer? Eles se mantem em um quadrante fixo ou se locomovem na matriz? Se o numero se estabiliza em relacao a entrada esta quantidade eh maior ou menor?</p>
 </ul>
