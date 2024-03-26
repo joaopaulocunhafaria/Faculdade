@@ -106,8 +106,8 @@ int *minMax::creat_random_array(int n)
     std::random_device rd;
     std::mt19937 gen(rd());
 
-    int min = 1;
-    int max = n;
+    int min = 0;
+    int max = 1000;
 
     std::uniform_int_distribution<int> dist(min, max);
 
@@ -119,33 +119,127 @@ int *minMax::creat_random_array(int n)
     return array;
 }
 
+
+
+void mergeCrescent(int* arr, int l, int m, int r) {
+    int n1 = m - l + 1;
+    int n2 = r - m;
+
+    int L[n1], R[n2];
+
+    for (int i = 0; i < n1; i++) {
+        L[i] = arr[l + i];
+    }
+    for (int j = 0; j < n2; j++) {
+        R[j] = arr[m + 1 + j];
+    }
+
+    int i = 0, j = 0, k = l;
+    while (i < n1 && j < n2) {
+        if (L[i] <= R[j]) {
+            arr[k] = L[i];
+            i++;
+        } else {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+
+    while (i < n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+
+    while (j < n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
+}
+
+void mergeSortCrescent(int* arr, int l, int r) {
+    if (l >= r) {
+        return;
+    }
+    int m = l + (r - l) / 2;
+    mergeSortCrescent(arr, l, m);
+    mergeSortCrescent(arr, m + 1, r);
+    mergeCrescent(arr, l, m, r);
+}
+
+
+void mergeDecrescent(int* arr, int l, int m, int r) {
+    int n1 = m - l + 1;
+    int n2 = r - m;
+
+    int L[n1], R[n2];
+
+    for (int i = 0; i < n1; i++) {
+        L[i] = arr[l + i];
+    }
+    for (int j = 0; j < n2; j++) {
+        R[j] = arr[m + 1 + j];
+    }
+
+    int i = 0, j = 0, k = l;
+    while (i < n1 && j < n2) {
+        if (L[i] >= R[j]) {  // Alterado para ordem decrescente
+            arr[k] = L[i];
+            i++;
+        } else {
+            arr[k] = R[j];
+            j++;
+        }
+        k++;
+    }
+
+    while (i < n1) {
+        arr[k] = L[i];
+        i++;
+        k++;
+    }
+
+    while (j < n2) {
+        arr[k] = R[j];
+        j++;
+        k++;
+    }
+}
+
+void mergeSortDecrescent(int* arr, int l, int r) {
+    if (l >= r) {
+        return;
+    }
+    int m = l + (r - l) / 2;
+    mergeSortDecrescent(arr, l, m);
+    mergeSortDecrescent(arr, m + 1, r);
+    mergeDecrescent(arr, l, m, r);
+}
+
+
 int *minMax::create_crescent_sort_array(int n)
 {
-    int *array;
-    array = new int[n];
+    int *array = creat_random_array(n);
 
-    for (int i = 0; i < n; i++)
-    {
-        array[i] = i + 1;
-    }
+     mergeSortCrescent(array,0,n-1);
 
     return array;
 }
 
 int *minMax::create_decrescent_sort_array(int n)
 {
-    int *array;
-    array = new int[n];
-    int aux = n;
-
-    for (int i = 0; i < n; i++)
-    {
-        array[i] = aux;
-        aux--;
-    }
+    int *array = creat_random_array(n);
+    
+    mergeSortDecrescent(array,0,n-1);
 
     return array;
 }
+
+ 
+
+ 
 
 void minMax::manage_executions()
 {

@@ -5,13 +5,13 @@
 #include <random>
 #include "results.hpp"
 
- 
 using namespace std;
- 
+
 class minMax
 {
 private:
     results r;
+
 public:
     minMax();
     void manage_executions();
@@ -21,7 +21,6 @@ public:
     double minMax1(int *vet, int n);
     double minMax2(int *vet, int n);
     double minMax3(int *vet, int n);
-     
 };
 
 #endif
