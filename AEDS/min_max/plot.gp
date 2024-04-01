@@ -1,6 +1,6 @@
 # Define o terminal de saída e o arquivo de saída
 set terminal png
-set output 'min_max1_crescente2.png'
+set output 'minmax3.png'
 
 
 # Configurações do gráfico
