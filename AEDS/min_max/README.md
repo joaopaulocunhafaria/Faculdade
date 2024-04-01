@@ -6,4 +6,4 @@
 </p>
  
 
-<p>Contudo, com frequência, desejamos medir o tempo execução de um programa em um ambiente controlado . </p>
+<p>Contudo, com frequência, desejamos medir o tempo execução de um programa em um ambiente controlado e a isso damos o nome de abordagem empírica. Neste contexto esse projeto tem o objetivo de calcular e realizar comparacoes a respeito de algoritimos de descobrir valores maximos e minimos em uma base de dados de tamanhos e com ordenacoes diversas  fazendo uso de tres algoritimos formuladas de maneiras diferentes afim de chegar a conclusao de qual deles tem a melhor performace e em quais situacoes eles melhores se encaixam. </p>
