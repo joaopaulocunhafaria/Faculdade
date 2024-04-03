@@ -27,14 +27,60 @@
 <div align="center"> <img align="center" height="160px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/794be396-1b00-454d-9ce4-cda8efcfbf0d">
 </div>
 <hr>
-<h2 align="center">Exposicao dos algoritimos de teste</h2>
-<p align="center">Como dito anteriormente os algoritimos a serem analissado executam a tarefa de encontrar um menor e maior valor dentro de uma base de dados de <strong>n</strong> posicoes, as bases de dados serao vetores preenchido com numeros 1-1000, adiante sera esclarecido como serao dispostos tais vetores. Faremos uso de tres algoritimos que embora realizem a mesma operacao o fazem de maneira diferente. </p>
-<h3 align="center">ALGORITIMO 1 - MINMAX 1</h3>
-<p align="center">O primeiro algoritimo chamado de <strong>minmax1</strong> realiaza sua funcao de maneira bem simples, fazendo com que dentre os tres algoritimos com os quais trabalharemos ele seja o de menor complexidade e tambem, logicamente, o de implementacao mais simples. A implementacao deste algoritimo em C++ pode ser encontrada na linha 7 do arquivo <strong>minMax.cpp</strong> dentro da pasta <strong>src</strong></p>
+<h2 align="center">Exposição dos algoritmos de teste</h2>
+
+<p align="center">
+    Como dito anteriormente, os algoritmos a serem analisados executam a tarefa de encontrar um menor e um maior valor dentro de uma base de dados de <strong>n</strong> posições.
+    As bases de dados serão vetores preenchidos com números de 1 a 1000.
+    Adiante, será esclarecido como serão dispostos tais vetores.
+    Faremos uso de três algoritmos que, embora realizem a mesma operação, o fazem de maneiras diferentes.
+</p>
+
+<h3 align="center">ALGORITMO 1 - MINMAX 1</h3>
+
+<p align="center">
+    O primeiro algoritmo, chamado <strong>minmax1</strong>, realiza sua função de maneira bem simples,
+    fazendo com que, dentre os três algoritmos com os quais trabalharemos, ele seja o de menor complexidade
+    e também, logicamente, o de implementação mais simples.
+    A implementação deste algoritmo em C++ pode ser encontrada na linha 7 do arquivo 
+    <a href="https://github.com/joaopaulocunhafaria/Faculdade/blob/7c8fc1f23c02af0dcf4a43c28427759ad79c92e7/AEDS/min_max/src/minMax.cpp#L7">
+        <strong>minMax.cpp</strong>
+    </a> 
+    dentro da pasta <strong>src</strong>.
+</p>
+
 <div align="center">
-<div>
- <img height="150px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/9777f4f1-0753-4a7e-8d3a-00dccceeb351">
-  <p>Implementacao em cobol do <strong>minmax1</strong>. (Loureiro A.A.F, 2010)</p>
- 
- </div>
+    <img height="150px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/9777f4f1-0753-4a7e-8d3a-00dccceeb351">
+    <p>
+        Implementação em COBOL do <strong>minmax1</strong>. (Loureiro A.A.F, 2010)
+    </p>
+</div>
+
+</div><h3 align="center">ALGORITMO 2 - MINMAX 2</h3>
+
+<p align="center">
+    Seguindo um caminho lógico bem semelhante ao primeiro algoritmo, a segunda versão apresenta uma solução um pouco mais elaborada.
+    Diferenciando-se apenas na condição de que, ao invés de em cada iteração serem realizadas duas comparações, ele envolve o código com uma condicional <em>if</em> e uma segunda condição <em>else if</em>.
+    Dessa forma, em alguns casos, principalmente devido à ordenação dos vetores, será feita durante cada iteração apenas uma única comparação ao invés das duas que sempre são feitas no primeiro caso. Isso consequentemente economiza processamento, visto que o número de instruções realizadas pela máquina é menor. Tal diferença pode causar grandes impactos, principalmente em quantidades massivas de dados.
+</p>
+<p align="center">A implementacao em C++ da segunda versao do algoritimo pode ser encontrada na linha 34, tambem no arquivo <a href="https://github.com/joaopaulocunhafaria/Faculdade/blob/7c8fc1f23c02af0dcf4a43c28427759ad79c92e7/AEDS/min_max/src/minMax.cpp#L34"><strong>minMax.cpp</strong></a></p>
+<div align="center" >
+    <img height="150px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/f6590068-4822-4945-901a-58cfd9a33649">
+   <p>
+        Implementação em COBOL do <strong>minmax2</strong>. (Loureiro A.A.F, 2010)
+    </p>
+</div>
+++++++++++++ 
+</div><h3 align="center">ALGORITMO 3 - MINMAX 3</h3>
+
+<p align="center">
+   Seguindo uma abordagem um pouco diferente dos dois primeiros algoritimos a terceira versao opta por uma abordagem com maior complexidade logica e de implementacao mas que pode trazer algumas vantagens, novamente em decorrencia da organizacao da massa de dados de entrada. Nesta implementacao o algoritimo utiliza-se de duas comparacoes consecutivas das posicoes <em>i</em> e <em>i+1</em> em cada iteracao, reduzindo como que pela metade a quantidade final de interacoes realizadas pelo algoritimo.
+</p>
+<p align="center">A implementacao em C++ da terceira versao do algoritimo pode ser encontrada na linha  62,   no arquivo <a href=""><strong>minMax.cpp</strong></a></p>
+<div align="center" >
+    <img height="300px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/b3e6e628-471a-4d05-a0b3-58de38b7a659">
+ <img height="250px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/26269ae1-7c54-4833-9fc1-156939a86e3c">
+   <p>
+        Implementação em COBOL do <strong>minmax3</strong>. (Loureiro A.A.F, 2010)
+    </p>
 </div>
