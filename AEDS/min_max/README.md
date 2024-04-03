@@ -32,6 +32,9 @@
 <h3 align="center">ALGORITIMO 1 - MINMAX 1</h3>
 <p align="center">O primeiro algoritimo chamado de <strong>minmax1</strong> realiaza sua funcao de maneira bem simples, fazendo com que dentre os tres algoritimos com os quais trabalharemos ele seja o de menor complexidade e tambem, logicamente, o de implementacao mais simples. A implementacao deste algoritimo em C++ pode ser encontrada na linha 7 do arquivo <strong>minMax.cpp</strong> dentro da pasta <strong>src</strong></p>
 <div align="center">
-<img height="150px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/9777f4f1-0753-4a7e-8d3a-00dccceeb351">
- <p>Implementacao em cobol do <strong>minmax1</strong>. (Loureiro A.A.F, 2010</p>
+<div>
+ <img height="150px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/9777f4f1-0753-4a7e-8d3a-00dccceeb351">
+  <p>Implementacao em cobol do <strong>minmax1</strong>. (Loureiro A.A.F, 2010)</p>
+ 
+ </div>
 </div>
