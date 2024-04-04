@@ -129,7 +129,7 @@
  <table border="1" align="center">
       <tr>
         <td>Sistema Operacional </td>
-        <td>Debian 12- bookworm</td>
+        <td>Debian 12 - "Bookworm"</td>
       </tr>
       <tr>
         <td>Compilador </td>
@@ -141,7 +141,13 @@
       </tr>   
  </table>
 <hr>
-<h2 align="center"></h2>
+<h2 align="center">Resultados e conclusoes</h2>
+<p align="center">Tomando a literatura como base para termos nocao do que esperar da analize pratica, utilizaremos das conclusoes teoricas presente, tambem, no material de aula do professor Loureiro A.A.F como ja citado acima. De acordo com os resultados apresentados pelo professor o custo assintotico de cada um dos tres algoritimos,ja apresentados, nos tres casos possiveis que sao o melhor caso, pior caso e caso medio, sao os seguintes.</p>
+<div align="center"><img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/07a16d2c-eb19-4a19-8d4d-fc9e8550f73f" height="100px"></div>
+<p align="center">Loureiro A.A.F, 2010</p>
+<p align="center">A partir desses resultados, podemos supor que cada algoritmo pode apresentar um desempenho melhor ou pior, dependendo de qual caso ele está executando. Os "casos" neste trabalho serão as formas com as quais as massas de dados estão organizadas. Analisando os resultados do custo assintótico de cada algoritmo, percebemos que o <strong>minmax1</strong> e o <strong>minmax3</strong> possuem um custo linear, ou seja, não se alteram em relação aos casos, e também que o <strong>minmax3</strong> apresenta um resultado ligeiramente melhor que o <strong>minmax1</strong>. O <strong>minmax2</strong>, por sua vez, possui um custo que pode variar conforme o caso em que ele está executando. Tal variação pode fazer com que ele tenha uma performance melhor ou pior que os demais, dependendo do caso.</p>
+<p align="center">Tendo agora um aparato teórico com o qual podemos nos basear e saber o que esperar, vamos agora para os resultados práticos.</p>
+
 <hr>
 <h2 align="center">Referências</h2>
 
