@@ -113,9 +113,15 @@
  </table>
 
  <p align="center">Com os números que compõem cada entrada variando de 0 a 1000, as mesmas serão construídas primeiramente inicializando um vetor com números aleatórios de 0 a 1000 e depois ordenando cada um conforme mostrado acima, de modo crescente e decrescente, exceto, é claro, aquela entrada de dados que será aleatória, ou seja, sem ordenação.</p>
+<hr> 
+<h2 align="center">Condições de análise</h2>
+<p align="center">Visando sempre os melhores resultados possíveis e, novamente, com o intuito de testar bem cada algoritmo, as condições de análise serão impostas para que os resultados não sejam afetados por condições que não as presentes nos próprios algoritmos.</p>
+<p align="center">Dessa forma, o tempo considerado para análise de cada algoritmo será a média calculada entre dez execuções. Assim, cada algoritmo com cada ordenação e tamanho de dados será testado dez vezes e terá suas médias calculadas para que se obtenha um resultado final.</p>
+<p align="center">Somado a isso, as condições da máquina de teste são outra característica que pode interferir de maneira considerável no tempo de execução de cada algoritmo. Embora, de modo geral, as condições e o desempenho de cada um possam ser tomados de maneira comum a todos, fazendo com que mesmo tendo diferenças de tempo devido ao hardware, as devidas proposições sempre são guardadas, fazendo com que nenhum sobreponha outro por estar em um ambiente diferente.</p>
 
 <hr>
-<h2 align="center">Refer'encias</h2>
+<h2 align="center">Referências</h2>
+
 <ul>
  <li>Slide do cara da UFMG => concertar depois</li>
 </ul>
