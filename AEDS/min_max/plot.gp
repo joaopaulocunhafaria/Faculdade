@@ -4,8 +4,8 @@ set output 'minmax3.png'
 
 
 # Configurações do gráfico
-set xlabel 'Tempo de execucao'
-set ylabel 'Tamanho da entrada'
+set xlabel 'Tempo de execucao(em segundos)'
+set ylabel 'Tamanho da entrada de dados'
 set title 'results'
 set yrange [0:550000]
 set ytics add (1000, 10000, 100000, 500000)
