@@ -1,12 +1,4 @@
-MinMax: 1 Array size: 1000 type: random time: 2.529e-06
-MinMax: 1 Array size: 1000 type: crescent time: 5.349e-06
-MinMax: 1 Array size: 1000 type: decrescent time: 5.11e-06
-MinMax: 1 Array size: 10000 type: random time: 2.2913e-05
-MinMax: 1 Array size: 10000 type: crescent time: 2.9043e-05
-MinMax: 1 Array size: 10000 type: decrescent time: 2.8824e-05
-MinMax: 1 Array size: 100000 type: random time: 0.000230038
-MinMax: 1 Array size: 100000 type: crescent time: 0.00024333
-MinMax: 1 Array size: 100000 type: decrescent time: 0.000229873
-MinMax: 1 Array size: 500000 type: random time: 0.0011671
-MinMax: 1 Array size: 500000 type: crescent time: 0.0012348
-MinMax: 1 Array size: 500000 type: decrescent time: 0.00111152
+MinMax: 1 Array size: 1000 type: random time: 2.3933e-06
+MinMax: 1 Array size: 10000 type: random time: 2.56457e-05
+MinMax: 1 Array size: 100000 type: random time: 0.000229311
+MinMax: 1 Array size: 500000 type: random time: 0.00112114
