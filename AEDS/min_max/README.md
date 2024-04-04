@@ -1,16 +1,16 @@
 <h1 align="center">ANÁLISE ASSINTÓTICA E CUSTO COMPUTACIONAL</h1>
 <div align="center"> <img height="50px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/e23053b2-63e7-486c-aaf0-11bb4a30fd3c">
  </div>
-<h3>Sumario</h3>
+<h3>Sumário</h3>
 <ul>
  <li><strong>Introdução</strong></li>
- <li><strong>Descrição da resolucao</strong></li>
- <li><strong>Exposicao dos algoritimos de teste</strong></li>
- <li><strong>Exposicao das entradas de dados</strong></li>
- <li><strong>Condicoes de analise</strong></li>
- <li></li>
+ <li><strong>Descrição da resolução</strong></li>
+ <li><strong>Exposição dos algoritmos de teste</strong></li>
+ <li><strong>Exposição das entradas de dados</strong></li>
+ <li><strong>Condições de análise</strong></li>
 </ul>
-<hr>
+
+ <hr>
 <h2 align="center">Introdução</h2>
 <p align="center">"A análise de desempenho é uma etapa fundamental na concepção de um algoritmo. Diante de um problema computacional, diversas soluções podem ser propostas. Por exemplo, para ordenar uma sequência de números, o desenvolvedor pode utilizar algoritmos como o BubbleSort, MergeSort, QuickSort, entre outros. Entender como esses algoritmos se comportam à medida que aumentamos o tamanho da entrada a ser ordenada é primordial para decidirmos qual solução adotar em um determinado contexto.</p>
 <p align="center">Analisar um algoritmo significa prever a quantidade de recursos que tal algoritmo consome ao ser executado. Diversas variáveis podem ser objetos de estudo da análise de um algoritmo, por exemplo, consumo de memória, largura de banda de comunicação, entre outros."
@@ -25,7 +25,9 @@
 <p align="center">A forma com que sera calculada o tempo gasto por  cada algoritimo durante sua execucao sera fazendo-se uso da biblioteca padrao da linguagem <strong>C++</strong> <strong>CHRONO</strong> que eh amplamente usada para medicao de tempo em programas escritos em C ou C++.</p>
 <p align="center"> Segue um pseudo codigo de como sera feita a medicao de tempo</p>
 <div align="center"> <img align="center" height="160px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/794be396-1b00-454d-9ce4-cda8efcfbf0d">
-</div>
+
+</div><p align="center">Dessa forma, obtendo o tempo de execução de cada algoritmo individualmente, poderemos chegar às conclusões necessárias quanto ao custo computacional e análise assintótica dos algoritmos de estudo.</p>
+
 <hr>
 <h2 align="center">Exposição dos algoritmos de teste</h2>
 
@@ -70,17 +72,19 @@
         Implementação em COBOL do <strong>minmax2</strong>. (Loureiro A.A.F, 2010)
     </p>
 </div>
-++++++++++++ 
 </div><h3 align="center">ALGORITMO 3 - MINMAX 3</h3>
 
 <p align="center">
    Seguindo uma abordagem um pouco diferente dos dois primeiros algoritimos a terceira versao opta por uma abordagem com maior complexidade logica e de implementacao mas que pode trazer algumas vantagens, novamente em decorrencia da organizacao da massa de dados de entrada. Nesta implementacao o algoritimo utiliza-se de duas comparacoes consecutivas das posicoes <em>i</em> e <em>i+1</em> em cada iteracao, reduzindo como que pela metade a quantidade final de interacoes realizadas pelo algoritimo.
 </p>
-<p align="center">A implementacao em C++ da terceira versao do algoritimo pode ser encontrada na linha  62,   no arquivo <a href=""><strong>minMax.cpp</strong></a></p>
+<p align="center">A implementacao em C++ da terceira versao do algoritimo pode ser encontrada na linha  62,   no arquivo <a href="https://github.com/joaopaulocunhafaria/Faculdade/blob/7ba8c27063c41bf034e8e99e1f3fd7f01ef862fd/AEDS/min_max/src/minMax.cpp#L62"><strong>minMax.cpp</strong></a></p>
 <div align="center" >
     <img height="300px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/b3e6e628-471a-4d05-a0b3-58de38b7a659">
- <img height="250px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/26269ae1-7c54-4833-9fc1-156939a86e3c">
+ <img height="290px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/447a3360-4955-400a-898b-ac76d7bd4db0">
    <p>
         Implementação em COBOL do <strong>minmax3</strong>. (Loureiro A.A.F, 2010)
     </p>
 </div>
+<hr>
+<h2 align="center">Exposição das entradas de dados</h2>
+<p align="center">Com o intuito de melhor testar cada algoritimo de modo a expor cada um deles em uma gama de testes mais diversas as entradas de dados vao ser distribuidas da seguinte forma.</p>
