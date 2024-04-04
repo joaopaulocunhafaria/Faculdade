@@ -114,3 +114,8 @@
 
  <p align="center">Com os números que compõem cada entrada variando de 0 a 1000, as mesmas serão construídas primeiramente inicializando um vetor com números aleatórios de 0 a 1000 e depois ordenando cada um conforme mostrado acima, de modo crescente e decrescente, exceto, é claro, aquela entrada de dados que será aleatória, ou seja, sem ordenação.</p>
 
+<hr>
+<h2 align="center">Refer'encias</h2>
+<ul>
+ <li>Slide do cara da UFMG => concertar depois</li>
+</ul>
