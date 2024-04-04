@@ -6,7 +6,7 @@
  <li><strong>Introdução</strong></li>
  <li><strong>Descrição da resolução</strong></li>
  <li><strong>Exposição dos algoritmos de teste</strong></li>
- <li><strong>Exposição das entradas de dados</strong></li>
+ <li><strong>Exposição dos dados de entradas</strong></li>
  <li><strong>Condições de análise</strong></li>
 </ul>
 
@@ -86,5 +86,31 @@
     </p>
 </div>
 <hr>
-<h2 align="center">Exposição das entradas de dados</h2>
-<p align="center">Com o intuito de melhor testar cada algoritimo de modo a expor cada um deles em uma gama de testes mais diversas as entradas de dados vao ser distribuidas da seguinte forma.</p>
+<h2 align="center">Exposição dos dados de entradas</h2>
+<p align="center">Com o intuito de melhor testar cada algoritmo de modo a expor cada um deles em uma gama de testes mais diversa, as entradas de dados serão distribuídas da seguinte forma:</p>
+ <table border="1" align="center">
+      <tr>
+        <td>Tamanho da entrada <strong>n</strong></td>
+        <td>Ordenações</td>
+      </tr>
+      <tr>
+        <td>1000</td>
+        <td>Aleatório, crescente, decrescente</td>
+      </tr>
+      <tr>
+        <td>10000</td>
+        <td>Aleatório, crescente, decrescente</td>
+      </tr>
+      <tr>
+        <td>100000</td>
+        <td>Aleatório, crescente, decrescente</td>
+      </tr>
+        <tr>
+        <td>500000</td>
+        <td>Aleatório, crescente, decrescente</td>
+      </tr>
+     
+ </table>
+
+ <p align="center">Com os números que compõem cada entrada variando de 0 a 1000, as mesmas serão construídas primeiramente inicializando um vetor com números aleatórios de 0 a 1000 e depois ordenando cada um conforme mostrado acima, de modo crescente e decrescente, exceto, é claro, aquela entrada de dados que será aleatória, ou seja, sem ordenação.</p>
+
