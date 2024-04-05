@@ -18,28 +18,38 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "03/22/2024 15:42:12"
+// Generated on "04/05/2024 17:18:00"
                                                                         
-// Verilog Self-Checking Test Bench (with test vectors) for design :    decoder3_8
+// Verilog Self-Checking Test Bench (with test vectors) for design :    ULA_1BIT
 // 
 // Simulation tool : 3rd Party
 // 
 
 `timescale 1 ps/ 1 ps
-module decoder3_8_vlg_sample_tst(
+module ULA_1BIT_vlg_sample_tst(
 	A,
 	B,
-	C,
+	CIN,
+	ENA,
+	ENAB,
+	F1,
+	Fo,
+	INVA,
 	sampler_tx
 );
 input  A;
 input  B;
-input  C;
+input  CIN;
+input  ENA;
+input  ENAB;
+input  F1;
+input  Fo;
+input  INVA;
 output sampler_tx;
 
 reg sample;
 time current_time;
-always @(A or B or C)
+always @(A or B or CIN or ENA or ENAB or F1 or Fo or INVA)
                                                                                 
 begin                                                 
  if ($realtime > 0)                                   
@@ -58,69 +68,33 @@ end
 assign sampler_tx = sample;
 endmodule
 
-module decoder3_8_vlg_check_tst (
-	S0,
-	S1,
-	S2,
-	S3,
-	S4,
-	S5,
-	S6,
-	S7,
+module ULA_1BIT_vlg_check_tst (
+	CO,
+	S,
 	sampler_rx
 );
-input  S0;
-input  S1;
-input  S2;
-input  S3;
-input  S4;
-input  S5;
-input  S6;
-input  S7;
+input  CO;
+input  S;
 input sampler_rx;
 
-reg  S0_expected;
-reg  S1_expected;
-reg  S2_expected;
-reg  S3_expected;
-reg  S4_expected;
-reg  S5_expected;
-reg  S6_expected;
-reg  S7_expected;
+reg  CO_expected;
+reg  S_expected;
 
-reg  S0_prev;
-reg  S1_prev;
-reg  S2_prev;
-reg  S3_prev;
-reg  S4_prev;
-reg  S5_prev;
-reg  S6_prev;
-reg  S7_prev;
+reg  CO_prev;
+reg  S_prev;
 
-reg  S0_expected_prev;
-reg  S1_expected_prev;
-reg  S2_expected_prev;
-reg  S3_expected_prev;
-reg  S4_expected_prev;
-reg  S5_expected_prev;
-reg  S6_expected_prev;
-reg  S7_expected_prev;
+reg  CO_expected_prev;
+reg  S_expected_prev;
 
-reg  last_S0_exp;
-reg  last_S1_exp;
-reg  last_S2_exp;
-reg  last_S3_exp;
-reg  last_S4_exp;
-reg  last_S5_exp;
-reg  last_S6_exp;
-reg  last_S7_exp;
+reg  last_CO_exp;
+reg  last_S_exp;
 
 reg trigger;
 
 integer i;
 integer nummismatches;
 
-reg [1:8] on_first_change ;
+reg [1:2] on_first_change ;
 
 
 initial
@@ -128,88 +102,42 @@ begin
 trigger = 0;
 i = 0;
 nummismatches = 0;
-on_first_change = 8'b1;
+on_first_change = 2'b1;
 end
 
 // update real /o prevs
 
 always @(trigger)
 begin
-	S0_prev = S0;
-	S1_prev = S1;
-	S2_prev = S2;
-	S3_prev = S3;
-	S4_prev = S4;
-	S5_prev = S5;
-	S6_prev = S6;
-	S7_prev = S7;
+	CO_prev = CO;
+	S_prev = S;
 end
 
 // update expected /o prevs
 
 always @(trigger)
 begin
-	S0_expected_prev = S0_expected;
-	S1_expected_prev = S1_expected;
-	S2_expected_prev = S2_expected;
-	S3_expected_prev = S3_expected;
-	S4_expected_prev = S4_expected;
-	S5_expected_prev = S5_expected;
-	S6_expected_prev = S6_expected;
-	S7_expected_prev = S7_expected;
+	CO_expected_prev = CO_expected;
+	S_expected_prev = S_expected;
 end
 
 
 
-// expected S0
+// expected CO
 initial
 begin
-	S0_expected = 1'bX;
+	CO_expected = 1'bX;
+	CO_expected = #999000 1'b0;
 end 
 
-// expected S1
+// expected S
 initial
 begin
-	S1_expected = 1'bX;
-end 
-
-// expected S2
-initial
-begin
-	S2_expected = 1'bX;
-end 
-
-// expected S3
-initial
-begin
-	S3_expected = 1'bX;
-end 
-
-// expected S4
-initial
-begin
-	S4_expected = 1'bX;
-end 
-
-// expected S5
-initial
-begin
-	S5_expected = 1'bX;
-end 
-
-// expected S6
-initial
-begin
-	S6_expected = 1'bX;
-end 
-
-// expected S7
-initial
-begin
-	S7_expected = 1'bX;
+	S_expected = 1'bX;
+	S_expected = #999000 1'b0;
 end 
 // generate trigger
-always @(S0_expected or S0 or S1_expected or S1 or S2_expected or S2 or S3_expected or S3 or S4_expected or S4 or S5_expected or S5 or S6_expected or S6 or S7_expected or S7)
+always @(CO_expected or CO or S_expected or S)
 begin
 	trigger <= ~trigger;
 end
@@ -219,112 +147,34 @@ begin
 `ifdef debug_tbench
 	$display("Scanning pattern %d @time = %t",i,$realtime );
 	i = i + 1;
-	$display("| expected S0 = %b | expected S1 = %b | expected S2 = %b | expected S3 = %b | expected S4 = %b | expected S5 = %b | expected S6 = %b | expected S7 = %b | ",S0_expected_prev,S1_expected_prev,S2_expected_prev,S3_expected_prev,S4_expected_prev,S5_expected_prev,S6_expected_prev,S7_expected_prev);
-	$display("| real S0 = %b | real S1 = %b | real S2 = %b | real S3 = %b | real S4 = %b | real S5 = %b | real S6 = %b | real S7 = %b | ",S0_prev,S1_prev,S2_prev,S3_prev,S4_prev,S5_prev,S6_prev,S7_prev);
+	$display("| expected CO = %b | expected S = %b | ",CO_expected_prev,S_expected_prev);
+	$display("| real CO = %b | real S = %b | ",CO_prev,S_prev);
 `endif
 	if (
-		( S0_expected_prev !== 1'bx ) && ( S0_prev !== S0_expected_prev )
-		&& ((S0_expected_prev !== last_S0_exp) ||
+		( CO_expected_prev !== 1'bx ) && ( CO_prev !== CO_expected_prev )
+		&& ((CO_expected_prev !== last_CO_exp) ||
 			on_first_change[1])
 	)
 	begin
-		$display ("ERROR! Vector Mismatch for output port S0 :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", S0_expected_prev);
-		$display ("     Real value = %b", S0_prev);
+		$display ("ERROR! Vector Mismatch for output port CO :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", CO_expected_prev);
+		$display ("     Real value = %b", CO_prev);
 		nummismatches = nummismatches + 1;
 		on_first_change[1] = 1'b0;
-		last_S0_exp = S0_expected_prev;
+		last_CO_exp = CO_expected_prev;
 	end
 	if (
-		( S1_expected_prev !== 1'bx ) && ( S1_prev !== S1_expected_prev )
-		&& ((S1_expected_prev !== last_S1_exp) ||
+		( S_expected_prev !== 1'bx ) && ( S_prev !== S_expected_prev )
+		&& ((S_expected_prev !== last_S_exp) ||
 			on_first_change[2])
 	)
 	begin
-		$display ("ERROR! Vector Mismatch for output port S1 :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", S1_expected_prev);
-		$display ("     Real value = %b", S1_prev);
+		$display ("ERROR! Vector Mismatch for output port S :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", S_expected_prev);
+		$display ("     Real value = %b", S_prev);
 		nummismatches = nummismatches + 1;
 		on_first_change[2] = 1'b0;
-		last_S1_exp = S1_expected_prev;
-	end
-	if (
-		( S2_expected_prev !== 1'bx ) && ( S2_prev !== S2_expected_prev )
-		&& ((S2_expected_prev !== last_S2_exp) ||
-			on_first_change[3])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port S2 :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", S2_expected_prev);
-		$display ("     Real value = %b", S2_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[3] = 1'b0;
-		last_S2_exp = S2_expected_prev;
-	end
-	if (
-		( S3_expected_prev !== 1'bx ) && ( S3_prev !== S3_expected_prev )
-		&& ((S3_expected_prev !== last_S3_exp) ||
-			on_first_change[4])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port S3 :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", S3_expected_prev);
-		$display ("     Real value = %b", S3_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[4] = 1'b0;
-		last_S3_exp = S3_expected_prev;
-	end
-	if (
-		( S4_expected_prev !== 1'bx ) && ( S4_prev !== S4_expected_prev )
-		&& ((S4_expected_prev !== last_S4_exp) ||
-			on_first_change[5])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port S4 :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", S4_expected_prev);
-		$display ("     Real value = %b", S4_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[5] = 1'b0;
-		last_S4_exp = S4_expected_prev;
-	end
-	if (
-		( S5_expected_prev !== 1'bx ) && ( S5_prev !== S5_expected_prev )
-		&& ((S5_expected_prev !== last_S5_exp) ||
-			on_first_change[6])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port S5 :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", S5_expected_prev);
-		$display ("     Real value = %b", S5_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[6] = 1'b0;
-		last_S5_exp = S5_expected_prev;
-	end
-	if (
-		( S6_expected_prev !== 1'bx ) && ( S6_prev !== S6_expected_prev )
-		&& ((S6_expected_prev !== last_S6_exp) ||
-			on_first_change[7])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port S6 :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", S6_expected_prev);
-		$display ("     Real value = %b", S6_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[7] = 1'b0;
-		last_S6_exp = S6_expected_prev;
-	end
-	if (
-		( S7_expected_prev !== 1'bx ) && ( S7_prev !== S7_expected_prev )
-		&& ((S7_expected_prev !== last_S7_exp) ||
-			on_first_change[8])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port S7 :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", S7_expected_prev);
-		$display ("     Real value = %b", S7_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[8] = 1'b0;
-		last_S7_exp = S7_expected_prev;
+		last_S_exp = S_expected_prev;
 	end
 
 	trigger <= ~trigger;
@@ -333,7 +183,7 @@ initial
 
 begin 
 $timeformat(-12,3," ps",6);
-#1000000;
+#1600000;
 if (nummismatches > 0)
 	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
 else
@@ -342,80 +192,116 @@ $finish;
 end 
 endmodule
 
-module decoder3_8_vlg_vec_tst();
+module ULA_1BIT_vlg_vec_tst();
 // constants                                           
 // general purpose registers
 reg A;
 reg B;
-reg C;
+reg CIN;
+reg ENA;
+reg ENAB;
+reg F1;
+reg Fo;
+reg INVA;
 // wires                                               
-wire S0;
-wire S1;
-wire S2;
-wire S3;
-wire S4;
-wire S5;
-wire S6;
-wire S7;
+wire CO;
+wire S;
 
 wire sampler;                             
 
 // assign statements (if any)                          
-decoder3_8 i1 (
+ULA_1BIT i1 (
 // port map - connection between master ports and signals/registers   
 	.A(A),
 	.B(B),
-	.C(C),
-	.S0(S0),
-	.S1(S1),
-	.S2(S2),
-	.S3(S3),
-	.S4(S4),
-	.S5(S5),
-	.S6(S6),
-	.S7(S7)
+	.CIN(CIN),
+	.CO(CO),
+	.ENA(ENA),
+	.ENAB(ENAB),
+	.F1(F1),
+	.Fo(Fo),
+	.INVA(INVA),
+	.S(S)
 );
 
 // A
 always
 begin
 	A = 1'b0;
-	A = #500000 1'b1;
-	#500000;
+	A = #200000 1'b1;
+	#200000;
 end 
 
 // B
 always
 begin
 	B = 1'b0;
-	B = #250000 1'b1;
-	#250000;
+	B = #100000 1'b1;
+	#100000;
 end 
 
-// C
+// ENA
+initial
+begin
+	ENA = 1'b1;
+	ENA = #300000 1'b0;
+	ENA = #40000 1'b1;
+end 
+
+// ENAB
+initial
+begin
+	ENAB = 1'b1;
+	ENAB = #700000 1'b0;
+	ENAB = #100000 1'b1;
+end 
+
+// INVA
+initial
+begin
+	INVA = 1'b0;
+	INVA = #140000 1'b1;
+	INVA = #60000 1'b0;
+end 
+
+// F1
 always
 begin
-	C = 1'b0;
-	C = #125000 1'b1;
-	#125000;
+	F1 = 1'b0;
+	F1 = #800000 1'b1;
+	#800000;
 end 
 
-decoder3_8_vlg_sample_tst tb_sample (
+// Fo
+always
+begin
+	Fo = 1'b0;
+	Fo = #400000 1'b1;
+	#400000;
+end 
+
+// CIN
+initial
+begin
+	CIN = 1'b0;
+	CIN = #1560000 1'b1;
+end 
+
+ULA_1BIT_vlg_sample_tst tb_sample (
 	.A(A),
 	.B(B),
-	.C(C),
+	.CIN(CIN),
+	.ENA(ENA),
+	.ENAB(ENAB),
+	.F1(F1),
+	.Fo(Fo),
+	.INVA(INVA),
 	.sampler_tx(sampler)
 );
 
-decoder3_8_vlg_check_tst tb_out(
-	.S0(S0),
-	.S1(S1),
-	.S2(S2),
-	.S3(S3),
-	.S4(S4),
-	.S5(S5),
-	.S6(S6),
-	.S7(S7),
+ULA_1BIT_vlg_check_tst tb_out(
+	.CO(CO),
+	.S(S),
 	.sampler_rx(sampler)
 );
 endmodule

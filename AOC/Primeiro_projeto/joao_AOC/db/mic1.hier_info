@@ -1,26 +1,40 @@
-|decoder3_8
-S0 <= inst.DB_MAX_OUTPUT_PORT_TYPE
-A => 1.IN0
-A => inst5.IN0
+|ULA_1BIT
+S <= inst11.DB_MAX_OUTPUT_PORT_TYPE
+INVA => inst2.IN0
+A => inst.IN0
+ENA => inst.IN1
+B => inst1.IN0
+ENAB => inst1.IN1
+Fo => decoder2_4:inst3.A
+F1 => decoder2_4:inst3.B
+CIN => FULL_ADDER_1BIT:inst12.CIN
+CO <= FULL_ADDER_1BIT:inst12.COUT
+
+
+|ULA_1BIT|decoder2_4:inst3
+S0 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+B => inst.IN0
+B => inst5.IN1
+B => inst7.IN1
+A => 31.IN0
 A => inst6.IN0
 A => inst7.IN0
-A => inst8.IN0
-B => inst1.IN0
-B => inst3.IN1
-B => inst4.IN1
-B => inst7.IN1
-B => inst8.IN1
-C => 2.IN0
-C => inst2.IN2
-C => inst4.IN2
-C => inst6.IN2
-C => inst8.IN2
-S1 <= inst2.DB_MAX_OUTPUT_PORT_TYPE
-S2 <= inst3.DB_MAX_OUTPUT_PORT_TYPE
-S3 <= inst4.DB_MAX_OUTPUT_PORT_TYPE
-S4 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-S5 <= inst6.DB_MAX_OUTPUT_PORT_TYPE
-S6 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
-S7 <= inst8.DB_MAX_OUTPUT_PORT_TYPE
+S1 <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+S2 <= inst6.DB_MAX_OUTPUT_PORT_TYPE
+S3 <= inst7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ULA_1BIT|FULL_ADDER_1BIT:inst12
+S <= inst2.DB_MAX_OUTPUT_PORT_TYPE
+CIN => inst1.IN0
+CIN => inst5.IN0
+A => inst.IN0
+A => inst3.IN2
+B => inst.IN1
+B => inst3.IN0
+ENA => inst2.IN1
+ENA => inst3.IN1
+ENA => inst5.IN1
+COUT <= inst4.DB_MAX_OUTPUT_PORT_TYPE
 
 
