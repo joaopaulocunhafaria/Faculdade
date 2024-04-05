@@ -8,9 +8,9 @@
  <li><strong>Exposição dos algoritmos de teste</strong></li>
  <li><strong>Exposição dos dados de entradas</strong></li>
  <li><strong>Condições de análise</strong></li>
-  <li><strong>Resultados e conclusoes</strong></li>
+ <li><strong>Resultados e conclusoes</strong></li>
+ <li><strong>Ferramentas usadas</strong></li>
  <li><strong>Referencias</strong></li>
- 
 </ul>
 
  <hr>
@@ -146,7 +146,13 @@
 <div align="center"><img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/07a16d2c-eb19-4a19-8d4d-fc9e8550f73f" height="100px"></div>
 <p align="center">Loureiro A.A.F, 2010</p>
 <p align="center">A partir desses resultados, podemos supor que cada algoritmo pode apresentar um desempenho melhor ou pior, dependendo de qual caso ele está executando. Os "casos" neste trabalho serão as formas com as quais as massas de dados estão organizadas. Analisando os resultados do custo assintótico de cada algoritmo, percebemos que o <strong>minmax1</strong> e o <strong>minmax3</strong> possuem um custo linear, ou seja, não se alteram em relação aos casos, e também que o <strong>minmax3</strong> apresenta um resultado ligeiramente melhor que o <strong>minmax1</strong>. O <strong>minmax2</strong>, por sua vez, possui um custo que pode variar conforme o caso em que ele está executando. Tal variação pode fazer com que ele tenha uma performance melhor ou pior que os demais, dependendo do caso.</p>
-<p align="center">Tendo agora um aparato teórico com o qual podemos nos basear e saber o que esperar, vamos agora para os resultados práticos.</p>
+<p align="center">Tendo agora um aparato teórico com o qual podemos nos basear e saber o que esperar, vamos agora para os resultados práticos. Para melhor analissarmos a eficiecia e o custo de cada algoritimo iremos dividir os os teste segundo a ordenacao de dados, primeiramente iremos analisar os resultados para os testes feitos com os a massa de dados ordenadas crescentemente.</p>
+<h4 align="center">Crescente</h4>
+<div align="center">
+ <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/be20488a-a255-4712-be30-e2df32fbc0ba" height="150px">
+ <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/561e1556-e954-4208-86a3-eb8b1e72df46" height="150px">
+ <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/e0169ba6-b573-4283-a8db-52e8e93e6011" height="150px">
+</div>
 
 <hr>
 <h2 align="center">Referências</h2>
@@ -155,4 +161,4 @@
  <li>Slide do cara da UFMG => concertar depois</li>
 </ul>
 <h2>Contato</h2>
-meus contatos aqui.
+<div><a href="https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3BObdM58vxRxmAhVnA76lGBQ%3D%3D"><img  height="25px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/03a2e495-7b32-4f8e-93d6-c90963460432"></a></div>
