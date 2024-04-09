@@ -203,4 +203,4 @@ Loureiro A.A.F, 2010[^2]
 <h2 align="center">Referências</h2>
 
 [^1]:Rerefencia do site de introducao a analise assintotica https://joaoarthurbm.github.io/eda/posts/introducao-a-analise/
-[^2]: Referencia do slide do professor da ufmg https://homepages.dcc.ufmg.br/~loureiro/alg/091/paa_Analise.pdf
+[^2]: LOURERO, A. F. nome do material. Disponivel em:  https://homepages.dcc.ufmg.br/~loureiro/alg/091/paa_Analise.pdf. Acesso em 10/04/200
