@@ -16,9 +16,15 @@
  <hr>
 <h2 align="center">Introdução</h2>
 <p align="center">"A análise de desempenho é uma etapa fundamental na concepção de um algoritmo. Diante de um problema computacional, diversas soluções podem ser propostas. Por exemplo, para ordenar uma sequência de números, o desenvolvedor pode utilizar algoritmos como o BubbleSort, MergeSort, QuickSort, entre outros. Entender como esses algoritmos se comportam à medida que aumentamos o tamanho da entrada a ser ordenada é primordial para decidirmos qual solução adotar em um determinado contexto.</p>
-<p align="center">Analisar um algoritmo significa prever a quantidade de recursos que tal algoritmo consome ao ser executado. Diversas variáveis podem ser objetos de estudo da análise de um algoritmo, por exemplo, consumo de memória, largura de banda de comunicação, entre outros."
-(Brunet, João Arthur. "Introdução à Análise de Algoritmos." <a href="https://joaoarthurbm.github.io/eda/posts/introducao-a-analise/">Link para o artigo.</a>).
+
+<p align="center">
+ 
+ Analisar um algoritmo significa prever a quantidade de recursos que tal algoritmo consome ao ser executado. Diversas variáveis podem ser objetos de estudo da análise de um algoritmo, por exemplo, consumo de memória, largura de banda de comunicação, entre outros."
+(Brunet, 2019)[^1]
+
 </p>
+
+
 
  
 <p align="center">Contudo, com frequência, desejamos medir o tempo de execução de um programa em um ambiente controlado e a isso damos o nome de abordagem empírica. Neste contexto, este projeto tem o objetivo de calcular e realizar comparações a respeito de algoritmos que descobrem valores máximos e mínimos em uma base de dados de tamanhos e com ordenações diversas, fazendo uso de três algoritmos formulados de maneiras diferentes, afim de chegar à conclusão de qual deles tem a melhor performance e em quais situações eles se encaixam melhor.</p>
@@ -57,8 +63,10 @@
 <div align="center">
     <img height="150px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/9777f4f1-0753-4a7e-8d3a-00dccceeb351">
     <p>
-        Implementação em COBOL do <strong>minmax1</strong>. (Loureiro A.A.F, 2010)
-    </p>
+    
+Implementação em COBOL do <strong>minmax1</strong>. (Loureiro A.A.F, 2010)[^2] 
+     
+</p>
 </div>
 
 </div><h3 align="center">ALGORITMO 2 - MINMAX 2</h3>
@@ -72,7 +80,8 @@
 <div align="center" >
     <img height="150px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/f6590068-4822-4945-901a-58cfd9a33649">
    <p>
-        Implementação em COBOL do <strong>minmax2</strong>. (Loureiro A.A.F, 2010)
+    
+   Implementação em COBOL do <strong>minmax2</strong>. (Loureiro A.A.F, 2010)[^2] 
     </p>
 </div>
 </div><h3 align="center">ALGORITMO 3 - MINMAX 3</h3>
@@ -84,9 +93,11 @@
 <div align="center" >
     <img height="300px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/b3e6e628-471a-4d05-a0b3-58de38b7a659">
  <img height="290px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/447a3360-4955-400a-898b-ac76d7bd4db0">
-   <p>
-        Implementação em COBOL do <strong>minmax3</strong>. (Loureiro A.A.F, 2010)
-    </p>
+ 
+ <p>
+ 
+  Implementação em COBOL do <strong>minmax3</strong>. (Loureiro A.A.F, 2010)[^2] 
+ </p>
 </div>
 <hr>
 <h2 align="center">Exposição dos dados de entradas</h2>
@@ -143,22 +154,53 @@
 <hr>
 <h2 align="center">Resultados e conclusoes</h2>
 <p align="center">Tomando a literatura como base para termos nocao do que esperar da analize pratica, utilizaremos das conclusoes teoricas presente, tambem, no material de aula do professor Loureiro A.A.F como ja citado acima. De acordo com os resultados apresentados pelo professor o custo assintotico de cada um dos tres algoritimos,ja apresentados, nos tres casos possiveis que sao o melhor caso, pior caso e caso medio, sao os seguintes.</p>
-<div align="center"><img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/07a16d2c-eb19-4a19-8d4d-fc9e8550f73f" height="100px"></div>
-<p align="center">Loureiro A.A.F, 2010</p>
+<div align="center"><img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/07a16d2c-eb19-4a19-8d4d-fc9e8550f73f" height="100px">
+<p  align="center">
+ 
+Loureiro A.A.F, 2010[^2] 
+</p>
+</div>
+
 <p align="center">A partir desses resultados, podemos supor que cada algoritmo pode apresentar um desempenho melhor ou pior, dependendo de qual caso ele está executando. Os "casos" neste trabalho serão as formas com as quais as massas de dados estão organizadas. Analisando os resultados do custo assintótico de cada algoritmo, percebemos que o <strong>minmax1</strong> e o <strong>minmax3</strong> possuem um custo linear, ou seja, não se alteram em relação aos casos, e também que o <strong>minmax3</strong> apresenta um resultado ligeiramente melhor que o <strong>minmax1</strong>. O <strong>minmax2</strong>, por sua vez, possui um custo que pode variar conforme o caso em que ele está executando. Tal variação pode fazer com que ele tenha uma performance melhor ou pior que os demais, dependendo do caso.</p>
 <p align="center">Tendo agora um aparato teórico com o qual podemos nos basear e saber o que esperar, vamos agora para os resultados práticos. Para melhor analissarmos a eficiecia e o custo de cada algoritimo iremos dividir os os teste segundo a ordenacao de dados, primeiramente iremos analisar os resultados para os testes feitos com os a massa de dados ordenadas crescentemente.</p>
 <h4 align="center">Crescente</h4>
 <div align="center">
- <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/be20488a-a255-4712-be30-e2df32fbc0ba" height="150px">
- <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/561e1556-e954-4208-86a3-eb8b1e72df46" height="150px">
- <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/e0169ba6-b573-4283-a8db-52e8e93e6011" height="150px">
+ <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/be20488a-a255-4712-be30-e2df32fbc0ba" height="200px">
+ <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/561e1556-e954-4208-86a3-eb8b1e72df46" height="200px">
+ <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/e0169ba6-b573-4283-a8db-52e8e93e6011" height="200px">
+</div>
+<div align="center">
+<img height="250px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/03cdc72f-f8a0-4622-aa08-15a661a1eddf">
+ 
+</div>
+<h4 align="center">Decrescente</h4>
+<div align="center">
+ <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/8d2508e3-e6a0-42ef-8495-aeab0a3eda93" height="200px">
+ <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/47eed561-a5b1-4532-8cf2-4f479fc148aa" height="200px">
+ <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/637444bb-38c7-44d8-aff1-40cb7392155f" height="200px">
+</div>
+<div align="center">
+ <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/d3531e42-7a38-4de1-b0e3-e98c030f803a" height="250px">
 </div>
 
-<hr>
-<h2 align="center">Referências</h2>
+<h4 align="center">Aleatorio</h4>
+<div align="center">
+ <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/d71ade5a-481e-49c6-8c43-90f1bbdf00d8" height="200px">
+ <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/11250291-9bfe-4fb4-9d50-a684bd64092e" height="200px">
+ <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/de3458ad-9c23-4a2e-903b-5f057c9b1161" height="200px">
+</div>
+<div align="center">
+ <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/f4d245be-bf15-4fae-a490-2df1c71c49cd" height="250px">
+</div>
 
-<ul>
- <li>Slide do cara da UFMG => concertar depois</li>
-</ul>
+
+
+<hr>
+
+
 <h2>Contato</h2>
 <div><a href="https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3BObdM58vxRxmAhVnA76lGBQ%3D%3D"><img  height="25px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/03a2e495-7b32-4f8e-93d6-c90963460432"></a></div>
+<h2 align="center">Referências</h2>
+
+[^1]:Rerefencia do site de introducao a analise assintotica https://joaoarthurbm.github.io/eda/posts/introducao-a-analise/
+[^2]: Referencia do slide do professor da ufmg https://homepages.dcc.ufmg.br/~loureiro/alg/091/paa_Analise.pdf
