@@ -30,11 +30,11 @@
 <p align="center">Contudo, com frequência, desejamos medir o tempo de execução de um programa em um ambiente controlado e a isso damos o nome de abordagem empírica. Neste contexto, este projeto tem o objetivo de calcular e realizar comparações a respeito de algoritmos que descobrem valores máximos e mínimos em uma base de dados de tamanhos e com ordenações diversas, fazendo uso de três algoritmos formulados de maneiras diferentes, afim de chegar à conclusão de qual deles tem a melhor performance e em quais situações eles se encaixam melhor.</p>
 <hr>
 <h2 align="center">Descrição da resolucao</h2>
-<p align="center">Para tratar adequadamente e chegar às conclusões necessárias quanto à eficiência comparada dos três algoritmos que serão apresentados, a abordagem tomada será a seguinte: serão utilizadas diferentes entradas de dados de tamanhos e ordenações variados. Isso permitirá entender se algum algoritmo tem melhor desempenho em condições específicas, se a eficiência dos algoritmos é independente da ordenação e se existem outras condições que possam interferir no desempenho deles. Para obter uma medida justa do tempo gasto por cada algoritmo em cada situação abordada, será feito o cálculo do tempo gasto em todas as execuções em conjunto, ou seja, sem distinção de ordenação de dados, mas ainda considerando o tamanho da entrada. Em seguida, será calculado o tempo gasto em cada condição específica de ordenação e tamanho da entrada de dados.</p>
+<p align="center">Para tratar adequadamente e chegar às conclusões necessárias quanto à eficiência comparada dos três algoritmos que serão apresentados, a abordagem tomada será a seguinte: serão utilizadas diferentes entradas de dados de tamanhos e ordenações variados. Isso permitirá entender se algum algoritmo tem melhor desempenho em condições específicas, se a eficiência dos algoritmos é independente da ordenação e se existem outras condições que possam interferir no desempenho deles. Para obter uma medida justa do tempo gasto por cada algoritmo em cada situação abordada, será calculado o tempo gasto em cada condição específica de ordenação e tamanho da entrada de dados separadamente.</p>
 
 <p align="center">A forma como será calculado o tempo gasto por cada algoritmo durante sua execução será utilizando a biblioteca padrão da linguagem <strong>C++</strong> <strong>CHRONO</strong>, que é amplamente usada para medição de tempo em programas escritos em C ou C++.</p>
 
-<p align="center">Segue um pseudocódigo de como será feita a medição de tempo</p>
+<p align="center">Segue um pseudocódigo de como será feita a medição de tempo. A implementação do mesmo em C++ pode ser encontrado no arquivo <a href="https://github.com/joaopaulocunhafaria/Faculdade/blob/3ae698a2457c64b05d1a82c79345a307ce762a78/AEDS/min_max/src/minMax.cpp#L10">minMax.cpp</a> na linha 10</p>
 
 <div align="center"><img align="center" height="160px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/794be396-1b00-454d-9ce4-cda8efcfbf0d"></div>
 
@@ -159,7 +159,7 @@ Implementação em COBOL do <strong>minmax1</strong>. (Loureiro A.A.F, 2010)[^2]
 
 <p align="center">
  
- Tomando a literatura como base para termos noção do que esperar da análise prática, utilizaremos as conclusões teóricas presentes no material de aula do professor Loureiro A.A.F[^2], como já citado acima. De acordo com os resultados apresentados pelo professor, o custo assintótico de cada um dos três algoritmos, já apresentados, nos três casos possíveis que são o melhor caso, pior caso e caso médio, são os seguintes:</p>
+ Tomando a literatura como base para termos noção do que esperar da análise prática, utilizaremos as conclusões teóricas presentes no material de aula do professor Loureiro A.A.F[^2], já citado acima. De acordo com os resultados apresentados pelo professor, o custo assintótico de cada um dos três algoritmos, já apresentados, nos três casos possíveis que são o melhor caso, pior caso e caso médio, são os seguintes:</p>
 
 <div align="center">
     <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/07a16d2c-eb19-4a19-8d4d-fc9e8550f73f" height="100px">
@@ -236,6 +236,24 @@ Implementação em COBOL do <strong>minmax1</strong>. (Loureiro A.A.F, 2010)[^2]
 <p align="center">Com esses resultados expostos, fica nítido aquilo que inferimos dos gráficos acima, onde foram plotados os desempenhos de cada algoritmo de maneira separada. Vemos aqui que o minmax1 teve um melhor desempenho e que o minmax3, por sua vez, apresentou o pior desempenho. Tais conclusões diferem de forma enfática daquilo que inferimos dos dois primeiros casos. Nota-se também que para essa organização, diferentemente das demais, os casos onde a massa de dados está entre 1000 e 10000 inidades apresentaram resultados mais dispersos e não todos centrados na mesma quantidade de microssegundos.</p>
 
 <h4 align="center">Conclusoes gerais</h4>
+
+<p align="center">
+ 
+ A partir das análises feitas acima, podemos chegar a algumas conclusões que são de suma importância para a boa compreensão do cálculo de custo computacional e análise assintótica. Primeiramente, é importante notar que, embora em um ambiente controlado onde todos os algoritmos foram executados e tiveram seus tempos de execução calculados da mesma forma, ainda sim as condições físicas da máquina podem interferir no tempo final de execução de cada algoritmo.
+
+Um segundo ponto importante a se perceber é o fato de que todos os algoritmos tiveram tempos diferentes como resultados, porém toda a divergência se encontra na faixa dos microssegundos na maior parte dos casos.
+
+Partindo para uma conclusão prática de cada algoritmo, podemos começar citando novamente o professor LOUREIRO, A. F[^2], mais especificamente a tabela de custos exposta no material de sua aula. Fato é que os algoritmos apresentaram resultados realmente coerentes com o que está explicitado na tabela, embora, logicamente, houvesse casos em que os resultados divergiram.
+
+Feitas as seguintes considerações, um resultado claro que nossos testes não proporcionaram foi o fato de que a ordenação da massa de dados influencia significativamente na eficiência de cada algoritmo. Nos testes realizados nas massas de dados organizadas de forma crescente e decrescente, os resultados para uma maior quantidade de dados, 500.000, ficaram entre 10 e 14 microssegundos. Já para aqueles realizados nas massas de dados dispostas de forma aleatória, os resultados variam de 11 microssegundos até aproximadamente 37 microssegundos, dando ênfase no MinMax 3, que foi o algoritmo que obteve piores resultados nesta condição de ordenação.
+
+ Contudo, o MinMax 3 obteve o melhor desempenho dentre todos, se consideradas apenas as duas primeiras ordenações, crescente e decrescente. Logo, fica claro que, embora a forma como um algoritmo lida com determinado problema seja de grande impacto para o bom desempenho de suas funções, uma vez que se possui diferentes algoritmos que lidam com um mesmo problema de forma semelhante, divergindo-se apenas em alguns pontos, fatores externos aos próprios algoritmos podem surtir um impacto maior do que apenas a lógica por trás da resolução do problema implementada por determinado algoritmo.
+
+Um fator primordial que alterou grandemente a eficácia dos nossos testes foi a maneira como estavam ordenadas as massas de dados, fazendo com que surgissem resultados diferentes para cada caso. No caso em que os dados estavam dispostos de maneira aleatória, o resultado obtido foi divergente em relação aos demais, fazendo com que o MinMax 3 apresentasse pior desempenho.
+
+Para por fim tirarmos uma conclusao final do nosso estudo nao iremos apontar qual dos tres algoritimos obteve o melhor desempenho, uma vez que  os resultados favoreceram e desfavoreceram a todos  em determinadas ocassioes. Afirmaremos entao que a analisse impirica de algoritimos, que e realizada calculando o  tempo de execucao do mesmos, pode nos fornecer bons resultados para tomarmos como base  mas nada com muita exatidao.
+ 
+ </p>
 
 <hr>
 <h2 align="center">Ferramentas usadas</h2>
