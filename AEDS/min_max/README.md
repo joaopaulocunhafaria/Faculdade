@@ -4,13 +4,13 @@
 <h3>Sumário</h3>
 <ul>
  <li><strong>Introdução</strong></li>
- <li><strong>Descrição da resolução</strong></li>
- <li><strong>Exposição dos algoritmos de teste</strong></li>
- <li><strong>Exposição dos dados de entradas</strong></li>
- <li><strong>Condições de análise</strong></li>
- <li><strong>Resultados e conclusoes</strong></li>
- <li><strong>Ferramentas usadas</strong></li>
- <li><strong>Referencias</strong></li>
+    <li><strong>Descrição da resolução</strong></li>
+    <li><strong>Exposição dos algoritmos de teste</strong></li>
+    <li><strong>Exposição dos dados de entrada</strong></li>
+    <li><strong>Condições de análise</strong></li>
+    <li><strong>Resultados e conclusões</strong></li>
+    <li><strong>Ferramentas usadas</strong></li>
+    <li><strong>Referências</strong></li>
 </ul>
 
  <hr>
@@ -30,10 +30,13 @@
 <p align="center">Contudo, com frequência, desejamos medir o tempo de execução de um programa em um ambiente controlado e a isso damos o nome de abordagem empírica. Neste contexto, este projeto tem o objetivo de calcular e realizar comparações a respeito de algoritmos que descobrem valores máximos e mínimos em uma base de dados de tamanhos e com ordenações diversas, fazendo uso de três algoritmos formulados de maneiras diferentes, afim de chegar à conclusão de qual deles tem a melhor performance e em quais situações eles se encaixam melhor.</p>
 <hr>
 <h2 align="center">Descrição da resolucao</h2>
-<p align="center">Para bem tratar e chegar as conclusoes necessarias quanto a eficiencia comparada dos tres algoritimos que serao apresentados a abordagem tomada sera a seguinte, serao usadas diferentes entradas de dados de diferentes tamanhos e ordenacoes para que se tenha nocao se acasso algum algoritimo performa melhor em alguma condicao especifica, se a eficiencia dos algoritimos independem da ordenacao e ainda se existe outras condicoes que podem interferir no dessempenho dos mesmos; para que se tenha uma justa medida do tempo gasto por cada algoritimo em cada situacao que sera abordada fazer-se-a o calculo do tempo gasto em todas as  execucoes em conjunto, ou seja, sem distincao de ordenacao de dados,mas ainda distiguindo-se o tamanho da entrada, e logo apos o tempo gasto em cada condicao especifica de ordenacao e tamanho da entrada de dados. </p>
-<p align="center">A forma com que sera calculada o tempo gasto por  cada algoritimo durante sua execucao sera fazendo-se uso da biblioteca padrao da linguagem <strong>C++</strong> <strong>CHRONO</strong> que eh amplamente usada para medicao de tempo em programas escritos em C ou C++.</p>
-<p align="center"> Segue um pseudo codigo de como sera feita a medicao de tempo</p>
-<div align="center"> <img align="center" height="160px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/794be396-1b00-454d-9ce4-cda8efcfbf0d">
+<p align="center">Para tratar adequadamente e chegar às conclusões necessárias quanto à eficiência comparada dos três algoritmos que serão apresentados, a abordagem tomada será a seguinte: serão utilizadas diferentes entradas de dados de tamanhos e ordenações variados. Isso permitirá entender se algum algoritmo tem melhor desempenho em condições específicas, se a eficiência dos algoritmos é independente da ordenação e se existem outras condições que possam interferir no desempenho deles. Para obter uma medida justa do tempo gasto por cada algoritmo em cada situação abordada, será feito o cálculo do tempo gasto em todas as execuções em conjunto, ou seja, sem distinção de ordenação de dados, mas ainda considerando o tamanho da entrada. Em seguida, será calculado o tempo gasto em cada condição específica de ordenação e tamanho da entrada de dados.</p>
+
+<p align="center">A forma como será calculado o tempo gasto por cada algoritmo durante sua execução será utilizando a biblioteca padrão da linguagem <strong>C++</strong> <strong>CHRONO</strong>, que é amplamente usada para medição de tempo em programas escritos em C ou C++.</p>
+
+<p align="center">Segue um pseudocódigo de como será feita a medição de tempo</p>
+
+<div align="center"><img align="center" height="160px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/794be396-1b00-454d-9ce4-cda8efcfbf0d"></div>
 
 </div><p align="center">Dessa forma, obtendo o tempo de execução de cada algoritmo individualmente, poderemos chegar às conclusões necessárias quanto ao custo computacional e análise assintótica dos algoritmos de estudo.</p>
 
@@ -152,48 +155,87 @@ Implementação em COBOL do <strong>minmax1</strong>. (Loureiro A.A.F, 2010)[^2]
       </tr>   
  </table>
 <hr>
-<h2 align="center">Resultados e conclusoes</h2>
-<p align="center">Tomando a literatura como base para termos nocao do que esperar da analize pratica, utilizaremos das conclusoes teoricas presente, tambem, no material de aula do professor Loureiro A.A.F como ja citado acima. De acordo com os resultados apresentados pelo professor o custo assintotico de cada um dos tres algoritimos,ja apresentados, nos tres casos possiveis que sao o melhor caso, pior caso e caso medio, sao os seguintes.</p>
-<div align="center"><img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/07a16d2c-eb19-4a19-8d4d-fc9e8550f73f" height="100px">
-<p  align="center">
+<h2 align="center">Resultados e conclusões</h2>
+
+<p align="center">
  
-Loureiro A.A.F, 2010[^2] 
-</p>
+ Tomando a literatura como base para termos noção do que esperar da análise prática, utilizaremos as conclusões teóricas presentes no material de aula do professor Loureiro A.A.F[^2], como já citado acima. De acordo com os resultados apresentados pelo professor, o custo assintótico de cada um dos três algoritmos, já apresentados, nos três casos possíveis que são o melhor caso, pior caso e caso médio, são os seguintes:</p>
+
+<div align="center">
+    <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/07a16d2c-eb19-4a19-8d4d-fc9e8550f73f" height="100px">
+ 
+ <p align="center">
+  
+  Loureiro A.A.F, 2010[^2]
+ </p>
+
 </div>
 
-<p align="center">A partir desses resultados, podemos supor que cada algoritmo pode apresentar um desempenho melhor ou pior, dependendo de qual caso ele está executando. Os "casos" neste trabalho serão as formas com as quais as massas de dados estão organizadas. Analisando os resultados do custo assintótico de cada algoritmo, percebemos que o <strong>minmax1</strong> e o <strong>minmax3</strong> possuem um custo linear, ou seja, não se alteram em relação aos casos, e também que o <strong>minmax3</strong> apresenta um resultado ligeiramente melhor que o <strong>minmax1</strong>. O <strong>minmax2</strong>, por sua vez, possui um custo que pode variar conforme o caso em que ele está executando. Tal variação pode fazer com que ele tenha uma performance melhor ou pior que os demais, dependendo do caso.</p>
-<p align="center">Tendo agora um aparato teórico com o qual podemos nos basear e saber o que esperar, vamos agora para os resultados práticos. Para melhor analissarmos a eficiecia e o custo de cada algoritimo iremos dividir os os teste segundo a ordenacao de dados, primeiramente iremos analisar os resultados para os testes feitos com os a massa de dados ordenadas crescentemente.</p>
+<p align="center">A partir desses resultados, podemos supor que cada algoritmo pode apresentar um desempenho melhor ou pior, dependendo do caso em que está executando. Os "casos" neste trabalho serão as formas como as massas de dados estão organizadas. Analisando os resultados do custo assintótico de cada algoritmo, percebemos que o <strong>minmax1</strong> e o <strong>minmax3</strong> possuem um custo linear, ou seja, não se alteram em relação aos casos, e também que o <strong>minmax3</strong> apresenta um resultado ligeiramente melhor que o <strong>minmax1</strong>. O <strong>minmax2</strong>, por sua vez, possui um custo que pode variar conforme o caso em que está executando. Tal variação pode fazer com que ele tenha uma performance melhor ou pior que os demais, dependendo do caso.</p>
+
+<p align="center">Tendo agora um aparato teórico com o qual podemos nos basear e saber o que esperar, vamos agora para os resultados práticos. Para melhor analisarmos a eficiência e o custo de cada algoritmo, iremos dividir os testes segundo a ordenação de dados. Primeiramente, iremos analisar os resultados para os testes feitos com a massa de dados ordenada crescentemente.</p>
+
 <h4 align="center">Crescente</h4>
+
 <div align="center">
- <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/be20488a-a255-4712-be30-e2df32fbc0ba" height="200px">
- <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/561e1556-e954-4208-86a3-eb8b1e72df46" height="200px">
- <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/e0169ba6-b573-4283-a8db-52e8e93e6011" height="200px">
+    <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/be20488a-a255-4712-be30-e2df32fbc0ba" height="200px">
+    <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/561e1556-e954-4208-86a3-eb8b1e72df46" height="200px">
+    <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/e0169ba6-b573-4283-a8db-52e8e93e6011" height="200px">
 </div>
+<p align="center">Em uma análise puramente empírica, através da interpretação dos gráficos, podemos notar que o desempenho dos algoritmos 1, 2 e 3 em uma massa de dados ordenada de forma crescente não difere de maneira expressiva, principalmente se tratando dos casos onde a quantidade de dados de entrada é inferior a 1000. A partir dessa quantidade de dados de entrada, começa-se a perceber diferenças no desempenho de cada um, embora ainda de forma bem ínfima, onde podemos notar um melhor resultado do algoritmo 3 em comparação com os demais. Contudo, é interessante notar que a diferença de um resultado para o outro está na casa dos microssegundos e tais diferenças tão mínimas podem ocorrer por diversos motivos, como o simples fato de que a temperatura do processador em um ou outro teste pode ser superior, o que por sua vez ocasionaria resultados inferiores, e isso é apenas uma das diversas possíveis causas que podem afetar o desempenho dos algoritmos.</p>
+
+<p align="center">Realizando uma nova bateria de testes e colocando os resultados em um mesmo gráfico pode nos fornecer uma perspectiva diferente da análise dos algoritmos.</p>
+
 <div align="center">
-<img height="250px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/03cdc72f-f8a0-4622-aa08-15a661a1eddf">
+    <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/03cdc72f-f8a0-4622-aa08-15a661a1eddf" height="250px">
+</div>
+<p align="center">Interpretando tais resultados, podemos chegar a conclusões parecidas com as expostas logo acima. Todavia, há ainda alguns fatos a serem apontados que são extraídos do seguinte gráfico, como o fato de que nesta sequência de execuções o algoritmo 1 apresentou um resultado inferior aos outros dois. Mesmo se tratando de uma diferença de microssegundos, seria algo inesperado, uma vez que os comportamentos apresentados pelo minmax1 no primeiro teste foram bem semelhantes aos demais. Guardaremos tal questionamento para depois de feitas todas as análises.</p>
+
  
-</div>
+
 <h4 align="center">Decrescente</h4>
-<div align="center">
- <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/8d2508e3-e6a0-42ef-8495-aeab0a3eda93" height="200px">
- <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/47eed561-a5b1-4532-8cf2-4f479fc148aa" height="200px">
- <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/637444bb-38c7-44d8-aff1-40cb7392155f" height="200px">
-</div>
-<div align="center">
- <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/d3531e42-7a38-4de1-b0e3-e98c030f803a" height="250px">
-</div>
-
-<h4 align="center">Aleatorio</h4>
-<div align="center">
- <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/d71ade5a-481e-49c6-8c43-90f1bbdf00d8" height="200px">
- <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/11250291-9bfe-4fb4-9d50-a684bd64092e" height="200px">
- <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/de3458ad-9c23-4a2e-903b-5f057c9b1161" height="200px">
-</div>
-<div align="center">
- <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/f4d245be-bf15-4fae-a490-2df1c71c49cd" height="250px">
-</div>
 
 
+
+<div align="center">
+    <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/8d2508e3-e6a0-42ef-8495-aeab0a3eda93" height="200px">
+    <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/47eed561-a5b1-4532-8cf2-4f479fc148aa" height="200px">
+    <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/637444bb-38c7-44d8-aff1-40cb7392155f" height="200px">
+</div>
+<p align="center">
+ 
+ Tratando agora de uma massa de dados organizada de forma decrescente, nossos algoritmos apresentaram um resultado mais condizente com a tabela de custos assintóticos apresentada pelo professor LOUREIRO, A.F[^2]. Dentre os três algoritmos, o minmax3 apresentou um melhor desempenho em relação aos outros dois, mantendo a condição de que o desempenho de todos os algoritmos é bastante semelhante quando se trata de uma massa de dados menor que 1000 ou 10000 elementos. Nota-se também que o minmax1, assim como tivemos no primeiro caso, apresentou um resultado inferior.
+ 
+</p>
+<p align="center">Tomando uma abordagem semelhante ao primeiro caso de ordenação, iremos analisar uma nova sequência de testes realizados e expostos no mesmo gráfico, a fim de termos mais material para realizarmos nossa análise.</p>
+
+
+<div align="center">
+    <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/d3531e42-7a38-4de1-b0e3-e98c030f803a" height="250px">
+</div>
+<p align="center">Como bem podemos inferir do gráfico aqui exposto, fica claro que, também nesta ocasião, o algoritmo minmax3 tem um melhor desempenho do que os demais e que o algoritmo minmax1, novamente, é aquele que apresenta o pior resultado. Logicamente, o minmax2 é aquele que apresenta um resultado intermediário, superando o minmax1 e sendo inferior ao minmax3.</p>
+
+
+<h4 align="center">Aleatório</h4>
+<p align="center">Agora, para finalizarmos a exposição de resultados, analisaremos a massa de dados disposta de maneira aleatória.</p>
+
+
+<div align="center">
+    <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/d71ade5a-481e-49c6-8c43-90f1bbdf00d8" height="200px">
+    <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/11250291-9bfe-4fb4-9d50-a684bd64092e" height="200px">
+    <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/de3458ad-9c23-4a2e-903b-5f057c9b1161" height="200px">
+</div>
+<p align="center">Diferentemente dos primeiros casos, aqui podemos tirar conclusões distintas das duas iniciais. Primeiramente, fica claro que neste caso o algoritmo minmax3 teve o pior desempenho dentre todos, o que vai na contramão do que foi apresentado nos dois primeiros casos. Logo após, percebemos que, também em oposição ao que foi analisado nos dois primeiros casos, o algoritmo minmax1 foi aquele que apresentou o melhor desempenho, superando também o minmax2.</p>
+
+<p align="center">Seguindo o padrão já exposto, vejamos uma nova bateria de testes onde foram plotados todos os algoritmos em um só gráfico.</p>
+
+<div align="center">
+    <img src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/f4d245be-bf15-4fae-a490-2df1c71c49cd" height="250px">
+</div>
+
+<p align="center">Com esses resultados expostos, fica nítido aquilo que inferimos dos gráficos acima, onde foram plotados os desempenhos de cada algoritmo de maneira separada. Vemos aqui que o minmax1 teve um melhor desempenho e que o minmax3, por sua vez, apresentou o pior desempenho. Tais conclusões diferem de forma enfática daquilo que inferimos dos dois primeiros casos. Nota-se também que para essa organização, diferentemente das demais, os casos onde a massa de dados está entre 1000 e 10000 inidades apresentaram resultados mais dispersos e não todos centrados na mesma quantidade de microssegundos.</p>
+
+<h4 align="center">Conclusoes gerais</h4>
 
 <hr>
 
