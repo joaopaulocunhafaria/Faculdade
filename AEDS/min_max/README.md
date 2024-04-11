@@ -10,6 +10,7 @@
     <li><strong>Condições de análise</strong></li>
     <li><strong>Resultados e conclusões</strong></li>
     <li><strong>Ferramentas usadas</strong></li>
+    <li><strong>Organização do codigo</strong></li>
     <li><strong>Referências</strong></li>
 </ul>
 
@@ -90,9 +91,10 @@ Implementação em COBOL do <strong>minmax1</strong>. (Loureiro A.A.F, 2010)[^2]
 </div><h3 align="center">ALGORITMO 3 - MINMAX 3</h3>
 
 <p align="center">
-   Seguindo uma abordagem um pouco diferente dos dois primeiros algoritimos a terceira versao opta por uma abordagem com maior complexidade logica e de implementacao mas que pode trazer algumas vantagens, novamente em decorrencia da organizacao da massa de dados de entrada. Nesta implementacao o algoritimo utiliza-se de duas comparacoes consecutivas das posicoes <em>i</em> e <em>i+1</em> em cada iteracao, reduzindo como que pela metade a quantidade final de interacoes realizadas pelo algoritimo.
+   Seguindo uma abordagem um pouco diferente dos dois primeiros algoritmos, a terceira versão opta por uma abordagem com maior complexidade lógica e de implementação, mas que pode trazer algumas vantagens, novamente em decorrência da organização da massa de dados de entrada. Nesta implementação, o algoritmo utiliza-se de duas comparações consecutivas das posições <em>i</em> e <em>i+1</em> em cada iteração, reduzindo, como que pela metade, a quantidade final de interações realizadas pelo algoritmo.
 </p>
-<p align="center">A implementacao em C++ da terceira versao do algoritimo pode ser encontrada na linha  62,   no arquivo <a href="https://github.com/joaopaulocunhafaria/Faculdade/blob/7ba8c27063c41bf034e8e99e1f3fd7f01ef862fd/AEDS/min_max/src/minMax.cpp#L62"><strong>minMax.cpp</strong></a></p>
+<p align="center">A implementação em C++ da terceira versão do algoritmo pode ser encontrada na linha 62, no arquivo <a href="https://github.com/joaopaulocunhafaria/Faculdade/blob/7ba8c27063c41bf034e8e99e1f3fd7f01ef862fd/AEDS/min_max/src/minMax.cpp#L62"><strong>minMax.cpp</strong></a></p>
+
 <div align="center" >
     <img height="300px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/b3e6e628-471a-4d05-a0b3-58de38b7a659">
  <img height="290px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/447a3360-4955-400a-898b-ac76d7bd4db0">
@@ -253,7 +255,7 @@ Um fator primordial que alterou grandemente a eficácia dos nossos testes foi a 
 
 Para finalizarmos e tirarmos uma conclusão final do nosso estudo, não iremos apontar qual dos três algoritmos obteve o melhor desempenho, uma vez que os resultados favoreceram e desfavoreceram a todos em determinadas ocasiões. Afirmaremos então que a análise empírica de algoritmos, que é realizada calculando o tempo de execução dos mesmos, pode nos fornecer bons resultados para tomarmos como base, mas nunca resultados incontestáveis de suas performances. Isso ocorre porque é fisicamente impossível testar algoritmos diferentes nas mesmas condições. Por exemplo, é conhecido que uma mudança efêmera nas condições térmicas de um mesmo processador pode alterar os resultados de uma execução, e isso citando apenas uma única condição física que pode ser alterada durante o processo de testes.
 
-Em casos onde se necessita apenas de uma noção superficial de qual algoritmo teria um melhor desempenho em determinada condição, tal abordagem pode ser proveitosa. Contudo, no estudo aprofundado de análise assintótica e custo computacional, se guiar pela literatura e pelos conceitos já definidos é de maior proveito e maior confiabilidade em comparação com o uso de uma abordagem empírica  que, a depender do hambiente e das condições de teste, pode apresentar resultados não confiaveis.    
+Em casos onde se necessita apenas de uma noção superficial de qual algoritmo teria um melhor desempenho em determinada condição, tal abordagem pode ser proveitosa. Contudo, no estudo aprofundado de análise assintótica e custo computacional, se guiar pela literatura e pelos conceitos já definidos é de maior proveito e maior confiabilidade em comparação com o uso de uma abordagem empírica  que, a depender do hambiente e das condições de teste, pode apresentar resultados não confiaveis e/ou instáveis.    
  
  </p>
 
@@ -263,6 +265,12 @@ Em casos onde se necessita apenas de uma noção superficial de qual algoritmo t
 
 <h4 align="center">Scripts utilizados</h4>
 <p align="center">Neste projeto, foram utilizados dois scripts diferentes para geração dos gráficos, que foram alterados conforme as necessidades aparentes. Ambos podem ser encontrados na pasta raiz deste repositório, nomeados como <em><a href="https://github.com/joaopaulocunhafaria/Faculdade/blob/main/AEDS/min_max/plot.gp">plot.gp</a></em> e <em><a href="https://github.com/joaopaulocunhafaria/Faculdade/blob/main/AEDS/min_max/plot2.gp">plot2.gp</a></em>. O primeiro script foi utilizado para gerar gráficos com apenas uma linha, enquanto o segundo foi utilizado para plotar gráficos com mais de uma linha.</p>
+
+<hr>
+<h4 align="center"><strong>Organização do código</strong></h4>
+<p align="center">Para testar adequadamente os algoritmos do nosso estudo, cada um dos que foram apresentados na seção <strong>Exposição dos algoritmos de teste</strong> foi implementado em C++, como já mencionado anteriormente. Após realizar o cálculo de tempo, os resultados obtidos são escritos no arquivo <code>data.txt</code>, possibilitando a geração de gráficos para análise utilizando a ferramenta <em>gnuplot</em>.</p>
+
+<p align="center">A separação de funções no código criado para o estudo se deu da seguinte forma: as classes <code>minMax.hpp</code> e <code>minMax.cpp</code> ficaram responsáveis pela execução e cálculo de tempo dos testes; as classes <code>results.hpp</code> e <code>results.cpp</code> ficaram responsáveis pela escrita dos dados nos arquivos. Para a geração de gráficos com múltiplas linhas, os dados de saída foram armazenados em arquivos diferentes, cada um condizente com a organização da massa de dados de entrada. Esses arquivos são <code>crescente.txt</code>, <code>decrescente.txt</code> e <code>aleatorio.txt</code>.</p>
 
 <hr>
 
