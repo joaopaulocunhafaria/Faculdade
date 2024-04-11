@@ -249,9 +249,11 @@ Feitas as seguintes considerações, um resultado claro que nossos testes não p
 
  Contudo, o MinMax 3 obteve o melhor desempenho dentre todos, se consideradas apenas as duas primeiras ordenações, crescente e decrescente. Logo, fica claro que, embora a forma como um algoritmo lida com determinado problema seja de grande impacto para o bom desempenho de suas funções, uma vez que se possui diferentes algoritmos que lidam com um mesmo problema de forma semelhante, divergindo-se apenas em alguns pontos, fatores externos aos próprios algoritmos podem surtir um impacto maior do que apenas a lógica por trás da resolução do problema implementada por determinado algoritmo.
 
-Um fator primordial que alterou grandemente a eficácia dos nossos testes foi a maneira como estavam ordenadas as massas de dados, fazendo com que surgissem resultados diferentes para cada caso. No caso em que os dados estavam dispostos de maneira aleatória, o resultado obtido foi divergente em relação aos demais, fazendo com que o MinMax 3 apresentasse pior desempenho.
+Um fator primordial que alterou grandemente a eficácia dos nossos testes foi a maneira como estavam ordenadas as massas de dados, fazendo com que surgissem resultados diferentes para cada caso. No caso em que os dados estavam dispostos de maneira aleatória, o resultado obtido foi divergente em relação aos demais, fazendo com que o MinMax 3 apresentasse pior desempenho, sendo que nas outras condicoes o resultado foi o oposto.
 
-Para por fim tirarmos uma conclusao final do nosso estudo nao iremos apontar qual dos tres algoritimos obteve o melhor desempenho, uma vez que  os resultados favoreceram e desfavoreceram a todos  em determinadas ocassioes. Afirmaremos entao que a analisse impirica de algoritimos, que e realizada calculando o  tempo de execucao do mesmos, pode nos fornecer bons resultados para tomarmos como base  mas nada com muita exatidao.
+Para finalizarmos e tirarmos uma conclusão final do nosso estudo, não iremos apontar qual dos três algoritmos obteve o melhor desempenho, uma vez que os resultados favoreceram e desfavoreceram a todos em determinadas ocasiões. Afirmaremos então que a análise empírica de algoritmos, que é realizada calculando o tempo de execução dos mesmos, pode nos fornecer bons resultados para tomarmos como base, mas nunca resultados incontestáveis de suas performances. Isso ocorre porque é fisicamente impossível testar algoritmos diferentes nas mesmas condições. Por exemplo, é conhecido que uma mudança efêmera nas condições térmicas de um mesmo processador pode alterar os resultados de uma execução, e isso citando apenas uma única condição física que pode ser alterada durante o processo de testes.
+
+Em casos onde se necessita apenas de uma noção superficial de qual algoritmo teria um melhor desempenho em determinada condição, tal abordagem pode ser proveitosa. Contudo, no estudo aprofundado de análise assintótica e custo computacional, se guiar pela literatura e pelos conceitos já definidos é de maior proveito e maior confiabilidade em comparação com o uso de uma abordagem empírica  que, a depender do hambiente e das condições de teste, pode apresentar resultados não confiaveis.    
  
  </p>
 
@@ -269,5 +271,5 @@ Para por fim tirarmos uma conclusao final do nosso estudo nao iremos apontar qua
 <div><a href="https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3BObdM58vxRxmAhVnA76lGBQ%3D%3D"><img  height="25px" src="https://github.com/joaopaulocunhafaria/Faculdade/assets/138056835/03a2e495-7b32-4f8e-93d6-c90963460432"></a></div>
 <h2 align="center">Referências</h2>
 
-[^1]:Rerefencia do site de introducao a analise assintotica https://joaoarthurbm.github.io/eda/posts/introducao-a-analise/
-[^2]: LOURERO, A. F. nome do material. Disponivel em:  https://homepages.dcc.ufmg.br/~loureiro/alg/091/paa_Analise.pdf. Acesso em 10/04/200
+[^1]: BRUNET, J. A. Introdução à Análise de Algoritmos. Disponivel em: https://joaoarthurbm.github.io/eda/posts/introducao-a-analise/ . Acesso em 10/04/2024
+[^2]: LOURERO, A. F.  PROJETO E ANÁLISE DE ALGORITMOS . Disponivel em:  https://homepages.dcc.ufmg.br/~loureiro/alg/091/paa_Analise.pdf. Acesso em 10/04/2024
