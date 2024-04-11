@@ -270,7 +270,10 @@ Em casos onde se necessita apenas de uma noção superficial de qual algoritmo t
 <h4 align="center"><strong>Organização do código</strong></h4>
 <p align="center">Para testar adequadamente os algoritmos do nosso estudo, cada um dos que foram apresentados na seção <strong>Exposição dos algoritmos de teste</strong> foi implementado em C++, como já mencionado anteriormente. Após realizar o cálculo de tempo, os resultados obtidos são escritos no arquivo <code>data.txt</code>, possibilitando a geração de gráficos para análise utilizando a ferramenta <em>gnuplot</em>.</p>
 
-<p align="center">A separação de funções no código criado para o estudo se deu da seguinte forma: as classes <code>minMax.hpp</code> e <code>minMax.cpp</code> ficaram responsáveis pela execução e cálculo de tempo dos testes; as classes <code>results.hpp</code> e <code>results.cpp</code> ficaram responsáveis pela escrita dos dados nos arquivos. Para a geração de gráficos com múltiplas linhas, os dados de saída foram armazenados em arquivos diferentes, cada um condizente com a organização da massa de dados de entrada. Esses arquivos são <code>crescente.txt</code>, <code>decrescente.txt</code> e <code>aleatorio.txt</code>.</p>
+<p align="center">A separação de funções no código criado para o estudo se deu da seguinte forma: as classes <code>minMax.hpp</code> e <code>minMax.cpp</code> ficaram responsáveis pela execução e cálculo de tempo dos testes; as classes <code>results.hpp</code> e <code>results.cpp</code> ficaram responsáveis pela escrita dos dados nos arquivos. Para a geração de gráficos com múltiplas linhas, os dados de saída foram armazenados em arquivos diferentes, cada um condizente com a organização da massa de dados de entrada. Esses arquivos são <code>crescente.txt</code>, <code>decrescente.txt</code> e <code>aleatorio.txt</code>.
+</p><p align="center">Para os leitores que desejam realizar os testes em suas próprias máquinas, dentro do arquivo <code>minMax.cpp</code>, mais especificamente na função <a href="link da linha onde está a função">manage_executions</a>, podem ser encontradas instruções detalhadas sobre como modificar o código-fonte para executar os testes desejados pelo usuário.</p>
+<h3 align="center">COMPILAR E EXECUTAR</h3>
+
 
 <hr>
 
