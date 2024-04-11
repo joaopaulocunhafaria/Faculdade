@@ -1,4 +1,4 @@
-MinMax: 1 Array size: 1000 type: crescent time: 4.0665e-06
-MinMax: 1 Array size: 10000 type: crescent time: 4.36624e-05
-MinMax: 1 Array size: 100000 type: crescent time: 0.000288804
-MinMax: 1 Array size: 500000 type: crescent time: 0.00180036
+MinMax: 1 Array size: 1000 type: crescent time: 7.5405e-06
+MinMax: 1 Array size: 10000 type: crescent time: 7.74523e-05
+MinMax: 1 Array size: 100000 type: crescent time: 0.000630977
+MinMax: 1 Array size: 500000 type: crescent time: 0.0030136

@@ -257,6 +257,32 @@ int *minMax::create_decrescent_sort_array(int n)
 
 void minMax::manage_executions()
 {
+
+    // Esta função é responsável por ordenar a execução de cada algoritmo,
+    // com suas respectivas organizações e tamanhos de entrada. A lógica 
+    // dela é um switch case que está dentro de um for, para que seja
+    // executada cada quantidade de entrada de dados. Dentro de cada "case",
+    // atribui-se um valor diferente para a variável 'n', que será o 
+    // tamanho do vetor de testes. Em seguida, a variável "array" recebe
+    // um valor retornado por funções que podem gerar arrays aleatórios,
+    // crescentes ou decrescentes. Então, inicia-se o cálculo de tempo
+    // dentro de um laço for que roda 10 vezes; a variável 'time' tem
+    // seu valor somado ao tempo retornado pela função de teste em cada 
+    // iteração. Ao final, a variável 'media' recebe o valor da soma dos
+    // tempos dividido por 10 para calcular a média de cada algoritmo.
+    // Finalmente, a média gerada é escrita em um arquivo utilizando
+    // uma instância da classe results.hpp. Após isso, os valores de
+    // tempo e média são zerados e o "array" tem seu valor deletado
+    // para que se possa começar novamente no próximo caso.
+
+    // Para realizar testes de forma personalizada, basta remover os
+    // comentários do caso desejado, como foi feito na última execução.
+    // A maneira como o código está disposto foi quando se realizou o
+    // cálculo de tempo dos algoritmos com massas de dados crescentes.
+    
+
+
+
     int n = 0;
     double time;
     int *array;
@@ -267,202 +293,202 @@ void minMax::manage_executions()
         switch (i)
         {
         case 1:
-            n = 1000;
+        n = 1000;
 
-            array = creat_random_array(n);
+        array = creat_random_array(n);
 
-            // for (int i = 0; i < 10; i++)
-            // {
-            //     time += minMax1(array, n);
-            // }
-            // media = time / 10;
+        // for (int i = 0; i < 10; i++)
+        // {
+        //     time += minMax1(array, n);
+        // }
+        // media = time / 10;
 
-            // r.write_results(1, n, "random", media, "results.txt");
+        // r.write_results(1, n, "random", media, "results.txt");
 
-            // media = 0;
-            // time = 0;
+        // media = 0;
+        // time = 0;
 
-            delete[] array;
+        delete[] array;
 
-            array = create_crescent_sort_array(n);
+        array = create_crescent_sort_array(n);
 
-            for (int i = 0; i < 10; i++)
-            {
-                time += minMax1(array, n);
-            }
-            media = time / 10;
-
-            r.write_results(1, n, "crescent", media, "results.txt");
-
-            media = 0;
-            time = 0;
-
-            delete[] array;
-
-            array = create_decrescent_sort_array(n);
-
-            // for (int i = 0; i < 10; i++)
-            // {
-            //     time += minMax1(array, n);
-            // }
-            // media = time / 10;
-
-            // r.write_results(1, n, "decrescent", media, "results.txt");
-
-            // media = 0;
-            // time = 0;
-
-            delete[] array;
-
-            break;
-        case 2:
-            n = 10000;
-
-            array = creat_random_array(n);
-
-            // for (int i = 0; i < 10; i++)
-            // {
-            //     time += minMax1(array, n);
-            // }
-            // media = time / 10;
-
-            // r.write_results(1, n, "random", media, "results.txt");
-
-            // media = 0;
-            // time = 0;
-
-            delete[] array;
-
-            array = create_crescent_sort_array(n);
-
-            for (int i = 0; i < 10; i++)
-            {
-                time += minMax1(array, n);
-            }
-            media = time / 10;
-
-            r.write_results(1, n, "crescent", media, "results.txt");
-
-            media = 0;
-            time = 0;
-
-            delete[] array;
-
-            array = create_decrescent_sort_array(n);
-
-            // for (int i = 0; i < 10; i++)
-            // {
-            //     time += minMax1(array, n);
-            // }
-            // media = time / 10;
-
-            // r.write_results(1, n, "decrescent", media, "results.txt");
-
-            // media = 0;
-            // time = 0;
-
-            delete[] array;
-            break;
-        case 3:
-            n = 100000;
-
-            array = creat_random_array(n);
-
-            // for (int i = 0; i < 10; i++)
-            // {
-            //     time += minMax1(array, n);
-            // }
-            // media = time / 10;
-
-            // r.write_results(1, n, "random", media, "results.txt");
-
-            // media = 0;
-            // time = 0;
-
-            delete[] array;
-
-            array = create_crescent_sort_array(n);
-
-            for (int i = 0; i < 10; i++)
-            {
-                time += minMax1(array, n);
-            }
-            media = time / 10;
-
-            r.write_results(1, n, "crescent", media, "results.txt");
-
-            media = 0;
-            time = 0;
-
-            delete[] array;
-
-            array = create_decrescent_sort_array(n);
-
-            // for (int i = 0; i < 10; i++)
-            // {
-            //     time += minMax1(array, n);
-            // }
-            // media = time / 10;
-
-            // r.write_results(1, n, "decrescent", media, "results.txt");
-
-            // media = 0;
-
-            // time = 0;
-           
-            delete[] array;
-            break;
-        case 4:
-            n = 500000;
-
-            array = creat_random_array(n);
-
-            // for (int i = 0; i < 10; i++)
-            // {
-            //     time += minMax1(array, n);
-            // }
-            // media = time / 10;
-
-            // r.write_results(1, n, "random", media, "results.txt");
-
-            // media = 0;
-            // time = 0;
-           
-            delete[] array;
-
-            array = create_crescent_sort_array(n);
-
-            for (int i = 0; i < 10; i++)
-            {
-                time += minMax1(array, n);
-            }
-            media = time / 10;
-
-            r.write_results(1, n, "crescent", media, "results.txt");
-
-            media = 0;
-            time = 0;
-
-            delete[] array;
-
-            array = create_decrescent_sort_array(n);
-
-            // for (int i = 0; i < 10; i++)
-            // {
-            //     time += minMax1(array, n);
-            // }
-            // media = time / 10;
-
-            // r.write_results(1, n, "decrescent", media, "results.txt");
-
-            // media = 0;
-            // time = 0;
-
-            delete[] array;
-            break;
-
-        default:
-            break;
+        for (int i = 0; i < 10; i++)
+        {
+            time += minMax1(array, n);
         }
+        media = time / 10;
+
+        r.write_results(1, n, "crescent", media, "results.txt");
+
+        media = 0;
+        time = 0;
+
+        delete[] array;
+
+        array = create_decrescent_sort_array(n);
+
+        // for (int i = 0; i < 10; i++)
+        // {
+        //     time += minMax1(array, n);
+        // }
+        // media = time / 10;
+
+        // r.write_results(1, n, "decrescent", media, "results.txt");
+
+        // media = 0;
+        // time = 0;
+
+        delete[] array;
+
+        break;
+    case 2:
+        n = 10000;
+
+        array = creat_random_array(n);
+
+        // for (int i = 0; i < 10; i++)
+        // {
+        //     time += minMax1(array, n);
+        // }
+        // media = time / 10;
+
+        // r.write_results(1, n, "random", media, "results.txt");
+
+        // media = 0;
+        // time = 0;
+
+        delete[] array;
+
+        array = create_crescent_sort_array(n);
+
+        for (int i = 0; i < 10; i++)
+        {
+            time += minMax1(array, n);
+        }
+        media = time / 10;
+
+        r.write_results(1, n, "crescent", media, "results.txt");
+
+        media = 0;
+        time = 0;
+
+        delete[] array;
+
+        array = create_decrescent_sort_array(n);
+
+        // for (int i = 0; i < 10; i++)
+        // {
+        //     time += minMax1(array, n);
+        // }
+        // media = time / 10;
+
+        // r.write_results(1, n, "decrescent", media, "results.txt");
+
+        // media = 0;
+        // time = 0;
+
+        delete[] array;
+        break;
+    case 3:
+        n = 100000;
+
+        array = creat_random_array(n);
+
+        // for (int i = 0; i < 10; i++)
+        // {
+        //     time += minMax1(array, n);
+        // }
+        // media = time / 10;
+
+        // r.write_results(1, n, "random", media, "results.txt");
+
+        // media = 0;
+        // time = 0;
+
+        delete[] array;
+
+        array = create_crescent_sort_array(n);
+
+        for (int i = 0; i < 10; i++)
+        {
+            time += minMax1(array, n);
+        }
+        media = time / 10;
+
+        r.write_results(1, n, "crescent", media, "results.txt");
+
+        media = 0;
+        time = 0;
+
+        delete[] array;
+
+        array = create_decrescent_sort_array(n);
+
+        // for (int i = 0; i < 10; i++)
+        // {
+        //     time += minMax1(array, n);
+        // }
+        // media = time / 10;
+
+        // r.write_results(1, n, "decrescent", media, "results.txt");
+
+        // media = 0;
+
+        // time = 0;
+
+        delete[] array;
+        break;
+    case 4:
+        n = 500000;
+
+        array = creat_random_array(n);
+
+        // for (int i = 0; i < 10; i++)
+        // {
+        //     time += minMax1(array, n);
+        // }
+        // media = time / 10;
+
+        // r.write_results(1, n, "random", media, "results.txt");
+
+        // media = 0;
+        // time = 0;
+
+        delete[] array;
+
+        array = create_crescent_sort_array(n);
+
+        for (int i = 0; i < 10; i++)
+        {
+            time += minMax1(array, n);
+        }
+        media = time / 10;
+
+        r.write_results(1, n, "crescent", media, "results.txt");
+
+        media = 0;
+        time = 0;
+
+        delete[] array;
+
+        array = create_decrescent_sort_array(n);
+
+        // for (int i = 0; i < 10; i++)
+        // {
+        //     time += minMax1(array, n);
+        // }
+        // media = time / 10;
+
+        // r.write_results(1, n, "decrescent", media, "results.txt");
+
+        // media = 0;
+        // time = 0;
+
+        delete[] array;
+        break;
+
+    default:
+        break;
     }
-}
+    }
+    }
