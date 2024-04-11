@@ -9,6 +9,7 @@ int main()
 
     cout << endl
          << "Starting execution" << endl;
+         
      m.manage_executions();
 
      
