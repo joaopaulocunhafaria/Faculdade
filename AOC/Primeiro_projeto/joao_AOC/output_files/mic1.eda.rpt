@@ -1,5 +1,5 @@
 EDA Netlist Writer report for mic1
-Fri Apr 05 17:18:01 2024
+Fri Apr 12 17:21:39 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,9 +36,9 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Fri Apr 05 17:18:01 2024 ;
+; EDA Netlist Writer Status ; Successful - Fri Apr 12 17:21:39 2024 ;
 ; Revision Name             ; mic1                                  ;
-; Top-level Entity Name     ; ULA_1BIT                              ;
+; Top-level Entity Name     ; ULA_8BIT                              ;
 ; Family                    ; Cyclone II                            ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
@@ -84,12 +84,12 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Apr 05 17:18:00 2024
+    Info: Processing started: Fri Apr 12 17:21:38 2024
 Info: Command: quartus_eda --functional=off --timescale=1ps --simulation=on --tool=modelsim_oem --format=verilog mic1 -c mic1
 Info (204026): Generated files "mic1.vo", "mic1_fast.vo", "mic1_v.sdo" and "mic1_v_fast.sdo" in directory "C:/Users/Aluno/Desktop/Primeiro_projeto/joao_AOC/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4520 megabytes
-    Info: Processing ended: Fri Apr 05 17:18:01 2024
+    Info: Peak virtual memory: 4515 megabytes
+    Info: Processing ended: Fri Apr 12 17:21:39 2024
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

@@ -250,13 +250,12 @@ r1
 R8
 R9
 Z71 n@u@l@a_1@b@i@t
-!i10b 1
-!s85 0
 Z72 !s108 1712348281.759000
 R12
+!i10b 1
+!s85 0
 !s101 -O0
 vULA_1BIT_vlg_check_tst
-!i10b 1
 Z73 !s100 ]KJGZ>kX]HWIEQe[iz^741
 Z74 IDDkUeAMBVS>91fSG6[]ZF2
 Z75 VPc>3bC5l6D_G<@ONKXROP2
@@ -267,19 +266,19 @@ R18
 L0 71
 R7
 r1
-!s85 0
 31
 Z76 !s108 1712348281.863000
-Z77 !s107 mic1.vt|
+R20
 R21
-!s101 -O0
 R9
-Z78 n@u@l@a_1@b@i@t_vlg_check_tst
-vULA_1BIT_vlg_sample_tst
+Z77 n@u@l@a_1@b@i@t_vlg_check_tst
 !i10b 1
-Z79 !s100 [RP3@1glGWoanIo7DWQ2Z1
-Z80 I=4BC=_I:f`iiFBab5Keke1
-Z81 ViS3TcZ9>`^^eI[I@_F]^T3
+!s85 0
+!s101 -O0
+vULA_1BIT_vlg_sample_tst
+Z78 !s100 [RP3@1glGWoanIo7DWQ2Z1
+Z79 I=4BC=_I:f`iiFBab5Keke1
+Z80 ViS3TcZ9>`^^eI[I@_F]^T3
 R47
 R70
 R17
@@ -287,18 +286,17 @@ R18
 L0 29
 R7
 r1
-!s85 0
 31
 R76
-R77
+R20
 R21
-!s101 -O0
 R9
-Z82 n@u@l@a_1@b@i@t_vlg_sample_tst
-vULA_1BIT_vlg_vec_tst
+Z81 n@u@l@a_1@b@i@t_vlg_sample_tst
 !i10b 1
-!s100 lID_OoA27:a7<OUAlzXPc3
-IlWhJQcoN>z90`SmDBc_TW3
+!s85 0
+!s101 -O0
+vULA_1BIT_vlg_vec_tst
+Z82 IlWhJQcoN>z90`SmDBc_TW3
 Z83 Vnd3N@lOaDUzBkbKo=5=1>1
 R47
 R70
@@ -307,11 +305,93 @@ R18
 Z84 L0 195
 R7
 r1
-!s85 0
 31
 R76
-R77
+R20
+R21
+R9
+Z85 n@u@l@a_1@b@i@t_vlg_vec_tst
+Z86 !s100 lID_OoA27:a7<OUAlzXPc3
+!i10b 1
+!s85 0
+!s101 -O0
+vULA_8BIT
+Z87 I;SG2RlHb7hWBD3lQh50:T1
+Z88 Vg6b@;JS`VjXDMQUm5[7h51
+R47
+Z89 w1712953299
+R5
+R6
+L0 31
+R7
+r1
+31
+R8
+R9
+Z90 n@u@l@a_8@b@i@t
+!i10b 1
+Z91 !s100 GBjoQC;M`5ea=K56dm2FM2
+!s85 0
+Z92 !s108 1712953305.034000
+R12
+!s101 -O0
+vULA_8BIT_vlg_check_tst
+!i10b 1
+!s100 JF>XIEK@VYCdj?3gX?0<B0
+I=4iZnU=k?QN4ilmZ@hBV?3
+V3_HBSA>?j1==A8695eZ9:0
+R47
+Z93 w1712953298
+R17
+R18
+L0 71
+R7
+r1
+!s85 0
+31
+Z94 !s108 1712953305.392000
+Z95 !s107 mic1.vt|
 R21
 !s101 -O0
 R9
-Z85 n@u@l@a_1@b@i@t_vlg_vec_tst
+n@u@l@a_8@b@i@t_vlg_check_tst
+vULA_8BIT_vlg_sample_tst
+!i10b 1
+!s100 lVQ=;`@`mCnHb;<?NXz^63
+I5KOc2H>KmTAW@icFjG]``3
+VU`]9z6D`AcM5InzhYBJS63
+R47
+R93
+R17
+R18
+L0 29
+R7
+r1
+!s85 0
+31
+R94
+R95
+R21
+!s101 -O0
+R9
+n@u@l@a_8@b@i@t_vlg_sample_tst
+vULA_8BIT_vlg_vec_tst
+!i10b 1
+!s100 e6U_jmNOdVhF`8Zk9[LFM1
+I?z;Tn?cfH<::I9UScdiiH1
+Vh;=oXFMfgCeB8<Ro2ffN_1
+R47
+R93
+R17
+R18
+L0 291
+R7
+r1
+!s85 0
+31
+R94
+R95
+R21
+!s101 -O0
+R9
+n@u@l@a_8@b@i@t_vlg_vec_tst

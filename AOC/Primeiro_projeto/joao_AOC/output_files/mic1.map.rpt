@@ -1,5 +1,5 @@
 Analysis & Synthesis report for mic1
-Fri Apr 05 17:01:51 2024
+Fri Apr 12 17:09:01 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -41,16 +41,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Apr 05 17:01:51 2024           ;
+; Analysis & Synthesis Status        ; Successful - Fri Apr 12 17:09:01 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; mic1                                            ;
-; Top-level Entity Name              ; ULA_1BIT                                        ;
+; Top-level Entity Name              ; ULA_8BIT                                        ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 7                                               ;
-;     Total combinational functions  ; 7                                               ;
+; Total logic elements               ; 29                                              ;
+;     Total combinational functions  ; 29                                              ;
 ;     Dedicated logic registers      ; 0                                               ;
 ; Total registers                    ; 0                                               ;
-; Total pins                         ; 10                                              ;
+; Total pins                         ; 30                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -63,7 +63,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
-; Top-level entity name                                                      ; ULA_1BIT           ; mic1               ;
+; Top-level entity name                                                      ; ULA_8BIT           ; mic1               ;
 ; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -161,47 +161,62 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; decoder2_4.bdf                   ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Aluno/Desktop/Primeiro_projeto/joao_AOC/decoder2_4.bdf      ;         ;
 ; FULL_ADDER_1BIT.bdf              ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Aluno/Desktop/Primeiro_projeto/joao_AOC/FULL_ADDER_1BIT.bdf ;         ;
 ; ULA_1BIT.bdf                     ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Aluno/Desktop/Primeiro_projeto/joao_AOC/ULA_1BIT.bdf        ;         ;
+; ULA_8BIT.bdf                     ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Aluno/Desktop/Primeiro_projeto/joao_AOC/ULA_8BIT.bdf        ;         ;
 +----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimated Total logic elements              ; 7     ;
-;                                             ;       ;
-; Total combinational functions               ; 7     ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 4     ;
-;     -- 3 input functions                    ; 1     ;
-;     -- <=2 input functions                  ; 2     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 7     ;
-;     -- arithmetic mode                      ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 10    ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out node                        ; inst2 ;
-; Maximum fan-out                             ; 3     ;
-; Total fan-out                               ; 25    ;
-; Average fan-out                             ; 1.47  ;
-+---------------------------------------------+-------+
++---------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                           ;
++---------------------------------------------+-----------------------------------------+
+; Resource                                    ; Usage                                   ;
++---------------------------------------------+-----------------------------------------+
+; Estimated Total logic elements              ; 29                                      ;
+;                                             ;                                         ;
+; Total combinational functions               ; 29                                      ;
+; Logic element usage by number of LUT inputs ;                                         ;
+;     -- 4 input functions                    ; 20                                      ;
+;     -- 3 input functions                    ; 5                                       ;
+;     -- <=2 input functions                  ; 4                                       ;
+;                                             ;                                         ;
+; Logic elements by mode                      ;                                         ;
+;     -- normal mode                          ; 29                                      ;
+;     -- arithmetic mode                      ; 0                                       ;
+;                                             ;                                         ;
+; Total registers                             ; 0                                       ;
+;     -- Dedicated logic registers            ; 0                                       ;
+;     -- I/O registers                        ; 0                                       ;
+;                                             ;                                         ;
+; I/O pins                                    ; 30                                      ;
+; Embedded Multiplier 9-bit elements          ; 0                                       ;
+; Maximum fan-out node                        ; ULA_1BIT:inst5|decoder2_4:inst3|inst7~0 ;
+; Maximum fan-out                             ; 9                                       ;
+; Total fan-out                               ; 111                                     ;
+; Average fan-out                             ; 1.88                                    ;
++---------------------------------------------+-----------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                       ;
-+-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+--------------+
-; Compilation Hierarchy Node  ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name              ; Library Name ;
-+-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+--------------+
-; |ULA_1BIT                   ; 7 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |ULA_1BIT                        ; work         ;
-;    |FULL_ADDER_1BIT:inst12| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA_1BIT|FULL_ADDER_1BIT:inst12 ; work         ;
-+-----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                         ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+--------------+
+; Compilation Hierarchy Node     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                             ; Library Name ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+--------------+
+; |ULA_8BIT                      ; 29 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 30   ; 0            ; |ULA_8BIT                                       ; work         ;
+;    |ULA_1BIT:1|                ; 3 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA_8BIT|ULA_1BIT:1                            ; work         ;
+;       |FULL_ADDER_1BIT:inst12| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA_8BIT|ULA_1BIT:1|FULL_ADDER_1BIT:inst12     ; work         ;
+;    |ULA_1BIT:2|                ; 3 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA_8BIT|ULA_1BIT:2                            ; work         ;
+;       |FULL_ADDER_1BIT:inst12| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA_8BIT|ULA_1BIT:2|FULL_ADDER_1BIT:inst12     ; work         ;
+;    |ULA_1BIT:inst2|            ; 3 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA_8BIT|ULA_1BIT:inst2                        ; work         ;
+;       |FULL_ADDER_1BIT:inst12| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA_8BIT|ULA_1BIT:inst2|FULL_ADDER_1BIT:inst12 ; work         ;
+;    |ULA_1BIT:inst3|            ; 5 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA_8BIT|ULA_1BIT:inst3                        ; work         ;
+;       |FULL_ADDER_1BIT:inst12| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA_8BIT|ULA_1BIT:inst3|FULL_ADDER_1BIT:inst12 ; work         ;
+;    |ULA_1BIT:inst4|            ; 2 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA_8BIT|ULA_1BIT:inst4                        ; work         ;
+;       |FULL_ADDER_1BIT:inst12| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA_8BIT|ULA_1BIT:inst4|FULL_ADDER_1BIT:inst12 ; work         ;
+;    |ULA_1BIT:inst5|            ; 5 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA_8BIT|ULA_1BIT:inst5                        ; work         ;
+;       |decoder2_4:inst3|       ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA_8BIT|ULA_1BIT:inst5|decoder2_4:inst3       ; work         ;
+;    |ULA_1BIT:inst6|            ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA_8BIT|ULA_1BIT:inst6                        ; work         ;
+;    |ULA_1BIT:inst|             ; 3 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA_8BIT|ULA_1BIT:inst                         ; work         ;
+;       |FULL_ADDER_1BIT:inst12| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |ULA_8BIT|ULA_1BIT:inst|FULL_ADDER_1BIT:inst12  ; work         ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -235,7 +250,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Apr 05 17:01:48 2024
+    Info: Processing started: Fri Apr 12 17:08:59 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mic1 -c mic1
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 1 design units, including 1 entities, in source file decoder2_4.bdf
@@ -246,19 +261,35 @@ Info (12021): Found 1 design units, including 1 entities, in source file full_ad
     Info (12023): Found entity 1: FULL_ADDER_1BIT
 Info (12021): Found 1 design units, including 1 entities, in source file ula_1bit.bdf
     Info (12023): Found entity 1: ULA_1BIT
-Info (12127): Elaborating entity "ULA_1BIT" for the top level hierarchy
-Info (12128): Elaborating entity "decoder2_4" for hierarchy "decoder2_4:inst3"
-Info (12128): Elaborating entity "FULL_ADDER_1BIT" for hierarchy "FULL_ADDER_1BIT:inst12"
+Info (12021): Found 1 design units, including 1 entities, in source file ula_8bit.bdf
+    Info (12023): Found entity 1: ULA_8BIT
+Info (12127): Elaborating entity "ULA_8BIT" for the top level hierarchy
+Info (12128): Elaborating entity "ULA_1BIT" for hierarchy "ULA_1BIT:2"
+Info (12128): Elaborating entity "decoder2_4" for hierarchy "ULA_1BIT:2|decoder2_4:inst3"
+Info (12128): Elaborating entity "FULL_ADDER_1BIT" for hierarchy "ULA_1BIT:2|FULL_ADDER_1BIT:inst12"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 17 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 8 input pins
-    Info (21059): Implemented 2 output pins
-    Info (21061): Implemented 7 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4588 megabytes
-    Info: Processing ended: Fri Apr 05 17:01:51 2024
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:01
+Warning (21074): Design contains 12 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "A[7]"
+    Warning (15610): No output dependent on input pin "A[6]"
+    Warning (15610): No output dependent on input pin "A[5]"
+    Warning (15610): No output dependent on input pin "A[4]"
+    Warning (15610): No output dependent on input pin "A[3]"
+    Warning (15610): No output dependent on input pin "A[2]"
+    Warning (15610): No output dependent on input pin "B[7]"
+    Warning (15610): No output dependent on input pin "B[6]"
+    Warning (15610): No output dependent on input pin "B[5]"
+    Warning (15610): No output dependent on input pin "B[4]"
+    Warning (15610): No output dependent on input pin "B[3]"
+    Warning (15610): No output dependent on input pin "B[2]"
+Info (21057): Implemented 59 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 22 input pins
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 29 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 14 warnings
+    Info: Peak virtual memory: 4585 megabytes
+    Info: Processing ended: Fri Apr 12 17:09:01 2024
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 
