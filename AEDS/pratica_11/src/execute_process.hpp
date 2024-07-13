@@ -3,30 +3,28 @@
 
 #include <iostream>
 #include <fstream>
-#include <iostream>
+#include <chrono>
+#include <iostream> 
+#include <cmath>
+#include <sstream>
+#include <string>
+#include <vector>
 using namespace std;
 
 
 class execute_process
 {
 private:
-    /* data */
+    int quantity;
 public:
 
     float result_per_file(string path);
     float result_per_process(string process_path);
-    execute_process( );
+    void run();
+    execute_process(int quantity);
     ~execute_process();
 };
-
-execute_process::execute_process(/* args */)
-{
-}
-
-execute_process::~execute_process()
-{
-}
-
+ 
 
 
 #endif
