@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "07/12/2024 17:00:35"
+// Generated on "07/19/2024 16:16:09"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    ULA_32BIT
 // 
@@ -83,10 +83,8 @@ reg [31:0] S_expected;
 reg  COUT_prev;
 reg [31:0] S_prev;
 
-reg  COUT_expected_prev;
 reg [31:0] S_expected_prev;
 
-reg  last_COUT_exp;
 reg [31:0] last_S_exp;
 
 reg trigger;
@@ -117,17 +115,10 @@ end
 
 always @(trigger)
 begin
-	COUT_expected_prev = COUT_expected;
 	S_expected_prev = S_expected;
 end
 
 
-
-// expected COUT
-initial
-begin
-	COUT_expected = 1'bX;
-end 
 // expected S[ 31 ]
 initial
 begin
@@ -302,19 +293,6 @@ begin
 	$display("| expected COUT = %b | expected S = %b | ",COUT_expected_prev,S_expected_prev);
 	$display("| real COUT = %b | real S = %b | ",COUT_prev,S_prev);
 `endif
-	if (
-		( COUT_expected_prev !== 1'bx ) && ( COUT_prev !== COUT_expected_prev )
-		&& ((COUT_expected_prev !== last_COUT_exp) ||
-			on_first_change[1])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port COUT :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", COUT_expected_prev);
-		$display ("     Real value = %b", COUT_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[1] = 1'b0;
-		last_COUT_exp = COUT_expected_prev;
-	end
 	if (
 		( S_expected_prev[0] !== 1'bx ) && ( S_prev[0] !== S_expected_prev[0] )
 		&& ((S_expected_prev[0] !== last_S_exp[0]) ||
@@ -778,6 +756,211 @@ ULA_32BIT i1 (
 	.INVA(INVA),
 	.S(S)
 );
+
+// F0
+initial
+begin
+	F0 = 1'b0;
+	F0 = #750000 1'b1;
+end 
+
+// F1
+initial
+begin
+	F1 = 1'b1;
+	F1 = #750000 1'b0;
+end 
+
+// ENA
+initial
+begin
+	ENA = 1'b1;
+	ENA = #250000 1'b0;
+	ENA = #250000 1'b1;
+end 
+
+// ENB
+initial
+begin
+	ENB = 1'b0;
+	ENB = #250000 1'b1;
+	ENB = #250000 1'b0;
+	ENB = #250000 1'b1;
+end 
+
+// INVA
+initial
+begin
+	INVA = 1'b0;
+	INVA = #500000 1'b1;
+	INVA = #250000 1'b0;
+end 
+
+// CIN
+initial
+begin
+	CIN = 1'b0;
+end 
+// B[ 31 ]
+initial
+begin
+	B[31] = 1'b1;
+end 
+// B[ 30 ]
+initial
+begin
+	B[30] = 1'b1;
+end 
+// B[ 29 ]
+initial
+begin
+	B[29] = 1'b1;
+end 
+// B[ 28 ]
+initial
+begin
+	B[28] = 1'b1;
+end 
+// B[ 27 ]
+initial
+begin
+	B[27] = 1'b1;
+end 
+// B[ 26 ]
+initial
+begin
+	B[26] = 1'b1;
+end 
+// B[ 25 ]
+initial
+begin
+	B[25] = 1'b1;
+end 
+// B[ 24 ]
+initial
+begin
+	B[24] = 1'b1;
+end 
+// B[ 23 ]
+initial
+begin
+	B[23] = 1'b1;
+end 
+// B[ 22 ]
+initial
+begin
+	B[22] = 1'b1;
+end 
+// B[ 21 ]
+initial
+begin
+	B[21] = 1'b1;
+end 
+// B[ 20 ]
+initial
+begin
+	B[20] = 1'b1;
+end 
+// B[ 19 ]
+initial
+begin
+	B[19] = 1'b1;
+end 
+// B[ 18 ]
+initial
+begin
+	B[18] = 1'b1;
+end 
+// B[ 17 ]
+initial
+begin
+	B[17] = 1'b1;
+end 
+// B[ 16 ]
+initial
+begin
+	B[16] = 1'b1;
+end 
+// B[ 15 ]
+initial
+begin
+	B[15] = 1'b1;
+end 
+// B[ 14 ]
+initial
+begin
+	B[14] = 1'b1;
+end 
+// B[ 13 ]
+initial
+begin
+	B[13] = 1'b1;
+end 
+// B[ 12 ]
+initial
+begin
+	B[12] = 1'b1;
+end 
+// B[ 11 ]
+initial
+begin
+	B[11] = 1'b1;
+end 
+// B[ 10 ]
+initial
+begin
+	B[10] = 1'b1;
+end 
+// B[ 9 ]
+initial
+begin
+	B[9] = 1'b1;
+end 
+// B[ 8 ]
+initial
+begin
+	B[8] = 1'b1;
+end 
+// B[ 7 ]
+initial
+begin
+	B[7] = 1'b1;
+end 
+// B[ 6 ]
+initial
+begin
+	B[6] = 1'b1;
+end 
+// B[ 5 ]
+initial
+begin
+	B[5] = 1'b1;
+end 
+// B[ 4 ]
+initial
+begin
+	B[4] = 1'b1;
+end 
+// B[ 3 ]
+initial
+begin
+	B[3] = 1'b1;
+end 
+// B[ 2 ]
+initial
+begin
+	B[2] = 1'b1;
+end 
+// B[ 1 ]
+initial
+begin
+	B[1] = 1'b1;
+end 
+// B[ 0 ]
+initial
+begin
+	B[0] = 1'b1;
+end 
 // A[ 31 ]
 initial
 begin
@@ -937,202 +1120,6 @@ end
 initial
 begin
 	A[0] = 1'b0;
-end 
-// B[ 31 ]
-initial
-begin
-	B[31] = 1'b0;
-end 
-// B[ 30 ]
-initial
-begin
-	B[30] = 1'b0;
-end 
-// B[ 29 ]
-initial
-begin
-	B[29] = 1'b0;
-end 
-// B[ 28 ]
-initial
-begin
-	B[28] = 1'b0;
-end 
-// B[ 27 ]
-initial
-begin
-	B[27] = 1'b0;
-end 
-// B[ 26 ]
-initial
-begin
-	B[26] = 1'b0;
-end 
-// B[ 25 ]
-initial
-begin
-	B[25] = 1'b0;
-end 
-// B[ 24 ]
-initial
-begin
-	B[24] = 1'b0;
-end 
-// B[ 23 ]
-initial
-begin
-	B[23] = 1'b0;
-end 
-// B[ 22 ]
-initial
-begin
-	B[22] = 1'b0;
-end 
-// B[ 21 ]
-initial
-begin
-	B[21] = 1'b0;
-end 
-// B[ 20 ]
-initial
-begin
-	B[20] = 1'b0;
-end 
-// B[ 19 ]
-initial
-begin
-	B[19] = 1'b0;
-end 
-// B[ 18 ]
-initial
-begin
-	B[18] = 1'b0;
-end 
-// B[ 17 ]
-initial
-begin
-	B[17] = 1'b0;
-end 
-// B[ 16 ]
-initial
-begin
-	B[16] = 1'b0;
-end 
-// B[ 15 ]
-initial
-begin
-	B[15] = 1'b0;
-end 
-// B[ 14 ]
-initial
-begin
-	B[14] = 1'b0;
-end 
-// B[ 13 ]
-initial
-begin
-	B[13] = 1'b0;
-end 
-// B[ 12 ]
-initial
-begin
-	B[12] = 1'b0;
-end 
-// B[ 11 ]
-initial
-begin
-	B[11] = 1'b0;
-end 
-// B[ 10 ]
-initial
-begin
-	B[10] = 1'b0;
-end 
-// B[ 9 ]
-initial
-begin
-	B[9] = 1'b0;
-end 
-// B[ 8 ]
-initial
-begin
-	B[8] = 1'b0;
-end 
-// B[ 7 ]
-initial
-begin
-	B[7] = 1'b0;
-end 
-// B[ 6 ]
-initial
-begin
-	B[6] = 1'b0;
-end 
-// B[ 5 ]
-initial
-begin
-	B[5] = 1'b0;
-end 
-// B[ 4 ]
-initial
-begin
-	B[4] = 1'b0;
-end 
-// B[ 3 ]
-initial
-begin
-	B[3] = 1'b0;
-end 
-// B[ 2 ]
-initial
-begin
-	B[2] = 1'b0;
-end 
-// B[ 1 ]
-initial
-begin
-	B[1] = 1'b0;
-end 
-// B[ 0 ]
-initial
-begin
-	B[0] = 1'b0;
-end 
-
-// CIN
-initial
-begin
-	CIN = 1'b0;
-end 
-
-// ENA
-initial
-begin
-	ENA = 1'b0;
-end 
-
-// ENB
-initial
-begin
-	ENB = 1'b0;
-end 
-
-// F0
-initial
-begin
-	F0 = 1'b0;
-end 
-
-// F1
-initial
-begin
-	F1 = 1'b0;
-end 
-
-// INVA
-initial
-begin
-	INVA = 1'b0;
 end 
 
 ULA_32BIT_vlg_sample_tst tb_sample (
