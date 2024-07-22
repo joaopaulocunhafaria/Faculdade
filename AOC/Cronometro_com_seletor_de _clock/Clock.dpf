@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<pin_planner>
+	<pin_info>
+		<pin name="Sa" source="Pin Planner" >
+		</pin>
+		<pin name="Sb" source="Pin Planner" >
+		</pin>
+		<pin name="Sc" source="Pin Planner" >
+		</pin>
+		<pin name="Sd" source="Pin Planner" >
+		</pin>
+		<pin name="Se" source="Pin Planner" >
+		</pin>
+		<pin name="Sf" source="Pin Planner" >
+		</pin>
+		<pin name="Sg" source="Pin Planner" >
+		</pin>
+		<pin name="A" source="Pin Planner" >
+		</pin>
+		<pin name="B" source="Pin Planner" >
+		</pin>
+		<pin name="C" source="Pin Planner" >
+		</pin>
+		<pin name="D" source="Pin Planner" >
+		</pin>
+	</pin_info>
+	<buses>
+	</buses>
+	<group_file_association>
+	</group_file_association>
+	<pin_planner_file_specifies>
+	</pin_planner_file_specifies>
+</pin_planner>
