@@ -42,9 +42,46 @@ Nesta disciplina, foram utilizadas as linguagens Java e C++. Ambas são linguage
 
 O diretório correspondente a esta disciplina contém todas as atividades de laboratório concluídas, incluindo exemplos de código, exercícios e projetos desenvolvidos ao longo do curso. Cada projeto é estruturado para refletir a aplicação dos conceitos de programação orientada a objetos.
 
+### AEDS (Algoritmos e Estruturas de Dados)
+
+**Descrição:**
+
+A disciplina de Algoritmos e Estruturas de Dados (AEDS) foca no desenvolvimento e análise de algoritmos e estruturas de dados fundamentais para a resolução de problemas computacionais. Os principais tópicos abordados incluem:
+
+- **Análise de Algoritmos:** Estudo da eficiência de algoritmos, incluindo a análise de complexidade de tempo e espaço.
+- **Estruturas de Dados Lineares:** Implementação e uso de estruturas como vetores, listas encadeadas, pilhas e filas.
+- **Estruturas de Dados Não Lineares:** Análise e implementação de árvores (binárias, AVL, B-trees) e grafos.
+- **Algoritmos de Ordenação e Pesquisa:** Desenvolvimento e análise de algoritmos como QuickSort, MergeSort, Busca Binária, etc.
+
+**Linguagem Utilizada:**
+
+A linguagem de programação utilizada para implementar os conceitos de AEDS pode variar, mas frequentemente inclui C, C++ e Java, devido à sua capacidade de manipulação eficiente de dados e estruturas.
+
+**Conteúdo do Diretório:**
+
+O diretório referente a esta disciplina contém atividades práticas, exercícios e projetos que ilustram a aplicação de algoritmos e estruturas de dados. Os projetos são organizados para demonstrar a eficiência e a complexidade das soluções propostas.
+
+### AOC (Arquitetura de Computadores)
+
+**Descrição:**
+
+A disciplina de Arquitetura de Computadores (AOC) explora a estrutura e o funcionamento dos sistemas de computação, desde o hardware até a execução de programas. Os principais tópicos abordados incluem:
+
+- **Estrutura dos Sistemas de Computação:** Estudo dos componentes fundamentais dos computadores, como CPU, memória, e periféricos.
+- **Conjunto de Instruções e Processamento:** Análise do conjunto de instruções da CPU e como essas instruções são processadas para executar tarefas.
+- **Organização da Memória:** Compreensão dos diferentes tipos de memória (RAM, cache, memória secundária) e seu gerenciamento.
+- **Pipeline e Processamento Paralelo:** Técnicas para melhorar o desempenho do processamento através de pipeline e execução paralela.
+
+**Linguagem Utilizada:**
+
+Embora a AOC seja mais focada no hardware, algumas atividades podem utilizar linguagens de baixo nível, como Assembly, para ilustrar a interação com o hardware.
+
+**Conteúdo do Diretório:**
+
+O diretório desta disciplina contém exercícios e projetos relacionados à arquitetura de computadores, incluindo simulações, análise de desempenho e experimentos com o conjunto de instruções e gerenciamento de memória.
+
 ---
 
 Este repositório é uma fonte abrangente de materiais e projetos desenvolvidos nas disciplinas de programação do curso de Engenharia de Computação do CEFET-MG. Cada diretório e arquivo está organizado para facilitar a consulta e o estudo dos conceitos abordados nas disciplinas.
 
 Para mais informações ou dúvidas, por favor, entre em contato com o responsável pelo repositório ou consulte a documentação adicional disponível no repositório.
-
