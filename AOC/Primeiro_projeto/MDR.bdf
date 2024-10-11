@@ -1,0 +1,106 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+*/
+(header "graphic" (version "1.4"))
+(symbol
+	(rect 376 128 640 320)
+	(text "REGISTER_32BIT_INCOMPLETO" (rect 5 0 200 13)(font "Arial" (font_size 8)))
+	(text "inst" (rect 8 177 25 188)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "OUT_EN" (rect 0 0 51 13)(font "Arial" (font_size 8)))
+		(text "OUT_EN" (rect 21 27 72 40)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "OUT_MEM_EN" (rect 0 0 88 13)(font "Arial" (font_size 8)))
+		(text "OUT_MEM_EN" (rect 21 43 109 56)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "IN_C[31..0]" (rect 0 0 63 13)(font "Arial" (font_size 8)))
+		(text "IN_C[31..0]" (rect 21 59 84 72)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "LOAD[31..0]" (rect 0 0 69 13)(font "Arial" (font_size 8)))
+		(text "LOAD[31..0]" (rect 21 75 90 88)(font "Arial" (font_size 8)))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "I_MEM[31..0]" (rect 0 0 75 13)(font "Arial" (font_size 8)))
+		(text "I_MEM[31..0]" (rect 21 91 96 104)(font "Arial" (font_size 8)))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "LOADN" (rect 0 0 43 13)(font "Arial" (font_size 8)))
+		(text "LOADN" (rect 21 107 64 120)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "I_SELECT" (rect 0 0 60 13)(font "Arial" (font_size 8)))
+		(text "I_SELECT" (rect 21 123 81 136)(font "Arial" (font_size 8)))
+		(line (pt 0 128)(pt 16 128))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "WRITE_EN" (rect 0 0 66 13)(font "Arial" (font_size 8)))
+		(text "WRITE_EN" (rect 21 139 87 152)(font "Arial" (font_size 8)))
+		(line (pt 0 144)(pt 16 144))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "CLOCK" (rect 0 0 43 13)(font "Arial" (font_size 8)))
+		(text "CLOCK" (rect 21 155 64 168)(font "Arial" (font_size 8)))
+		(line (pt 0 160)(pt 16 160))
+	)
+	(port
+		(pt 264 32)
+		(output)
+		(text "OUTPUT[31..0]" (rect 0 0 87 13)(font "Arial" (font_size 8)))
+		(text "OUTPUT[31..0]" (rect 156 27 243 40)(font "Arial" (font_size 8)))
+		(line (pt 264 32)(pt 248 32)(line_width 3))
+	)
+	(port
+		(pt 264 48)
+		(output)
+		(text "OUTPUT_MEM[31..0]" (rect 0 0 123 13)(font "Arial" (font_size 8)))
+		(text "OUTPUT_MEM[31..0]" (rect 120 43 243 56)(font "Arial" (font_size 8)))
+		(line (pt 264 48)(pt 248 48)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 248 176))
+	)
+)
