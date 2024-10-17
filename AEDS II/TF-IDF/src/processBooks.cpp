@@ -27,8 +27,7 @@ unordered_set<string> ProcessBooks::processStopWords()
     }
 
     file.close();
-    cout << "Stop words processadas" << endl;
-    return stopWords;
+     return stopWords;
 }
 
 vector<string> ProcessBooks::processLine(string line)
@@ -58,8 +57,7 @@ vector<string> ProcessBooks::processLine(string line)
                                          [](unsigned char c)
                                          { return c == '.' || c == ',' || c == '!' || c == '?' || c == ':' || c == ';' || c == '"' || c == '\'' || c == '(' || c == ')' || c == '[' || c == ']' || c == '{' || c == '}' || c == '-' || c == '_'; }),
                                word.end());
-                    cout << word << endl;
-                    result.push_back(word);
+                     result.push_back(word);
                 }
             }
         }
@@ -91,8 +89,7 @@ vector<unordered_map<string, int>> ProcessBooks::processWords()
     for (int i = 0; i < booksQuantity; i++)
     {
         string filePath = BOOKSPATH + to_string(i + 1) + ".txt";
-        cout << filePath << endl;
-
+         
         ifstream file(filePath);
         string line;
         unordered_map<string, int> wordCounter;
