@@ -15,3 +15,7 @@ makefile
 #replit web Programing 
 *.replit
 *.inix
+.cache
+.ccls-cache
+.breakpoints
+*.nix

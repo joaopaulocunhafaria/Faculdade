@@ -1,0 +1,14 @@
+se acasso deseje atribuir um valor atribuir os valores da matriz direito no codigo
+EXEMPLO:
+
+.#define N 4
+
+ .int mat[N][N] = {
+      {1,0,0,0, },
+      {0,0,0,0, },
+      {0,0,0,0, },     
+      {0,0,0,0, }};
+
+.alterar valores e parametros das funçoes para EX:letraA(int mat[N][N]), ao chamar a funçao  letraA(mat);
+.apagar declaracao da variavel N, no codigo fonte.
+.alterar tambem a funçao letraF, que é chamada recursivamente.
