@@ -5,7 +5,9 @@ TfIdf::TfIdf(vector<unordered_map<string, int>> wordsInDocs)
     this->keyWords = processKeyWords();
     this->idfRank = idf(wordsInDocs);
     this->tfRank = tf(wordsInDocs);
-    this->wordsScore = calculateScore();
+    this->wordsScore = calculateTfIdf();
+    this->lineScore = calculateScore();
+
     showScore();
 }
 
@@ -14,18 +16,21 @@ unordered_map<string, double> TfIdf::idf(vector<unordered_map<string, int>> word
     unordered_map<string, double> result;
 
     int totalNumberOfDocuments = wordsInDocs.size();
-    for (auto key : keyWords)
+    for (auto line : keyWords)
     {
-        int numberOfDocsKeyAppers;
-        for (int i = 0; i < totalNumberOfDocuments; i++)
+        for (auto key : line)
         {
-            if (wordsInDocs[i].find(key) != wordsInDocs[i].end())
+            int numberOfDocsKeyAppers;
+            for (int i = 0; i < totalNumberOfDocuments; i++)
             {
-                numberOfDocsKeyAppers++;
+                if (wordsInDocs[i].find(key) != wordsInDocs[i].end())
+                {
+                    numberOfDocsKeyAppers++;
+                }
             }
-        }
 
-        result[key] = log(static_cast<double>(totalNumberOfDocuments) / 1 + static_cast<double>(numberOfDocsKeyAppers));
+            result[key] = log(static_cast<double>(totalNumberOfDocuments) / 1 + static_cast<double>(numberOfDocsKeyAppers));
+        }
     }
 
     return result;
@@ -36,26 +41,29 @@ unordered_map<string, vector<double>> TfIdf::tf(vector<unordered_map<string, int
     unordered_map<string, vector<double>> tfPerDoc;
     int docsQuantity = wordsInDocs.size();
 
-    for (auto key : keyWords)
+    for (auto line : keyWords)
     {
-        int howManyApperanceInEachDocument;
-        int totalTermsInDoc;
-        for (int i = 0; i < docsQuantity; i++)
+        for (auto key : line)
         {
-            totalTermsInDoc = wordsInDocs[i].size();
-            howManyApperanceInEachDocument = wordsInDocs[i][key];
-            double result = static_cast<double>(howManyApperanceInEachDocument) / static_cast<double>(totalTermsInDoc);
-            tfPerDoc[key].push_back(result);
+            int howManyApperanceInEachDocument;
+            int totalTermsInDoc;
+            for (int i = 0; i < docsQuantity; i++)
+            {
+                totalTermsInDoc = wordsInDocs[i].size();
+                howManyApperanceInEachDocument = wordsInDocs[i][key];
+                double result = static_cast<double>(howManyApperanceInEachDocument) / static_cast<double>(totalTermsInDoc);
+                tfPerDoc[key].push_back(result);
+            }
         }
     }
 
     return tfPerDoc;
 }
 
-vector<string> TfIdf::processKeyWords()
+vector<vector<string>> TfIdf::processKeyWords()
 {
 
-    vector<string> result;
+    vector<vector<string>> result;
 
     ifstream file(KEYWORDSPATH);
 
@@ -63,52 +71,67 @@ vector<string> TfIdf::processKeyWords()
 
     while (getline(file, line))
     {
-        string keyWord = processLine(line);
-        result.push_back(keyWord);
+        vector<string> lineKeyWord = processLine(line);
+        result.push_back(lineKeyWord);
     }
     file.close();
 
     return result;
 }
 
-string TfIdf::processLine(string line)
+vector<string> TfIdf::processLine(string line)
 {
+
+    vector<string> result;
 
     if (!line.empty())
     {
 
-        transform(line.begin(), line.end(), line.begin(), [](unsigned char c)
-                  {
-                      return std::tolower(c); // Converte cada caractere para minúscula
-                  });
-        // tirar os acentos
+        vector<string> lineWords = splitString(line);
+        for (size_t i = 0; i < lineWords.size(); i++)
+        {
+            string word = lineWords.at(i);
 
-        line.erase(remove_if(line.begin(), line.end(),
-                             [](unsigned char c)
-                             { return c == '.' || c == ',' || c == '!' || c == '?' || c == ':' || c == ';' || c == '"' || c == '\'' || c == '(' || c == ')' || c == '[' || c == ']' || c == '{' || c == '}' || c == '-' || c == '_'; }),
-                   line.end());
+            transform(word.begin(), word.end(), word.begin(), [](unsigned char c)
+                      {
+                          return std::tolower(c); // Converte cada caractere para minúscula
+                      });
+
+            // tirar os acentos
+
+            word.erase(remove_if(word.begin(), word.end(),
+                                 [](unsigned char c)
+                                 { return c == '.' || c == ',' || c == '!' || c == '?' || c == ':' || c == ';' || c == '"' || c == '\'' || c == '(' || c == ')' || c == '[' || c == ']' || c == '{' || c == '}' || c == '-' || c == '_'; }),
+                       word.end());
+
+            result.push_back(word);
+        }
     }
 
-    return line;
+    return result;
 }
 
-unordered_map<string, vector<double>> TfIdf::calculateScore()
+unordered_map<string, vector<double>> TfIdf::calculateTfIdf()
 {
 
     unordered_map<string, vector<double>> score;
 
     for (size_t i = 0; i < keyWords.size(); i++)
     {
-        string key = keyWords[i];
-
-        vector<double> resultPerKey;
-
-        for (size_t j = 0; j < tfRank[key].size(); j++)
+        vector<string> line = keyWords.at(i);
+        for (size_t j = 0; j < line.size(); j++)
         {
-            resultPerKey.push_back(tfRank[key][j] * idfRank[key]);
-        }
+            string key = line[j];
 
-        score[key] = resultPerKey;
+            vector<double> resultPerKey;
+
+            for (size_t k = 0; k < tfRank[key].size(); k++)
+            {
+                resultPerKey.push_back(tfRank[key][k] * idfRank[key]);
+            }
+
+            score[key] = resultPerKey;
+        }
     }
 
     return score;
@@ -116,15 +139,12 @@ unordered_map<string, vector<double>> TfIdf::calculateScore()
 
 void TfIdf::showScore()
 {
-
-    for (size_t i = 0; i < keyWords.size(); i++)
+    for (size_t i = 0; i < lineScore.size(); i++)
     {
-        string key = keyWords[i];
+        vector<double> score = lineScore.at(i);
 
-        int sortedIndex = findMaxIndex(wordsScore[key]);
-        cout << " A palavra " << key << " aparece mais no documento " << sortedIndex +1<< endl;
-
-        
+        int sortedIndex = findMaxIndex(score);
+        cout << "A frase " << i + 1  << " tem mais relevancia para o documento " << sortedIndex + 1 << endl;
     }
 }
 
@@ -193,4 +213,47 @@ int TfIdf::findMaxIndex(const std::vector<double> &arr)
     }
 
     return indice_maior;
+}
+
+vector<string> TfIdf::splitString(string str)
+{
+    vector<string> result;
+    stringstream ss(str);
+    string token;
+    char delimiter = ' ';
+
+    while (std::getline(ss, token, delimiter))
+    {
+        result.push_back(token);
+    }
+
+    return result;
+}
+
+vector<vector<double>> TfIdf::calculateScore()
+{
+    vector<vector<double>> result;
+
+    for (auto line : keyWords)
+    {
+        vector<double> score(line.size(), 0.0);
+        for (auto key : line)
+        {
+            score = sumVector(score, wordsScore[key]);
+        }
+
+        result.push_back(score);
+    }
+
+    return result;
+}
+
+vector<double> TfIdf::sumVector(vector<double> vec, vector<double> sum)
+{
+    vector<double> result(sum.size(), 0.0);
+    for (size_t i = 0; i < sum.size(); ++i)
+    {
+        result[i] = vec[i] + sum[i];
+    }
+    return result;
 }
