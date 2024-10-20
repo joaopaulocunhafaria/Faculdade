@@ -24,16 +24,45 @@ O sistema receberá como entrada:
 
 ## Estruturas de Dados
 
-Para bem modelar o trabalho em questão, de forma a obter a melhor performance possível, usaram-se diversas estruturas de dados que foram abordadas durante a matéria de Algoritmos e Estruturas de Dados I. Foram usadas, em sua grande maioria, estruturas de dados complexas ou de segunda ordem, ou seja, estruturas diferentes das primárias. Em cada etapa da implementação, foram usadas estruturas que melhor modelassem o problema a ser resolvido, de forma que, em diferentes etapas, usaram-se estruturas semelhantes para resolver problemas diferentes. Sendo assim, para cada etapa da resolução do trabalho, será apresentada as estruturas que foram empregadas, de forma a exemplificar da melhor maneira possível a solução apresentada.
+Para modelar o trabalho em questão de forma a obter a melhor performance possível, foram utilizadas diversas estruturas de dados abordadas na disciplina de Algoritmos e Estruturas de Dados I. Foram empregadas, em sua maioria, estruturas de dados complexas ou de segunda ordem, ou seja, diferentes das estruturas primárias. Em cada etapa da implementação, foram usadas estruturas que melhor modelassem o problema a ser resolvido, e, em diferentes etapas, estruturas semelhantes foram usadas para resolver problemas distintos. Sendo assim, para cada etapa da solução, serão apresentadas as estruturas empregadas, exemplificando da melhor maneira possível a solução implementada.
+
+## Leitura de Palavras
+
+Como a entrada deste trabalho, tanto as **keywords** quanto os documentos a serem ranqueados, estão em formato de arquivos `.txt`, é necessário ser capaz de acessar cada palavra de maneira eficiente. Para isso, todas as palavras a serem pesquisadas (**keywords**), após serem lidas do arquivo, foram armazenadas em um **unordered_set**, permitindo acesso rápido e eficiente. Isso porque o **unordered_set** oferece busca em tempo constante, O(1), em comparação ao **vector**, cuja busca tem custo linear, O(n). Esse ganho de performance é essencial quando lidamos com grandes volumes de dados.
 
 ## Contagem de Palavras
 
-Para bem abordar o problema apresentado, primeiramente é necessário realizar a normalização dentro dos textos presentes em cada documento. Para tal, faz-se necessário a eliminação de todas as palavras que usualmente não geram alterações no sentido de cada texto. Essas palavras são as chamadas "stop words", dentre elas podemos citar palavras genéricas como: a, as, que, da, de, entre inúmeras outras. Após realizado tal procedimento, necessita-se fazer a contagem de palavras relevantes dentro de cada documento. Para cada documento, foi usada uma estrutura do tipo **Hash Table**, ou **unordered_map** em C++, para auxiliar na contagem. Como as **Hash Tables** possuem custo de acesso com valor constante, elas são uma ótima opção para atribuir a um determinado índice um certo valor, que, nesse caso, será a quantidade de vezes que a palavra aparece no documento em questão. Ao iterar sobre as palavras presentes no documento, cada uma delas é alocada dentro da tabela. Sempre que seu valor se repete, seu índice é acessado e o valor presente nele incrementado. Dessa forma, ao percorrer todo o documento, as palavras presentes nele foram todas contadas e estão alocadas dentro da tabela, assim como a quantidade de vezes que cada uma se repete no documento.
+Para abordar corretamente o problema apresentado, primeiramente é necessário realizar a normalização dos textos presentes em cada documento. Para isso, é preciso eliminar todas as palavras que geralmente não alteram o sentido do texto. Essas palavras são as chamadas "stop words", como: "a", "as", "que", "da", "de", entre outras. Durante esse processo, é necessário contar as palavras relevantes em cada documento. Para cada documento, foi utilizada uma estrutura do tipo **Hash Table**, ou **unordered_map** em C++, para auxiliar na contagem. Como as **Hash Tables** possuem custo de acesso em tempo constante, O(1), elas são uma excelente escolha para atribuir a um índice específico o número de ocorrências de cada palavra.
 
-Contudo, tal abordagem oferece a solução para apenas um único documento, sendo necessário ampliar essa solução para quantos documentos forem necessários processar. Sendo assim, a estrutura final para realizar tal procedimento foi um array, **vector** na linguagem C++, de tabelas hash, onde cada posição do array representa as palavras processadas em cada documento. Como resultado final, para termos acesso a todas essas informações, a estrutura final ficou implementada da seguinte maneira:
+Durante a iteração sobre as palavras no documento, cada uma é alocada na tabela. Sempre que uma palavra se repete, seu índice é acessado e o valor correspondente é incrementado. Dessa forma, após percorrer todo o documento, temos todas as palavras contadas e armazenadas na tabela, junto com a quantidade de vezes que se repetem.
+
+Essa abordagem resolve o problema para um único documento, mas é necessário expandir a solução para processar vários documentos. Assim, a estrutura final para realizar essa tarefa foi um array, **vector** em C++, de tabelas hash, onde cada posição do array representa as palavras processadas em um documento. O resultado final é uma estrutura que permite acessar todas essas informações de maneira eficiente.
+
+<img src="https://github.com/user-attachments/assets/18474e58-07a9-47c9-86b8-46a7e70f51c9" width="600px" height="40px" alt="Vector de Hash">
 
 
-<img src="https://github.com/user-attachments/assets/d933efc9-0b88-429a-bb72-4a6d3ffa3a23" height="80px" alt="Vector de Hash">
+## Cálculo TF (Term Frequency)
+
+Cada palavra a ser ranqueada usando o algoritmo TF-IDF possui um valor de **Term Frequency** (TF) para cada documento. Portanto, é necessário que exista uma estrutura que armazene, para cada palavra, seus valores de **Term Frequency** em cada documento. Para modelar essa etapa, novamente foram utilizadas tabelas hash. Porém, nesta etapa, ao invés de armazenar a contagem de ocorrências de uma palavra, armazenamos um array que contém os valores de **Term Frequency** para cada documento.
+
+O resultado final é uma tabela hash onde a chave é a palavra, e o valor é um array. Cada posição do array contém o valor de **Term Frequency** para essa palavra em um documento específico. Os documentos seguem a ordem dos índices do array, ou seja, a primeira posição do array corresponde ao documento 1.
+
+<img src="https://github.com/user-attachments/assets/35ffccdb-fa4a-4272-9b09-a17914ff4de6" width="600px" height="40px" alt="TF rank">
+
+
+## Cálculo IDF (Inverse Document Frequency)
+
+O cálculo do **Inverse Document Frequency** (IDF) é mais simples, pois cada palavra possui apenas um valor de IDF. Isso permite uma modelagem mais direta. Inicialmente, considerou-se a possibilidade de usar estruturas do tipo **Tuple** para essa etapa. No entanto, como será necessário acessar os valores de IDF posteriormente, **Tuples** não são a melhor opção, pois a busca dentro de um array de **Tuples** tem custo O(n). Por outro lado, o uso de tabelas hash oferece tempo de acesso constante, O(1).
+
+Assim, os valores resultantes dos cálculos de **Inverse Document Frequency** para cada palavra foram armazenados em uma tabela hash, onde as chaves são as palavras e os valores são os resultados dos cálculos de IDF. Essa abordagem permite acesso rápido e eficiente a essas informações.
+
+<img src="https://github.com/user-attachments/assets/93d2c771-36b8-4614-9a11-92f043a2d957" width="600px" height="40px" alt="IDF rank">
+
+
+ 
+ 
+
+
 
 ## COMPILAÇÃO E EXECUÇÃO
 
