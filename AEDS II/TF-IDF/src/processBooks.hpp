@@ -6,7 +6,12 @@
 
 #include <bits/stdc++.h>
 #include <cstring>
+#include <locale>
+#include <codecvt>
+#include <algorithm>
+
 #include "tfIdf.hpp"
+
 using namespace std;
 
 class ProcessBooks
