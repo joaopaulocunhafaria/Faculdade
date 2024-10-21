@@ -11,8 +11,13 @@ class TfIdf
 {
 
 public:
+
     unordered_map<string, vector<double>> tfRank;
+
+
     unordered_map<string, double> idfRank;
+
+    
     vector<vector<string>> keyWords;
     unordered_map<string, vector<double>> wordsScore;
     vector<vector<double>> lineScore;

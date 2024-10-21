@@ -13,7 +13,9 @@ class ProcessBooks
 {
 public:
     unordered_set<string> stopWords;
+
     vector<unordered_map<string, int>> wordsInDocument;
+    
     vector<float> documentRate;
 
     int booksQuantity;
