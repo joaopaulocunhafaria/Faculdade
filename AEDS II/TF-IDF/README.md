@@ -24,7 +24,7 @@ O sistema receberá como entrada:
 
 ## Estruturas de Dados
 
-Para modelar o trabalho em questão de forma a obter a melhor performance possível, foram utilizadas diversas estruturas de dados abordadas na disciplina de Algoritmos e Estruturas de Dados I. Foram empregadas, em sua maioria, estruturas de dados complexas ou de segunda ordem, ou seja, diferentes das estruturas primárias. Em cada etapa da implementação, foram usadas estruturas que melhor modelassem o problema a ser resolvido, e, em diferentes etapas, estruturas semelhantes foram usadas para resolver problemas distintos. Sendo assim, para cada etapa da solução, serão apresentadas as estruturas empregadas, exemplificando da melhor maneira possível a solução implementada.
+Para modelar o trabalho em questão, de forma a obter a melhor performance possível, foram utilizadas diversas estruturas de dados abordadas na disciplina de Algoritmos e Estruturas de Dados I. Foram empregadas, em sua maioria, estruturas de dados complexas ou de segunda ordem, ou seja, diferentes das estruturas primárias. Em cada etapa da implementação, foram usadas estruturas que melhor modelassem o problema a ser resolvido, e, em diferentes etapas, estruturas semelhantes foram usadas para resolver problemas distintos. Sendo assim, para cada etapa da solução, serão apresentadas as estruturas empregadas, exemplificando da melhor maneira possível a solução implementada.
 
 ## Leitura de Palavras
 
@@ -38,8 +38,9 @@ Durante a iteração sobre as palavras no documento, cada uma é alocada na tabe
 
 Essa abordagem resolve o problema para um único documento, mas é necessário expandir a solução para processar vários documentos. Assim, a estrutura final para realizar essa tarefa foi um array, **vector** em C++, de tabelas hash, onde cada posição do array representa as palavras processadas em um documento. O resultado final é uma estrutura que permite acessar todas essas informações de maneira eficiente.
 
-<img src="https://github.com/user-attachments/assets/18474e58-07a9-47c9-86b8-46a7e70f51c9" width="600px" height="40px" alt="Vector de Hash">
+<a href="https://github.com/joaopaulocunhafaria/Faculdade/blob/dd1c6e58b73d0b8b527b2f6da8990a175572fc0b/AEDS%20II/TF-IDF/src/processBooks.hpp#L22"> Acesse a declaração no código </a>
 
+ 
 
 ## Cálculo TF (Term Frequency)
 
@@ -47,8 +48,8 @@ Cada palavra a ser ranqueada usando o algoritmo TF-IDF possui um valor de **Term
 
 O resultado final é uma tabela hash onde a chave é a palavra, e o valor é um array. Cada posição do array contém o valor de **Term Frequency** para essa palavra em um documento específico. Os documentos seguem a ordem dos índices do array, ou seja, a primeira posição do array corresponde ao documento 1.
 
-<img src="https://github.com/user-attachments/assets/35ffccdb-fa4a-4272-9b09-a17914ff4de6" width="600px" height="40px" alt="TF rank">
-
+<a href="https://github.com/joaopaulocunhafaria/Faculdade/blob/dd1c6e58b73d0b8b527b2f6da8990a175572fc0b/AEDS%20II/TF-IDF/src/tfIdf.hpp#L15"> Acesse a declaração no código </a>
+ 
 
 ## Cálculo IDF (Inverse Document Frequency)
 
@@ -56,11 +57,18 @@ O cálculo do **Inverse Document Frequency** (IDF) é mais simples, pois cada pa
 
 Assim, os valores resultantes dos cálculos de **Inverse Document Frequency** para cada palavra foram armazenados em uma tabela hash, onde as chaves são as palavras e os valores são os resultados dos cálculos de IDF. Essa abordagem permite acesso rápido e eficiente a essas informações.
 
-<img src="https://github.com/user-attachments/assets/93d2c771-36b8-4614-9a11-92f043a2d957" width="600px" height="40px" alt="IDF rank">
+<a href="https://github.com/joaopaulocunhafaria/Faculdade/blob/dd1c6e58b73d0b8b527b2f6da8990a175572fc0b/AEDS%20II/TF-IDF/src/tfIdf.hpp#L18"> Acesse a declaração no código </a>
+  
+## Cálculo de Relevância TF/IDF
+
+Finalmente, para termos acesso ao ranking que cada palavra possui em cada documento, é necessário realizar o cálculo proposto pelo algoritmo TF/IDF. Esse cálculo se baseia em multiplicar o TF **(Term Frequency)** de uma palavra em relação a determinado documento pelo seu IDF  **(Inverse Document Frequency)**  em relação à totalidade dos documentos.
+
+Para armazenar essas informações, utilizou-se uma estrutura semelhante à empregada para armazenar apenas o TF  de cada palavra, uma vez que cada palavra terá um array contendo seu ranking para cada documento, semelhante ao valor de TF. Portanto, foi utilizada novamente uma tabela hash, contendo cada keyword como chave e um array com os resultados dos cálculos TF/IDF como valor.
+
+Foi utilizado um vector para armazenar os valores, pois, apesar de ter um tempo de acesso pior quando comparado a outras opções possíveis, seu uso permite que os índices representem diretamente o ranking de cada documento. Dessa forma, de maneira semelhante à estrutura usada para armazenar os valores de TF, cada índice do array representa o ranking do respectivo documento. Ou seja, o primeiro valor do array corresponde ao ranking do documento 1, e assim sucessivamente.
 
 
- 
- 
+<a href="https://github.com/joaopaulocunhafaria/Faculdade/blob/dd1c6e58b73d0b8b527b2f6da8990a175572fc0b/AEDS%20II/TF-IDF/src/tfIdf.hpp#L22"> Acesse a declaração no código </a>
 
 
 
