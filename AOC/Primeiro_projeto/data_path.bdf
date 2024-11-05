@@ -376,11 +376,11 @@ applicable agreement for further details.
 		(line (pt 232 32)(pt 216 32)(line_width 3))
 	)
 	(port
-		(pt 232 136)
+		(pt 232 112)
 		(output)
 		(text "OUT_B[31..0]" (rect 0 0 77 13)(font "Arial" (font_size 8)))
-		(text "OUT_B[31..0]" (rect 134 131 211 144)(font "Arial" (font_size 8)))
-		(line (pt 232 136)(pt 216 136)(line_width 3))
+		(text "OUT_B[31..0]" (rect 134 107 211 120)(font "Arial" (font_size 8)))
+		(line (pt 232 112)(pt 216 112)(line_width 3))
 	)
 	(port
 		(pt 232 64)
@@ -404,11 +404,11 @@ applicable agreement for further details.
 		(line (pt 232 48)(pt 216 48)(line_width 3))
 	)
 	(port
-		(pt 232 120)
+		(pt 232 96)
 		(output)
 		(text "OUT_A[31..0]" (rect 0 0 77 13)(font "Arial" (font_size 8)))
-		(text "OUT_A[31..0]" (rect 134 115 211 128)(font "Arial" (font_size 8)))
-		(line (pt 232 120)(pt 216 120)(line_width 3))
+		(text "OUT_A[31..0]" (rect 134 91 211 104)(font "Arial" (font_size 8)))
+		(line (pt 232 96)(pt 216 96)(line_width 3))
 	)
 	(drawing
 		(rectangle (rect 16 16 216 144))
@@ -508,16 +508,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 472 336)
-	(pt 472 232)
-	(bus)
-)
-(connector
-	(pt 376 232)
-	(pt 472 232)
-	(bus)
-)
-(connector
 	(pt 472 232)
 	(pt 592 232)
 	(bus)
@@ -525,16 +515,6 @@ applicable agreement for further details.
 (connector
 	(pt 456 352)
 	(pt 480 352)
-	(bus)
-)
-(connector
-	(pt 456 352)
-	(pt 456 248)
-	(bus)
-)
-(connector
-	(pt 376 248)
-	(pt 456 248)
 	(bus)
 )
 (connector
@@ -560,6 +540,36 @@ applicable agreement for further details.
 (connector
 	(pt 424 80)
 	(pt 104 80)
+	(bus)
+)
+(connector
+	(pt 472 208)
+	(pt 376 208)
+	(bus)
+)
+(connector
+	(pt 472 208)
+	(pt 472 232)
+	(bus)
+)
+(connector
+	(pt 472 232)
+	(pt 472 336)
+	(bus)
+)
+(connector
+	(pt 376 224)
+	(pt 456 224)
+	(bus)
+)
+(connector
+	(pt 456 224)
+	(pt 456 248)
+	(bus)
+)
+(connector
+	(pt 456 248)
+	(pt 456 352)
 	(bus)
 )
 (junction (pt 472 232))
