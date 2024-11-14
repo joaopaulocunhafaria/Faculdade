@@ -4118,6 +4118,7 @@ OUTPUT[30] <= inst4[30].DB_MAX_OUTPUT_PORT_TYPE
 OUTPUT[31] <= inst4[31].DB_MAX_OUTPUT_PORT_TYPE
 LOAD => REGISTER4bit:inst3.LOAD
 LOAD => REGISTER4bit:inst2.LOAD
+LOAD => REGISTER4bit:inst1.LOAD
 LOAD => REGISTER4bit:inst.LOAD
 LOAD => REGISTER4bit:inst11.LOAD
 LOAD => REGISTER4bit:inst14.LOAD
@@ -4226,10 +4227,10 @@ IN_LOAD[0] => REGISTER4bit:inst.IN_LOAD[0]
 IN_LOAD[1] => REGISTER4bit:inst.IN_LOAD[1]
 IN_LOAD[2] => REGISTER4bit:inst.IN_LOAD[2]
 IN_LOAD[3] => REGISTER4bit:inst.IN_LOAD[3]
-IN_LOAD[4] => ~NO_FANOUT~
-IN_LOAD[5] => ~NO_FANOUT~
-IN_LOAD[6] => ~NO_FANOUT~
-IN_LOAD[7] => ~NO_FANOUT~
+IN_LOAD[4] => REGISTER4bit:inst1.IN_LOAD[3]
+IN_LOAD[5] => REGISTER4bit:inst1.IN_LOAD[2]
+IN_LOAD[6] => REGISTER4bit:inst1.IN_LOAD[1]
+IN_LOAD[7] => REGISTER4bit:inst1.IN_LOAD[0]
 IN_LOAD[8] => REGISTER4bit:inst2.IN_LOAD[3]
 IN_LOAD[9] => REGISTER4bit:inst2.IN_LOAD[2]
 IN_LOAD[10] => REGISTER4bit:inst2.IN_LOAD[1]
@@ -4414,6 +4415,37 @@ IN[2] => inst16.DATAIN
 IN[3] => inst20.DATAIN
 
 
+|data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst1
+OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+OUT[3] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+IN_LOAD[0] => inst4.IN0
+IN_LOAD[0] => inst666.IN0
+IN_LOAD[1] => inst7.IN0
+IN_LOAD[1] => inst6.IN0
+IN_LOAD[2] => inst19.IN0
+IN_LOAD[2] => inst17.IN0
+IN_LOAD[3] => inst23.IN0
+IN_LOAD[3] => inst21.IN0
+LOAD => inst3.IN1
+LOAD => inst6.IN1
+LOAD => inst2.IN1
+LOAD => inst666.IN1
+LOAD => inst18.IN1
+LOAD => inst17.IN1
+LOAD => inst22.IN1
+LOAD => inst21.IN1
+CLOCK => inst5.CLK
+CLOCK => inst.CLK
+CLOCK => inst16.CLK
+CLOCK => inst20.CLK
+IN[0] => inst.DATAIN
+IN[1] => inst5.DATAIN
+IN[2] => inst16.DATAIN
+IN[3] => inst20.DATAIN
+
+
 |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst
 OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
 OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
@@ -4539,37 +4571,6 @@ IN[3] => inst20.DATAIN
 
 
 |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst16
-OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
-OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
-OUT[3] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
-IN_LOAD[0] => inst4.IN0
-IN_LOAD[0] => inst666.IN0
-IN_LOAD[1] => inst7.IN0
-IN_LOAD[1] => inst6.IN0
-IN_LOAD[2] => inst19.IN0
-IN_LOAD[2] => inst17.IN0
-IN_LOAD[3] => inst23.IN0
-IN_LOAD[3] => inst21.IN0
-LOAD => inst3.IN1
-LOAD => inst6.IN1
-LOAD => inst2.IN1
-LOAD => inst666.IN1
-LOAD => inst18.IN1
-LOAD => inst17.IN1
-LOAD => inst22.IN1
-LOAD => inst21.IN1
-CLOCK => inst5.CLK
-CLOCK => inst.CLK
-CLOCK => inst16.CLK
-CLOCK => inst20.CLK
-IN[0] => inst.DATAIN
-IN[1] => inst5.DATAIN
-IN[2] => inst16.DATAIN
-IN[3] => inst20.DATAIN
-
-
-|data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst1
 OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
 OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
@@ -4763,6 +4764,7 @@ OUTPUT[30] <= inst4[30].DB_MAX_OUTPUT_PORT_TYPE
 OUTPUT[31] <= inst4[31].DB_MAX_OUTPUT_PORT_TYPE
 LOAD => REGISTER4bit:inst3.LOAD
 LOAD => REGISTER4bit:inst2.LOAD
+LOAD => REGISTER4bit:inst1.LOAD
 LOAD => REGISTER4bit:inst.LOAD
 LOAD => REGISTER4bit:inst11.LOAD
 LOAD => REGISTER4bit:inst14.LOAD
@@ -4871,10 +4873,10 @@ IN_LOAD[0] => REGISTER4bit:inst.IN_LOAD[0]
 IN_LOAD[1] => REGISTER4bit:inst.IN_LOAD[1]
 IN_LOAD[2] => REGISTER4bit:inst.IN_LOAD[2]
 IN_LOAD[3] => REGISTER4bit:inst.IN_LOAD[3]
-IN_LOAD[4] => ~NO_FANOUT~
-IN_LOAD[5] => ~NO_FANOUT~
-IN_LOAD[6] => ~NO_FANOUT~
-IN_LOAD[7] => ~NO_FANOUT~
+IN_LOAD[4] => REGISTER4bit:inst1.IN_LOAD[3]
+IN_LOAD[5] => REGISTER4bit:inst1.IN_LOAD[2]
+IN_LOAD[6] => REGISTER4bit:inst1.IN_LOAD[1]
+IN_LOAD[7] => REGISTER4bit:inst1.IN_LOAD[0]
 IN_LOAD[8] => REGISTER4bit:inst2.IN_LOAD[3]
 IN_LOAD[9] => REGISTER4bit:inst2.IN_LOAD[2]
 IN_LOAD[10] => REGISTER4bit:inst2.IN_LOAD[1]
@@ -5029,6 +5031,37 @@ IN[3] => inst20.DATAIN
 
 
 |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst2
+OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+OUT[3] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+IN_LOAD[0] => inst4.IN0
+IN_LOAD[0] => inst666.IN0
+IN_LOAD[1] => inst7.IN0
+IN_LOAD[1] => inst6.IN0
+IN_LOAD[2] => inst19.IN0
+IN_LOAD[2] => inst17.IN0
+IN_LOAD[3] => inst23.IN0
+IN_LOAD[3] => inst21.IN0
+LOAD => inst3.IN1
+LOAD => inst6.IN1
+LOAD => inst2.IN1
+LOAD => inst666.IN1
+LOAD => inst18.IN1
+LOAD => inst17.IN1
+LOAD => inst22.IN1
+LOAD => inst21.IN1
+CLOCK => inst5.CLK
+CLOCK => inst.CLK
+CLOCK => inst16.CLK
+CLOCK => inst20.CLK
+IN[0] => inst.DATAIN
+IN[1] => inst5.DATAIN
+IN[2] => inst16.DATAIN
+IN[3] => inst20.DATAIN
+
+
+|data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst1
 OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
 OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
@@ -5214,37 +5247,6 @@ IN[2] => inst16.DATAIN
 IN[3] => inst20.DATAIN
 
 
-|data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst1
-OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
-OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
-OUT[3] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
-IN_LOAD[0] => inst4.IN0
-IN_LOAD[0] => inst666.IN0
-IN_LOAD[1] => inst7.IN0
-IN_LOAD[1] => inst6.IN0
-IN_LOAD[2] => inst19.IN0
-IN_LOAD[2] => inst17.IN0
-IN_LOAD[3] => inst23.IN0
-IN_LOAD[3] => inst21.IN0
-LOAD => inst3.IN1
-LOAD => inst6.IN1
-LOAD => inst2.IN1
-LOAD => inst666.IN1
-LOAD => inst18.IN1
-LOAD => inst17.IN1
-LOAD => inst22.IN1
-LOAD => inst21.IN1
-CLOCK => inst5.CLK
-CLOCK => inst.CLK
-CLOCK => inst16.CLK
-CLOCK => inst20.CLK
-IN[0] => inst.DATAIN
-IN[1] => inst5.DATAIN
-IN[2] => inst16.DATAIN
-IN[3] => inst20.DATAIN
-
-
 |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3
 OUTPUT[0] <= inst4[0].DB_MAX_OUTPUT_PORT_TYPE
 OUTPUT[1] <= inst4[1].DB_MAX_OUTPUT_PORT_TYPE
@@ -5280,6 +5282,7 @@ OUTPUT[30] <= inst4[30].DB_MAX_OUTPUT_PORT_TYPE
 OUTPUT[31] <= inst4[31].DB_MAX_OUTPUT_PORT_TYPE
 LOAD => REGISTER4bit:inst3.LOAD
 LOAD => REGISTER4bit:inst2.LOAD
+LOAD => REGISTER4bit:inst1.LOAD
 LOAD => REGISTER4bit:inst.LOAD
 LOAD => REGISTER4bit:inst11.LOAD
 LOAD => REGISTER4bit:inst14.LOAD
@@ -5388,10 +5391,10 @@ IN_LOAD[0] => REGISTER4bit:inst.IN_LOAD[0]
 IN_LOAD[1] => REGISTER4bit:inst.IN_LOAD[1]
 IN_LOAD[2] => REGISTER4bit:inst.IN_LOAD[2]
 IN_LOAD[3] => REGISTER4bit:inst.IN_LOAD[3]
-IN_LOAD[4] => ~NO_FANOUT~
-IN_LOAD[5] => ~NO_FANOUT~
-IN_LOAD[6] => ~NO_FANOUT~
-IN_LOAD[7] => ~NO_FANOUT~
+IN_LOAD[4] => REGISTER4bit:inst1.IN_LOAD[3]
+IN_LOAD[5] => REGISTER4bit:inst1.IN_LOAD[2]
+IN_LOAD[6] => REGISTER4bit:inst1.IN_LOAD[1]
+IN_LOAD[7] => REGISTER4bit:inst1.IN_LOAD[0]
 IN_LOAD[8] => REGISTER4bit:inst2.IN_LOAD[3]
 IN_LOAD[9] => REGISTER4bit:inst2.IN_LOAD[2]
 IN_LOAD[10] => REGISTER4bit:inst2.IN_LOAD[1]
@@ -5576,6 +5579,37 @@ IN[2] => inst16.DATAIN
 IN[3] => inst20.DATAIN
 
 
+|data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst1
+OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+OUT[3] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+IN_LOAD[0] => inst4.IN0
+IN_LOAD[0] => inst666.IN0
+IN_LOAD[1] => inst7.IN0
+IN_LOAD[1] => inst6.IN0
+IN_LOAD[2] => inst19.IN0
+IN_LOAD[2] => inst17.IN0
+IN_LOAD[3] => inst23.IN0
+IN_LOAD[3] => inst21.IN0
+LOAD => inst3.IN1
+LOAD => inst6.IN1
+LOAD => inst2.IN1
+LOAD => inst666.IN1
+LOAD => inst18.IN1
+LOAD => inst17.IN1
+LOAD => inst22.IN1
+LOAD => inst21.IN1
+CLOCK => inst5.CLK
+CLOCK => inst.CLK
+CLOCK => inst16.CLK
+CLOCK => inst20.CLK
+IN[0] => inst.DATAIN
+IN[1] => inst5.DATAIN
+IN[2] => inst16.DATAIN
+IN[3] => inst20.DATAIN
+
+
 |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst
 OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
 OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
@@ -5701,37 +5735,6 @@ IN[3] => inst20.DATAIN
 
 
 |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst16
-OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
-OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
-OUT[3] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
-IN_LOAD[0] => inst4.IN0
-IN_LOAD[0] => inst666.IN0
-IN_LOAD[1] => inst7.IN0
-IN_LOAD[1] => inst6.IN0
-IN_LOAD[2] => inst19.IN0
-IN_LOAD[2] => inst17.IN0
-IN_LOAD[3] => inst23.IN0
-IN_LOAD[3] => inst21.IN0
-LOAD => inst3.IN1
-LOAD => inst6.IN1
-LOAD => inst2.IN1
-LOAD => inst666.IN1
-LOAD => inst18.IN1
-LOAD => inst17.IN1
-LOAD => inst22.IN1
-LOAD => inst21.IN1
-CLOCK => inst5.CLK
-CLOCK => inst.CLK
-CLOCK => inst16.CLK
-CLOCK => inst20.CLK
-IN[0] => inst.DATAIN
-IN[1] => inst5.DATAIN
-IN[2] => inst16.DATAIN
-IN[3] => inst20.DATAIN
-
-
-|data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst1
 OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
 OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
@@ -5967,6 +5970,7 @@ OUTPUT[30] <= inst4[30].DB_MAX_OUTPUT_PORT_TYPE
 OUTPUT[31] <= inst4[31].DB_MAX_OUTPUT_PORT_TYPE
 LOAD => REGISTER4bit:inst3.LOAD
 LOAD => REGISTER4bit:inst2.LOAD
+LOAD => REGISTER4bit:inst1.LOAD
 LOAD => REGISTER4bit:inst.LOAD
 LOAD => REGISTER4bit:inst11.LOAD
 LOAD => REGISTER4bit:inst14.LOAD
@@ -6075,10 +6079,10 @@ IN_LOAD[0] => REGISTER4bit:inst.IN_LOAD[0]
 IN_LOAD[1] => REGISTER4bit:inst.IN_LOAD[1]
 IN_LOAD[2] => REGISTER4bit:inst.IN_LOAD[2]
 IN_LOAD[3] => REGISTER4bit:inst.IN_LOAD[3]
-IN_LOAD[4] => ~NO_FANOUT~
-IN_LOAD[5] => ~NO_FANOUT~
-IN_LOAD[6] => ~NO_FANOUT~
-IN_LOAD[7] => ~NO_FANOUT~
+IN_LOAD[4] => REGISTER4bit:inst1.IN_LOAD[3]
+IN_LOAD[5] => REGISTER4bit:inst1.IN_LOAD[2]
+IN_LOAD[6] => REGISTER4bit:inst1.IN_LOAD[1]
+IN_LOAD[7] => REGISTER4bit:inst1.IN_LOAD[0]
 IN_LOAD[8] => REGISTER4bit:inst2.IN_LOAD[3]
 IN_LOAD[9] => REGISTER4bit:inst2.IN_LOAD[2]
 IN_LOAD[10] => REGISTER4bit:inst2.IN_LOAD[1]
@@ -6233,6 +6237,37 @@ IN[3] => inst20.DATAIN
 
 
 |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst2
+OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+OUT[3] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+IN_LOAD[0] => inst4.IN0
+IN_LOAD[0] => inst666.IN0
+IN_LOAD[1] => inst7.IN0
+IN_LOAD[1] => inst6.IN0
+IN_LOAD[2] => inst19.IN0
+IN_LOAD[2] => inst17.IN0
+IN_LOAD[3] => inst23.IN0
+IN_LOAD[3] => inst21.IN0
+LOAD => inst3.IN1
+LOAD => inst6.IN1
+LOAD => inst2.IN1
+LOAD => inst666.IN1
+LOAD => inst18.IN1
+LOAD => inst17.IN1
+LOAD => inst22.IN1
+LOAD => inst21.IN1
+CLOCK => inst5.CLK
+CLOCK => inst.CLK
+CLOCK => inst16.CLK
+CLOCK => inst20.CLK
+IN[0] => inst.DATAIN
+IN[1] => inst5.DATAIN
+IN[2] => inst16.DATAIN
+IN[3] => inst20.DATAIN
+
+
+|data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst1
 OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
 OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
@@ -6418,37 +6453,6 @@ IN[2] => inst16.DATAIN
 IN[3] => inst20.DATAIN
 
 
-|data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst1
-OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
-OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
-OUT[3] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
-IN_LOAD[0] => inst4.IN0
-IN_LOAD[0] => inst666.IN0
-IN_LOAD[1] => inst7.IN0
-IN_LOAD[1] => inst6.IN0
-IN_LOAD[2] => inst19.IN0
-IN_LOAD[2] => inst17.IN0
-IN_LOAD[3] => inst23.IN0
-IN_LOAD[3] => inst21.IN0
-LOAD => inst3.IN1
-LOAD => inst6.IN1
-LOAD => inst2.IN1
-LOAD => inst666.IN1
-LOAD => inst18.IN1
-LOAD => inst17.IN1
-LOAD => inst22.IN1
-LOAD => inst21.IN1
-CLOCK => inst5.CLK
-CLOCK => inst.CLK
-CLOCK => inst16.CLK
-CLOCK => inst20.CLK
-IN[0] => inst.DATAIN
-IN[1] => inst5.DATAIN
-IN[2] => inst16.DATAIN
-IN[3] => inst20.DATAIN
-
-
 |data_path|BANK_REG:inst1|H:inst10
 OUT_B[0] <= REGISTER32bit:inst.OUTPUT[0]
 OUT_B[1] <= REGISTER32bit:inst.OUTPUT[1]
@@ -6589,6 +6593,7 @@ OUTPUT[30] <= inst4[30].DB_MAX_OUTPUT_PORT_TYPE
 OUTPUT[31] <= inst4[31].DB_MAX_OUTPUT_PORT_TYPE
 LOAD => REGISTER4bit:inst3.LOAD
 LOAD => REGISTER4bit:inst2.LOAD
+LOAD => REGISTER4bit:inst1.LOAD
 LOAD => REGISTER4bit:inst.LOAD
 LOAD => REGISTER4bit:inst11.LOAD
 LOAD => REGISTER4bit:inst14.LOAD
@@ -6697,10 +6702,10 @@ IN_LOAD[0] => REGISTER4bit:inst.IN_LOAD[0]
 IN_LOAD[1] => REGISTER4bit:inst.IN_LOAD[1]
 IN_LOAD[2] => REGISTER4bit:inst.IN_LOAD[2]
 IN_LOAD[3] => REGISTER4bit:inst.IN_LOAD[3]
-IN_LOAD[4] => ~NO_FANOUT~
-IN_LOAD[5] => ~NO_FANOUT~
-IN_LOAD[6] => ~NO_FANOUT~
-IN_LOAD[7] => ~NO_FANOUT~
+IN_LOAD[4] => REGISTER4bit:inst1.IN_LOAD[3]
+IN_LOAD[5] => REGISTER4bit:inst1.IN_LOAD[2]
+IN_LOAD[6] => REGISTER4bit:inst1.IN_LOAD[1]
+IN_LOAD[7] => REGISTER4bit:inst1.IN_LOAD[0]
 IN_LOAD[8] => REGISTER4bit:inst2.IN_LOAD[3]
 IN_LOAD[9] => REGISTER4bit:inst2.IN_LOAD[2]
 IN_LOAD[10] => REGISTER4bit:inst2.IN_LOAD[1]
@@ -6885,6 +6890,37 @@ IN[2] => inst16.DATAIN
 IN[3] => inst20.DATAIN
 
 
+|data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst1
+OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+OUT[3] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+IN_LOAD[0] => inst4.IN0
+IN_LOAD[0] => inst666.IN0
+IN_LOAD[1] => inst7.IN0
+IN_LOAD[1] => inst6.IN0
+IN_LOAD[2] => inst19.IN0
+IN_LOAD[2] => inst17.IN0
+IN_LOAD[3] => inst23.IN0
+IN_LOAD[3] => inst21.IN0
+LOAD => inst3.IN1
+LOAD => inst6.IN1
+LOAD => inst2.IN1
+LOAD => inst666.IN1
+LOAD => inst18.IN1
+LOAD => inst17.IN1
+LOAD => inst22.IN1
+LOAD => inst21.IN1
+CLOCK => inst5.CLK
+CLOCK => inst.CLK
+CLOCK => inst16.CLK
+CLOCK => inst20.CLK
+IN[0] => inst.DATAIN
+IN[1] => inst5.DATAIN
+IN[2] => inst16.DATAIN
+IN[3] => inst20.DATAIN
+
+
 |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst
 OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
 OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
@@ -7010,37 +7046,6 @@ IN[3] => inst20.DATAIN
 
 
 |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst16
-OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
-OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
-OUT[3] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
-IN_LOAD[0] => inst4.IN0
-IN_LOAD[0] => inst666.IN0
-IN_LOAD[1] => inst7.IN0
-IN_LOAD[1] => inst6.IN0
-IN_LOAD[2] => inst19.IN0
-IN_LOAD[2] => inst17.IN0
-IN_LOAD[3] => inst23.IN0
-IN_LOAD[3] => inst21.IN0
-LOAD => inst3.IN1
-LOAD => inst6.IN1
-LOAD => inst2.IN1
-LOAD => inst666.IN1
-LOAD => inst18.IN1
-LOAD => inst17.IN1
-LOAD => inst22.IN1
-LOAD => inst21.IN1
-CLOCK => inst5.CLK
-CLOCK => inst.CLK
-CLOCK => inst16.CLK
-CLOCK => inst20.CLK
-IN[0] => inst.DATAIN
-IN[1] => inst5.DATAIN
-IN[2] => inst16.DATAIN
-IN[3] => inst20.DATAIN
-
-
-|data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst1
 OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
 OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
@@ -7243,6 +7248,7 @@ OUTPUT[30] <= inst4[30].DB_MAX_OUTPUT_PORT_TYPE
 OUTPUT[31] <= inst4[31].DB_MAX_OUTPUT_PORT_TYPE
 LOAD => REGISTER4bit:inst3.LOAD
 LOAD => REGISTER4bit:inst2.LOAD
+LOAD => REGISTER4bit:inst1.LOAD
 LOAD => REGISTER4bit:inst.LOAD
 LOAD => REGISTER4bit:inst11.LOAD
 LOAD => REGISTER4bit:inst14.LOAD
@@ -7351,10 +7357,10 @@ IN_LOAD[0] => REGISTER4bit:inst.IN_LOAD[0]
 IN_LOAD[1] => REGISTER4bit:inst.IN_LOAD[1]
 IN_LOAD[2] => REGISTER4bit:inst.IN_LOAD[2]
 IN_LOAD[3] => REGISTER4bit:inst.IN_LOAD[3]
-IN_LOAD[4] => ~NO_FANOUT~
-IN_LOAD[5] => ~NO_FANOUT~
-IN_LOAD[6] => ~NO_FANOUT~
-IN_LOAD[7] => ~NO_FANOUT~
+IN_LOAD[4] => REGISTER4bit:inst1.IN_LOAD[3]
+IN_LOAD[5] => REGISTER4bit:inst1.IN_LOAD[2]
+IN_LOAD[6] => REGISTER4bit:inst1.IN_LOAD[1]
+IN_LOAD[7] => REGISTER4bit:inst1.IN_LOAD[0]
 IN_LOAD[8] => REGISTER4bit:inst2.IN_LOAD[3]
 IN_LOAD[9] => REGISTER4bit:inst2.IN_LOAD[2]
 IN_LOAD[10] => REGISTER4bit:inst2.IN_LOAD[1]
@@ -7509,6 +7515,37 @@ IN[3] => inst20.DATAIN
 
 
 |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst2
+OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+OUT[3] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+IN_LOAD[0] => inst4.IN0
+IN_LOAD[0] => inst666.IN0
+IN_LOAD[1] => inst7.IN0
+IN_LOAD[1] => inst6.IN0
+IN_LOAD[2] => inst19.IN0
+IN_LOAD[2] => inst17.IN0
+IN_LOAD[3] => inst23.IN0
+IN_LOAD[3] => inst21.IN0
+LOAD => inst3.IN1
+LOAD => inst6.IN1
+LOAD => inst2.IN1
+LOAD => inst666.IN1
+LOAD => inst18.IN1
+LOAD => inst17.IN1
+LOAD => inst22.IN1
+LOAD => inst21.IN1
+CLOCK => inst5.CLK
+CLOCK => inst.CLK
+CLOCK => inst16.CLK
+CLOCK => inst20.CLK
+IN[0] => inst.DATAIN
+IN[1] => inst5.DATAIN
+IN[2] => inst16.DATAIN
+IN[3] => inst20.DATAIN
+
+
+|data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst1
 OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
 OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
@@ -7694,37 +7731,6 @@ IN[2] => inst16.DATAIN
 IN[3] => inst20.DATAIN
 
 
-|data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst1
-OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
-OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
-OUT[3] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
-IN_LOAD[0] => inst4.IN0
-IN_LOAD[0] => inst666.IN0
-IN_LOAD[1] => inst7.IN0
-IN_LOAD[1] => inst6.IN0
-IN_LOAD[2] => inst19.IN0
-IN_LOAD[2] => inst17.IN0
-IN_LOAD[3] => inst23.IN0
-IN_LOAD[3] => inst21.IN0
-LOAD => inst3.IN1
-LOAD => inst6.IN1
-LOAD => inst2.IN1
-LOAD => inst666.IN1
-LOAD => inst18.IN1
-LOAD => inst17.IN1
-LOAD => inst22.IN1
-LOAD => inst21.IN1
-CLOCK => inst5.CLK
-CLOCK => inst.CLK
-CLOCK => inst16.CLK
-CLOCK => inst20.CLK
-IN[0] => inst.DATAIN
-IN[1] => inst5.DATAIN
-IN[2] => inst16.DATAIN
-IN[3] => inst20.DATAIN
-
-
 |data_path|BANK_REG:inst1|SP:inst1
 OUT_B[0] <= REGISTER32bit:inst.OUTPUT[0]
 OUT_B[1] <= REGISTER32bit:inst.OUTPUT[1]
@@ -7865,6 +7871,7 @@ OUTPUT[30] <= inst4[30].DB_MAX_OUTPUT_PORT_TYPE
 OUTPUT[31] <= inst4[31].DB_MAX_OUTPUT_PORT_TYPE
 LOAD => REGISTER4bit:inst3.LOAD
 LOAD => REGISTER4bit:inst2.LOAD
+LOAD => REGISTER4bit:inst1.LOAD
 LOAD => REGISTER4bit:inst.LOAD
 LOAD => REGISTER4bit:inst11.LOAD
 LOAD => REGISTER4bit:inst14.LOAD
@@ -7973,10 +7980,10 @@ IN_LOAD[0] => REGISTER4bit:inst.IN_LOAD[0]
 IN_LOAD[1] => REGISTER4bit:inst.IN_LOAD[1]
 IN_LOAD[2] => REGISTER4bit:inst.IN_LOAD[2]
 IN_LOAD[3] => REGISTER4bit:inst.IN_LOAD[3]
-IN_LOAD[4] => ~NO_FANOUT~
-IN_LOAD[5] => ~NO_FANOUT~
-IN_LOAD[6] => ~NO_FANOUT~
-IN_LOAD[7] => ~NO_FANOUT~
+IN_LOAD[4] => REGISTER4bit:inst1.IN_LOAD[3]
+IN_LOAD[5] => REGISTER4bit:inst1.IN_LOAD[2]
+IN_LOAD[6] => REGISTER4bit:inst1.IN_LOAD[1]
+IN_LOAD[7] => REGISTER4bit:inst1.IN_LOAD[0]
 IN_LOAD[8] => REGISTER4bit:inst2.IN_LOAD[3]
 IN_LOAD[9] => REGISTER4bit:inst2.IN_LOAD[2]
 IN_LOAD[10] => REGISTER4bit:inst2.IN_LOAD[1]
@@ -8131,6 +8138,37 @@ IN[3] => inst20.DATAIN
 
 
 |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst2
+OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+OUT[3] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+IN_LOAD[0] => inst4.IN0
+IN_LOAD[0] => inst666.IN0
+IN_LOAD[1] => inst7.IN0
+IN_LOAD[1] => inst6.IN0
+IN_LOAD[2] => inst19.IN0
+IN_LOAD[2] => inst17.IN0
+IN_LOAD[3] => inst23.IN0
+IN_LOAD[3] => inst21.IN0
+LOAD => inst3.IN1
+LOAD => inst6.IN1
+LOAD => inst2.IN1
+LOAD => inst666.IN1
+LOAD => inst18.IN1
+LOAD => inst17.IN1
+LOAD => inst22.IN1
+LOAD => inst21.IN1
+CLOCK => inst5.CLK
+CLOCK => inst.CLK
+CLOCK => inst16.CLK
+CLOCK => inst20.CLK
+IN[0] => inst.DATAIN
+IN[1] => inst5.DATAIN
+IN[2] => inst16.DATAIN
+IN[3] => inst20.DATAIN
+
+
+|data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst1
 OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
 OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
@@ -8316,37 +8354,6 @@ IN[2] => inst16.DATAIN
 IN[3] => inst20.DATAIN
 
 
-|data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst1
-OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
-OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
-OUT[3] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
-IN_LOAD[0] => inst4.IN0
-IN_LOAD[0] => inst666.IN0
-IN_LOAD[1] => inst7.IN0
-IN_LOAD[1] => inst6.IN0
-IN_LOAD[2] => inst19.IN0
-IN_LOAD[2] => inst17.IN0
-IN_LOAD[3] => inst23.IN0
-IN_LOAD[3] => inst21.IN0
-LOAD => inst3.IN1
-LOAD => inst6.IN1
-LOAD => inst2.IN1
-LOAD => inst666.IN1
-LOAD => inst18.IN1
-LOAD => inst17.IN1
-LOAD => inst22.IN1
-LOAD => inst21.IN1
-CLOCK => inst5.CLK
-CLOCK => inst.CLK
-CLOCK => inst16.CLK
-CLOCK => inst20.CLK
-IN[0] => inst.DATAIN
-IN[1] => inst5.DATAIN
-IN[2] => inst16.DATAIN
-IN[3] => inst20.DATAIN
-
-
 |data_path|BANK_REG:inst1|LV:inst2
 OUT_B[0] <= REGISTER32bit:inst.OUTPUT[0]
 OUT_B[1] <= REGISTER32bit:inst.OUTPUT[1]
@@ -8487,6 +8494,7 @@ OUTPUT[30] <= inst4[30].DB_MAX_OUTPUT_PORT_TYPE
 OUTPUT[31] <= inst4[31].DB_MAX_OUTPUT_PORT_TYPE
 LOAD => REGISTER4bit:inst3.LOAD
 LOAD => REGISTER4bit:inst2.LOAD
+LOAD => REGISTER4bit:inst1.LOAD
 LOAD => REGISTER4bit:inst.LOAD
 LOAD => REGISTER4bit:inst11.LOAD
 LOAD => REGISTER4bit:inst14.LOAD
@@ -8595,10 +8603,10 @@ IN_LOAD[0] => REGISTER4bit:inst.IN_LOAD[0]
 IN_LOAD[1] => REGISTER4bit:inst.IN_LOAD[1]
 IN_LOAD[2] => REGISTER4bit:inst.IN_LOAD[2]
 IN_LOAD[3] => REGISTER4bit:inst.IN_LOAD[3]
-IN_LOAD[4] => ~NO_FANOUT~
-IN_LOAD[5] => ~NO_FANOUT~
-IN_LOAD[6] => ~NO_FANOUT~
-IN_LOAD[7] => ~NO_FANOUT~
+IN_LOAD[4] => REGISTER4bit:inst1.IN_LOAD[3]
+IN_LOAD[5] => REGISTER4bit:inst1.IN_LOAD[2]
+IN_LOAD[6] => REGISTER4bit:inst1.IN_LOAD[1]
+IN_LOAD[7] => REGISTER4bit:inst1.IN_LOAD[0]
 IN_LOAD[8] => REGISTER4bit:inst2.IN_LOAD[3]
 IN_LOAD[9] => REGISTER4bit:inst2.IN_LOAD[2]
 IN_LOAD[10] => REGISTER4bit:inst2.IN_LOAD[1]
@@ -8753,6 +8761,37 @@ IN[3] => inst20.DATAIN
 
 
 |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst2
+OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+OUT[3] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+IN_LOAD[0] => inst4.IN0
+IN_LOAD[0] => inst666.IN0
+IN_LOAD[1] => inst7.IN0
+IN_LOAD[1] => inst6.IN0
+IN_LOAD[2] => inst19.IN0
+IN_LOAD[2] => inst17.IN0
+IN_LOAD[3] => inst23.IN0
+IN_LOAD[3] => inst21.IN0
+LOAD => inst3.IN1
+LOAD => inst6.IN1
+LOAD => inst2.IN1
+LOAD => inst666.IN1
+LOAD => inst18.IN1
+LOAD => inst17.IN1
+LOAD => inst22.IN1
+LOAD => inst21.IN1
+CLOCK => inst5.CLK
+CLOCK => inst.CLK
+CLOCK => inst16.CLK
+CLOCK => inst20.CLK
+IN[0] => inst.DATAIN
+IN[1] => inst5.DATAIN
+IN[2] => inst16.DATAIN
+IN[3] => inst20.DATAIN
+
+
+|data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst1
 OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
 OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
@@ -8938,37 +8977,6 @@ IN[2] => inst16.DATAIN
 IN[3] => inst20.DATAIN
 
 
-|data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst1
-OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
-OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
-OUT[3] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
-IN_LOAD[0] => inst4.IN0
-IN_LOAD[0] => inst666.IN0
-IN_LOAD[1] => inst7.IN0
-IN_LOAD[1] => inst6.IN0
-IN_LOAD[2] => inst19.IN0
-IN_LOAD[2] => inst17.IN0
-IN_LOAD[3] => inst23.IN0
-IN_LOAD[3] => inst21.IN0
-LOAD => inst3.IN1
-LOAD => inst6.IN1
-LOAD => inst2.IN1
-LOAD => inst666.IN1
-LOAD => inst18.IN1
-LOAD => inst17.IN1
-LOAD => inst22.IN1
-LOAD => inst21.IN1
-CLOCK => inst5.CLK
-CLOCK => inst.CLK
-CLOCK => inst16.CLK
-CLOCK => inst20.CLK
-IN[0] => inst.DATAIN
-IN[1] => inst5.DATAIN
-IN[2] => inst16.DATAIN
-IN[3] => inst20.DATAIN
-
-
 |data_path|BANK_REG:inst1|CPP:inst6
 OUT_B[0] <= REGISTER32bit:inst.OUTPUT[0]
 OUT_B[1] <= REGISTER32bit:inst.OUTPUT[1]
@@ -9109,6 +9117,7 @@ OUTPUT[30] <= inst4[30].DB_MAX_OUTPUT_PORT_TYPE
 OUTPUT[31] <= inst4[31].DB_MAX_OUTPUT_PORT_TYPE
 LOAD => REGISTER4bit:inst3.LOAD
 LOAD => REGISTER4bit:inst2.LOAD
+LOAD => REGISTER4bit:inst1.LOAD
 LOAD => REGISTER4bit:inst.LOAD
 LOAD => REGISTER4bit:inst11.LOAD
 LOAD => REGISTER4bit:inst14.LOAD
@@ -9217,10 +9226,10 @@ IN_LOAD[0] => REGISTER4bit:inst.IN_LOAD[0]
 IN_LOAD[1] => REGISTER4bit:inst.IN_LOAD[1]
 IN_LOAD[2] => REGISTER4bit:inst.IN_LOAD[2]
 IN_LOAD[3] => REGISTER4bit:inst.IN_LOAD[3]
-IN_LOAD[4] => ~NO_FANOUT~
-IN_LOAD[5] => ~NO_FANOUT~
-IN_LOAD[6] => ~NO_FANOUT~
-IN_LOAD[7] => ~NO_FANOUT~
+IN_LOAD[4] => REGISTER4bit:inst1.IN_LOAD[3]
+IN_LOAD[5] => REGISTER4bit:inst1.IN_LOAD[2]
+IN_LOAD[6] => REGISTER4bit:inst1.IN_LOAD[1]
+IN_LOAD[7] => REGISTER4bit:inst1.IN_LOAD[0]
 IN_LOAD[8] => REGISTER4bit:inst2.IN_LOAD[3]
 IN_LOAD[9] => REGISTER4bit:inst2.IN_LOAD[2]
 IN_LOAD[10] => REGISTER4bit:inst2.IN_LOAD[1]
@@ -9375,6 +9384,37 @@ IN[3] => inst20.DATAIN
 
 
 |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst2
+OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+OUT[3] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+IN_LOAD[0] => inst4.IN0
+IN_LOAD[0] => inst666.IN0
+IN_LOAD[1] => inst7.IN0
+IN_LOAD[1] => inst6.IN0
+IN_LOAD[2] => inst19.IN0
+IN_LOAD[2] => inst17.IN0
+IN_LOAD[3] => inst23.IN0
+IN_LOAD[3] => inst21.IN0
+LOAD => inst3.IN1
+LOAD => inst6.IN1
+LOAD => inst2.IN1
+LOAD => inst666.IN1
+LOAD => inst18.IN1
+LOAD => inst17.IN1
+LOAD => inst22.IN1
+LOAD => inst21.IN1
+CLOCK => inst5.CLK
+CLOCK => inst.CLK
+CLOCK => inst16.CLK
+CLOCK => inst20.CLK
+IN[0] => inst.DATAIN
+IN[1] => inst5.DATAIN
+IN[2] => inst16.DATAIN
+IN[3] => inst20.DATAIN
+
+
+|data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst1
 OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
 OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
@@ -9560,37 +9600,6 @@ IN[2] => inst16.DATAIN
 IN[3] => inst20.DATAIN
 
 
-|data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst1
-OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
-OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
-OUT[3] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
-IN_LOAD[0] => inst4.IN0
-IN_LOAD[0] => inst666.IN0
-IN_LOAD[1] => inst7.IN0
-IN_LOAD[1] => inst6.IN0
-IN_LOAD[2] => inst19.IN0
-IN_LOAD[2] => inst17.IN0
-IN_LOAD[3] => inst23.IN0
-IN_LOAD[3] => inst21.IN0
-LOAD => inst3.IN1
-LOAD => inst6.IN1
-LOAD => inst2.IN1
-LOAD => inst666.IN1
-LOAD => inst18.IN1
-LOAD => inst17.IN1
-LOAD => inst22.IN1
-LOAD => inst21.IN1
-CLOCK => inst5.CLK
-CLOCK => inst.CLK
-CLOCK => inst16.CLK
-CLOCK => inst20.CLK
-IN[0] => inst.DATAIN
-IN[1] => inst5.DATAIN
-IN[2] => inst16.DATAIN
-IN[3] => inst20.DATAIN
-
-
 |data_path|BANK_REG:inst1|TOS:inst7
 OUT_B[0] <= REGISTER32bit:inst.OUTPUT[0]
 OUT_B[1] <= REGISTER32bit:inst.OUTPUT[1]
@@ -9731,6 +9740,7 @@ OUTPUT[30] <= inst4[30].DB_MAX_OUTPUT_PORT_TYPE
 OUTPUT[31] <= inst4[31].DB_MAX_OUTPUT_PORT_TYPE
 LOAD => REGISTER4bit:inst3.LOAD
 LOAD => REGISTER4bit:inst2.LOAD
+LOAD => REGISTER4bit:inst1.LOAD
 LOAD => REGISTER4bit:inst.LOAD
 LOAD => REGISTER4bit:inst11.LOAD
 LOAD => REGISTER4bit:inst14.LOAD
@@ -9839,10 +9849,10 @@ IN_LOAD[0] => REGISTER4bit:inst.IN_LOAD[0]
 IN_LOAD[1] => REGISTER4bit:inst.IN_LOAD[1]
 IN_LOAD[2] => REGISTER4bit:inst.IN_LOAD[2]
 IN_LOAD[3] => REGISTER4bit:inst.IN_LOAD[3]
-IN_LOAD[4] => ~NO_FANOUT~
-IN_LOAD[5] => ~NO_FANOUT~
-IN_LOAD[6] => ~NO_FANOUT~
-IN_LOAD[7] => ~NO_FANOUT~
+IN_LOAD[4] => REGISTER4bit:inst1.IN_LOAD[3]
+IN_LOAD[5] => REGISTER4bit:inst1.IN_LOAD[2]
+IN_LOAD[6] => REGISTER4bit:inst1.IN_LOAD[1]
+IN_LOAD[7] => REGISTER4bit:inst1.IN_LOAD[0]
 IN_LOAD[8] => REGISTER4bit:inst2.IN_LOAD[3]
 IN_LOAD[9] => REGISTER4bit:inst2.IN_LOAD[2]
 IN_LOAD[10] => REGISTER4bit:inst2.IN_LOAD[1]
@@ -9997,6 +10007,37 @@ IN[3] => inst20.DATAIN
 
 
 |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst2
+OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+OUT[3] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+IN_LOAD[0] => inst4.IN0
+IN_LOAD[0] => inst666.IN0
+IN_LOAD[1] => inst7.IN0
+IN_LOAD[1] => inst6.IN0
+IN_LOAD[2] => inst19.IN0
+IN_LOAD[2] => inst17.IN0
+IN_LOAD[3] => inst23.IN0
+IN_LOAD[3] => inst21.IN0
+LOAD => inst3.IN1
+LOAD => inst6.IN1
+LOAD => inst2.IN1
+LOAD => inst666.IN1
+LOAD => inst18.IN1
+LOAD => inst17.IN1
+LOAD => inst22.IN1
+LOAD => inst21.IN1
+CLOCK => inst5.CLK
+CLOCK => inst.CLK
+CLOCK => inst16.CLK
+CLOCK => inst20.CLK
+IN[0] => inst.DATAIN
+IN[1] => inst5.DATAIN
+IN[2] => inst16.DATAIN
+IN[3] => inst20.DATAIN
+
+
+|data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst1
 OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
 OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
@@ -10182,37 +10223,6 @@ IN[2] => inst16.DATAIN
 IN[3] => inst20.DATAIN
 
 
-|data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst1
-OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
-OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
-OUT[3] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
-IN_LOAD[0] => inst4.IN0
-IN_LOAD[0] => inst666.IN0
-IN_LOAD[1] => inst7.IN0
-IN_LOAD[1] => inst6.IN0
-IN_LOAD[2] => inst19.IN0
-IN_LOAD[2] => inst17.IN0
-IN_LOAD[3] => inst23.IN0
-IN_LOAD[3] => inst21.IN0
-LOAD => inst3.IN1
-LOAD => inst6.IN1
-LOAD => inst2.IN1
-LOAD => inst666.IN1
-LOAD => inst18.IN1
-LOAD => inst17.IN1
-LOAD => inst22.IN1
-LOAD => inst21.IN1
-CLOCK => inst5.CLK
-CLOCK => inst.CLK
-CLOCK => inst16.CLK
-CLOCK => inst20.CLK
-IN[0] => inst.DATAIN
-IN[1] => inst5.DATAIN
-IN[2] => inst16.DATAIN
-IN[3] => inst20.DATAIN
-
-
 |data_path|BANK_REG:inst1|OPC:inst8
 OUT_B[0] <= REGISTER32bit:inst.OUTPUT[0]
 OUT_B[1] <= REGISTER32bit:inst.OUTPUT[1]
@@ -10353,6 +10363,7 @@ OUTPUT[30] <= inst4[30].DB_MAX_OUTPUT_PORT_TYPE
 OUTPUT[31] <= inst4[31].DB_MAX_OUTPUT_PORT_TYPE
 LOAD => REGISTER4bit:inst3.LOAD
 LOAD => REGISTER4bit:inst2.LOAD
+LOAD => REGISTER4bit:inst1.LOAD
 LOAD => REGISTER4bit:inst.LOAD
 LOAD => REGISTER4bit:inst11.LOAD
 LOAD => REGISTER4bit:inst14.LOAD
@@ -10461,10 +10472,10 @@ IN_LOAD[0] => REGISTER4bit:inst.IN_LOAD[0]
 IN_LOAD[1] => REGISTER4bit:inst.IN_LOAD[1]
 IN_LOAD[2] => REGISTER4bit:inst.IN_LOAD[2]
 IN_LOAD[3] => REGISTER4bit:inst.IN_LOAD[3]
-IN_LOAD[4] => ~NO_FANOUT~
-IN_LOAD[5] => ~NO_FANOUT~
-IN_LOAD[6] => ~NO_FANOUT~
-IN_LOAD[7] => ~NO_FANOUT~
+IN_LOAD[4] => REGISTER4bit:inst1.IN_LOAD[3]
+IN_LOAD[5] => REGISTER4bit:inst1.IN_LOAD[2]
+IN_LOAD[6] => REGISTER4bit:inst1.IN_LOAD[1]
+IN_LOAD[7] => REGISTER4bit:inst1.IN_LOAD[0]
 IN_LOAD[8] => REGISTER4bit:inst2.IN_LOAD[3]
 IN_LOAD[9] => REGISTER4bit:inst2.IN_LOAD[2]
 IN_LOAD[10] => REGISTER4bit:inst2.IN_LOAD[1]
@@ -10649,6 +10660,37 @@ IN[2] => inst16.DATAIN
 IN[3] => inst20.DATAIN
 
 
+|data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst1
+OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
+OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
+OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
+OUT[3] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
+IN_LOAD[0] => inst4.IN0
+IN_LOAD[0] => inst666.IN0
+IN_LOAD[1] => inst7.IN0
+IN_LOAD[1] => inst6.IN0
+IN_LOAD[2] => inst19.IN0
+IN_LOAD[2] => inst17.IN0
+IN_LOAD[3] => inst23.IN0
+IN_LOAD[3] => inst21.IN0
+LOAD => inst3.IN1
+LOAD => inst6.IN1
+LOAD => inst2.IN1
+LOAD => inst666.IN1
+LOAD => inst18.IN1
+LOAD => inst17.IN1
+LOAD => inst22.IN1
+LOAD => inst21.IN1
+CLOCK => inst5.CLK
+CLOCK => inst.CLK
+CLOCK => inst16.CLK
+CLOCK => inst20.CLK
+IN[0] => inst.DATAIN
+IN[1] => inst5.DATAIN
+IN[2] => inst16.DATAIN
+IN[3] => inst20.DATAIN
+
+
 |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst
 OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
 OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
@@ -10774,37 +10816,6 @@ IN[3] => inst20.DATAIN
 
 
 |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst16
-OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
-OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
-OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE
-OUT[3] <= inst20.DB_MAX_OUTPUT_PORT_TYPE
-IN_LOAD[0] => inst4.IN0
-IN_LOAD[0] => inst666.IN0
-IN_LOAD[1] => inst7.IN0
-IN_LOAD[1] => inst6.IN0
-IN_LOAD[2] => inst19.IN0
-IN_LOAD[2] => inst17.IN0
-IN_LOAD[3] => inst23.IN0
-IN_LOAD[3] => inst21.IN0
-LOAD => inst3.IN1
-LOAD => inst6.IN1
-LOAD => inst2.IN1
-LOAD => inst666.IN1
-LOAD => inst18.IN1
-LOAD => inst17.IN1
-LOAD => inst22.IN1
-LOAD => inst21.IN1
-CLOCK => inst5.CLK
-CLOCK => inst.CLK
-CLOCK => inst16.CLK
-CLOCK => inst20.CLK
-IN[0] => inst.DATAIN
-IN[1] => inst5.DATAIN
-IN[2] => inst16.DATAIN
-IN[3] => inst20.DATAIN
-
-
-|data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst1
 OUT[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
 OUT[1] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 OUT[2] <= inst16.DB_MAX_OUTPUT_PORT_TYPE

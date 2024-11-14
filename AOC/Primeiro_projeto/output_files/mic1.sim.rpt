@@ -1,5 +1,5 @@
 Simulator report for mic1
-Mon Nov  4 21:06:56 2024
+Thu Nov  7 10:42:46 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -45,41 +45,41 @@ applicable agreement for further details.
 +-----------------------------+--------------+
 ; Simulation Start Time       ; 0 ps         ;
 ; Simulation End Time         ; 1.6 us       ;
-; Simulation Netlist Size     ; 2182 nodes   ;
-; Simulation Coverage         ;      11.01 % ;
-; Total Number of Transitions ; 2106         ;
+; Simulation Netlist Size     ; 2238 nodes   ;
+; Simulation Coverage         ;      10.79 % ;
+; Total Number of Transitions ; 2137         ;
 ; Simulation Breakpoints      ; 0            ;
 ; Family                      ; Cyclone II   ;
 +-----------------------------+--------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Simulator Settings                                                                                                                                                               ;
-+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------+---------------+
-; Option                                                                                     ; Setting                                                             ; Default Value ;
-+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------+---------------+
-; Simulation mode                                                                            ; Functional                                                          ; Timing        ;
-; Start time                                                                                 ; 0 ns                                                                ; 0 ns          ;
-; Simulation results format                                                                  ; VWF                                                                 ;               ;
-; Vector input source                                                                        ; /home/joao/Desktop/mic1/Faculdade/AOC/Primeiro_projeto/DATAPATH.vwf ;               ;
-; Add pins automatically to simulation output waveforms                                      ; On                                                                  ; On            ;
-; Check outputs                                                                              ; Off                                                                 ; Off           ;
-; Report simulation coverage                                                                 ; On                                                                  ; On            ;
-; Display complete 1/0 value coverage report                                                 ; On                                                                  ; On            ;
-; Display missing 1-value coverage report                                                    ; On                                                                  ; On            ;
-; Display missing 0-value coverage report                                                    ; On                                                                  ; On            ;
-; Detect setup and hold time violations                                                      ; Off                                                                 ; Off           ;
-; Detect glitches                                                                            ; Off                                                                 ; Off           ;
-; Disable timing delays in Timing Simulation                                                 ; Off                                                                 ; Off           ;
-; Generate Signal Activity File                                                              ; Off                                                                 ; Off           ;
-; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                                 ; Off           ;
-; Group bus channels in simulation results                                                   ; Off                                                                 ; Off           ;
-; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                                  ; On            ;
-; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                                          ; INPUT_EDGE    ;
-; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                                 ; Off           ;
-; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                                 ;               ;
-; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                                ; Auto          ;
-+--------------------------------------------------------------------------------------------+---------------------------------------------------------------------+---------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                                           ;
++--------------------------------------------------------------------------------------------+-----------------------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                                         ; Default Value ;
++--------------------------------------------------------------------------------------------+-----------------------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Functional                                                      ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                            ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                             ;               ;
+; Vector input source                                                                        ; /home/joao/Desktop/Faculdade/AOC/Primeiro_projeto/DATAPATH3.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                              ; On            ;
+; Check outputs                                                                              ; Off                                                             ; Off           ;
+; Report simulation coverage                                                                 ; On                                                              ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                              ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                              ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                              ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                             ; Off           ;
+; Detect glitches                                                                            ; Off                                                             ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                             ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                             ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                             ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                             ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                              ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                                      ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                             ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                             ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                            ; Auto          ;
++--------------------------------------------------------------------------------------------+-----------------------------------------------------------------+---------------+
 
 
 +----------------------+
@@ -94,13 +94,13 @@ Please use Quartus II 64-Bit to view the waveform report data.
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;      11.01 % ;
-; Total nodes checked                                 ; 2182         ;
-; Total output ports checked                          ; 2162         ;
-; Total output ports with complete 1/0-value coverage ; 238          ;
-; Total output ports with no 1/0-value coverage       ; 1683         ;
-; Total output ports with no 1-value coverage         ; 1893         ;
-; Total output ports with no 0-value coverage         ; 1714         ;
+; Total coverage as a percentage                      ;      10.79 % ;
+; Total nodes checked                                 ; 2238         ;
+; Total output ports checked                          ; 2225         ;
+; Total output ports with complete 1/0-value coverage ; 240          ;
+; Total output ports with no 1/0-value coverage       ; 1733         ;
+; Total output ports with no 1-value coverage         ; 1948         ;
+; Total output ports with no 0-value coverage         ; 1770         ;
 +-----------------------------------------------------+--------------+
 
 
@@ -180,10 +180,12 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |data_path|BANK_REG:inst1|MDR:inst3|inst                                                  ; |data_path|BANK_REG:inst1|MDR:inst3|inst                                                  ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|inst15                                                ; |data_path|BANK_REG:inst1|MDR:inst3|inst15                                                ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst12                            ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst12                            ; out0             ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[4]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[4]                          ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[3]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[3]                          ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[2]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[2]                          ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[1]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[1]                          ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[0]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[0]                          ; out0             ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[4]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[4]                          ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[3]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[3]                          ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[2]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[2]                          ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[1]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[1]                          ; out0             ;
@@ -359,6 +361,9 @@ The following table displays output ports that do not toggle to 1 during simulat
 +-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+------------------+
 ; |data_path|LOAD                                                                           ; |data_path|LOAD                                                                           ; out              ;
 ; |data_path|MBR_IN[7]                                                                      ; |data_path|MBR_IN[7]                                                                      ; out              ;
+; |data_path|MBR_IN[6]                                                                      ; |data_path|MBR_IN[6]                                                                      ; out              ;
+; |data_path|MBR_IN[5]                                                                      ; |data_path|MBR_IN[5]                                                                      ; out              ;
+; |data_path|MBR_IN[4]                                                                      ; |data_path|MBR_IN[4]                                                                      ; out              ;
 ; |data_path|MBR_IN[3]                                                                      ; |data_path|MBR_IN[3]                                                                      ; out              ;
 ; |data_path|MBR_IN[2]                                                                      ; |data_path|MBR_IN[2]                                                                      ; out              ;
 ; |data_path|MBR_IN[1]                                                                      ; |data_path|MBR_IN[1]                                                                      ; out              ;
@@ -387,6 +392,10 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |data_path|MDR_IN[10]                                                                     ; |data_path|MDR_IN[10]                                                                     ; out              ;
 ; |data_path|MDR_IN[9]                                                                      ; |data_path|MDR_IN[9]                                                                      ; out              ;
 ; |data_path|MDR_IN[8]                                                                      ; |data_path|MDR_IN[8]                                                                      ; out              ;
+; |data_path|MDR_IN[7]                                                                      ; |data_path|MDR_IN[7]                                                                      ; out              ;
+; |data_path|MDR_IN[6]                                                                      ; |data_path|MDR_IN[6]                                                                      ; out              ;
+; |data_path|MDR_IN[5]                                                                      ; |data_path|MDR_IN[5]                                                                      ; out              ;
+; |data_path|MDR_IN[4]                                                                      ; |data_path|MDR_IN[4]                                                                      ; out              ;
 ; |data_path|MDR_IN[3]                                                                      ; |data_path|MDR_IN[3]                                                                      ; out              ;
 ; |data_path|MDR_IN[2]                                                                      ; |data_path|MDR_IN[2]                                                                      ; out              ;
 ; |data_path|MDR_IN[1]                                                                      ; |data_path|MDR_IN[1]                                                                      ; out              ;
@@ -454,7 +463,6 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |data_path|B_BUS[7]                                                                       ; |data_path|B_BUS[7]                                                                       ; pin_out          ;
 ; |data_path|B_BUS[6]                                                                       ; |data_path|B_BUS[6]                                                                       ; pin_out          ;
 ; |data_path|B_BUS[5]                                                                       ; |data_path|B_BUS[5]                                                                       ; pin_out          ;
-; |data_path|B_BUS[4]                                                                       ; |data_path|B_BUS[4]                                                                       ; pin_out          ;
 ; |data_path|C_BUS[31]                                                                      ; |data_path|C_BUS[31]                                                                      ; pin_out          ;
 ; |data_path|C_BUS[30]                                                                      ; |data_path|C_BUS[30]                                                                      ; pin_out          ;
 ; |data_path|C_BUS[29]                                                                      ; |data_path|C_BUS[29]                                                                      ; pin_out          ;
@@ -548,7 +556,6 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |data_path|MDR_OUT[7]                                                                     ; |data_path|MDR_OUT[7]                                                                     ; pin_out          ;
 ; |data_path|MDR_OUT[6]                                                                     ; |data_path|MDR_OUT[6]                                                                     ; pin_out          ;
 ; |data_path|MDR_OUT[5]                                                                     ; |data_path|MDR_OUT[5]                                                                     ; pin_out          ;
-; |data_path|MDR_OUT[4]                                                                     ; |data_path|MDR_OUT[4]                                                                     ; pin_out          ;
 ; |data_path|PC[31]                                                                         ; |data_path|PC[31]                                                                         ; pin_out          ;
 ; |data_path|PC[30]                                                                         ; |data_path|PC[30]                                                                         ; pin_out          ;
 ; |data_path|PC[29]                                                                         ; |data_path|PC[29]                                                                         ; pin_out          ;
@@ -604,7 +611,6 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |data_path|BANK_REG:inst1|OUT_B[7]                                                        ; |data_path|BANK_REG:inst1|OUT_B[7]                                                        ; out0             ;
 ; |data_path|BANK_REG:inst1|OUT_B[6]                                                        ; |data_path|BANK_REG:inst1|OUT_B[6]                                                        ; out0             ;
 ; |data_path|BANK_REG:inst1|OUT_B[5]                                                        ; |data_path|BANK_REG:inst1|OUT_B[5]                                                        ; out0             ;
-; |data_path|BANK_REG:inst1|OUT_B[4]                                                        ; |data_path|BANK_REG:inst1|OUT_B[4]                                                        ; out0             ;
 ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|inst4[31]                          ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|inst4[31]                          ; out              ;
 ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|inst4[30]                          ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|inst4[30]                          ; out              ;
 ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|inst4[29]                          ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|inst4[29]                          ; out              ;
@@ -655,6 +661,10 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst|inst5            ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst|inst5            ; regout           ;
 ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst|inst             ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst|inst             ; regout           ;
 ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst|inst16           ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst|inst16           ; regout           ;
+; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst1|inst5           ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst1|inst5           ; regout           ;
+; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst1|inst            ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst1|inst            ; regout           ;
+; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst1|inst16          ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst1|inst16          ; regout           ;
+; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst1|inst20          ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst1|inst20          ; regout           ;
 ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst2|inst5           ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst2|inst5           ; regout           ;
 ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst2|inst            ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst2|inst            ; regout           ;
 ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst2|inst16          ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst2|inst16          ; regout           ;
@@ -709,6 +719,10 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst11|inst16         ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst11|inst16         ; regout           ;
 ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst11|inst20         ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst11|inst20         ; regout           ;
 ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst|inst20           ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst|inst20           ; regout           ;
+; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst1|inst5           ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst1|inst5           ; regout           ;
+; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst1|inst            ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst1|inst            ; regout           ;
+; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst1|inst16          ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst1|inst16          ; regout           ;
+; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst1|inst20          ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst1|inst20          ; regout           ;
 ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst2|inst5           ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst2|inst5           ; regout           ;
 ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst2|inst            ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst2|inst            ; regout           ;
 ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst2|inst16          ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst2|inst16          ; regout           ;
@@ -765,6 +779,10 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst11|inst20         ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst11|inst20         ; regout           ;
 ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst|inst             ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst|inst             ; regout           ;
 ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst|inst20           ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst|inst20           ; regout           ;
+; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst1|inst5           ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst1|inst5           ; regout           ;
+; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst1|inst            ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst1|inst            ; regout           ;
+; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst1|inst16          ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst1|inst16          ; regout           ;
+; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst1|inst20          ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst1|inst20          ; regout           ;
 ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst2|inst5           ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst2|inst5           ; regout           ;
 ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst2|inst            ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst2|inst            ; regout           ;
 ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst2|inst16          ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst2|inst16          ; regout           ;
@@ -821,6 +839,10 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst11|inst20          ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst11|inst20          ; regout           ;
 ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst|inst5             ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst|inst5             ; regout           ;
 ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst|inst20            ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst|inst20            ; regout           ;
+; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst1|inst5            ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst1|inst5            ; regout           ;
+; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst1|inst             ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst1|inst             ; regout           ;
+; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst1|inst16           ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst1|inst16           ; regout           ;
+; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst1|inst20           ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst1|inst20           ; regout           ;
 ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst2|inst5            ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst2|inst5            ; regout           ;
 ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst2|inst             ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst2|inst             ; regout           ;
 ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst2|inst16           ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst2|inst16           ; regout           ;
@@ -879,6 +901,10 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst|inst5             ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst|inst5             ; regout           ;
 ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst|inst              ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst|inst              ; regout           ;
 ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst|inst20            ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst|inst20            ; regout           ;
+; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst1|inst5            ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst1|inst5            ; regout           ;
+; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst1|inst             ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst1|inst             ; regout           ;
+; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst1|inst16           ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst1|inst16           ; regout           ;
+; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst1|inst20           ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst1|inst20           ; regout           ;
 ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst2|inst5            ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst2|inst5            ; regout           ;
 ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst2|inst             ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst2|inst             ; regout           ;
 ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst2|inst16           ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst2|inst16           ; regout           ;
@@ -959,6 +985,10 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst11|inst            ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst11|inst            ; regout           ;
 ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst11|inst16          ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst11|inst16          ; regout           ;
 ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst11|inst20          ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst11|inst20          ; regout           ;
+; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst1|inst5            ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst1|inst5            ; regout           ;
+; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst1|inst             ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst1|inst             ; regout           ;
+; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst1|inst16           ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst1|inst16           ; regout           ;
+; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst1|inst20           ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst1|inst20           ; regout           ;
 ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst2|inst5            ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst2|inst5            ; regout           ;
 ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst2|inst             ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst2|inst             ; regout           ;
 ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst2|inst16           ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst2|inst16           ; regout           ;
@@ -1015,6 +1045,10 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst11|inst20          ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst11|inst20          ; regout           ;
 ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst|inst5             ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst|inst5             ; regout           ;
 ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst|inst16            ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst|inst16            ; regout           ;
+; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst1|inst5            ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst1|inst5            ; regout           ;
+; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst1|inst             ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst1|inst             ; regout           ;
+; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst1|inst16           ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst1|inst16           ; regout           ;
+; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst1|inst20           ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst1|inst20           ; regout           ;
 ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst2|inst5            ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst2|inst5            ; regout           ;
 ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst2|inst             ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst2|inst             ; regout           ;
 ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst2|inst16           ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst2|inst16           ; regout           ;
@@ -1051,7 +1085,6 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst4[7]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst4[7]                          ; out              ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst4[6]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst4[6]                          ; out              ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst4[5]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst4[5]                          ; out              ;
-; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst4[4]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst4[4]                          ; out              ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst4[3]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst4[3]                          ; out              ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst4[2]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst4[2]                          ; out              ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst4[1]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst4[1]                          ; out              ;
@@ -1079,6 +1112,9 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[10]                         ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[10]                         ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[9]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[9]                          ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[8]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[8]                          ; out0             ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[7]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[7]                          ; out0             ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[6]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[6]                          ; out0             ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[5]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[5]                          ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[31]                         ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[31]                         ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[30]                         ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[30]                         ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[29]                         ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[29]                         ; out0             ;
@@ -1103,6 +1139,10 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[10]                         ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[10]                         ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[9]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[9]                          ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[8]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[8]                          ; out0             ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[7]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[7]                          ; out0             ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[6]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[6]                          ; out0             ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[5]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[5]                          ; out0             ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[4]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[4]                          ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[3]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[3]                          ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[2]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[2]                          ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[1]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[1]                          ; out0             ;
@@ -1131,6 +1171,9 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[10]                         ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[10]                         ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[9]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[9]                          ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[8]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[8]                          ; out0             ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[7]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[7]                          ; out0             ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[6]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[6]                          ; out0             ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[5]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[5]                          ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst10[31]                        ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst10[31]                        ; out              ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst10[30]                        ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst10[30]                        ; out              ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst10[29]                        ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst10[29]                        ; out              ;
@@ -1158,7 +1201,6 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst10[7]                         ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst10[7]                         ; out              ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst10[6]                         ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst10[6]                         ; out              ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst10[5]                         ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst10[5]                         ; out              ;
-; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst10[4]                         ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst10[4]                         ; out              ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst16|inst5         ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst16|inst5         ; regout           ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst16|inst          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst16|inst          ; regout           ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst16|inst16        ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst16|inst16        ; regout           ;
@@ -1175,6 +1217,9 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst11|inst          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst11|inst          ; regout           ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst11|inst16        ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst11|inst16        ; regout           ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst11|inst20        ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst11|inst20        ; regout           ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst1|inst5          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst1|inst5          ; regout           ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst1|inst           ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst1|inst           ; regout           ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst1|inst16         ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst1|inst16         ; regout           ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst2|inst5          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst2|inst5          ; regout           ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst2|inst           ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst2|inst           ; regout           ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst2|inst16         ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst2|inst16         ; regout           ;
@@ -1231,6 +1276,10 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst|inst            ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst|inst            ; regout           ;
 ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst|inst16          ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst|inst16          ; regout           ;
 ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst|inst20          ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst|inst20          ; regout           ;
+; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst1|inst5          ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst1|inst5          ; regout           ;
+; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst1|inst           ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst1|inst           ; regout           ;
+; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst1|inst16         ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst1|inst16         ; regout           ;
+; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst1|inst20         ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst1|inst20         ; regout           ;
 ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|inst4[31]                          ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|inst4[31]                          ; out              ;
 ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|inst4[30]                          ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|inst4[30]                          ; out              ;
 ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|inst4[29]                          ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|inst4[29]                          ; out              ;
@@ -1284,6 +1333,10 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst|inst             ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst|inst             ; regout           ;
 ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst|inst16           ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst|inst16           ; regout           ;
 ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst|inst20           ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst|inst20           ; regout           ;
+; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst1|inst5           ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst1|inst5           ; regout           ;
+; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst1|inst            ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst1|inst            ; regout           ;
+; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst1|inst16          ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst1|inst16          ; regout           ;
+; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst1|inst20          ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst1|inst20          ; regout           ;
 ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst2|inst5           ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst2|inst5           ; regout           ;
 ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst2|inst            ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst2|inst            ; regout           ;
 ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst2|inst16          ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst2|inst16          ; regout           ;
@@ -1342,6 +1395,10 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst|inst              ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst|inst              ; regout           ;
 ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst|inst16            ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst|inst16            ; regout           ;
 ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst|inst20            ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst|inst20            ; regout           ;
+; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst1|inst5            ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst1|inst5            ; regout           ;
+; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst1|inst             ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst1|inst             ; regout           ;
+; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst1|inst16           ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst1|inst16           ; regout           ;
+; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst1|inst20           ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst1|inst20           ; regout           ;
 ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst2|inst5            ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst2|inst5            ; regout           ;
 ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst2|inst             ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst2|inst             ; regout           ;
 ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst2|inst16           ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst2|inst16           ; regout           ;
@@ -2259,8 +2316,10 @@ The following table displays output ports that do not toggle to 0 during simulat
 +-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+------------------+
 ; Node Name                                                                                 ; Output Port Name                                                                          ; Output Port Type ;
 +-------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+------------------+
-; |data_path|LOAD                                                                           ; |data_path|LOAD                                                                           ; out              ;
 ; |data_path|MBR_IN[7]                                                                      ; |data_path|MBR_IN[7]                                                                      ; out              ;
+; |data_path|MBR_IN[6]                                                                      ; |data_path|MBR_IN[6]                                                                      ; out              ;
+; |data_path|MBR_IN[5]                                                                      ; |data_path|MBR_IN[5]                                                                      ; out              ;
+; |data_path|MBR_IN[4]                                                                      ; |data_path|MBR_IN[4]                                                                      ; out              ;
 ; |data_path|MBR_IN[3]                                                                      ; |data_path|MBR_IN[3]                                                                      ; out              ;
 ; |data_path|MBR_IN[2]                                                                      ; |data_path|MBR_IN[2]                                                                      ; out              ;
 ; |data_path|MBR_IN[1]                                                                      ; |data_path|MBR_IN[1]                                                                      ; out              ;
@@ -2289,6 +2348,10 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |data_path|MDR_IN[10]                                                                     ; |data_path|MDR_IN[10]                                                                     ; out              ;
 ; |data_path|MDR_IN[9]                                                                      ; |data_path|MDR_IN[9]                                                                      ; out              ;
 ; |data_path|MDR_IN[8]                                                                      ; |data_path|MDR_IN[8]                                                                      ; out              ;
+; |data_path|MDR_IN[7]                                                                      ; |data_path|MDR_IN[7]                                                                      ; out              ;
+; |data_path|MDR_IN[6]                                                                      ; |data_path|MDR_IN[6]                                                                      ; out              ;
+; |data_path|MDR_IN[5]                                                                      ; |data_path|MDR_IN[5]                                                                      ; out              ;
+; |data_path|MDR_IN[4]                                                                      ; |data_path|MDR_IN[4]                                                                      ; out              ;
 ; |data_path|MDR_IN[3]                                                                      ; |data_path|MDR_IN[3]                                                                      ; out              ;
 ; |data_path|MDR_IN[2]                                                                      ; |data_path|MDR_IN[2]                                                                      ; out              ;
 ; |data_path|MDR_IN[1]                                                                      ; |data_path|MDR_IN[1]                                                                      ; out              ;
@@ -2532,6 +2595,10 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst|inst             ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst|inst             ; regout           ;
 ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst|inst16           ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst|inst16           ; regout           ;
 ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst|inst20           ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst|inst20           ; regout           ;
+; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst1|inst5           ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst1|inst5           ; regout           ;
+; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst1|inst            ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst1|inst            ; regout           ;
+; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst1|inst16          ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst1|inst16          ; regout           ;
+; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst1|inst20          ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst1|inst20          ; regout           ;
 ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst2|inst5           ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst2|inst5           ; regout           ;
 ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst2|inst            ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst2|inst            ; regout           ;
 ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst2|inst16          ; |data_path|BANK_REG:inst1|OPC:inst8|REGISTER32bit:inst|REGISTER4bit:inst2|inst16          ; regout           ;
@@ -2563,6 +2630,10 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst|inst             ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst|inst             ; regout           ;
 ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst|inst16           ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst|inst16           ; regout           ;
 ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst|inst20           ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst|inst20           ; regout           ;
+; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst1|inst5           ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst1|inst5           ; regout           ;
+; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst1|inst            ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst1|inst            ; regout           ;
+; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst1|inst16          ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst1|inst16          ; regout           ;
+; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst1|inst20          ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst1|inst20          ; regout           ;
 ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst2|inst5           ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst2|inst5           ; regout           ;
 ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst2|inst            ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst2|inst            ; regout           ;
 ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst2|inst16          ; |data_path|BANK_REG:inst1|TOS:inst7|REGISTER32bit:inst|REGISTER4bit:inst2|inst16          ; regout           ;
@@ -2593,6 +2664,9 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst|inst             ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst|inst             ; regout           ;
 ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst|inst16           ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst|inst16           ; regout           ;
 ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst|inst20           ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst|inst20           ; regout           ;
+; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst1|inst5           ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst1|inst5           ; regout           ;
+; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst1|inst16          ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst1|inst16          ; regout           ;
+; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst1|inst20          ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst1|inst20          ; regout           ;
 ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst2|inst5           ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst2|inst5           ; regout           ;
 ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst2|inst            ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst2|inst            ; regout           ;
 ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst2|inst16          ; |data_path|BANK_REG:inst1|CPP:inst6|REGISTER32bit:inst|REGISTER4bit:inst2|inst16          ; regout           ;
@@ -2608,9 +2682,7 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst16|inst16          ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst16|inst16          ; regout           ;
 ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst16|inst20          ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst16|inst20          ; regout           ;
 ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst15|inst5           ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst15|inst5           ; regout           ;
-; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst15|inst            ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst15|inst            ; regout           ;
 ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst15|inst16          ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst15|inst16          ; regout           ;
-; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst15|inst20          ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst15|inst20          ; regout           ;
 ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst14|inst5           ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst14|inst5           ; regout           ;
 ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst14|inst            ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst14|inst            ; regout           ;
 ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst14|inst16          ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst14|inst16          ; regout           ;
@@ -2623,6 +2695,10 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst|inst              ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst|inst              ; regout           ;
 ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst|inst16            ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst|inst16            ; regout           ;
 ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst|inst20            ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst|inst20            ; regout           ;
+; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst1|inst5            ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst1|inst5            ; regout           ;
+; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst1|inst             ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst1|inst             ; regout           ;
+; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst1|inst16           ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst1|inst16           ; regout           ;
+; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst1|inst20           ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst1|inst20           ; regout           ;
 ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst2|inst5            ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst2|inst5            ; regout           ;
 ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst2|inst             ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst2|inst             ; regout           ;
 ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst2|inst16           ; |data_path|BANK_REG:inst1|LV:inst2|REGISTER32bit:inst|REGISTER4bit:inst2|inst16           ; regout           ;
@@ -2637,9 +2713,7 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst16|inst16          ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst16|inst16          ; regout           ;
 ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst16|inst20          ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst16|inst20          ; regout           ;
 ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst15|inst5           ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst15|inst5           ; regout           ;
-; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst15|inst            ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst15|inst            ; regout           ;
 ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst15|inst16          ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst15|inst16          ; regout           ;
-; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst15|inst20          ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst15|inst20          ; regout           ;
 ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst14|inst5           ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst14|inst5           ; regout           ;
 ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst14|inst            ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst14|inst            ; regout           ;
 ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst14|inst16          ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst14|inst16          ; regout           ;
@@ -2652,6 +2726,10 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst|inst              ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst|inst              ; regout           ;
 ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst|inst16            ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst|inst16            ; regout           ;
 ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst|inst20            ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst|inst20            ; regout           ;
+; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst1|inst5            ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst1|inst5            ; regout           ;
+; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst1|inst             ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst1|inst             ; regout           ;
+; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst1|inst16           ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst1|inst16           ; regout           ;
+; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst1|inst20           ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst1|inst20           ; regout           ;
 ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst2|inst5            ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst2|inst5            ; regout           ;
 ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst2|inst             ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst2|inst             ; regout           ;
 ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst2|inst16           ; |data_path|BANK_REG:inst1|SP:inst1|REGISTER32bit:inst|REGISTER4bit:inst2|inst16           ; regout           ;
@@ -2706,6 +2784,10 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst11|inst16          ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst11|inst16          ; regout           ;
 ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst11|inst20          ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst11|inst20          ; regout           ;
 ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst|inst20            ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst|inst20            ; regout           ;
+; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst1|inst5            ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst1|inst5            ; regout           ;
+; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst1|inst             ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst1|inst             ; regout           ;
+; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst1|inst16           ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst1|inst16           ; regout           ;
+; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst1|inst20           ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst1|inst20           ; regout           ;
 ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst2|inst5            ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst2|inst5            ; regout           ;
 ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst2|inst             ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst2|inst             ; regout           ;
 ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst2|inst16           ; |data_path|BANK_REG:inst1|PC:inst4|REGISTER32bit:inst|REGISTER4bit:inst2|inst16           ; regout           ;
@@ -2766,6 +2848,10 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst|inst              ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst|inst              ; regout           ;
 ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst|inst16            ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst|inst16            ; regout           ;
 ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst|inst20            ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst|inst20            ; regout           ;
+; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst1|inst5            ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst1|inst5            ; regout           ;
+; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst1|inst             ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst1|inst             ; regout           ;
+; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst1|inst16           ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst1|inst16           ; regout           ;
+; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst1|inst20           ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst1|inst20           ; regout           ;
 ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst2|inst5            ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst2|inst5            ; regout           ;
 ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst2|inst             ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst2|inst             ; regout           ;
 ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst2|inst16           ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst2|inst16           ; regout           ;
@@ -2775,6 +2861,7 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst3|inst16           ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst3|inst16           ; regout           ;
 ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst3|inst20           ; |data_path|BANK_REG:inst1|H:inst10|REGISTER32bit:inst|REGISTER4bit:inst3|inst20           ; regout           ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|inst13                                                ; |data_path|BANK_REG:inst1|MDR:inst3|inst13                                                ; regout           ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst4[4]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst4[4]                          ; out              ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst4[0]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst4[0]                          ; out              ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[31]                         ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[31]                         ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[30]                         ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[30]                         ; out0             ;
@@ -2800,6 +2887,9 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[10]                         ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[10]                         ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[9]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[9]                          ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[8]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[8]                          ; out0             ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[7]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[7]                          ; out0             ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[6]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[6]                          ; out0             ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[5]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst9[5]                          ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[31]                         ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[31]                         ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[30]                         ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[30]                         ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[29]                         ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[29]                         ; out0             ;
@@ -2824,6 +2914,10 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[10]                         ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[10]                         ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[9]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[9]                          ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[8]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[8]                          ; out0             ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[7]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[7]                          ; out0             ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[6]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[6]                          ; out0             ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[5]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[5]                          ; out0             ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[4]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[4]                          ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[3]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[3]                          ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[2]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[2]                          ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[1]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst7[1]                          ; out0             ;
@@ -2852,6 +2946,9 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[10]                         ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[10]                         ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[9]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[9]                          ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[8]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[8]                          ; out0             ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[7]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[7]                          ; out0             ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[6]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[6]                          ; out0             ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[5]                          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst6[5]                          ; out0             ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst10[31]                        ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst10[31]                        ; out              ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst10[30]                        ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst10[30]                        ; out              ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst10[29]                        ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|inst10[29]                        ; out              ;
@@ -2896,6 +2993,10 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst11|inst          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst11|inst          ; regout           ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst11|inst16        ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst11|inst16        ; regout           ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst11|inst20        ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst11|inst20        ; regout           ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst1|inst5          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst1|inst5          ; regout           ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst1|inst           ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst1|inst           ; regout           ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst1|inst16         ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst1|inst16         ; regout           ;
+; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst1|inst20         ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst1|inst20         ; regout           ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst2|inst5          ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst2|inst5          ; regout           ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst2|inst           ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst2|inst           ; regout           ;
 ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst2|inst16         ; |data_path|BANK_REG:inst1|MDR:inst3|REGISTER32bit:inst1|REGISTER4bit:inst2|inst16         ; regout           ;
@@ -2952,6 +3053,10 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst|inst            ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst|inst            ; regout           ;
 ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst|inst16          ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst|inst16          ; regout           ;
 ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst|inst20          ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst|inst20          ; regout           ;
+; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst1|inst5          ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst1|inst5          ; regout           ;
+; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst1|inst           ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst1|inst           ; regout           ;
+; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst1|inst16         ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst1|inst16         ; regout           ;
+; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst1|inst20         ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst3|REGISTER4bit:inst1|inst20         ; regout           ;
 ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|inst4[31]                          ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|inst4[31]                          ; out              ;
 ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|inst4[30]                          ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|inst4[30]                          ; out              ;
 ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|inst4[29]                          ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|inst4[29]                          ; out              ;
@@ -3005,6 +3110,10 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst|inst             ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst|inst             ; regout           ;
 ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst|inst16           ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst|inst16           ; regout           ;
 ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst|inst20           ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst|inst20           ; regout           ;
+; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst1|inst5           ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst1|inst5           ; regout           ;
+; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst1|inst            ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst1|inst            ; regout           ;
+; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst1|inst16          ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst1|inst16          ; regout           ;
+; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst1|inst20          ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst1|inst20          ; regout           ;
 ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst2|inst5           ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst2|inst5           ; regout           ;
 ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst2|inst            ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst2|inst            ; regout           ;
 ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst2|inst16          ; |data_path|BANK_REG:inst1|MBR:inst5|REGISTER32bit:inst|REGISTER4bit:inst2|inst16          ; regout           ;
@@ -3065,6 +3174,10 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst|inst              ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst|inst              ; regout           ;
 ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst|inst16            ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst|inst16            ; regout           ;
 ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst|inst20            ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst|inst20            ; regout           ;
+; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst1|inst5            ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst1|inst5            ; regout           ;
+; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst1|inst             ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst1|inst             ; regout           ;
+; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst1|inst16           ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst1|inst16           ; regout           ;
+; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst1|inst20           ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst1|inst20           ; regout           ;
 ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst2|inst5            ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst2|inst5            ; regout           ;
 ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst2|inst             ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst2|inst             ; regout           ;
 ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst2|inst16           ; |data_path|BANK_REG:inst1|MAR:inst|REGISTER32bit:inst|REGISTER4bit:inst2|inst16           ; regout           ;
@@ -3989,115 +4102,203 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Simulator
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Nov  4 21:06:56 2024
+    Info: Processing started: Thu Nov  7 10:42:45 2024
 Info: Command: quartus_sim --simulation_results_format=VWF mic1 -c mic1
-Info (324025): Using vector source file "/home/joao/Desktop/mic1/Faculdade/AOC/Primeiro_projeto/DATAPATH.vwf"
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[31]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[30]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[29]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[28]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[27]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[26]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[25]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[24]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[23]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[22]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[21]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[20]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[19]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[18]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[17]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[16]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[15]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[14]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[13]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[12]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[11]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[10]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[9]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[8]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[7]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[6]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[5]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[4]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[3]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[2]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[1]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "A[0]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[31]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[30]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[29]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[28]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[27]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[26]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[25]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[24]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[23]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[22]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[21]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[20]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[19]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[18]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[17]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[16]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[15]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[14]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[13]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[12]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[11]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[10]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[9]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[8]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[7]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[6]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[5]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[4]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[3]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[2]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[1]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "B[0]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[31]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[30]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[29]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[28]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[27]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[26]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[25]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[24]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[23]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[22]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[21]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[20]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[19]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[18]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[17]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[16]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[15]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[14]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[13]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[12]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[11]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[10]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[9]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[8]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[7]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[6]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[5]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[4]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[3]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[2]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[1]" in design.
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "C[0]" in design.
+Info (324025): Using vector source file "/home/joao/Desktop/Faculdade/AOC/Primeiro_projeto/DATAPATH3.vwf"
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[31]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[30]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[29]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[28]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[27]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[26]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[25]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[24]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[23]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[22]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[21]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[20]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[19]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[18]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[17]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[16]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[15]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[14]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[13]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[12]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[11]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[10]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[9]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[8]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[7]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[6]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[5]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[4]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[3]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[2]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[1]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "ADDRESS[0]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MBR[7]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MBR[6]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MBR[5]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MBR[4]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MBR[3]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MBR[2]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MBR[1]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MBR[0]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[31]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[30]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[29]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[28]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[27]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[26]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[25]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[24]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[23]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[22]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[21]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[20]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[19]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[18]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[17]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[16]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[15]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[14]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[13]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[12]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[11]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[10]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[9]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[8]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[7]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[6]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[5]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[4]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[3]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[2]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[1]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "IN_MEM[0]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[31]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[30]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[29]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[28]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[27]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[26]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[25]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[24]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[23]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[22]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[21]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[20]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[19]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[18]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[17]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[16]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[15]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[14]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[13]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[12]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[11]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[10]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[9]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[8]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[7]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[6]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[5]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[4]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[3]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[2]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[1]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MEM[0]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MBR[7]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MBR[6]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MBR[5]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MBR[4]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MBR[3]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MBR[2]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MBR[1]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "OUT_MBR[0]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[31]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[30]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[29]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[28]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[27]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[26]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[25]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[24]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[23]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[22]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[21]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[20]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[19]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[18]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[17]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[16]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[15]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[14]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[13]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[12]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[11]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[10]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[9]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[8]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[7]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[6]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[5]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[4]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[3]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[2]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[1]" in design.
+Warning (328013): Ignored node in vector source file. Can't find corresponding node name "Lv[0]" in design.
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MBR_IN[7]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MBR_IN[6]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MBR_IN[5]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MBR_IN[4]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MBR_IN[3]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MBR_IN[2]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MBR_IN[1]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MBR_IN[0]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[31]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[30]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[29]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[28]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[27]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[26]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[25]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[24]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[23]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[22]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[21]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[20]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[19]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[18]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[17]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[16]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[15]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[14]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[13]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[12]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[11]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[10]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[9]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[8]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[7]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[6]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[5]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[4]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[3]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[2]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[1]"
+Warning (328012): Can't find signal in vector source file for input pin "|data_path|MDR_IN[0]"
 Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
 Info (310002): Simulation partitioned into 1 sub-simulations
-Info (328053): Simulation coverage is      11.01 %
-Info (328052): Number of transitions in simulation is 2106
+Info (328053): Simulation coverage is      10.79 %
+Info (328052): Number of transitions in simulation is 2137
 Info (324045): Vector file mic1.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
-Info: Quartus II 64-Bit Simulator was successful. 0 errors, 96 warnings
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 184 warnings
     Info: Peak virtual memory: 643 megabytes
-    Info: Processing ended: Mon Nov  4 21:06:56 2024
-    Info: Elapsed time: 00:00:00
+    Info: Processing ended: Thu Nov  7 10:42:46 2024
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 

@@ -49,10 +49,6 @@ set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
 set_global_assignment -name VECTOR_OUTPUT_FORMAT VWF
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
 set_global_assignment -name VECTOR_WAVEFORM_FILE DATAPATH.vwf
 set_global_assignment -name TEXT_FILE "DATAPATH test microcode.txt"
 set_global_assignment -name SOURCE_FILE DATAPATH3.vwf.temp
@@ -102,4 +98,8 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE BANK_REGS.vwf
 set_global_assignment -name BDF_FILE REGISTER4bit.bdf
 set_global_assignment -name VECTOR_WAVEFORM_FILE TOS.vwf
 set_global_assignment -name BDF_FILE data_path.bdf
-set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE /home/joao/Desktop/mic1/Faculdade/AOC/Primeiro_projeto/DATAPATH.vwf
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE /home/joao/Desktop/Faculdade/AOC/Primeiro_projeto/DATAPATH3.vwf

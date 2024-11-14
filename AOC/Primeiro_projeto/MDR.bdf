@@ -290,6 +290,40 @@ applicable agreement for further details.
 	)
 )
 (symbol
+	(rect 744 72 776 104)
+	(text "GND" (rect 3 6 24 16)(font "Arial" (font_size 6)))
+	(text "inst3" (rect 6 -1 29 10)(font "Arial" )(invisible))
+	(port
+		(pt 16 32)
+		(output)
+		(text "1" (rect 18 0 25 11)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 9 20 16 31)(font "Courier New" (bold))(invisible))
+		(line (pt 16 24)(pt 16 32))
+	)
+	(drawing
+		(line (pt 24 24)(pt 16 16))
+		(line (pt 16 16)(pt 8 24))
+		(line (pt 24 24)(pt 8 24))
+	)
+	(rotate180)
+)
+(symbol
+	(rect 904 368 936 384)
+	(text "VCC" (rect 5 6 25 16)(font "Arial" (font_size 6)))
+	(text "inst2" (rect 6 0 29 11)(font "Arial" )(invisible))
+	(port
+		(pt 16 0)
+		(output)
+		(text "1" (rect 19 7 26 18)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 6 -2 13 9)(font "Courier New" (bold))(invisible))
+		(line (pt 16 0)(pt 16 8))
+	)
+	(drawing
+		(line (pt 24 8)(pt 8 8))
+	)
+	(rotate180)
+)
+(symbol
 	(rect 960 176 1216 368)
 	(text "REGISTER32bit" (rect 5 0 97 13)(font "Arial" (font_size 8)))
 	(text "inst1" (rect 8 176 31 187)(font "Arial" ))
@@ -373,40 +407,6 @@ applicable agreement for further details.
 	(drawing
 		(rectangle (rect 16 16 240 176))
 	)
-)
-(symbol
-	(rect 744 72 776 104)
-	(text "GND" (rect 3 6 24 16)(font "Arial" (font_size 6)))
-	(text "inst3" (rect 6 -1 29 10)(font "Arial" )(invisible))
-	(port
-		(pt 16 32)
-		(output)
-		(text "1" (rect 18 0 25 11)(font "Courier New" (bold))(invisible))
-		(text "1" (rect 9 20 16 31)(font "Courier New" (bold))(invisible))
-		(line (pt 16 24)(pt 16 32))
-	)
-	(drawing
-		(line (pt 24 24)(pt 16 16))
-		(line (pt 16 16)(pt 8 24))
-		(line (pt 24 24)(pt 8 24))
-	)
-	(rotate180)
-)
-(symbol
-	(rect 904 368 936 384)
-	(text "VCC" (rect 5 6 25 16)(font "Arial" (font_size 6)))
-	(text "inst2" (rect 6 0 29 11)(font "Arial" )(invisible))
-	(port
-		(pt 16 0)
-		(output)
-		(text "1" (rect 19 7 26 18)(font "Courier New" (bold))(invisible))
-		(text "1" (rect 6 -2 13 9)(font "Courier New" (bold))(invisible))
-		(line (pt 16 0)(pt 16 8))
-	)
-	(drawing
-		(line (pt 24 8)(pt 8 8))
-	)
-	(rotate180)
 )
 (connector
 	(text "IN_C[31..0]" (rect 763 224 819 235)(font "Arial" ))
