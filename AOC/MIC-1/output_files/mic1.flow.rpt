@@ -1,5 +1,5 @@
 Flow report for mic1
-Thu Nov  7 10:42:23 2024
+Mon Dec 02 16:39:15 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,20 +40,22 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Thu Nov  7 10:42:23 2024           ;
+; Flow Status                        ; Successful - Mon Dec 02 16:39:15 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; mic1                                            ;
-; Top-level Entity Name              ; data_path                                       ;
+; Top-level Entity Name              ; UNIDADE_CONTROLE                                ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 729                                             ;
-;     Total combinational functions  ; 492                                             ;
-;     Dedicated logic registers      ; 306                                             ;
-; Total registers                    ; 306                                             ;
-; Total pins                         ; 280                                             ;
+; Total logic elements               ; 12 / 4,608 ( < 1 % )                            ;
+;     Total combinational functions  ; 10 / 4,608 ( < 1 % )                            ;
+;     Dedicated logic registers      ; 3 / 4,608 ( < 1 % )                             ;
+; Total registers                    ; 3                                               ;
+; Total pins                         ; 57 / 89 ( 64 % )                                ;
 ; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 0                                               ;
+; Total memory bits                  ; 18,432 / 119,808 ( 15 % )                       ;
+; Embedded Multiplier 9-bit elements ; 0 / 26 ( 0 % )                                  ;
+; Total PLLs                         ; 0 / 2 ( 0 % )                                   ;
+; Device                             ; EP2C5T144C6                                     ;
+; Timing Models                      ; Final                                           ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -62,56 +64,84 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/07/2024 10:42:21 ;
+; Start date & time ; 12/02/2024 16:09:10 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; mic1                ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                               ;
-+-------------------------------------+---------------------------+---------------+-------------+----------------+
-; Assignment Name                     ; Value                     ; Default Value ; Entity Name ; Section Id     ;
-+-------------------------------------+---------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 0.173098694111921         ; --            ; --          ; --             ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                        ; --            ; --          ; eda_simulation ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl               ; --            ; --          ; eda_simulation ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog) ; <None>        ; --          ; --             ;
-; EDA_TIME_SCALE                      ; 1 ps                      ; --            ; --          ; eda_simulation ;
-; IP_TOOL_NAME                        ; RAM: 2-PORT               ; --            ; --          ; --             ;
-; IP_TOOL_VERSION                     ; 13.0                      ; --            ; --          ; --             ;
-; MISC_FILE                           ; RAM.bsf                   ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057                  ; --            ; data_path   ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING     ; --            ; data_path   ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                    ; --            ; data_path   ; Top            ;
-; PROJECT_OUTPUT_DIRECTORY            ; output_files              ; --            ; --          ; --             ;
-; TOP_LEVEL_ENTITY                    ; data_path                 ; mic1          ; --          ; --             ;
-+-------------------------------------+---------------------------+---------------+-------------+----------------+
-
-
 +--------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                        ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:02     ; 1.0                     ; 600 MB              ; 00:00:02                           ;
-; Total                ; 00:00:02     ; --                      ; --                  ; 00:00:02                           ;
-+----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Flow Non-Default Global Settings                                                                                         ;
++-------------------------------------+--------------------------------+---------------+------------------+----------------+
+; Assignment Name                     ; Value                          ; Default Value ; Entity Name      ; Section Id     ;
++-------------------------------------+--------------------------------+---------------+------------------+----------------+
+; COMPILER_SIGNATURE_ID               ; 27116745733253.173316655005352 ; --            ; --               ; --             ;
+; EDA_GENERATE_FUNCTIONAL_NETLIST     ; On                             ; --            ; --               ; eda_simulation ;
+; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                    ; --            ; --               ; eda_simulation ;
+; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)      ; <None>        ; --               ; --             ;
+; EDA_TIME_SCALE                      ; 1 ps                           ; --            ; --               ; eda_simulation ;
+; IP_TOOL_NAME                        ; RAM: 2-PORT                    ; --            ; --               ; --             ;
+; IP_TOOL_NAME                        ; ROM: 1-PORT                    ; --            ; --               ; --             ;
+; IP_TOOL_VERSION                     ; 13.0                           ; --            ; --               ; --             ;
+; IP_TOOL_VERSION                     ; 13.0                           ; --            ; --               ; --             ;
+; MISC_FILE                           ; RAM.bsf                        ; --            ; --               ; --             ;
+; MISC_FILE                           ; CONTROLSTORE.bsf               ; --            ; --               ; --             ;
+; MISC_FILE                           ; CONTROLSTORE.cmp               ; --            ; --               ; --             ;
+; PARTITION_COLOR                     ; 16764057                       ; --            ; UNIDADE_CONTROLE ; Top            ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING          ; --            ; UNIDADE_CONTROLE ; Top            ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                         ; --            ; UNIDADE_CONTROLE ; Top            ;
+; PROJECT_OUTPUT_DIRECTORY            ; output_files                   ; --            ; --               ; --             ;
+; TOP_LEVEL_ENTITY                    ; UNIDADE_CONTROLE               ; mic1          ; --               ; --             ;
++-------------------------------------+--------------------------------+---------------+------------------+----------------+
 
 
-+------------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                          ;
-+----------------------+------------------+------------------+------------+----------------+
-; Module Name          ; Machine Hostname ; OS Name          ; OS Version ; Processor type ;
-+----------------------+------------------+------------------+------------+----------------+
-; Analysis & Synthesis ; joaodebian       ; Debian GNU/Linux ; 12         ; x86_64         ;
-+----------------------+------------------+------------------+------------+----------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                             ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 4644 MB             ; 00:00:02                           ;
+; Fitter                    ; 00:00:03     ; 1.0                     ; 4791 MB             ; 00:00:03                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4536 MB             ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 4534 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4512 MB             ; 00:00:00                           ;
+; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 4515 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:00     ; 1.0                     ; 4515 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4515 MB             ; 00:00:01                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4515 MB             ; 00:00:01                           ;
+; Total                     ; 00:00:11     ; --                      ; --                  ; 00:00:11                           ;
++---------------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                        ;
++---------------------------+------------------+-----------+------------+----------------+
+; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
++---------------------------+------------------+-----------+------------+----------------+
+; Analysis & Synthesis      ; DECOMDV-304-008  ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; DECOMDV-304-008  ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; DECOMDV-304-008  ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; DECOMDV-304-008  ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; DECOMDV-304-008  ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; DECOMDV-304-008  ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; DECOMDV-304-008  ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; DECOMDV-304-008  ; Windows 7 ; 6.2        ; x86_64         ;
+; EDA Netlist Writer        ; DECOMDV-304-008  ; Windows 7 ; 6.2        ; x86_64         ;
++---------------------------+------------------+-----------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off mic1 -c mic1
+quartus_fit --read_settings_files=off --write_settings_files=off mic1 -c mic1
+quartus_asm --read_settings_files=off --write_settings_files=off mic1 -c mic1
+quartus_sta mic1 -c mic1
+quartus_eda --read_settings_files=off --write_settings_files=off mic1 -c mic1
+quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog mic1 -c mic1 --vector_source=C:/Users/Aluno/Desktop/sfiesaufgi/Faculdade-main/AOC/MIC-1/CONTROL_UNIT_bipush.vwf --testbench_file=./simulation/qsim/mic1.vt
+quartus_eda --functional=on --simulation=on --tool=modelsim_oem --format=verilog mic1 -c mic1
+quartus_eda --gen_testbench --check_outputs=on --tool=modelsim_oem --format=verilog mic1 -c mic1 --vector_source=C:/Users/Aluno/Desktop/sfiesaufgi/Faculdade-main/AOC/MIC-1/CONTROL_UNIT_bipush.vwf --testbench_file=./simulation/qsim/mic1.vt
+quartus_eda --functional=on --simulation=on --tool=modelsim_oem --format=verilog mic1 -c mic1
 
 
 
