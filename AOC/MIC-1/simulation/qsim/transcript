@@ -23,14 +23,14 @@
 # Loading cycloneii_ver.cycloneii_clkctrl
 # Loading cycloneii_ver.cycloneii_mux41
 # Loading cycloneii_ver.cycloneii_ena_reg
+# Loading cycloneii_ver.cycloneii_lcell_ff
+# Loading cycloneii_ver.cycloneii_lcell_comb
 # Loading cycloneii_ver.cycloneii_ram_block
 # Loading cycloneii_ver.cycloneii_ram_register
 # Loading cycloneii_ver.cycloneii_ram_pulse_generator
-# Loading cycloneii_ver.cycloneii_lcell_ff
-# Loading cycloneii_ver.cycloneii_lcell_comb
 # Loading work.UNIDADE_CONTROLE_vlg_sample_tst
 # Loading work.UNIDADE_CONTROLE_vlg_check_tst
 # Loading cycloneii_ver.CYCLONEII_PRIM_DFFE
 # Simulation passed !
-# ** Note: $finish    : mic1.vt(980)
-#    Time: 1400 ns  Iteration: 0  Instance: /UNIDADE_CONTROLE_vlg_vec_tst/tb_out
+# ** Note: $finish    : mic1.vt(958)
+#    Time: 1800 ns  Iteration: 0  Instance: /UNIDADE_CONTROLE_vlg_vec_tst/tb_out

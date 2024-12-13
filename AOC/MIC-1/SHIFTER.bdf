@@ -1132,12 +1132,12 @@ applicable agreement for further details.
 	(pt 1224 792)
 )
 (connector
-	(text "MIR[22]" (rect 656 264 694 275)(font "Arial" ))
+	(text "MIR[23]" (rect 656 264 694 275)(font "Arial" ))
 	(pt 704 280)
 	(pt 648 280)
 )
 (connector
-	(text "MIR[23]" (rect 656 280 694 291)(font "Arial" ))
+	(text "MIR[22]" (rect 656 280 694 291)(font "Arial" ))
 	(pt 704 296)
 	(pt 648 296)
 )

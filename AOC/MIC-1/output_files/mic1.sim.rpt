@@ -1,5 +1,5 @@
 Simulator report for mic1
-Mon Dec 02 16:31:44 2024
+Fri Dec 13 17:28:27 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -10,13 +10,12 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Simulator Summary
   3. Simulator Settings
   4. Simulation Waveforms
-  5. |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ALTSYNCRAM
-  6. Coverage Summary
-  7. Complete 1/0-Value Coverage
-  8. Missing 1-Value Coverage
-  9. Missing 0-Value Coverage
- 10. Simulator INI Usage
- 11. Simulator Messages
+  5. Coverage Summary
+  6. Complete 1/0-Value Coverage
+  7. Missing 1-Value Coverage
+  8. Missing 0-Value Coverage
+  9. Simulator INI Usage
+ 10. Simulator Messages
 
 
 
@@ -39,48 +38,40 @@ applicable agreement for further details.
 
 
 
-+--------------------------------------------+
-; Simulator Summary                          ;
-+-----------------------------+--------------+
-; Type                        ; Value        ;
-+-----------------------------+--------------+
-; Simulation Start Time       ; 0 ps         ;
-; Simulation End Time         ; 1.4 us       ;
-; Simulation Netlist Size     ; 115 nodes    ;
-; Simulation Coverage         ;      46.96 % ;
-; Total Number of Transitions ; 187          ;
-; Simulation Breakpoints      ; 0            ;
-; Family                      ; Cyclone II   ;
-+-----------------------------+--------------+
++-------------------+
+; Simulator Summary ;
++------+------------+
+; Type ; Value      ;
++------+------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Simulator Settings                                                                                                                                                                             ;
-+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------+
-; Option                                                                                     ; Setting                                                                           ; Default Value ;
-+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------+
-; Simulation mode                                                                            ; Functional                                                                        ; Timing        ;
-; Start time                                                                                 ; 0 ns                                                                              ; 0 ns          ;
-; Simulation results format                                                                  ; VWF                                                                               ;               ;
-; Vector input source                                                                        ; C:/Users/Aluno/Desktop/sfiesaufgi/Faculdade-main/AOC/MIC-1/CONTROL_UNIT_iload.vwf ;               ;
-; Add pins automatically to simulation output waveforms                                      ; On                                                                                ; On            ;
-; Check outputs                                                                              ; Off                                                                               ; Off           ;
-; Report simulation coverage                                                                 ; On                                                                                ; On            ;
-; Display complete 1/0 value coverage report                                                 ; On                                                                                ; On            ;
-; Display missing 1-value coverage report                                                    ; On                                                                                ; On            ;
-; Display missing 0-value coverage report                                                    ; On                                                                                ; On            ;
-; Detect setup and hold time violations                                                      ; Off                                                                               ; Off           ;
-; Detect glitches                                                                            ; Off                                                                               ; Off           ;
-; Disable timing delays in Timing Simulation                                                 ; Off                                                                               ; Off           ;
-; Generate Signal Activity File                                                              ; Off                                                                               ; Off           ;
-; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                                               ; Off           ;
-; Group bus channels in simulation results                                                   ; Off                                                                               ; Off           ;
-; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                                                ; On            ;
-; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                                                        ; INPUT_EDGE    ;
-; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                                               ; Off           ;
-; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                                               ;               ;
-; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                                              ; Auto          ;
-+--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+---------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Simulator Settings                                                                                                                                               ;
++--------------------------------------------------------------------------------------------+-----------------------------------------------------+---------------+
+; Option                                                                                     ; Setting                                             ; Default Value ;
++--------------------------------------------------------------------------------------------+-----------------------------------------------------+---------------+
+; Simulation mode                                                                            ; Timing                                              ; Timing        ;
+; Start time                                                                                 ; 0 ns                                                ; 0 ns          ;
+; Simulation results format                                                                  ; VWF                                                 ;               ;
+; Vector input source                                                                        ; /home/joao/Desktop/Faculdade/AOC/MIC-1/CPU_ifeq.vwf ;               ;
+; Add pins automatically to simulation output waveforms                                      ; On                                                  ; On            ;
+; Check outputs                                                                              ; Off                                                 ; Off           ;
+; Report simulation coverage                                                                 ; On                                                  ; On            ;
+; Display complete 1/0 value coverage report                                                 ; On                                                  ; On            ;
+; Display missing 1-value coverage report                                                    ; On                                                  ; On            ;
+; Display missing 0-value coverage report                                                    ; On                                                  ; On            ;
+; Detect setup and hold time violations                                                      ; Off                                                 ; Off           ;
+; Detect glitches                                                                            ; Off                                                 ; Off           ;
+; Disable timing delays in Timing Simulation                                                 ; Off                                                 ; Off           ;
+; Generate Signal Activity File                                                              ; Off                                                 ; Off           ;
+; Generate VCD File for PowerPlay Power Analyzer                                             ; Off                                                 ; Off           ;
+; Group bus channels in simulation results                                                   ; Off                                                 ; Off           ;
+; Preserve fewer signal transitions to reduce memory requirements                            ; On                                                  ; On            ;
+; Trigger vector comparison with the specified mode                                          ; INPUT_EDGE                                          ; INPUT_EDGE    ;
+; Disable setup and hold time violations detection in input registers of bi-directional pins ; Off                                                 ; Off           ;
+; Overwrite Waveform Inputs With Simulation Outputs                                          ; Off                                                 ;               ;
+; Perform Glitch Filtering in Timing Simulation                                              ; Auto                                                ; Auto          ;
++--------------------------------------------------------------------------------------------+-----------------------------------------------------+---------------+
 
 
 +----------------------+
@@ -90,222 +81,35 @@ Waveform report data cannot be output to ASCII.
 Please use Quartus II 64-Bit to view the waveform report data.
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ALTSYNCRAM ;
-+----------------------------------------------------------------------------------------------------------------+
-Please refer to fitter text-based report (*.fit.rpt) to view logical memory report content in ASCII.
-
-
-+--------------------------------------------------------------------+
-; Coverage Summary                                                   ;
-+-----------------------------------------------------+--------------+
-; Type                                                ; Value        ;
-+-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;      46.96 % ;
-; Total nodes checked                                 ; 115          ;
-; Total output ports checked                          ; 115          ;
-; Total output ports with complete 1/0-value coverage ; 54           ;
-; Total output ports with no 1/0-value coverage       ; 55           ;
-; Total output ports with no 1-value coverage         ; 55           ;
-; Total output ports with no 0-value coverage         ; 61           ;
-+-----------------------------------------------------+--------------+
++------------------+
+; Coverage Summary ;
++------+-----------+
+; Type ; Value     ;
++------+-----------+
 
 
 The following table displays output ports that toggle between 1 and 0 during simulation.
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Complete 1/0-Value Coverage                                                                                                                                                                                                                        ;
-+-------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------+
-; Node Name                                                                                                         ; Output Port Name                                                                                            ; Output Port Type ;
-+-------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------+
-; |UNIDADE_CONTROLE|write_enable                                                                                    ; |UNIDADE_CONTROLE|write_enable                                                                              ; pin_out          ;
-; |UNIDADE_CONTROLE|inst6                                                                                           ; |UNIDADE_CONTROLE|inst6                                                                                     ; regout           ;
-; |UNIDADE_CONTROLE|CLOCK                                                                                           ; |UNIDADE_CONTROLE|CLOCK                                                                                     ; out              ;
-; |UNIDADE_CONTROLE|MIR[31]                                                                                         ; |UNIDADE_CONTROLE|MIR[31]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[30]                                                                                         ; |UNIDADE_CONTROLE|MIR[30]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[29]                                                                                         ; |UNIDADE_CONTROLE|MIR[29]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[28]                                                                                         ; |UNIDADE_CONTROLE|MIR[28]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[27]                                                                                         ; |UNIDADE_CONTROLE|MIR[27]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[26]                                                                                         ; |UNIDADE_CONTROLE|MIR[26]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[21]                                                                                         ; |UNIDADE_CONTROLE|MIR[21]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[19]                                                                                         ; |UNIDADE_CONTROLE|MIR[19]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[16]                                                                                         ; |UNIDADE_CONTROLE|MIR[16]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[15]                                                                                         ; |UNIDADE_CONTROLE|MIR[15]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[10]                                                                                         ; |UNIDADE_CONTROLE|MIR[10]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[9]                                                                                          ; |UNIDADE_CONTROLE|MIR[9]                                                                                    ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[7]                                                                                          ; |UNIDADE_CONTROLE|MIR[7]                                                                                    ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[6]                                                                                          ; |UNIDADE_CONTROLE|MIR[6]                                                                                    ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[5]                                                                                          ; |UNIDADE_CONTROLE|MIR[5]                                                                                    ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[4]                                                                                          ; |UNIDADE_CONTROLE|MIR[4]                                                                                    ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[2]                                                                                          ; |UNIDADE_CONTROLE|MIR[2]                                                                                    ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[1]                                                                                          ; |UNIDADE_CONTROLE|MIR[1]                                                                                    ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[0]                                                                                          ; |UNIDADE_CONTROLE|MIR[0]                                                                                    ; pin_out          ;
-; |UNIDADE_CONTROLE|MPC[4]                                                                                          ; |UNIDADE_CONTROLE|MPC[4]                                                                                    ; pin_out          ;
-; |UNIDADE_CONTROLE|MPC[3]                                                                                          ; |UNIDADE_CONTROLE|MPC[3]                                                                                    ; pin_out          ;
-; |UNIDADE_CONTROLE|MPC[2]                                                                                          ; |UNIDADE_CONTROLE|MPC[2]                                                                                    ; pin_out          ;
-; |UNIDADE_CONTROLE|MPC[1]                                                                                          ; |UNIDADE_CONTROLE|MPC[1]                                                                                    ; pin_out          ;
-; |UNIDADE_CONTROLE|MPC[0]                                                                                          ; |UNIDADE_CONTROLE|MPC[0]                                                                                    ; pin_out          ;
-; |UNIDADE_CONTROLE|MPC:inst|inst56[4]                                                                              ; |UNIDADE_CONTROLE|MPC:inst|inst56[4]                                                                        ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst56[3]                                                                              ; |UNIDADE_CONTROLE|MPC:inst|inst56[3]                                                                        ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst56[2]                                                                              ; |UNIDADE_CONTROLE|MPC:inst|inst56[2]                                                                        ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst56[1]                                                                              ; |UNIDADE_CONTROLE|MPC:inst|inst56[1]                                                                        ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst56[0]                                                                              ; |UNIDADE_CONTROLE|MPC:inst|inst56[0]                                                                        ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst5[4]                                                                               ; |UNIDADE_CONTROLE|MPC:inst|inst5[4]                                                                         ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst5[2]                                                                               ; |UNIDADE_CONTROLE|MPC:inst|inst5[2]                                                                         ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst5[0]                                                                               ; |UNIDADE_CONTROLE|MPC:inst|inst5[0]                                                                         ; out0             ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a0  ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[0]  ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a1  ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[1]  ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a2  ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[2]  ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a4  ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[4]  ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a5  ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[5]  ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a6  ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[6]  ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a7  ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[7]  ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a9  ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[9]  ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a10 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[10] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a15 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[15] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a16 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[16] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a19 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[19] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a21 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[21] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a26 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[26] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a27 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[27] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a28 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[28] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a29 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[29] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a30 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[30] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a31 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[31] ; portadataout0    ;
-+-------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------+
++-------------------------------------------------+
+; Complete 1/0-Value Coverage                     ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 1 during simulation.
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Missing 1-Value Coverage                                                                                                                                                                                                                           ;
-+-------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------+
-; Node Name                                                                                                         ; Output Port Name                                                                                            ; Output Port Type ;
-+-------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------+
-; |UNIDADE_CONTROLE|MIR[35]                                                                                         ; |UNIDADE_CONTROLE|MIR[35]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[34]                                                                                         ; |UNIDADE_CONTROLE|MIR[34]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[33]                                                                                         ; |UNIDADE_CONTROLE|MIR[33]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[32]                                                                                         ; |UNIDADE_CONTROLE|MIR[32]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[25]                                                                                         ; |UNIDADE_CONTROLE|MIR[25]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[24]                                                                                         ; |UNIDADE_CONTROLE|MIR[24]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[23]                                                                                         ; |UNIDADE_CONTROLE|MIR[23]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[22]                                                                                         ; |UNIDADE_CONTROLE|MIR[22]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[17]                                                                                         ; |UNIDADE_CONTROLE|MIR[17]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[14]                                                                                         ; |UNIDADE_CONTROLE|MIR[14]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[12]                                                                                         ; |UNIDADE_CONTROLE|MIR[12]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[11]                                                                                         ; |UNIDADE_CONTROLE|MIR[11]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[8]                                                                                          ; |UNIDADE_CONTROLE|MIR[8]                                                                                    ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[3]                                                                                          ; |UNIDADE_CONTROLE|MIR[3]                                                                                    ; pin_out          ;
-; |UNIDADE_CONTROLE|Z                                                                                               ; |UNIDADE_CONTROLE|Z                                                                                         ; out              ;
-; |UNIDADE_CONTROLE|N                                                                                               ; |UNIDADE_CONTROLE|N                                                                                         ; out              ;
-; |UNIDADE_CONTROLE|MBR_IN[7]                                                                                       ; |UNIDADE_CONTROLE|MBR_IN[7]                                                                                 ; out              ;
-; |UNIDADE_CONTROLE|MBR_IN[6]                                                                                       ; |UNIDADE_CONTROLE|MBR_IN[6]                                                                                 ; out              ;
-; |UNIDADE_CONTROLE|MBR_IN[5]                                                                                       ; |UNIDADE_CONTROLE|MBR_IN[5]                                                                                 ; out              ;
-; |UNIDADE_CONTROLE|MBR_IN[4]                                                                                       ; |UNIDADE_CONTROLE|MBR_IN[4]                                                                                 ; out              ;
-; |UNIDADE_CONTROLE|MBR_IN[3]                                                                                       ; |UNIDADE_CONTROLE|MBR_IN[3]                                                                                 ; out              ;
-; |UNIDADE_CONTROLE|MBR_IN[2]                                                                                       ; |UNIDADE_CONTROLE|MBR_IN[2]                                                                                 ; out              ;
-; |UNIDADE_CONTROLE|MBR_IN[1]                                                                                       ; |UNIDADE_CONTROLE|MBR_IN[1]                                                                                 ; out              ;
-; |UNIDADE_CONTROLE|MBR_IN[0]                                                                                       ; |UNIDADE_CONTROLE|MBR_IN[0]                                                                                 ; out              ;
-; |UNIDADE_CONTROLE|MPC[8]                                                                                          ; |UNIDADE_CONTROLE|MPC[8]                                                                                    ; pin_out          ;
-; |UNIDADE_CONTROLE|MPC[7]                                                                                          ; |UNIDADE_CONTROLE|MPC[7]                                                                                    ; pin_out          ;
-; |UNIDADE_CONTROLE|MPC[6]                                                                                          ; |UNIDADE_CONTROLE|MPC[6]                                                                                    ; pin_out          ;
-; |UNIDADE_CONTROLE|MPC[5]                                                                                          ; |UNIDADE_CONTROLE|MPC[5]                                                                                    ; pin_out          ;
-; |UNIDADE_CONTROLE|MPC:inst|inst4                                                                                  ; |UNIDADE_CONTROLE|MPC:inst|inst4                                                                            ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst3                                                                                  ; |UNIDADE_CONTROLE|MPC:inst|inst3                                                                            ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst1                                                                                  ; |UNIDADE_CONTROLE|MPC:inst|inst1                                                                            ; regout           ;
-; |UNIDADE_CONTROLE|MPC:inst|inst2                                                                                  ; |UNIDADE_CONTROLE|MPC:inst|inst2                                                                            ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst                                                                                   ; |UNIDADE_CONTROLE|MPC:inst|inst                                                                             ; regout           ;
-; |UNIDADE_CONTROLE|MPC:inst|inst56[7]                                                                              ; |UNIDADE_CONTROLE|MPC:inst|inst56[7]                                                                        ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst56[6]                                                                              ; |UNIDADE_CONTROLE|MPC:inst|inst56[6]                                                                        ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst56[5]                                                                              ; |UNIDADE_CONTROLE|MPC:inst|inst56[5]                                                                        ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst5[7]                                                                               ; |UNIDADE_CONTROLE|MPC:inst|inst5[7]                                                                         ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst5[6]                                                                               ; |UNIDADE_CONTROLE|MPC:inst|inst5[6]                                                                         ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst5[5]                                                                               ; |UNIDADE_CONTROLE|MPC:inst|inst5[5]                                                                         ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst5[3]                                                                               ; |UNIDADE_CONTROLE|MPC:inst|inst5[3]                                                                         ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst5[1]                                                                               ; |UNIDADE_CONTROLE|MPC:inst|inst5[1]                                                                         ; out0             ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a3  ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[3]  ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a8  ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[8]  ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a11 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[11] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a12 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[12] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a14 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[14] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a17 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[17] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a22 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[22] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a23 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[23] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a24 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[24] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a25 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[25] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a32 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[32] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a33 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[33] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a34 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[34] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a35 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[35] ; portadataout0    ;
-+-------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------+
++-------------------------------------------------+
+; Missing 1-Value Coverage                        ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 0 during simulation.
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Missing 0-Value Coverage                                                                                                                                                                                                                           ;
-+-------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------+
-; Node Name                                                                                                         ; Output Port Name                                                                                            ; Output Port Type ;
-+-------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------+
-; |UNIDADE_CONTROLE|MIR[35]                                                                                         ; |UNIDADE_CONTROLE|MIR[35]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[34]                                                                                         ; |UNIDADE_CONTROLE|MIR[34]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[33]                                                                                         ; |UNIDADE_CONTROLE|MIR[33]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[32]                                                                                         ; |UNIDADE_CONTROLE|MIR[32]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[25]                                                                                         ; |UNIDADE_CONTROLE|MIR[25]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[24]                                                                                         ; |UNIDADE_CONTROLE|MIR[24]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[23]                                                                                         ; |UNIDADE_CONTROLE|MIR[23]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[22]                                                                                         ; |UNIDADE_CONTROLE|MIR[22]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[20]                                                                                         ; |UNIDADE_CONTROLE|MIR[20]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[18]                                                                                         ; |UNIDADE_CONTROLE|MIR[18]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[17]                                                                                         ; |UNIDADE_CONTROLE|MIR[17]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[14]                                                                                         ; |UNIDADE_CONTROLE|MIR[14]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[13]                                                                                         ; |UNIDADE_CONTROLE|MIR[13]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[12]                                                                                         ; |UNIDADE_CONTROLE|MIR[12]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[11]                                                                                         ; |UNIDADE_CONTROLE|MIR[11]                                                                                   ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[8]                                                                                          ; |UNIDADE_CONTROLE|MIR[8]                                                                                    ; pin_out          ;
-; |UNIDADE_CONTROLE|MIR[3]                                                                                          ; |UNIDADE_CONTROLE|MIR[3]                                                                                    ; pin_out          ;
-; |UNIDADE_CONTROLE|Z                                                                                               ; |UNIDADE_CONTROLE|Z                                                                                         ; out              ;
-; |UNIDADE_CONTROLE|N                                                                                               ; |UNIDADE_CONTROLE|N                                                                                         ; out              ;
-; |UNIDADE_CONTROLE|MBR_IN[7]                                                                                       ; |UNIDADE_CONTROLE|MBR_IN[7]                                                                                 ; out              ;
-; |UNIDADE_CONTROLE|MBR_IN[6]                                                                                       ; |UNIDADE_CONTROLE|MBR_IN[6]                                                                                 ; out              ;
-; |UNIDADE_CONTROLE|MBR_IN[5]                                                                                       ; |UNIDADE_CONTROLE|MBR_IN[5]                                                                                 ; out              ;
-; |UNIDADE_CONTROLE|MBR_IN[4]                                                                                       ; |UNIDADE_CONTROLE|MBR_IN[4]                                                                                 ; out              ;
-; |UNIDADE_CONTROLE|MBR_IN[3]                                                                                       ; |UNIDADE_CONTROLE|MBR_IN[3]                                                                                 ; out              ;
-; |UNIDADE_CONTROLE|MBR_IN[2]                                                                                       ; |UNIDADE_CONTROLE|MBR_IN[2]                                                                                 ; out              ;
-; |UNIDADE_CONTROLE|MBR_IN[1]                                                                                       ; |UNIDADE_CONTROLE|MBR_IN[1]                                                                                 ; out              ;
-; |UNIDADE_CONTROLE|MBR_IN[0]                                                                                       ; |UNIDADE_CONTROLE|MBR_IN[0]                                                                                 ; out              ;
-; |UNIDADE_CONTROLE|MPC[8]                                                                                          ; |UNIDADE_CONTROLE|MPC[8]                                                                                    ; pin_out          ;
-; |UNIDADE_CONTROLE|MPC[7]                                                                                          ; |UNIDADE_CONTROLE|MPC[7]                                                                                    ; pin_out          ;
-; |UNIDADE_CONTROLE|MPC[6]                                                                                          ; |UNIDADE_CONTROLE|MPC[6]                                                                                    ; pin_out          ;
-; |UNIDADE_CONTROLE|MPC[5]                                                                                          ; |UNIDADE_CONTROLE|MPC[5]                                                                                    ; pin_out          ;
-; |UNIDADE_CONTROLE|MPC:inst|inst4                                                                                  ; |UNIDADE_CONTROLE|MPC:inst|inst4                                                                            ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst3                                                                                  ; |UNIDADE_CONTROLE|MPC:inst|inst3                                                                            ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst1                                                                                  ; |UNIDADE_CONTROLE|MPC:inst|inst1                                                                            ; regout           ;
-; |UNIDADE_CONTROLE|MPC:inst|inst2                                                                                  ; |UNIDADE_CONTROLE|MPC:inst|inst2                                                                            ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst                                                                                   ; |UNIDADE_CONTROLE|MPC:inst|inst                                                                             ; regout           ;
-; |UNIDADE_CONTROLE|MPC:inst|inst56[7]                                                                              ; |UNIDADE_CONTROLE|MPC:inst|inst56[7]                                                                        ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst56[6]                                                                              ; |UNIDADE_CONTROLE|MPC:inst|inst56[6]                                                                        ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst56[5]                                                                              ; |UNIDADE_CONTROLE|MPC:inst|inst56[5]                                                                        ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst5[7]                                                                               ; |UNIDADE_CONTROLE|MPC:inst|inst5[7]                                                                         ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst5[6]                                                                               ; |UNIDADE_CONTROLE|MPC:inst|inst5[6]                                                                         ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst5[5]                                                                               ; |UNIDADE_CONTROLE|MPC:inst|inst5[5]                                                                         ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst5[3]                                                                               ; |UNIDADE_CONTROLE|MPC:inst|inst5[3]                                                                         ; out0             ;
-; |UNIDADE_CONTROLE|MPC:inst|inst5[1]                                                                               ; |UNIDADE_CONTROLE|MPC:inst|inst5[1]                                                                         ; out0             ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a3  ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[3]  ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a8  ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[8]  ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a11 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[11] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a12 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[12] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a13 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[13] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a14 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[14] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a17 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[17] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a18 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[18] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a20 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[20] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a22 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[22] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a23 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[23] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a24 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[24] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a25 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[25] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a32 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[32] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a33 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[33] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a34 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[34] ; portadataout0    ;
-; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|ram_block1a35 ; |UNIDADE_CONTROLE|CONTROLSTORE:inst3|altsyncram:altsyncram_component|altsyncram_ds61:auto_generated|q_a[35] ; portadataout0    ;
-+-------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+------------------+
++-------------------------------------------------+
+; Missing 0-Value Coverage                        ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
 
 
 +---------------------+
@@ -321,19 +125,14 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Simulator
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Dec 02 16:31:43 2024
+    Info: Processing started: Fri Dec 13 17:28:27 2024
 Info: Command: quartus_sim --simulation_results_format=VWF mic1 -c mic1
-Info (324025): Using vector source file "C:/Users/Aluno/Desktop/sfiesaufgi/Faculdade-main/AOC/MIC-1/CONTROL_UNIT_iload.vwf"
-Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
-    Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
-Info (310002): Simulation partitioned into 1 sub-simulations
-Info (328053): Simulation coverage is      46.96 %
-Info (328052): Number of transitions in simulation is 187
-Info (324045): Vector file mic1.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
-Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4443 megabytes
-    Info: Processing ended: Mon Dec 02 16:31:44 2024
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+Info (324025): Using vector source file "/home/joao/Desktop/Faculdade/AOC/MIC-1/CPU_ifeq.vwf"
+Error (328002): Can't continue timing simulation because delay annotation information for design is missing
+Error: Quartus II 64-Bit Simulator was unsuccessful. 1 error, 0 warnings
+    Error: Peak virtual memory: 630 megabytes
+    Error: Processing ended: Fri Dec 13 17:28:27 2024
+    Error: Elapsed time: 00:00:00
+    Error: Total CPU time (on all processors): 00:00:00
 
 

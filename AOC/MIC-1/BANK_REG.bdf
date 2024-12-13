@@ -305,56 +305,6 @@ applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 312 304 584 432)
-	(text "MBR" (rect 5 0 33 13)(font "Arial" (font_size 8)))
-	(text "inst5" (rect 8 112 31 123)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "PROGRAM_BYTE[7..0]" (rect 0 0 133 13)(font "Arial" (font_size 8)))
-		(text "PROGRAM_BYTE[7..0]" (rect 21 27 154 40)(font "Arial" (font_size 8)))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "MIR[35..0]" (rect 0 0 59 13)(font "Arial" (font_size 8)))
-		(text "MIR[35..0]" (rect 21 43 80 56)(font "Arial" (font_size 8)))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "LOAD" (rect 0 0 35 13)(font "Arial" (font_size 8)))
-		(text "LOAD" (rect 21 59 56 72)(font "Arial" (font_size 8)))
-		(line (pt 0 64)(pt 16 64))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "CLOCK" (rect 0 0 43 13)(font "Arial" (font_size 8)))
-		(text "CLOCK" (rect 21 75 64 88)(font "Arial" (font_size 8)))
-		(line (pt 0 80)(pt 16 80))
-	)
-	(port
-		(pt 272 32)
-		(output)
-		(text "OUT_B[31..0]" (rect 0 0 77 13)(font "Arial" (font_size 8)))
-		(text "OUT_B[31..0]" (rect 176 27 253 40)(font "Arial" (font_size 8)))
-		(line (pt 272 32)(pt 256 32)(line_width 3))
-	)
-	(port
-		(pt 272 48)
-		(output)
-		(text "OUT_MBR[7..0]" (rect 0 0 89 13)(font "Arial" (font_size 8)))
-		(text "OUT_MBR[7..0]" (rect 165 43 254 56)(font "Arial" (font_size 8)))
-		(line (pt 272 48)(pt 256 48)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 256 112))
-	)
-)
-(symbol
 	(rect 384 448 576 576)
 	(text "SP" (rect 5 0 22 13)(font "Arial" (font_size 8)))
 	(text "inst1" (rect 8 112 31 123)(font "Arial" ))
@@ -669,6 +619,56 @@ applicable agreement for further details.
 		(rectangle (rect 16 16 232 112))
 	)
 )
+(symbol
+	(rect 312 304 592 432)
+	(text "MBR" (rect 5 0 33 13)(font "Arial" (font_size 8)))
+	(text "inst5" (rect 8 113 31 124)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "PROGRAM_BYTE[7..0]" (rect 0 0 133 13)(font "Arial" (font_size 8)))
+		(text "PROGRAM_BYTE[7..0]" (rect 21 27 154 40)(font "Arial" (font_size 8)))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "MIR[35..0]" (rect 0 0 59 13)(font "Arial" (font_size 8)))
+		(text "MIR[35..0]" (rect 21 43 80 56)(font "Arial" (font_size 8)))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "LOAD" (rect 0 0 35 13)(font "Arial" (font_size 8)))
+		(text "LOAD" (rect 21 59 56 72)(font "Arial" (font_size 8)))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "CLOCK" (rect 0 0 43 13)(font "Arial" (font_size 8)))
+		(text "CLOCK" (rect 21 75 64 88)(font "Arial" (font_size 8)))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 280 32)
+		(output)
+		(text "OUT_B[31..0]" (rect 0 0 77 13)(font "Arial" (font_size 8)))
+		(text "OUT_B[31..0]" (rect 182 27 259 40)(font "Arial" (font_size 8)))
+		(line (pt 280 32)(pt 264 32)(line_width 3))
+	)
+	(port
+		(pt 280 48)
+		(output)
+		(text "OUT_MBR[7..0]" (rect 0 0 89 13)(font "Arial" (font_size 8)))
+		(text "OUT_MBR[7..0]" (rect 170 43 259 56)(font "Arial" (font_size 8)))
+		(line (pt 280 48)(pt 264 48)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 264 112))
+	)
+)
 (connector
 	(pt 576 -80)
 	(pt 560 -80)
@@ -871,11 +871,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 584 352)
-	(pt 624 352)
-	(bus)
-)
-(connector
 	(pt 584 192)
 	(pt 816 192)
 	(bus)
@@ -883,21 +878,6 @@ applicable agreement for further details.
 (connector
 	(pt 816 56)
 	(pt 816 192)
-	(bus)
-)
-(connector
-	(pt 584 336)
-	(pt 816 336)
-	(bus)
-)
-(connector
-	(pt 816 192)
-	(pt 816 336)
-	(bus)
-)
-(connector
-	(pt 816 336)
-	(pt 816 480)
 	(bus)
 )
 (connector
@@ -947,11 +927,6 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 312 336)
-	(pt 64 336)
-	(bus)
-)
-(connector
 	(text "CLOCK" (rect 294 -96 334 -85)(font "Arial" ))
 	(pt 288 -80)
 	(pt 328 -80)
@@ -986,22 +961,6 @@ applicable agreement for further details.
 	(text "MIR[35..0]" (rect 272 -80 322 -69)(font "Arial" ))
 	(pt 288 -64)
 	(pt 328 -64)
-	(bus)
-)
-(connector
-	(text "LOAD" (rect 272 352 302 363)(font "Arial" ))
-	(pt 256 368)
-	(pt 312 368)
-)
-(connector
-	(text "CLOCK" (rect 272 368 312 379)(font "Arial" ))
-	(pt 256 384)
-	(pt 312 384)
-)
-(connector
-	(text "MIR[35..0]" (rect 240 336 290 347)(font "Arial" ))
-	(pt 256 352)
-	(pt 312 352)
 	(bus)
 )
 (connector
@@ -1051,6 +1010,47 @@ applicable agreement for further details.
 (connector
 	(pt 576 72)
 	(pt 592 72)
+	(bus)
+)
+(connector
+	(pt 64 336)
+	(pt 312 336)
+	(bus)
+)
+(connector
+	(text "MIR[35..0]" (rect 240 336 290 347)(font "Arial" ))
+	(pt 256 352)
+	(pt 312 352)
+	(bus)
+)
+(connector
+	(text "LOAD" (rect 272 352 302 363)(font "Arial" ))
+	(pt 256 368)
+	(pt 312 368)
+)
+(connector
+	(text "CLOCK" (rect 272 368 312 379)(font "Arial" ))
+	(pt 256 384)
+	(pt 312 384)
+)
+(connector
+	(pt 816 192)
+	(pt 816 336)
+	(bus)
+)
+(connector
+	(pt 816 336)
+	(pt 816 480)
+	(bus)
+)
+(connector
+	(pt 592 336)
+	(pt 816 336)
+	(bus)
+)
+(connector
+	(pt 592 352)
+	(pt 624 352)
 	(bus)
 )
 (junction (pt 120 224))

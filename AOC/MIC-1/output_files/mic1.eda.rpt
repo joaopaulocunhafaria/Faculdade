@@ -1,5 +1,5 @@
 EDA Netlist Writer report for mic1
-Mon Dec 02 16:39:15 2024
+Fri Dec 13 17:30:53 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -36,9 +36,9 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Mon Dec 02 16:39:15 2024 ;
+; EDA Netlist Writer Status ; Successful - Fri Dec 13 17:30:53 2024 ;
 ; Revision Name             ; mic1                                  ;
-; Top-level Entity Name     ; UNIDADE_CONTROLE                      ;
+; Top-level Entity Name     ; SHIFTER                               ;
 ; Family                    ; Cyclone II                            ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
@@ -65,13 +65,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------+---------------------------+
 
 
-+----------------------------------------------------------------------------------------+
-; Simulation Generated Files                                                             ;
-+----------------------------------------------------------------------------------------+
-; Generated Files                                                                        ;
-+----------------------------------------------------------------------------------------+
-; C:/Users/Aluno/Desktop/sfiesaufgi/Faculdade-main/AOC/MIC-1/simulation/modelsim/mic1.vo ;
-+----------------------------------------------------------------------------------------+
++--------------------------------------------------------------------+
+; Simulation Generated Files                                         ;
++--------------------------------------------------------------------+
+; Generated Files                                                    ;
++--------------------------------------------------------------------+
+; /home/joao/Desktop/Faculdade/AOC/MIC-1/simulation/modelsim/mic1.vo ;
++--------------------------------------------------------------------+
 
 
 +-----------------------------+
@@ -80,13 +80,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Dec 02 16:39:14 2024
-Info: Command: quartus_eda --functional=on --simulation=on --tool=modelsim_oem --format=verilog mic1 -c mic1
-Info (204019): Generated file mic1.vo in folder "C:/Users/Aluno/Desktop/sfiesaufgi/Faculdade-main/AOC/MIC-1/simulation/modelsim/" for EDA simulation tool
+    Info: Processing started: Fri Dec 13 17:30:53 2024
+Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off mic1 -c mic1
+Info (204019): Generated file mic1.vo in folder "/home/joao/Desktop/Faculdade/AOC/MIC-1/simulation/modelsim/" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4515 megabytes
-    Info: Processing ended: Mon Dec 02 16:39:15 2024
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 783 megabytes
+    Info: Processing ended: Fri Dec 13 17:30:53 2024
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:00
 
 
