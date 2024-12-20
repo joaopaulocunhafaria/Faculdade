@@ -303,42 +303,6 @@ applicable agreement for further details.
 	(pt 608 400)
 )
 (connector
-	(text "IN_C[31..0]" (rect 520 304 577 316)(font "Arial" ))
-	(pt 608 320)
-	(pt 512 320)
-	(bus)
-)
-(connector
-	(text "IN_SELECT" (rect 520 336 579 348)(font "Arial" ))
-	(pt 608 352)
-	(pt 512 352)
-)
-(connector
-	(text "LOAD" (rect 520 352 549 364)(font "Arial" ))
-	(pt 608 368)
-	(pt 512 368)
-)
-(connector
-	(text "CLOCK" (rect 520 400 557 412)(font "Arial" ))
-	(pt 608 416)
-	(pt 512 416)
-)
-(connector
-	(text "OUT_EN" (rect 520 416 563 428)(font "Arial" ))
-	(pt 608 432)
-	(pt 512 432)
-)
-(connector
-	(text "OUT_MEM_EN" (rect 520 432 593 444)(font "Arial" ))
-	(pt 608 448)
-	(pt 512 448)
-)
-(connector
-	(text "OUT_MEM_EN" (rect 346 400 419 412)(font "Arial" ))
-	(pt 264 416)
-	(pt 384 416)
-)
-(connector
 	(text "<<__$DEF_ALIAS1806>>" (rect 360 320 483 332)(font "Arial" ))
 	(pt 608 336)
 	(pt 248 336)
@@ -361,50 +325,12 @@ applicable agreement for further details.
 	(bus)
 )
 (connector
-	(text "IN_SELECT" (rect 338 352 397 364)(font "Arial" ))
-	(pt 264 368)
-	(pt 384 368)
-)
-(connector
-	(pt 264 368)
-	(pt 264 416)
-)
-(connector
-	(pt 264 416)
-	(pt 264 576)
-)
-(connector
-	(text "CLOCK" (rect 366 288 403 300)(font "Arial" ))
-	(pt 384 304)
-	(pt 280 304)
-)
-(connector
-	(pt 288 352)
-	(pt 288 272)
-	(bus)
-)
-(connector
-	(text "IN_C[31..0]" (rect 355 336 412 348)(font "Arial" ))
-	(pt 384 352)
-	(pt 288 352)
-	(bus)
-)
-(connector
 	(pt 280 208)
 	(pt 304 208)
 	(bus)
 )
 (connector
-	(text "LOAD" (rect 346 304 375 316)(font "Arial" ))
-	(pt 384 320)
-	(pt 304 320)
-)
-(connector
 	(pt 288 240)
-	(pt 304 240)
-)
-(connector
-	(pt 304 320)
 	(pt 304 240)
 )
 (connector
@@ -456,9 +382,69 @@ applicable agreement for further details.
 	(pt 56 448)
 )
 (connector
-	(text "OUT_EN" (rect 378 376 421 388)(font "Arial" ))
-	(pt 216 392)
-	(pt 384 392)
+	(pt 288 272)
+	(pt 288 320)
+	(bus)
 )
-(junction (pt 264 416))
+(connector
+	(pt 264 352)
+	(pt 264 448)
+)
+(connector
+	(pt 264 448)
+	(pt 264 576)
+)
+(connector
+	(pt 304 240)
+	(pt 304 368)
+)
+(connector
+	(text "CLOCK" (rect 326 288 363 300)(font "Arial" ))
+	(pt 280 304)
+	(pt 344 304)
+)
+(connector
+	(pt 344 304)
+	(pt 344 416)
+)
+(connector
+	(pt 224 392)
+	(pt 224 432)
+)
+(connector
+	(pt 216 392)
+	(pt 224 392)
+)
+(connector
+	(text "<<__$DEF_ALIAS6117>>" (rect 491 304 614 316)(font "Arial" )(invisible))
+	(pt 288 320)
+	(pt 608 320)
+	(bus)
+)
+(connector
+	(text "<<__$DEF_ALIAS6119>>" (rect 466 336 589 348)(font "Arial" )(invisible))
+	(pt 264 352)
+	(pt 608 352)
+)
+(connector
+	(text "<<__$DEF_ALIAS6121>>" (rect 474 352 597 364)(font "Arial" )(invisible))
+	(pt 304 368)
+	(pt 608 368)
+)
+(connector
+	(text "<<__$DEF_ALIAS6123>>" (rect 520 400 643 412)(font "Arial" )(invisible))
+	(pt 344 416)
+	(pt 608 416)
+)
+(connector
+	(text "<<__$DEF_ALIAS6125>>" (rect 522 416 645 428)(font "Arial" )(invisible))
+	(pt 224 432)
+	(pt 608 432)
+)
+(connector
+	(text "<<__$DEF_ALIAS6127>>" (rect 474 432 597 444)(font "Arial" )(invisible))
+	(pt 264 448)
+	(pt 608 448)
+)
 (junction (pt 248 384))
+(junction (pt 264 448))
