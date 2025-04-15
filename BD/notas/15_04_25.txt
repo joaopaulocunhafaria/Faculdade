@@ -1,0 +1,17 @@
+Operações com data em SQL
+
+Tipos de dados:
+    Date "AAAA-MM-DD"
+    Time "HH:mm:ss"
+    DateTime "AAAA-MM-DD HH:mm:ss"
+    TimeStamp "AAAA-MM-DD HH:mm:ss" com fuso horário
+
+Querys:
+    Select now(); Mostra a data completa 
+    Select Year("2005-05-31 11:55:42") Extrai o ano de uma data
+    Select Month("2005-05-31 11:55:42") Extrai o mês de uma data
+    Select Date("2005-05-31 11:55:42") Extrai o dia de uma data
+    Select Second("2005-05-31 11:55:42") Extrai o segundo de uma data
+
+    Select AddDate("", INTERVAL valor UNIDADE)
+    Select SubDate("", INTERVAL valor UNIDADE)
