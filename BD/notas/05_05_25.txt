@@ -1,0 +1,22 @@
+CONSTRAINT [nome]
+FOREING KEY (<coluna>)
+REFERENCES <tabela>(<coluna>)
+[ON DELETE <comportamento>]
+[ON UPDATE <comportamento>]
+
+<comportamento>
+--> RESTRICT
+    CASCADE
+    SET NULL
+
+EX: 
+CREATE TABLE telefone(
+    contato_id int,
+    telefone CHAR(11),
+    PRIMARY KEY (contato_id,telefone),
+    CONSTRAINT fk_telefone,
+    FOREING KEY (contato_id),
+    REFERENCES constatos(id),
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+);

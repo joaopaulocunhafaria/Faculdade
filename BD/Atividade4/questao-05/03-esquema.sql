@@ -1,0 +1,47 @@
+
+ 
+CREATE TABLE IF NOT EXISTS Cliente(
+    id  INT PRIMARY KEY AUTO_INCREMENT,
+    nome  VARCHAR(60) NOT NULL,
+    descricao  VARCHAR(200) NOT NULL,
+    logradouro VARCHAR(60) NOT NULL,
+    cidade VARCHAR(60) NOT NULL,
+    complemento VARCHAR(60) NOT NULL,
+    numero VARCHAR(8) NOT NULL
+);
+
+
+CREATE TABLE IF NOT EXISTS Pedido (
+  id  INT PRIMARY KEY AUTO_INCREMENT,
+  data_criacao DATETIME NOT NULL,
+  situacao_entrega VARCHAR(20) NOT NULL,
+  cliente INT,
+  CONSTRAINT fk_cliente 
+  FOREIGN KEY (cliente) REFERENCES Cliente(id)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE
+  );
+
+CREATE TABLE IF NOT EXISTS Item(
+    id  INT PRIMARY KEY AUTO_INCREMENT,
+    nome  VARCHAR(200) NOT NULL,
+    descricao  VARCHAR(200) NOT NULL,
+    preco  DECIMAL(10,2) NOT NULL,  
+);
+
+
+CREATE TABLE IF NOT EXISTS ListaItem(
+    id  INT PRIMARY KEY AUTO_INCREMENT,
+   item INT,
+  CONSTRAINT fk_item 
+  FOREIGN KEY (item) REFERENCES Item(id)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE,
+  pedido INT,
+  CONSTRAINT fk_pedido 
+  FOREIGN KEY (pedido) REFERENCES Pedido(id)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE  
+);
+
+  

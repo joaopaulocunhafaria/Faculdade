@@ -1,0 +1,64 @@
+Relação entre tabelas 
+
+CREATE DATABASE joao_agenda;
+USE joao_agenda;
+CREATE TABLE contatos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    endereco VARCHAR(255),
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE telefones (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    contato_id INT NOT NULL,
+    numero VARCHAR(20) NOT NULL,
+    tipo ENUM('residencial', 'comercial', 'celular') NOT NULL,
+    FOREIGN KEY (contato_id) REFERENCES contatos(id) ON DELETE CASCADE
+);
+
+-- Inserir contatos
+INSERT INTO contatos (nome, email, endereco) VALUES 
+('Ana Souza', 'ana.souza@email.com', 'Rua das Flores, 123'),
+('Carlos Pereira', 'carlos.pereira@email.com', 'Av. Principal, 456'),
+('Mariana Oliveira', 'mariana.oliveira@email.com', 'Travessa das Árvores, 789');
+
+
+INSERT INTO contatos (nome, email, endereco) VALUES 
+('João Paulo Cunha', 'joao.cunha@email.com', 'Rua das Flores, 123');
+-- Inserir telefones
+INSERT INTO telefones (contatofk_clientefk_cliente_id, numero, tipo) VALUES 
+(1, '11987654321', 'celular'),
+(1, '1123456789', 'residencial'),
+(2, '31987654321', 'celular'),
+(3, '2123456789', 'residencial'),
+(3, '21987654321', 'celular');
+
+SELECT * FROM contatos AS c , telefones AS t 
+WHERE t.id = 1;
+
+SELECT c.nome, COUNT(t.id) AS n_tel
+FROM contatos AS c 
+LEFT JOIN telefones AS t
+ON c.id = t.contato_id
+GROUP BY c.id;
+
+
+SELECT * FROM contatos AS c 
+LEFT JOIN telefones AS t 
+ON c.id = t.contato_id;
+
+Paginação de Dados : 
+
+SELECT *
+FROM contatos 
+WHERE nome LIKE "%Joao%" OR telefone LIKE "%37%" OR email LIKE "%@gmail%"
+ORDER BY nome 
+LIMIT 5 OFFSET 0;
+
+Contar a quantidade de paginas que tem em uma determinada tabela: 
+
+SELECT count(*)/5 
+FROM contato
+WHERE nome LIKE "%Joao%";

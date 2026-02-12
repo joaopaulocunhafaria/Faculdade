@@ -1,0 +1,8 @@
+select avg(salario) as media, count(*) as soma  from funcionarios group by departamento;
+
+select   avg(salario) as media, --Faz a media de uma coluna e a nomeia como media
+         count(*) as soma  --Faz a soma de uma coluna e nomeia de soma
+         from funcionarios
+         group by departamento --Agrupa por determinada coluna da escolha do usuario 
+         having media >5555.00; --Extrai somente as que tiverem dentro do filtro having
+
