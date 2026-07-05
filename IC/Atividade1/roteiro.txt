@@ -1,0 +1,136 @@
+APRESENTACAO: INTELIGENCIA COMPUTACIONAL - ATIVIDADE PRATICA 01
+TEMA: ANALISE E PRE-PROCESSAMENTO DE DADOS (ADULT CENSUS INCOME)
+
+SLIDE 1: TITULO E AUTORIA
+
+    Titulo: Inteligencia Computacional - Atividade Pratica 01: Metodologia Experimental 
+
+Autor: Joao Paulo da Cunha Faria
+
+Instituicao: CEFET-MG - Engenharia de Computacao
+
+Orientador: Prof. Dr. Alisson Marques da Silva 
+
+SLIDE 2: OBJETIVO DO TRABALHO
+
+    Desenvolver um experimento contemplando analise e compreensao dos dados.
+
+Aplicar pre-processamento e definir uma metodologia experimental adequada.
+
+Comparar modelos de forma reprodutivel e metodologicamente correta.
+
+SLIDE 3: CONTEXTUALIZACAO DO PROBLEMA
+
+    Descricao: Identificacao do problema associado ao conjunto de dados.
+
+Cenario: Predicao de renda anual baseada em dados do censo de 1994.
+
+Objetivo do Modelo: Prever se a renda anual supera 50 mil dolares.
+
+Tipo de Tarefa: Classificacao binaria.
+
+SLIDE 4: CARACTERIZACAO GERAL DA BASE
+
+    Fonte: UCI Machine Learning Repository.
+
+Total de Instancias: 32.561 registros.
+
+Numero de Atributos: 14 variaveis preditoras.
+
+Atributos Misto: Contem atributos categoricos, inteiros e reais.
+[IMAGEM: Tabela com a lista de atributos: age, workclass, education, occupation, etc.]
+
+SLIDE 5: ANALISE EXPLORATORIA (EDA) - DISTRIBUICAO DE IDADE
+
+    Metodo: Uso de histogramas para visualizar a concentracao dos dados.
+
+Observacao: A maior parte da amostra esta concentrada entre 20 e 50 anos.
+
+Importancia: Entender a demografia base para evitar vieses geracionais.
+[IMAGEM: histograma.png]
+
+SLIDE 6: ANALISE EXPLORATORIA (EDA) - HORAS TRABALHADAS E RENDA
+
+    Metodo: Uso de boxplots para identificar a relacao entre horas semanais e classe de renda.
+
+Outliers: Identificacao de valores extremos em pessoas que trabalham ate 99 horas por semana.
+
+Tendencia: Pessoas com renda superior a 50K tendem a trabalhar mais horas em media.
+[IMAGEM: boxplot.png]
+
+SLIDE 7: IDENTIFICACAO DE PROBLEMAS DE QUALIDADE
+
+    Valores Ausentes: Presenca do caractere "?" em colunas como workclass e occupation.
+
+Ruidos de Rotulo: Inconsistencia entre as categorias "<=50K" e "<=50K." que exigem limpeza.
+
+Desbalanceamento: A classe de menor renda representa cerca de 76% da base.
+
+Redundancia: O atributo "education" e redundante em relacao ao "education-num".
+
+SLIDE 8: PRE-PROCESSAMENTO - LIMPEZA E SELECAO
+
+    Tratamento de Ausentes: Aplicacao de imputacao pela moda para variaveis categoricas.
+
+Selecao de Atributos: Remocao de "fnlwgt" por ser um controle demografico irrelevante para a predicao individual.
+
+Reducao de Redundancia: Descarte da coluna "education" mantendo a versao numerica.
+
+SLIDE 9: PRE-PROCESSAMENTO - TRANSFORMACAO DE DADOS
+
+    Codificacao: Uso de One-Hot Encoding para transformar variaveis nominais em binarias.
+
+Justificativa do Encoding: Evitar a criacao de uma hierarquia inexistente entre categorias nominais.
+
+Normalizacao: Aplicacao de StandardScaler para garantir que todos os atributos numericos tenham a mesma escala.
+
+SLIDE 10: METODOLOGIA EXPERIMENTAL
+
+    Estrategia de Divisao: Uso de Hold-out com 80% para treinamento e 20% para teste.
+
+Estratificacao: Garantia de que a proporcao das classes seja mantida na divisao dos dados.
+
+Justificativa: Metodologia que permite avaliacao justa e reprodutivel dos modelos.
+
+SLIDE 11: ALGORITMOS SELECIONADOS
+
+    Algoritmo 1: Random Forest - escolhido por sua robustez a alta dimensionalidade.
+
+Algoritmo 2: Regressao Logistica - utilizado como baseline estatistico.
+
+Algoritmo 3: KNN (k=5) - selecionado para avaliar o impacto da esparsidade de dados.
+
+SLIDE 12: DISCUSSAO: POR QUE O F1-SCORE?
+
+    Problema: Em bases desbalanceadas, a acuracia pode ser enganosa.
+
+Solucao: O F1-Score equilibra a Precisao e o Recall.
+
+Formula: F1=2⋅Precisa˜o+RecallPrecisa˜o⋅Recall​
+
+Objetivo: Garantir que o modelo identifique corretamente a classe minoritaria (>50K).
+
+SLIDE 13: RESULTADOS OBTIDOS
+
+    Desempenho: O Random Forest apresentou o melhor equilíbrio entre as métricas.
+
+Comparacao: O KNN sofreu perda de performance devido a alta dimensionalidade gerada pelo encoding.
+
+Tabelas: Apresentacao organizada dos resultados comparativos.
+[IMAGEM: comparacao_desempenho.png]
+
+SLIDE 14: DISCUSSAO E CONCLUSAO
+
+    Resumo: O pre-processamento adequado foi fundamental para a qualidade dos resultados.
+
+Desafios: A limpeza de strings ruidosas evitou a criacao de classes duplicadas.
+
+Conclusao: A metodologia aplicada permitiu uma analise critica consistente entre os modelos.
+
+SLIDE 15: REFERENCIAS
+
+    Repositorio: UCI Machine Learning Repository.
+
+Ferramentas: Scikit-learn, Pandas, Matplotlib e Seaborn para Python.
+
+Metodologia: Inteligencia Computacional - Prof. Alisson Marques da Silva.

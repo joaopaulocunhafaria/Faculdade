@@ -34,14 +34,3 @@ python src/step2_vizualizacao.py
 python src/step3_separacao.py
 python src/step4_clusterizacao.py
 ```
-
-Os arquivos de entrada devem estar em `data/` e os artefatos gerados serão gravados em `output/` e `imgs/`.
-
-## Notas
-
-- Verifique os parâmetros dentro dos scripts caso queira alterar caminhos ou configurações.
-- Se houver dúvidas sobre execução ou erros, envie uma descrição do erro e o conteúdo de `requirements.txt`.
-
-## Autor
-
-Feito como parte do Trabalho Intermediário.

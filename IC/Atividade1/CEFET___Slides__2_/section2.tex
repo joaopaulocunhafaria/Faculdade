@@ -1,0 +1,48 @@
+% !TeX root = document.tex
+% !TeX encoding = UTF-8 Unicode
+
+\section{Pré-processamento e Metodologia}
+
+\begin{slide}{Pré-processamento: Limpeza e Seleção}
+  \begin{itemize}
+    \item \textbf{Tratamento de ausentes:} imputação pela moda para variáveis categóricas.
+    \item \textbf{Seleção de atributos:} remoção de fnlwgt por baixa relevância para predição individual.
+    \item \textbf{Redução de redundância:} descarte da coluna education, mantendo education-num.
+  \end{itemize}
+\end{slide}
+
+\begin{slide}{Pré-processamento: Transformação de Dados}
+  \begin{itemize}
+    \item \textbf{Codificação:} One-Hot Encoding para variáveis nominais.
+    \item \textbf{Justificativa:} evita hierarquia artificial entre categorias nominais.
+    \item \textbf{Normalização:} StandardScaler para padronizar escala dos atributos numéricos.
+  \end{itemize}
+\end{slide}
+
+\begin{slide}{Metodologia Experimental}
+  \begin{itemize}
+    \item \textbf{Estratégia de divisão:} hold-out com 80\% para treino e 20\% para teste.
+    \item \textbf{Estratificação:} manutenção da proporção das classes em treino e teste.
+    \item \textbf{Justificativa:} avaliação justa, simples e reprodutível.
+  \end{itemize}
+\end{slide}
+
+\begin{slide}{Algoritmos Selecionados}
+  \begin{itemize}
+    \item \textbf{Random Forest:} robusto para alta dimensionalidade após o encoding.
+    \item \textbf{Regressão Logística:} baseline estatístico para comparação.
+    \item \textbf{KNN (k=5):} avalia impacto da esparsidade no espaço de atributos.
+  \end{itemize}
+\end{slide}
+
+\begin{slide}{Discussão: Por que o F1-Score?}
+  \begin{itemize}
+    \item \textbf{Problema:} em bases desbalanceadas, acurácia pode ser enganosa.
+    \item \textbf{Solução:} F1-Score equilibra Precisão e Recall.
+    \item \textbf{Objetivo:} melhorar a identificação da classe minoritária (\textgreater 50K).
+  \end{itemize}
+
+  \[
+    F_1 = 2 \cdot \frac{\text{Precisão} \cdot \text{Recall}}{\text{Precisão} + \text{Recall}}
+  \]
+\end{slide}

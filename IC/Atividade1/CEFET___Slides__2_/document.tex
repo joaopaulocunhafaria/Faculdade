@@ -1,0 +1,44 @@
+% !TeX program = xelatex
+% !TeX encoding = UTF-8 Unicode
+% !BIB program = biber
+
+% essa classe aceita as seguintes opções:
+% abnd ou ieee pra estilo de citaçõ
+% english ou french pra língua dos slides (não passar nada é português)
+\documentclass[abnt]{slides}
+
+\title{Inteligência Computacional - Atividade Prática 01}
+\subtitle{Análise e Pré-processamento de Dados (Adult Census Income)}
+
+% Todo comando \add trabalha com uma lista e todo comando \set trabalha com um
+% único elemento, ou seja, pode haver apenas um \setorientador mas vários
+% \addauthor ou \addcoorientador. Todo comando \add e \set tem um \get
+% correspondente (por exemplo, \getauthors, \getcoorientadores, \getorientador,
+% \getmembrobanca). Esses comandos são definidos na classe slides.cls. No caso
+% dos \set, os \get são implicitos, e não você não vai encontrá-los na classe.
+
+\addauthor{João Paulo da Cunha Faria}{joaopaulo@example.com}
+\setorientador{Prof.\ Dr.\ Alisson Marques da Silva}
+\addcoorientador{Não se aplica}
+
+\setdepartamento{Engenharia de Computação}
+\setlocal{CEFET-MG}
+\setano{2026}
+
+\preamble{}
+
+% Essa classe usa o biblatex com backend biber ao invés do bibtex.
+\addbibresource{bibliothek.bib}
+
+% Controla o texto das captions das figuras. Neste caso, centraliza.
+\captionsetup{justification=centering}
+
+\begin{document}
+\maketitle{}
+
+% Eu gosto de separar meus documentos \latex em vários arquivos, para manter
+% organizado.
+\input{section1}
+\input{section2}
+\input{section3}
+\end{document}
