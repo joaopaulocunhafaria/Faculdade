@@ -1,0 +1,1 @@
+Utilizando o software excel ou equivalente você deve elaborar um ORGANOGRAMA (modelo em anexo) e em enviar a Solução da Atividade pelo SIGAA em PDF até às 23:59 do dia 02/10/2026 (sexta-feira). Valor: 5 pontos.
