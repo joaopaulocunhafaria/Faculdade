@@ -99,7 +99,7 @@ public class FrmLogin extends javax.swing.JFrame {
         getContentPane().add(RadAvatar1);
         RadAvatar1.setBounds(110, 90, 19, 19);
 
-        LblAvatar1.setIcon(new javax.swing.ImageIcon("/home/joao/Projetos/Sistemas-Distribuidos/SD-v4/Chat_Cliente_Desktop/src/main/java/images/icons8-lanterna-verde-16.png")); // NOI18N
+        LblAvatar1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/avatares/LanternaVerde.png"))); // NOI18N
         LblAvatar1.setLabelFor(RadAvatar1);
         getContentPane().add(LblAvatar1);
         LblAvatar1.setBounds(130, 90, 20, 20);
@@ -109,7 +109,7 @@ public class FrmLogin extends javax.swing.JFrame {
         getContentPane().add(RadAvatar2);
         RadAvatar2.setBounds(160, 90, 19, 19);
 
-        LblAvatar2.setIcon(new javax.swing.ImageIcon("/home/joao/Projetos/Sistemas-Distribuidos/SD-v4/Chat_Cliente_Desktop/src/main/java/images/icons8-the-flash-sign-16.png")); // NOI18N
+        LblAvatar2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/avatares/Flash.png"))); // NOI18N
         LblAvatar2.setLabelFor(RadAvatar2);
         getContentPane().add(LblAvatar2);
         LblAvatar2.setBounds(180, 90, 20, 20);
@@ -119,7 +119,7 @@ public class FrmLogin extends javax.swing.JFrame {
         getContentPane().add(RadAvatar3);
         RadAvatar3.setBounds(210, 90, 19, 19);
 
-        LblAvatar3.setIcon(new javax.swing.ImageIcon("/home/joao/Projetos/Sistemas-Distribuidos/SD-v4/Chat_Cliente_Desktop/src/main/java/images/icons8-batman-antigo-16.png")); // NOI18N
+        LblAvatar3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/avatares/Batman.png"))); // NOI18N
         LblAvatar3.setLabelFor(RadAvatar3);
         getContentPane().add(LblAvatar3);
         LblAvatar3.setBounds(230, 90, 20, 20);
@@ -167,12 +167,13 @@ public class FrmLogin extends javax.swing.JFrame {
             } else if (RadVermelho.isSelected()) {
                 Util.cor = "Red";
             }
+            // Guarda só o nome: cada cliente resolve a imagem em /images/avatares
             if(RadAvatar1.isSelected()){
-                Util.avatar = "/home/joao/Projetos/Sistemas-Distribuidos/SD-v4/Chat_Cliente_Desktop/src/main/java/images/icons8-lanterna-verde-16.png";
+                Util.avatar = "LanternaVerde";
             } else if(RadAvatar2.isSelected()){
-                Util.avatar = "/home/joao/Projetos/Sistemas-Distribuidos/SD-v4/Chat_Cliente_Desktop/src/main/java/images/icons8-batman-antigo-16.png";
+                Util.avatar = "Flash";
             } else if(RadAvatar3.isSelected()){
-                Util.avatar = "/home/joao/Projetos/Sistemas-Distribuidos/SD-v4/Chat_Cliente_Desktop/src/main/java/images/icons8-the-flash-sign-16.png";
+                Util.avatar = "Batman";
             }
             FrmChat frmchat = new FrmChat();
             frmchat.setVisible(true);

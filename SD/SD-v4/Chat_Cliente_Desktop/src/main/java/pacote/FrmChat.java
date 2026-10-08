@@ -27,7 +27,7 @@ public class FrmChat extends javax.swing.JFrame {
     public String msg = "";
     public void gerarEenviarMensagem(){
         this.msg = "";
-        this.msg += "<img src='file:" + Util.avatar + "' width='20' height='20'>";
+        this.msg += "[avatar:" + Util.avatar + "]";
         //this.msg += "<font color='" + Util.cor + "'>";
         this.msg += "<font color='cor'> apelido </font>";
         this.msg = this.msg.replace("cor",Util.cor);
@@ -64,11 +64,12 @@ public class FrmChat extends javax.swing.JFrame {
         }
         try{
             Socket cliente = new Socket();
-            cliente.connect(new InetSocketAddress("200.128.142.91",6662), 2000); // timeout para não travar se a máquina do servidor estiver fora
+            cliente.connect(new InetSocketAddress("127.0.0.1",6662), 2000); // timeout para não travar se a máquina do servidor estiver fora
             ObjectOutputStream output = new ObjectOutputStream(cliente.getOutputStream());
             output.writeUTF(this.msg);
             output.close();
             cliente.close();
+            TxtMensagem.setText("");
         } catch (IOException e) {
             // Servidor parado: mostra o aviso no painel em vez de dar erro
             this.entrarModoManutencao();
@@ -78,9 +79,16 @@ public class FrmChat extends javax.swing.JFrame {
         }
     }
 
-    // Troca os tokens [emoji:Nome] e [gif:Nome] pelas imagens locais deste cliente.
+    // Troca os tokens [avatar:Nome], [emoji:Nome] e [gif:Nome] pelas imagens locais deste cliente.
     // (?i) porque os modos Grita/Xinga deixam o texto em maiúsculas.
     public String renderizarTokens(String html){
+        for(String nome : Util.avatares){
+            URL url = getClass().getResource("/images/avatares/" + nome + ".png");
+            if(url != null){
+                html = html.replaceAll("(?i)\\[avatar:" + Pattern.quote(nome) + "\\]",
+                        Matcher.quoteReplacement("<img src='" + url + "' width='20' height='20'>"));
+            }
+        }
         for(String nome : Util.emojis){
             URL url = getClass().getResource("/images/emojis/" + nome + ".png");
             if(url != null){
@@ -166,7 +174,7 @@ public class FrmChat extends javax.swing.JFrame {
             while (true){
                 try{
                     Socket cliente = new Socket();
-                    cliente.connect(new InetSocketAddress("200.128.142.91",Util.PortaEnvioDesktop), 2000);
+                    cliente.connect(new InetSocketAddress("127.0.0.1",Util.PortaEnvioDesktop), 2000);
                     ObjectInputStream input = new ObjectInputStream(cliente.getInputStream());
                     String msgs = input.readUTF();
                     input.close();
@@ -232,6 +240,7 @@ public class FrmChat extends javax.swing.JFrame {
         LblMensagem.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         LblMensagem.setText("Mensagem");
 
+        TxtMensagem.setFont(new java.awt.Font("Liberation Sans", 0, 16)); // NOI18N
         TxtMensagem.setToolTipText("");
         TxtMensagem.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -242,6 +251,7 @@ public class FrmChat extends javax.swing.JFrame {
         LblModo.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         LblModo.setText("Modo:");
 
+        CBModo.setFont(new java.awt.Font("Liberation Sans", 1, 16)); // NOI18N
         CBModo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Fala", "Grita", "Xinga" }));
 
         BtnEmoji.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
@@ -260,40 +270,38 @@ public class FrmChat extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ScrConversa)
+                    .addComponent(ScrConversa, javax.swing.GroupLayout.DEFAULT_SIZE, 760, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(LblModo)
-                            .addComponent(LblMensagem))
+                            .addComponent(LblMensagem)
+                            .addComponent(LblModo))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(TxtMensagem)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(CBModo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(BtnEmoji, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(BtnEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 351, Short.MAX_VALUE)))))
+                                .addComponent(CBModo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(BtnEmoji, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(BtnEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(ScrConversa, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ScrConversa, javax.swing.GroupLayout.DEFAULT_SIZE, 440, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LblMensagem)
-                    .addComponent(TxtMensagem, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TxtMensagem, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(LblModo)
-                    .addComponent(CBModo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(BtnEmoji, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(BtnEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                    .addComponent(CBModo, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnEmoji, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnEnviar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         pack();

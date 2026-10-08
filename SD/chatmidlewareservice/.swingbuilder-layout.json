@@ -1,0 +1,54 @@
+{
+  "className": "MainWindow",
+  "frameTitle": "MainWindow",
+  "frameWidth": 1024,
+  "frameHeight": 768,
+  "components": [
+    {
+      "id": "ff6072ec-d260-455f-9704-3c361a2f13c2",
+      "type": "Label",
+      "variableName": "label1",
+      "x": 270,
+      "y": 17,
+      "width": 450,
+      "height": 65,
+      "backgroundColor": "#ffffff",
+      "textColor": "#825959",
+      "fontFamily": "Arial",
+      "fontSize": 40,
+      "eventMethodName": "",
+      "text": "PAINEL DE CONTROLE"
+    },
+    {
+      "id": "0788cb88-18e4-477c-8e3e-98812f50bb84",
+      "type": "Label",
+      "variableName": "label2",
+      "x": 86,
+      "y": 208,
+      "width": 300,
+      "height": 28,
+      "backgroundColor": "#ffffff",
+      "textColor": "#000000",
+      "fontFamily": "Arial",
+      "fontSize": 30,
+      "eventMethodName": "",
+      "text": "Serviço Desktop"
+    },
+    {
+      "id": "b603d4dc-1cd9-469c-982e-7f1f522593ab",
+      "type": "Label",
+      "variableName": "label3",
+      "x": 101,
+      "y": 369,
+      "width": 120,
+      "height": 28,
+      "backgroundColor": "#ffffff",
+      "textColor": "#000000",
+      "fontFamily": "Arial",
+      "fontSize": 12,
+      "eventMethodName": "",
+      "text": "Label"
+    }
+  ],
+  "backgroundColor": "#ffffff"
+}

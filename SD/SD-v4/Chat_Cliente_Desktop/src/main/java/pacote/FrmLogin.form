@@ -173,7 +173,7 @@
     <Component class="javax.swing.JLabel" name="LblAvatar1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="/home/joao/Projetos/Sistemas-Distribuidos/SD-v4/Chat_Cliente_Desktop/src/main/java/images/icons8-lanterna-verde-16.png"/>
+          <Image iconType="3" name="/images/avatares/LanternaVerde.png"/>
         </Property>
         <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
           <ComponentRef name="RadAvatar1"/>
@@ -203,7 +203,7 @@
     <Component class="javax.swing.JLabel" name="LblAvatar2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="/home/joao/Projetos/Sistemas-Distribuidos/SD-v4/Chat_Cliente_Desktop/src/main/java/images/icons8-the-flash-sign-16.png"/>
+          <Image iconType="3" name="/images/avatares/Flash.png"/>
         </Property>
         <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
           <ComponentRef name="RadAvatar2"/>
@@ -233,7 +233,7 @@
     <Component class="javax.swing.JLabel" name="LblAvatar3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="/home/joao/Projetos/Sistemas-Distribuidos/SD-v4/Chat_Cliente_Desktop/src/main/java/images/icons8-batman-antigo-16.png"/>
+          <Image iconType="3" name="/images/avatares/Batman.png"/>
         </Property>
         <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
           <ComponentRef name="RadAvatar3"/>

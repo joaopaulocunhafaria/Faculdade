@@ -27,22 +27,21 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="ScrConversa" alignment="0" max="32767" attributes="0"/>
+                  <Component id="ScrConversa" pref="760" max="32767" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="LblModo" min="-2" max="-2" attributes="0"/>
                           <Component id="LblMensagem" min="-2" max="-2" attributes="0"/>
+                          <Component id="LblModo" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="TxtMensagem" max="32767" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="CBModo" min="-2" max="-2" attributes="0"/>
-                                  <Component id="BtnEmoji" min="-2" pref="175" max="-2" attributes="0"/>
-                                  <Component id="BtnEnviar" min="-2" pref="175" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="0" pref="351" max="32767" attributes="0"/>
+                              <Component id="CBModo" min="-2" pref="150" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="BtnEmoji" min="-2" pref="210" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="BtnEnviar" min="-2" pref="210" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -55,22 +54,20 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="ScrConversa" min="-2" pref="320" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <Component id="ScrConversa" pref="440" max="32767" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="LblMensagem" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="TxtMensagem" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="TxtMensagem" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="LblModo" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="CBModo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="CBModo" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="BtnEmoji" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                  <Component id="BtnEnviar" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="BtnEmoji" min="-2" pref="40" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="BtnEnviar" min="-2" pref="33" max="-2" attributes="0"/>
-              <EmptySpace pref="19" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -98,6 +95,9 @@
     </Component>
     <Component class="javax.swing.JTextField" name="TxtMensagem">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="16" style="0"/>
+        </Property>
         <Property name="toolTipText" type="java.lang.String" value=""/>
       </Properties>
       <Events>
@@ -114,6 +114,9 @@
     </Component>
     <Component class="javax.swing.JComboBox" name="CBModo">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Liberation Sans" size="16" style="1"/>
+        </Property>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
           <StringArray count="3">
             <StringItem index="0" value="Fala"/>
