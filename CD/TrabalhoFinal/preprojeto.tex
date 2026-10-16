@@ -1,0 +1,520 @@
+\documentclass{article}
+
+% Pacotes
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath, graphicx, subcaption}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{extarrows}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{enumitem}
+
+
+% Definições de estilo para Python
+\lstdefinestyle{pythonstyle}{
+      language=Python,
+      basicstyle=\ttfamily\small,
+      keywordstyle=\color{blue}\bfseries,
+      commentstyle=\color{gray}\itshape,
+      stringstyle=\color{orange},
+      numbers=left,
+      numberstyle=\tiny,
+      stepnumber=1,
+      numbersep=10pt,
+      backgroundcolor=\color{white},
+      frame=single,
+      breaklines=true,
+      tabsize=4,
+      showstringspaces=false,
+}
+
+
+\begin{document}
+
+% Capa personalizada
+\begin{titlepage}
+      \centering
+      \includegraphics[width=4cm]{images/fig_logo_cefetmg.pdf}\par
+      \vspace{0.5cm}
+
+      {\LARGE Centro Federal de Educação Tecnológica de Minas Gerais \par}
+      \vspace{0.2cm}
+
+      {\Large Engenharia de Computação \\ Ciência de Dados \par}
+      \vspace{4cm}
+
+      {\Huge \textbf{Pré-Projeto} \par}
+      \vspace{0.3cm}
+      {\Large Preço do Café e da Soja $\times$ Dólar $\times$ Clima: \\
+      uma análise de dados das commodities agrícolas mineiras \par}
+      \vspace{0.8cm}
+
+      {\LARGE Alvaro José Sem Pé \par}
+      {\LARGE João Paulo da Cunha Faria \par}
+      \vfill
+
+      {\large Divinópolis - MG \par}
+      {\large Setembro de 2026 \par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+
+\section{Introdução}
+
+O Brasil é o maior produtor e exportador mundial de café e um dos maiores produtores de soja, e o
+agronegócio responde por uma parcela significativa do Produto Interno Bruto (PIB) e da balança comercial
+do país. Dentro desse cenário, Minas Gerais ocupa posição de destaque: o estado concentra cerca de metade
+da produção nacional de café, distribuída principalmente nas regiões do Sul de Minas, do Cerrado Mineiro e
+das Matas de Minas \cite{conab}. O tema, portanto, está diretamente ligado à realidade econômica da região
+em que o trabalho é desenvolvido.
+
+Commodities agrícolas como o café e a soja são negociadas no mercado internacional em dólar. Isso faz com
+que o preço recebido pelo produtor brasileiro, em reais, dependa não apenas da oferta e da demanda
+mundiais, mas também da taxa de câmbio. Além disso, por serem produtos agrícolas, sua oferta é fortemente
+influenciada pelo clima: secas prolongadas, excesso de chuva ou geadas nas regiões produtoras podem reduzir
+a safra e provocar fortes altas de preço, como ocorreu após a geada de julho de 2021 que atingiu as
+lavouras de café de Minas Gerais.
+
+Os dados necessários para estudar essas relações são públicos, porém estão espalhados em diferentes fontes
+e formatos: cotações publicadas em páginas web, séries históricas em planilhas, dados cambiais disponíveis
+por API e dados meteorológicos em bases científicas. A Ciência de Dados, entendida como a área
+interdisciplinar voltada para a extração de conhecimento, detecção de padrões e obtenção de
+\textit{insights} a partir de dados, oferece as ferramentas adequadas para coletar, integrar, tratar,
+visualizar e modelar essas informações.
+
+Este pré-projeto descreve a proposta de trabalho final da disciplina de Ciência de Dados, que consiste em
+construir uma base de dados integrada com os preços do café arábica e da soja, a cotação do dólar e
+variáveis climáticas das principais regiões cafeeiras de Minas Gerais, no período de 2020 até o presente,
+e analisar como esses fatores se relacionam ao longo do tempo.
+
+
+\section{Descrição do Problema}
+
+O preço de uma commodity agrícola é resultado de muitos fatores simultâneos. Dois deles são
+particularmente relevantes para o produtor brasileiro:
+
+\begin{itemize}
+      \item \textbf{Câmbio:} como o café e a soja são cotados em dólar no mercado internacional, uma
+            valorização do dólar tende a elevar o preço em reais. Não se sabe, porém, \textit{quanto} dessa
+            variação é repassada ao preço interno, nem \textit{com que atraso} esse repasse acontece;
+      \item \textbf{Clima:} a produtividade das lavouras depende de chuva e temperatura adequadas. Eventos
+            extremos (seca, geada) reduzem a oferta, mas o efeito sobre o preço não é imediato: a chuva de
+            um período pode afetar a florada e, consequentemente, a safra meses depois.
+\end{itemize}
+
+Soma-se a isso uma dificuldade prática: os dados estão dispersos. Cada fonte possui formato, frequência e
+granularidade diferentes (cotações apenas em dias úteis, clima diário, séries históricas em planilhas,
+páginas HTML), o que exige um esforço considerável de coleta, limpeza e integração antes que qualquer
+análise possa ser feita.
+
+A inclusão da soja permite ainda uma comparação interessante: enquanto o café arábica é um produto
+fortemente dependente das condições climáticas de uma região relativamente concentrada (Minas Gerais), a
+soja é produzida em diversas regiões do país e tende a ser mais sensível ao câmbio e ao mercado
+internacional. Assim, o problema pode ser resumido nas seguintes perguntas de pesquisa:
+
+\begin{enumerate}[label=\textbf{P\arabic*.}]
+      \item Como os preços do café arábica e da soja evoluíram entre 2020 e 2026?
+      \item Existe sazonalidade nos preços, associada aos períodos de safra e entressafra?
+      \item Os preços acompanham a variação do dólar? Com quanto tempo de defasagem?
+      \item Períodos de pouca chuva ou de temperaturas extremas nas regiões produtoras são seguidos de alta
+            no preço do café?
+      \item Qual foi o impacto da geada de julho de 2021 sobre o preço do café?
+      \item Qual das duas commodities é mais sensível ao clima e qual é mais sensível ao câmbio?
+\end{enumerate}
+
+
+\section{Objetivos}
+
+\subsection{Objetivo geral}
+
+Analisar a relação entre o preço do café arábica e da soja, a taxa de câmbio (dólar) e as condições
+climáticas das principais regiões cafeeiras de Minas Gerais, no período de 2020 até 2026, por meio de
+técnicas de coleta, tratamento, visualização de dados e aprendizado de máquina.
+
+\subsection{Objetivos específicos}
+
+\begin{itemize}
+      \item Desenvolver um \textit{web crawler} em Python que colete diariamente, de forma automatizada, as
+            cotações de café e soja publicadas no portal Notícias Agrícolas;
+      \item Obter as séries históricas de preços (CEPEA/ESALQ), de câmbio (Banco Central do Brasil) e de
+            clima (NASA POWER/INMET) para o período de 2020 a 2026;
+      \item Tratar e integrar as diferentes fontes em uma única base de dados organizada por data;
+      \item Criar variáveis derivadas que capturem efeitos defasados, como chuva acumulada e dólar de dias
+            anteriores;
+      \item Produzir visualizações que respondam às perguntas de pesquisa e disponibilizá-las em um painel
+            interativo;
+      \item Aplicar modelos de regressão linear e \textit{Random Forest} para identificar quais fatores mais
+            explicam a variação dos preços;
+      \item Manter todo o código, dados e notebooks em um repositório público e documentado.
+\end{itemize}
+
+
+\section{Metodologia}
+
+A metodologia segue as etapas clássicas de um projeto de Ciência de Dados: extração, tratamento,
+visualização e modelagem. As subseções a seguir descrevem as ferramentas e técnicas previstas para cada
+etapa. Ressalta-se que algumas bibliotecas e ferramentas poderão ser alteradas ao longo do desenvolvimento
+do trabalho, de acordo com as necessidades encontradas.
+
+\subsection{Ferramentas e ambiente de desenvolvimento}
+
+\begin{itemize}
+      \item \textbf{Linguagem:} Python 3, por sua ampla adoção em Ciência de Dados e pelo grande número de
+            bibliotecas disponíveis;
+      \item \textbf{Ambiente:} Jupyter Notebook/JupyterLab para a análise exploratória e documentação, e
+            Google Colab como alternativa para execução em nuvem e compartilhamento entre os integrantes;
+      \item \textbf{Versionamento:} Git e GitHub;
+      \item \textbf{Automação:} GitHub Actions, para executar o \textit{crawler} diariamente sem depender de
+            uma máquina local ligada.
+\end{itemize}
+
+\subsection{Extração de dados}
+
+Serão utilizadas três técnicas de extração: \textit{web scraping}, consumo de APIs e download de bases
+históricas. A Tabela~\ref{tab:fontes} resume as fontes de dados previstas.
+
+\begin{table}[H]
+      \centering
+      \small
+      \caption{Fontes de dados, técnicas de extração e formatos.}
+      \label{tab:fontes}
+      \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.6cm}
+                  >{\raggedright\arraybackslash}X
+                  >{\raggedright\arraybackslash}p{2.8cm}
+                  >{\raggedright\arraybackslash}p{1.6cm}
+                  >{\raggedright\arraybackslash}p{1.7cm}}
+            \toprule
+            \textbf{Fonte}          & \textbf{Dado}                                         &
+            \textbf{Técnica}        & \textbf{Formato}                                      & \textbf{Frequência} \\
+            \midrule
+            Notícias Agrícolas      & Cotações diárias de café arábica e soja               &
+            \textit{Web scraping}   & HTML                                                  & Diária (dias úteis) \\
+            CEPEA/ESALQ             & Indicador do café arábica e da soja (Paranaguá), R\$/saca &
+            Download de séries históricas & XLS/CSV                                         & Diária (dias úteis) \\
+            Banco Central (SGS/PTAX) & Cotação do dólar comercial (venda) e IPCA            &
+            API REST                & JSON                                                  & Diária / mensal     \\
+            NASA POWER              & Precipitação e temperatura (mín., méd., máx.) por coordenada &
+            API REST                & JSON/CSV                                              & Diária              \\
+            INMET                   & Dados das estações meteorológicas das regiões produtoras &
+            Download de arquivos    & CSV                                                   & Horária/diária      \\
+            \bottomrule
+      \end{tabularx}
+\end{table}
+
+\paragraph{\textit{Web scraping}.} O \textit{crawler} será um \textit{scraper} \textbf{direcionado}, pois
+coleta dados de um conjunto fixo de páginas de um único site, e \textbf{contínuo}, pois será executado
+diariamente para atualizar a base. Será implementado com as bibliotecas \texttt{requests} e
+\texttt{BeautifulSoup}; caso alguma tabela seja gerada dinamicamente por JavaScript, será utilizado o
+\texttt{Selenium}. Como a coleta ocorre apenas a partir do início do projeto, ela gera poucos meses de
+dados; por isso, o histórico desde 2020 será obtido do CEPEA, e os dados do \textit{crawler} serão
+cruzados com o CEPEA para validação.
+
+\paragraph{APIs.} A cotação do dólar será obtida pela API do Sistema Gerenciador de Séries Temporais (SGS)
+do Banco Central, e os dados climáticos pela API da NASA POWER, consultada nas coordenadas de municípios
+representativos das três regiões: Sul de Minas (ex.: Varginha), Cerrado Mineiro (ex.: Patrocínio) e
+Matas de Minas (ex.: Manhuaçu). Os dados do INMET serão usados de forma complementar, para validação.
+
+\paragraph{Ética e legalidade.} Serão seguidas as boas práticas de \textit{web scraping} ético: respeito
+ao arquivo \texttt{robots.txt}, identificação por meio de um \textit{User-Agent} descritivo e intervalos
+entre requisições (\texttt{time.sleep()}) para não sobrecarregar o servidor. Os dados coletados são
+cotações de mercado e dados meteorológicos, ou seja, \textbf{não são dados pessoais}, de modo que a Lei
+Geral de Proteção de Dados (Lei nº 13.709/2018) não se aplica \cite{lgpd}. Ainda assim, os termos de uso
+das fontes serão respeitados e as fontes serão sempre citadas.
+
+O Código~\ref{lst:crawler} ilustra a estrutura prevista para o \textit{crawler}.
+
+\begin{lstlisting}[style=pythonstyle, caption={Esboço do crawler de cotações.}, label={lst:crawler}]
+import time
+from datetime import date
+
+import pandas as pd
+import requests
+from bs4 import BeautifulSoup
+
+HEADERS = {"User-Agent": "CEFET-MG CD - projeto academico (contato: email)"}
+URLS = {
+    "cafe": "https://www.noticiasagricolas.com.br/cotacoes/cafe",
+    "soja": "https://www.noticiasagricolas.com.br/cotacoes/soja",
+}
+
+registros = []
+for produto, url in URLS.items():
+    resposta = requests.get(url, headers=HEADERS, timeout=30)
+    soup = BeautifulSoup(resposta.text, "html.parser")
+    tabela = soup.find("table")
+    for linha in tabela.find_all("tr")[1:]:
+        colunas = [c.get_text(strip=True) for c in linha.find_all("td")]
+        registros.append({"data": date.today(), "produto": produto,
+                          "praca": colunas[0], "preco": colunas[1]})
+    time.sleep(5)  # evita sobrecarregar o servidor
+
+pd.DataFrame(registros).to_csv("data/raw/cotacoes.csv", mode="a",
+                               header=False, index=False)
+\end{lstlisting}
+
+\subsection{Natureza e tipos dos dados}
+
+Quanto à estrutura, os dados de origem se classificam como:
+
+\begin{itemize}
+      \item \textbf{Semi-estruturados:} páginas HTML do Notícias Agrícolas e respostas JSON das APIs, que
+            possuem estrutura implícita e precisam ser interpretadas para extração dos valores;
+      \item \textbf{Estruturados:} planilhas do CEPEA e arquivos CSV do INMET, com colunas bem definidas.
+\end{itemize}
+
+Após o tratamento, todos os dados serão convertidos em uma base \textbf{estruturada}, na forma de
+\textbf{séries temporais} indexadas por data. A Tabela~\ref{tab:variaveis} apresenta as principais
+variáveis e seus tipos.
+
+\begin{table}[H]
+      \centering
+      \small
+      \caption{Principais variáveis da base integrada.}
+      \label{tab:variaveis}
+      \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.8cm}
+                  >{\raggedright\arraybackslash}X
+                  >{\raggedright\arraybackslash}p{3.8cm}}
+            \toprule
+            \textbf{Variável}           & \textbf{Descrição}                               & \textbf{Tipo}                       \\
+            \midrule
+            \texttt{data}               & Data da observação                               & Temporal                            \\
+            \texttt{preco\_cafe}        & Indicador café arábica (R\$/saca de 60 kg)       & Quantitativa contínua               \\
+            \texttt{preco\_soja}        & Indicador soja Paranaguá (R\$/saca de 60 kg)     & Quantitativa contínua               \\
+            \texttt{dolar}              & Cotação do dólar comercial (R\$/US\$)            & Quantitativa contínua               \\
+            \texttt{chuva\_mm}          & Precipitação diária (mm)                         & Quantitativa contínua               \\
+            \texttt{temp\_min/med/max}  & Temperaturas diárias ($^\circ$C)                 & Quantitativa contínua               \\
+            \texttt{regiao}             & Sul de Minas, Cerrado Mineiro ou Matas de Minas  & Qualitativa nominal                 \\
+            \texttt{periodo\_safra}     & Safra ou entressafra                             & Qualitativa nominal (derivada)      \\
+            \texttt{mes}, \texttt{ano}  & Componentes da data                              & Qualitativa ordinal (derivada)      \\
+            \bottomrule
+      \end{tabularx}
+\end{table}
+
+\subsection{Tratamento de dados}
+
+O tratamento será feito principalmente com as bibliotecas \texttt{pandas} e \texttt{numpy}, e
+compreende as seguintes etapas:
+
+\begin{enumerate}
+      \item \textbf{Padronização:} conversão de datas para um único formato, de valores textuais
+            (``R\$ 1.234,56'') para numéricos, e padronização de unidades;
+      \item \textbf{Integração:} junção de todas as fontes em uma única tabela indexada por data. Como não há
+            cotações em fins de semana e feriados, mas há dados climáticos todos os dias, o clima será
+            agregado (soma da chuva, média da temperatura) para os dias sem cotação ou as cotações serão
+            propagadas (\textit{forward fill}), conforme a análise;
+      \item \textbf{Dados ausentes e valores atípicos:} identificação de lacunas e de \textit{outliers}
+            (por exemplo, pelo método do intervalo interquartil -- IQR), verificando se representam erros
+            ou eventos reais (como a alta após a geada de 2021);
+      \item \textbf{Engenharia de atributos:} criação de variáveis que capturem efeitos não imediatos, como
+            chuva acumulada nos últimos 30 e 90 dias, dólar defasado em 1, 5 e 20 dias úteis, variação
+            percentual diária e mensal dos preços, médias móveis e média climática das três regiões;
+      \item \textbf{Deflação (opcional):} correção dos preços pelo IPCA, para comparar valores reais ao
+            longo do período.
+\end{enumerate}
+
+\subsection{Visualização de dados}
+
+A visualização será a parte central da análise. Serão utilizadas as bibliotecas \texttt{matplotlib} e
+\texttt{seaborn} para gráficos estáticos e \texttt{plotly} para gráficos interativos. Estão previstos:
+
+\begin{itemize}
+      \item Gráficos de linha da evolução dos preços do café e da soja (P1);
+      \item \textit{Boxplots} dos preços por mês, para identificar sazonalidade de safra e entressafra (P2);
+      \item Gráficos com eixo duplo preço $\times$ dólar e gráficos de correlação cruzada com diferentes
+            defasagens (P3);
+      \item Gráficos de chuva acumulada e temperatura por região sobrepostos ao preço do café (P4);
+      \item Destaque do período da geada de julho de 2021 na série de preços (P5);
+      \item Mapas de calor (\textit{heatmaps}) de correlação entre todas as variáveis, separados por
+            commodity (P6).
+\end{itemize}
+
+Ao final, os principais gráficos serão reunidos em um painel interativo desenvolvido com
+\texttt{Streamlit}, permitindo filtrar período, commodity e região.
+
+\subsection{Técnicas de \textit{machine learning}}
+
+O aprendizado de máquina será utilizado como \textbf{ferramenta de análise}, com o objetivo de
+identificar quais fatores mais explicam a variação dos preços, e não de construir um modelo de previsão
+perfeito. Serão utilizados, por meio da biblioteca \texttt{scikit-learn}:
+
+\begin{itemize}
+      \item \textbf{Regressão Linear:} modelo simples e interpretável, cujos coeficientes indicam a direção
+            e a intensidade da relação entre o preço e cada variável (dólar, chuva, temperatura e suas
+            defasagens);
+      \item \textbf{\textit{Random Forest} (regressão):} modelo capaz de capturar relações não lineares, cuja
+            medida de importância das variáveis (\textit{feature importance}) será comparada com os
+            coeficientes da regressão linear.
+\end{itemize}
+
+Por se tratar de séries temporais, a divisão entre treino e teste respeitará a ordem cronológica
+(\texttt{TimeSeriesSplit}), evitando que dados futuros sejam usados para explicar o passado. Os modelos
+serão avaliados pelas métricas MAE (erro absoluto médio), RMSE (raiz do erro quadrático médio) e
+coeficiente de determinação ($R^2$). Os modelos serão treinados separadamente para o café e para a soja,
+permitindo comparar a importância do clima e do câmbio em cada commodity.
+
+
+\section{Repositório}
+
+Todo o projeto será mantido em um repositório público no GitHub, disponível em
+\url{https://github.com/<usuario>/<repositorio>}. O repositório garantirá o versionamento do código, a
+colaboração entre os integrantes e a reprodutibilidade das análises. A estrutura prevista é:
+
+\begin{verbatim}
+projeto-cafe-dolar-clima/
+|-- .github/workflows/   # GitHub Actions: execucao diaria do crawler
+|-- crawler/             # scripts de coleta (scraping e APIs)
+|-- data/
+|   |-- raw/             # dados brutos, como foram coletados
+|   |-- processed/       # base tratada e integrada
+|-- notebooks/           # analise exploratoria, graficos e modelos
+|-- app/                 # painel Streamlit
+|-- requirements.txt     # dependencias do projeto
+|-- README.md            # descricao e instrucoes de execucao
+\end{verbatim}
+
+Os dados brutos serão mantidos separados dos dados tratados, de forma que todo o processo de tratamento
+possa ser refeito a partir das fontes originais. O \texttt{README.md} documentará as fontes de dados, a
+forma de executar cada etapa e os principais resultados.
+
+
+\section{Cronograma e Divisão de Tarefas}
+
+A Tabela~\ref{tab:cronograma} apresenta o cronograma previsto para o desenvolvimento do trabalho.
+
+\begin{table}[H]
+      \centering
+      \small
+      \caption{Cronograma previsto.}
+      \label{tab:cronograma}
+      \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}X >{\raggedright\arraybackslash}p{4.5cm}}
+            \toprule
+            \textbf{Etapa}                                                        & \textbf{Período}        \\
+            \midrule
+            Pré-projeto e criação do repositório                                  & Setembro de 2026        \\
+            Desenvolvimento do \textit{crawler} e automação com GitHub Actions    & Setembro/Outubro de 2026 \\
+            Coleta das séries históricas (CEPEA, Banco Central, NASA POWER/INMET) & Outubro de 2026         \\
+            Tratamento, integração e engenharia de atributos                      & Outubro de 2026         \\
+            Análise exploratória e visualizações                                  & Outubro/Novembro de 2026 \\
+            Modelos de \textit{machine learning}                                  & Novembro de 2026        \\
+            Painel Streamlit, relatório final e apresentação                      & Novembro/Dezembro de 2026 \\
+            \bottomrule
+      \end{tabularx}
+\end{table}
+
+As tarefas serão divididas da seguinte forma:
+
+\begin{itemize}
+      \item \textbf{Alvaro José Sem Pé:} desenvolvimento do \textit{crawler} e coleta de dados (Notícias
+            Agrícolas, CEPEA, Banco Central e dados climáticos);
+      \item \textbf{João Paulo da Cunha Faria:} tratamento, limpeza e integração dos dados;
+      \item \textbf{Ambos:} análise exploratória, visualizações, modelos de \textit{machine learning},
+            painel, relatório e slides.
+\end{itemize}
+
+
+\section{Conclusão e Pretensões}
+
+Este pré-projeto propõe a construção de uma base de dados integrada e de uma análise sobre como o câmbio e
+o clima influenciam os preços do café arábica e da soja, com foco nas regiões produtoras de Minas Gerais.
+O trabalho percorre todas as etapas de um projeto de Ciência de Dados abordadas na disciplina: extração
+por \textit{web scraping} e APIs, tratamento de dados de diferentes naturezas, visualização e aplicação de
+técnicas de \textit{machine learning}.
+
+Pretende-se, ao final do trabalho:
+
+\begin{itemize}
+      \item Disponibilizar uma base de dados limpa e integrada, de 2020 até 2026, que atualmente não existe
+            reunida em um único lugar;
+      \item Responder às perguntas de pesquisa, quantificando a relação entre preço e dólar (e sua
+            defasagem), a sazonalidade dos preços e o efeito de eventos climáticos como a geada de 2021;
+      \item Comparar o comportamento do café e da soja quanto à sensibilidade ao clima e ao câmbio;
+      \item Entregar um painel interativo e um repositório documentado e reprodutível.
+\end{itemize}
+
+Como limitações, reconhece-se que o \textit{crawler} coletará apenas alguns meses de dados até o fim do
+semestre, o que é contornado pelo uso das séries históricas do CEPEA, e que as relações encontradas
+indicarão \textbf{correlação}, não necessariamente \textbf{causalidade}, já que o preço das commodities
+também depende de fatores não incluídos no estudo, como estoques mundiais, demanda internacional e
+produção de outros países.
+
+
+\begin{thebibliography}{99}
+
+\bibitem{conab}
+COMPANHIA NACIONAL DE ABASTECIMENTO (CONAB). \textbf{Acompanhamento da Safra Brasileira de Café}.
+Brasília: Conab. Disponível em: \url{https://www.conab.gov.br/info-agro/safras/cafe}. Acesso em: Setembro
+de 2026.
+
+\bibitem{cepea}
+CENTRO DE ESTUDOS AVANÇADOS EM ECONOMIA APLICADA (CEPEA/ESALQ-USP). \textbf{Indicadores de preços:
+café e soja}. Disponível em: \url{https://www.cepea.org.br/}. Acesso em: Setembro de 2026.
+
+\bibitem{noticiasagricolas}
+NOTÍCIAS AGRÍCOLAS. \textbf{Cotações}. Disponível em:
+\url{https://www.noticiasagricolas.com.br/cotacoes/}. Acesso em: Setembro de 2026.
+
+\bibitem{bcb}
+BANCO CENTRAL DO BRASIL. \textbf{Sistema Gerenciador de Séries Temporais (SGS)}. Disponível em:
+\url{https://www3.bcb.gov.br/sgspub/}. Acesso em: Setembro de 2026.
+
+\bibitem{nasapower}
+NASA. \textbf{POWER -- Prediction Of Worldwide Energy Resources}. Disponível em:
+\url{https://power.larc.nasa.gov/}. Acesso em: Setembro de 2026.
+
+\bibitem{inmet}
+INSTITUTO NACIONAL DE METEOROLOGIA (INMET). \textbf{Banco de Dados Meteorológicos}. Disponível em:
+\url{https://portal.inmet.gov.br/}. Acesso em: Setembro de 2026.
+
+\bibitem{lgpd}
+BRASIL. \textbf{Lei nº 13.709, de 14 de agosto de 2018}. Lei Geral de Proteção de Dados Pessoais (LGPD).
+Disponível em: \url{https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm}. Acesso em:
+Setembro de 2026.
+
+\bibitem{mitchell}
+MITCHELL, Ryan. \textbf{Web Scraping com Python: coletando mais dados da web moderna}. 2. ed. São Paulo:
+Novatec, 2019.
+
+\bibitem{pandas}
+THE PANDAS DEVELOPMENT TEAM. \textbf{pandas Documentation}. Disponível em:
+\url{https://pandas.pydata.org/docs/}. Acesso em: Setembro de 2026.
+
+\bibitem{bs4}
+RICHARDSON, Leonard. \textbf{Beautiful Soup Documentation}. Disponível em:
+\url{https://www.crummy.com/software/BeautifulSoup/bs4/doc/}. Acesso em: Setembro de 2026.
+
+\bibitem{sklearn}
+PEDREGOSA, F. et al. Scikit-learn: Machine Learning in Python. \textbf{Journal of Machine Learning
+Research}, v. 12, p. 2825--2830, 2011.
+
+\bibitem{matplotlib}
+HUNTER, J. D. Matplotlib: A 2D Graphics Environment. \textbf{Computing in Science \& Engineering}, v. 9,
+n. 3, p. 90--95, 2007.
+
+\bibitem{seaborn}
+WASKOM, M. L. seaborn: statistical data visualization. \textbf{Journal of Open Source Software}, v. 6,
+n. 60, p. 3021, 2021.
+
+\bibitem{plotly}
+PLOTLY TECHNOLOGIES INC. \textbf{Plotly Python Open Source Graphing Library}. Disponível em:
+\url{https://plotly.com/python/}. Acesso em: Setembro de 2026.
+
+\bibitem{streamlit}
+STREAMLIT INC. \textbf{Streamlit Documentation}. Disponível em: \url{https://docs.streamlit.io/}. Acesso
+em: Setembro de 2026.
+
+\end{thebibliography}
+
+\end{document}
