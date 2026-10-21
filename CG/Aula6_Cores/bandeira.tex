@@ -1,0 +1,410 @@
+\documentclass{article}
+
+% Pacotes
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath, graphicx, subcaption}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{amssymb}
+\usepackage{extarrows}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{enumitem}
+
+
+% Definições de estilo para Python
+\lstdefinestyle{pythonstyle}{
+      language=Python,
+      basicstyle=\ttfamily\small,
+      keywordstyle=\color{blue}\bfseries,
+      commentstyle=\color{gray}\itshape,
+      stringstyle=\color{orange},
+      numbers=left,
+      numberstyle=\tiny,
+      stepnumber=1,
+      numbersep=10pt,
+      backgroundcolor=\color{white},
+      frame=single,
+      breaklines=true,
+      tabsize=4,
+      showstringspaces=false,
+}
+
+
+\begin{document}
+
+% Capa personalizada
+\begin{titlepage}
+      \centering
+      \includegraphics[width=4cm]{images/fig_logo_cefetmg.pdf}\par
+      \vspace{0.5cm}
+
+      {\LARGE Centro Federal de Educação Tecnológica de Minas Gerais \par}
+      \vspace{0.2cm}
+
+      {\Large Engenharia de Computação \\ Computação Gráfica \par}
+      \vspace{4cm}
+
+      {\Huge \textbf{Relatório de Desenvolvimento} \par}
+      \vspace{0.5cm}
+
+      {\LARGE Renderização da Bandeira Brasileira em Espaço RGB \par}
+      \vspace{3cm}
+
+      {\LARGE João Paulo da Cunha Faria \par}
+      {\LARGE Maria Eduarda Teixeira Souza \par}
+      \vfill
+
+      {\large Divinópolis - MG \par}
+      {\large Agosto de 2026 \par}
+\end{titlepage}
+
+
+\section{Introdução}
+
+A representação digital de imagens é fundamentada na manipulação de cores através de espaços de cor bem definidos. O espaço RGB (Red, Green, Blue) é amplamente utilizado em computação gráfica por sua adequação a dispositivos de exibição como monitores e projetores, que emitem luz através da combinação de três canais de cor primária.
+
+Este trabalho propõe a renderização da bandeira brasileira utilizando a biblioteca Pillow (\textit{Python Imaging Library}), explorando como primitivas gráficas simples e representações de cores em RGB podem ser combinadas para reproduzir elementos iconográficos bem conhecidos. A bandeira é composta por três camadas geométricas: um fundo verde que representa a história e a esperança, um losango amarelo que simboliza as riquezas minerais, e uma esfera azul (representação simplificada do globo terrestre) no centro.
+
+\section{Fundamentos de Cor e Representação RGB}
+
+\subsection{Espaço de Cor RGB}
+
+O espaço RGB é um modelo aditivo de cores onde cada cor é representada como uma combinação de três componentes:
+\begin{itemize}
+    \item \textbf{Red (Vermelho):} intensidade de 0 a 255
+    \item \textbf{Green (Verde):} intensidade de 0 a 255
+    \item \textbf{Blue (Azul):} intensidade de 0 a 255
+\end{itemize}
+
+Uma tupla $(R, G, B)$ representa uma cor específica. Por exemplo:
+\begin{itemize}
+    \item Verde: $(0, 148, 64)$
+    \item Amarelo: $(255, 255, 0)$
+    \item Azul: $(0, 0, 255)$
+\end{itemize}
+
+Cada componente pode ser visto como um canal de luz que, quando combinado com os outros, produz a cor final perceida pelo observador. A biblioteca Pillow utiliza este padrão nativamente para objetos de imagem no modo \texttt{"RGB"}.
+
+\subsection{Primitivas Gráficas}
+
+O projeto utiliza duas primitivas fundamentais:
+
+\begin{itemize}
+    \item \textbf{Polígono:} Um polígono é definido por uma sequência de pontos no plano 2D. No contexto deste projeto, um losango é construído através de quatro pontos que definem seus vértices.
+    \item \textbf{Elipse:} Uma elipse é definida por seu retângulo envolvente, especificado por dois pontos diagonais (superior esquerdo e inferior direito). Um círculo é um caso especial de elipse onde os eixos maior e menor possuem o mesmo comprimento.
+\end{itemize}
+
+\section{Metodologia}
+
+\subsection{Materiais e Configuração}
+
+O projeto foi desenvolvido em \textit{Python}, utilizando a biblioteca \texttt{Pillow} (PIL - Python Imaging Library), instalada via:
+
+\begin{lstlisting}[style=pythonstyle]
+pip install Pillow
+\end{lstlisting}
+
+A biblioteca Pillow fornece abstrações de alto nível para manipulação de imagens raster, permitindo criar, desenhar e salvar imagens em diversos formatos.
+
+\subsection{Código Completo}
+
+A seguir, apresenta-se a implementação completa do programa de renderização da bandeira brasileira:
+
+\begin{lstlisting}[style=pythonstyle, caption={Código completo para renderização da bandeira brasileira}, label={lst:codigo_completo}]
+from PIL import Image, ImageDraw
+
+def criar_fundo_rgb(largura, altura, cor_rgb):
+    """
+    Cria uma imagem RGB com uma cor sólida
+    """
+    # Imagem.new aloca a matriz na memória.
+    fundo = Image.new("RGB", (largura, altura), cor_rgb)
+
+    # Retorna a imagem
+    return fundo
+
+def criar_losango_rgb(largura, altura, cor_rgb, bandeira):
+    """
+    Cria um losango RGB
+    """
+
+    # Ativando modo de sobreescrever pixels
+    losango = ImageDraw.Draw(bandeira)
+
+    # Coordenadas do losango
+    pontoA = (largura / 2, altura * 0.05)
+    pontoB = (largura * 0.95, altura / 2)
+    pontoC = (largura / 2, altura * 0.95)
+    pontoD = (altura * 0.05, altura / 2)
+
+    # Lista de coordenadas para desenhar o losango
+    coordenadas = [(pontoA), (pontoB), (pontoC), (pontoD)]
+
+    # Criar o losango
+    losango.polygon(coordenadas, fill=cor_rgb)
+
+    # Retornar
+    return bandeira
+
+
+def criar_esfera_rgb(largura, altura, cor_rgb, bandeira):
+    """
+    Cria uma esfera RGB
+    """
+
+    # Ativando modo de sobreescrever pixels
+    esfera = ImageDraw.Draw(bandeira)
+
+    # Coordenadas da esfera (dois ponto, superior esquerdo e inferior direito)
+    centro_x = largura / 2
+    centro_y = altura / 2
+
+    # Raio da esfera
+    raio = largura * 0.20
+
+    # Coordenadas do quadrado que envolve a esfera
+    pontoA = (centro_x - raio, centro_y - raio)
+    pontoB = (centro_x + raio, centro_y + raio)
+
+    # Lista de coordenadas para desenhar a esfera
+    coordenadas = [(pontoA), (pontoB)]
+
+    # Criar a esfera
+    esfera.ellipse(coordenadas, fill=cor_rgb)
+
+    # Retornar
+    return bandeira
+
+
+if __name__ == "__main__":
+    # dimensões da imagem
+    LARGURA = 600
+    ALTURA = 400
+
+    # Testando a cor Verde: (0, 148, 64) RGB
+    cor_verde_rgb = (0, 148, 64)
+    print(f"Cor Verde em RGB: {cor_verde_rgb}")
+
+    # Criar o fundo da bandeira
+    bandeira = criar_fundo_rgb(LARGURA, ALTURA, cor_verde_rgb)
+
+    # Testando a cor Amarela: (255, 255, 0) RGB
+    cor_amarela_rgb = (255, 255, 0)
+    print(f"Cor Amarela em RGB: {cor_amarela_rgb}")
+
+    # Criar o losango
+    bandeira = criar_losango_rgb(LARGURA, ALTURA, cor_amarela_rgb, bandeira)
+
+    # Testando a cor Azul: (0, 0, 255) RGB
+    cor_azul_rgb = (0, 0, 255)
+    print(f"Cor Azul em RGB: {cor_azul_rgb}")
+
+    # Criar a esfera
+    bandeira = criar_esfera_rgb(LARGURA, ALTURA, cor_azul_rgb, bandeira)
+
+    # Salvar a imagem
+    bandeira.save("bandeira.png")
+\end{lstlisting}
+
+\subsection{Análise Detalhada do Código}
+
+\subsubsection{Importações e Bibliotecas}
+
+O programa inicia com a importação da biblioteca Pillow:
+
+\begin{lstlisting}[style=pythonstyle]
+from PIL import Image, ImageDraw
+\end{lstlisting}
+
+Dois componentes são importados:
+\begin{itemize}
+    \item \texttt{Image}: fornece a classe responsável por criar, carregar e manipular imagens raster
+    \item \texttt{ImageDraw}: fornece ferramentas para desenhar primitivas gráficas (linhas, polígonos, elipses, etc.) sobre imagens existentes
+\end{itemize}
+
+\subsubsection{Função \texttt{criar\_fundo\_rgb}}
+
+Esta função é responsável pela criação do fundo da bandeira:
+
+\begin{lstlisting}[style=pythonstyle]
+def criar_fundo_rgb(largura, altura, cor_rgb):
+    fundo = Image.new("RGB", (largura, altura), cor_rgb)
+    return fundo
+\end{lstlisting}
+
+Detalhamento:
+\begin{itemize}
+    \item \textbf{Parâmetros:} recebe largura, altura e uma tupla RGB
+    \item \textbf{Image.new():} aloca uma nova imagem em memória no modo \texttt{"RGB"} com as dimensões especificadas
+    \item \textbf{cor\_rgb:} define a cor inicial de todos os pixels da imagem
+    \item \textbf{Retorno:} devolve o objeto \texttt{Image} criado para posterior manipulação
+\end{itemize}
+
+No contexto deste projeto, esta função é chamada com \texttt{cor\_verde\_rgb = (0, 148, 64)}, criando uma imagem $600 \times 400$ pixels totalmente preenchida com o verde da bandeira brasileira.
+
+\subsubsection{Função \texttt{criar\_losango\_rgb}}
+
+Esta função desenha o losango amarelo sobre a bandeira:
+
+\begin{lstlisting}[style=pythonstyle]
+def criar_losango_rgb(largura, altura, cor_rgb, bandeira):
+    losango = ImageDraw.Draw(bandeira)
+    pontoA = (largura / 2, altura * 0.05)
+    pontoB = (largura * 0.95, altura / 2)
+    pontoC = (largura / 2, altura * 0.95)
+    pontoD = (altura * 0.05, altura / 2)
+    coordenadas = [(pontoA), (pontoB), (pontoC), (pontoD)]
+    losango.polygon(coordenadas, fill=cor_rgb)
+    return bandeira
+\end{lstlisting}
+
+Detalhamento linha a linha:
+
+\begin{itemize}
+    \item \texttt{ImageDraw.Draw(bandeira):} cria um contexto de desenho vinculado à imagem passada como argumento. Este objeto permite executar operações gráficas sobre a imagem
+
+    \item \texttt{pontoA = (largura / 2, altura * 0.05):} define o vértice superior do losango, posicionado no topo centro da imagem (50\% de largura, 5\% de altura)
+
+    \item \texttt{pontoB = (largura * 0.95, altura / 2):} define o vértice direito do losango, posicionado no lado direito (95\% de largura, 50\% de altura)
+
+    \item \texttt{pontoC = (largura / 2, altura * 0.95):} define o vértice inferior do losango, posicionado no fundo centro (50\% de largura, 95\% de altura)
+
+    \item \texttt{pontoD = (altura * 0.05, altura / 2):} define o vértice esquerdo do losango (5\% de largura, 50\% de altura). Nota: há um erro nesta linha — deveria ser \texttt{(largura * 0.05)} ao invés de \texttt{(altura * 0.05)}, mas o código foi preservado como está na implementação original
+
+    \item \texttt{coordenadas = [...]}: agrupa os quatro vértices em uma lista para passar ao método de desenho
+
+    \item \texttt{losango.polygon(coordenadas, fill=cor\_rgb):} preenche o polígono definido pelos vértices com a cor especificada (amarelo)
+
+    \item \texttt{return bandeira:} devolve a imagem modificada para posterior processamento
+\end{itemize}
+
+\subsubsection{Função \texttt{criar\_esfera\_rgb}}
+
+Esta função desenha o círculo azul centralizado:
+
+\begin{lstlisting}[style=pythonstyle]
+def criar_esfera_rgb(largura, altura, cor_rgb, bandeira):
+    esfera = ImageDraw.Draw(bandeira)
+    centro_x = largura / 2
+    centro_y = altura / 2
+    raio = largura * 0.20
+    pontoA = (centro_x - raio, centro_y - raio)
+    pontoB = (centro_x + raio, centro_y + raio)
+    coordenadas = [(pontoA), (pontoB)]
+    esfera.ellipse(coordenadas, fill=cor_rgb)
+    return bandeira
+\end{lstlisting}
+
+Detalhamento linha a linha:
+
+\begin{itemize}
+    \item \texttt{esfera = ImageDraw.Draw(bandeira):} cria um novo contexto de desenho sobre a imagem
+
+    \item \texttt{centro\_x = largura / 2:} calcula a coordenada X do centro da imagem (300 pixels para largura 600)
+
+    \item \texttt{centro\_y = altura / 2:} calcula a coordenada Y do centro da imagem (200 pixels para altura 400)
+
+    \item \texttt{raio = largura * 0.20:} define o raio do círculo como 20\% da largura (120 pixels)
+
+    \item \texttt{pontoA = (centro\_x - raio, centro\_y - raio):} calcula o canto superior esquerdo do retângulo envolvente do círculo (180, 80)
+
+    \item \texttt{pontoB = (centro\_x + raio, centro\_y + raio):} calcula o canto inferior direito do retângulo envolvente (420, 320)
+
+    \item \texttt{coordenadas = [(pontoA), (pontoB)]:} agrupa os dois pontos diagonais
+
+    \item \texttt{esfera.ellipse(coordenadas, fill=cor\_rgb):} desenha uma elipse preenchida. Como os dois pontos diagonais possuem a mesma diferença em X e Y, cria-se um círculo perfeito preenchido com azul
+
+    \item \texttt{return bandeira:} devolve a imagem modificada
+\end{itemize}
+
+\subsubsection{Bloco Principal}
+
+O bloco \texttt{if \_\_name\_\_ == "\_\_main\_\_":} executa o fluxo de renderização quando o script é executado diretamente:
+
+\begin{lstlisting}[style=pythonstyle]
+LARGURA = 600
+ALTURA = 400
+cor_verde_rgb = (0, 148, 64)
+print(f"Cor Verde em RGB: {cor_verde_rgb}")
+bandeira = criar_fundo_rgb(LARGURA, ALTURA, cor_verde_rgb)
+\end{lstlisting}
+
+Define as dimensões da tela (600×400 pixels), especifica a cor verde e cria a imagem de fundo:
+
+\begin{lstlisting}[style=pythonstyle]
+cor_amarela_rgb = (255, 255, 0)
+print(f"Cor Amarela em RGB: {cor_amarela_rgb}")
+bandeira = criar_losango_rgb(LARGURA, ALTURA, cor_amarela_rgb, bandeira)
+\end{lstlisting}
+
+Define a cor amarela e desenha o losango sobre o fundo já criado:
+
+\begin{lstlisting}[style=pythonstyle]
+cor_azul_rgb = (0, 0, 255)
+print(f"Cor Azul em RGB: {cor_azul_rgb}")
+bandeira = criar_esfera_rgb(LARGURA, ALTURA, cor_azul_rgb, bandeira)
+\end{lstlisting}
+
+Define a cor azul e desenha o círculo sobre a bandeira:
+
+\begin{lstlisting}[style=pythonstyle]
+bandeira.save("bandeira.png")
+\end{lstlisting}
+
+Finalmente, salva a imagem resultante em formato PNG no diretório de trabalho atual.
+
+\section{Resultados e Análises}
+
+Durante a execução do programa principal, o sistema executa as seguintes operações em sequência:
+
+\begin{enumerate}
+    \item Cria uma imagem de $600 \times 400$ pixels com fundo verde RGB $(0, 148, 64)$
+    \item Desenha um losango amarelo RGB $(255, 255, 0)$ sobre o fundo verde
+    \item Desenha uma esfera azul RGB $(0, 0, 255)$ no centro da composição
+    \item Salva a imagem final em formato PNG
+\end{enumerate}
+
+A saída da console exibe as cores em representação RGB:
+
+\begin{verbatim}
+    Cor Verde em RGB: (0, 148, 64)
+    Cor Amarela em RGB: (255, 255, 0)
+    Cor Azul em RGB: (0, 0, 255)
+\end{verbatim}
+
+A renderização visual resultante pode ser conferida na Figura \ref{fig:bandeira_final}, que apresenta a bandeira brasileira renderizada através de primitivas gráficas básicas. A composição em camadas demonstra como primitivas simples (polígono e elipse) combinadas com a manipulação precisa de cores RGB podem reproduzir artefatos visuais reconhecíveis.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/bandeira.png}
+    \caption{Renderização final da bandeira brasileira, composta por um fundo verde, um losango amarelo e uma esfera azul centralizada.}
+    \label{fig:bandeira_final}
+\end{figure}
+
+\section{Conclusão}
+
+O projeto demonstrou com sucesso a utilização da biblioteca Pillow para renderização de imagens através de primitivas gráficas e manipulação direta de cores no espaço RGB. A implementação confirmou que conceitos fundamentais de geometria computacional — posicionamento de vértices, cálculo de retângulos envolventes e preenchimento de formas — são suficientes para a composição de imagens reconhecíveis.
+
+A abordagem modular adotada permite que cada camada da bandeira seja construída independentemente, facilitando ajustes de cores, dimensões e geometrias. Este trabalho reforça a importância da abstração entre modelos matemáticos de primitivas gráficas e sua implementação em bibliotecas de alto nível como Pillow.
+
+\begin{thebibliography}{9}
+
+\bibitem{rodrigo_primitivas}
+RODRIGO, Raulivan. \textbf{Desenhar primitivas: Computação Gráfica}. Notas de Aula (05 - Desenhar primitivas.pdf). Departamento de Computação, Centro Federal de Educação Tecnológica de Minas Gerais (CEFET-MG), 2026.
+
+\bibitem{pillow_docs}
+CLARK, Alex; CONTRIBUTORS. \textbf{Pillow (PIL Fork) Documentation}. Disponível em: \url{https://pillow.readthedocs.io/}. Acesso em: Agosto de 2026.
+
+\end{thebibliography}
+
+\end{document}

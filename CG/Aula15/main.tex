@@ -1,0 +1,253 @@
+\documentclass{article}
+
+% Pacotes
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[letterpaper,top=2.5cm,bottom=2.5cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath, graphicx, subcaption}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{amssymb}    % símbolos matemáticos extras
+\usepackage{url}
+\usepackage{booktabs}   % Para top/mid/bottomrule
+\usepackage{float}      % Para [H]
+\usepackage{enumitem}   % Para customizar listas (a), (b), (c)
+
+
+% Definições de estilo para Python
+\lstdefinestyle{pythonstyle}{
+      language=Python,
+      basicstyle=\ttfamily\small,
+      keywordstyle=\color{blue}\bfseries,
+      commentstyle=\color{gray}\itshape,
+      stringstyle=\color{orange},
+      numbers=left,
+      numberstyle=\tiny,
+      stepnumber=1,
+      numbersep=10pt,
+      backgroundcolor=\color{white},
+      frame=single,
+      breaklines=true,
+      tabsize=4,
+      showstringspaces=false,
+      % Permite acentos e símbolos nos comentários do código
+      literate={á}{{\'a}}1 {à}{{\`a}}1 {ã}{{\~a}}1 {â}{{\^a}}1
+               {é}{{\'e}}1 {ê}{{\^e}}1 {í}{{\'i}}1 {ó}{{\'o}}1
+               {õ}{{\~o}}1 {ô}{{\^o}}1 {ú}{{\'u}}1 {ç}{{\c{c}}}1
+               {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1
+               {Ú}{{\'U}}1 {Ç}{{\c{C}}}1 {º}{{$^{\circ}$}}1,
+}
+
+\renewcommand{\lstlistingname}{Listagem}
+\setlength{\emergencystretch}{2em} % evita linhas estouradas com trechos de código no texto
+
+\begin{document}
+
+% Capa personalizada
+\begin{titlepage}
+      \centering
+      \IfFileExists{images/fig_logo_cefetmg.pdf}{\includegraphics[width=4cm]{images/fig_logo_cefetmg.pdf}\par}{}
+      \vspace{0.5cm}
+
+      {\LARGE Centro Federal de Educação Tecnológica de Minas Gerais \par}
+      \vspace{0.2cm}
+
+      {\Large Engenharia de Computação \\ Computação Gráfica \par}
+      \vspace{4cm}
+
+      {\Huge \textbf{Relatório de Desenvolvimento} \par}
+      \vspace{0.5cm}
+
+      {\LARGE Desafio do Engenheiro de Satélites Espaciais \par}
+      \vspace{3cm}
+
+      {\LARGE João Paulo da Cunha Faria \par}
+      {\LARGE Maria Eduarda Teixeira Souza \par}
+      \vfill
+
+      {\large Divinópolis - MG \par}
+      {\large Setembro de 2026 \par}
+\end{titlepage}
+
+
+\section{Introdução}
+
+Neste desafio da Aula 12, a proposta foi montar um satélite formado por quatro peças: um corpo, dois painéis solares e uma antena. Todas as peças foram fornecidas modeladas na origem (0,0), no Sistema de Referência do Objeto (SRO). O corpo e os painéis usam o mesmo quadrado, de vértices $(-1,-1)$, $(1,-1)$, $(1,1)$ e $(-1,1)$, e a antena é um triângulo de vértices $(-1,0)$, $(1,0)$ e $(0,2)$.
+
+O objetivo era aplicar transformações de Translação, Rotação e Escala (TRS) em cada peça para levá-las até a posição correta no Sistema de Referência do Universo (SRU), chegando à imagem do satélite apresentada em aula. Este relatório explica como o código em \textit{Python} foi construído para resolver o problema.
+
+\section{Fundamentação}
+
+Para juntar translação, rotação e escala em uma única operação, foram usadas coordenadas homogêneas, como visto em aula: cada ponto $(x, y)$ ganha uma terceira coordenada igual a 1 e passa a ser escrito como $[x,\ y,\ 1]^T$. Assim, as três transformações viram matrizes $3\times3$:
+
+\begin{equation}\label{eq:matrizes}
+T = \begin{bmatrix} 1 & 0 & t_x \\ 0 & 1 & t_y \\ 0 & 0 & 1 \end{bmatrix}, \quad
+R = \begin{bmatrix} \cos\theta & -\sin\theta & 0 \\ \sin\theta & \cos\theta & 0 \\ 0 & 0 & 1 \end{bmatrix}, \quad
+S = \begin{bmatrix} s_x & 0 & 0 \\ 0 & s_y & 0 \\ 0 & 0 & 1 \end{bmatrix}
+\end{equation}
+
+Com isso, basta multiplicar as três matrizes para obter uma matriz única para cada peça:
+
+\begin{equation}\label{eq:trs}
+M = T \cdot R \cdot S \qquad \Rightarrow \qquad P_{SRU} = M \cdot P_{SRO}
+\end{equation}
+
+A ordem importa. A matriz é aplicada da direita para a esquerda, então a peça é primeiro escalada, depois rotacionada e só no final transladada. Como a escala e a rotação acontecem em relação à origem, elas precisam ser feitas enquanto a peça ainda está em (0,0). Se a translação viesse antes, a peça seria deslocada junto com a rotação e a escala e sairia do lugar.
+
+\section{Metodologia}
+
+O código completo está no arquivo \texttt{desafio\_satelite.py}. Nesta seção ele é apresentado por inteiro, na ordem em que aparece no arquivo, e cada parte é explicada logo após a sua listagem. A numeração das linhas nas listagens é a mesma do arquivo original.
+
+\subsection{Materiais e Configuração}
+
+O código foi desenvolvido em \textit{Python} com duas bibliotecas: \texttt{NumPy}, para criar as matrizes e fazer as multiplicações, e \texttt{Matplotlib}, para desenhar as peças no plano cartesiano. A instalação é feita com:
+
+\begin{lstlisting}[style=pythonstyle, numbers=none]
+pip install numpy matplotlib
+\end{lstlisting}
+
+No início do arquivo, as duas bibliotecas são importadas com os apelidos usuais \texttt{np} e \texttt{plt} (Listagem \ref{lst:imports}).
+
+\lstinputlisting[style=pythonstyle, firstline=1, lastline=2, firstnumber=1, caption={Importação das bibliotecas}, label={lst:imports}]{code/desafio_satelite.py}
+
+\subsection{Funções das Transformações}
+
+As três transformações da Equação \ref{eq:matrizes} foram implementadas como funções (Listagem \ref{lst:matrizes}). Cada uma recebe os parâmetros da transformação e devolve a matriz $3\times3$ correspondente em coordenadas homogêneas:
+
+\begin{itemize}
+    \item \texttt{matriz\_translacao(tx, ty)}: coloca os deslocamentos $t_x$ e $t_y$ na terceira coluna da matriz identidade;
+    \item \texttt{matriz\_escala(sx, sy)}: coloca os fatores de escala na diagonal principal;
+    \item \texttt{matriz\_rotacao(angulo\_graus)}: recebe o ângulo em graus e o converte para radianos com \texttt{np.radians}, que é a unidade esperada por \texttt{np.cos} e \texttt{np.sin}. O seno e o cosseno são calculados uma única vez e reaproveitados na montagem da matriz.
+\end{itemize}
+
+O tipo \texttt{np.float32} foi usado em todas as matrizes para que os valores decimais do seno e do cosseno não sejam arredondados para inteiros.
+
+\lstinputlisting[style=pythonstyle, firstline=5, lastline=32, firstnumber=5, caption={Funções que geram as matrizes de translação, escala e rotação}, label={lst:matrizes}]{code/desafio_satelite.py}
+
+\subsection{Funções de Desenho}
+
+Duas funções auxiliares cuidam da parte visual (Listagem \ref{lst:desenho}).
+
+A função \texttt{desenhar\_peca} recebe uma matriz de vértices e separa a primeira linha (coordenadas $X$) e a segunda linha (coordenadas $Y$). Com elas, \texttt{ax.plot} desenha o contorno da peça e \texttt{ax.fill} pinta o seu interior com transparência (\texttt{alpha=0.25}), para que seja possível ver as peças mesmo quando estão sobrepostas. A terceira linha ($W$) não é usada no desenho, pois ela só serve para as contas com as matrizes.
+
+A função \texttt{configurar\_plano} prepara cada gráfico: define o título e os nomes dos eixos, limita a área visível a $x \in [-8, 8]$ e $y \in [-6, 6]$, desenha os eixos $x = 0$ e $y = 0$ em preto, adiciona a grade e a legenda. O comando \texttt{ax.set\_aspect('equal')} mantém a mesma escala nos dois eixos, sem o qual os quadrados poderiam aparecer como retângulos e os ângulos de rotação ficariam distorcidos na imagem.
+
+\lstinputlisting[style=pythonstyle, firstline=35, lastline=63, firstnumber=35, caption={Funções auxiliares de desenho e configuração do plano cartesiano}, label={lst:desenho}]{code/desafio_satelite.py}
+
+\subsection{Geometria das Peças}
+
+A função principal, \texttt{desafio\_satelite}, começa definindo as peças no SRO (Listagem \ref{lst:geometria}). Elas são guardadas como matrizes em que cada coluna é um vértice $[X, Y, W]^T$, com $W = 1$. O primeiro vértice é repetido no final para que o polígono seja desenhado fechado: por isso o quadrado tem 5 colunas e o triângulo tem 4.
+
+Organizar os vértices em colunas permite que uma única multiplicação \texttt{M @ vertices} transforme a peça inteira de uma vez. O corpo e os dois painéis usam a mesma matriz \texttt{quadrado\_unitario}, já que no SRO eles são o mesmo quadrado; o que muda entre eles são apenas as transformações. Em seguida, as duas matrizes são impressas no terminal para registro.
+
+\lstinputlisting[style=pythonstyle, firstline=66, lastline=91, firstnumber=66, caption={Definição dos vértices das peças no SRO em coordenadas homogêneas}, label={lst:geometria}]{code/desafio_satelite.py}
+
+\subsection{Composição das Matrizes TRS}
+
+Os valores de cada transformação foram escolhidos observando a imagem esperada do satélite (Tabela \ref{tab:parametros}):
+
+\begin{itemize}
+    \item \textbf{Corpo:} o quadrado é apenas dobrado de tamanho, passando de $2\times2$ para $4\times4$, e continua centrado na origem;
+    \item \textbf{Painéis:} o quadrado é esticado 3 vezes no eixo $x$ e reduzido à metade no eixo $y$, virando uma barra de $6\times1$. Depois, o painel esquerdo é girado $30^\circ$ e levado para $(-4, 0)$, e o direito é girado $-30^\circ$ e levado para $(4, 0)$;
+    \item \textbf{Antena:} o triângulo é reduzido à metade e movido 2 unidades para cima. Como a base do triângulo já está em $y = 0$, ela fica exatamente em $y = 2$, apoiada no topo do corpo.
+\end{itemize}
+
+\begin{table}[H]
+\centering
+\caption{Valores de escala, rotação e translação usados em cada peça.}
+\label{tab:parametros}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Peça} & \textbf{Escala $(s_x, s_y)$} & \textbf{Rotação} & \textbf{Translação $(t_x, t_y)$} \\
+\midrule
+Corpo Principal & $(2;\ 2)$         & $0^\circ$   & $(0;\ 0)$  \\
+Painel Esquerdo & $(3;\ 0{,}5)$     & $30^\circ$  & $(-4;\ 0)$ \\
+Painel Direito  & $(3;\ 0{,}5)$     & $-30^\circ$ & $(4;\ 0)$  \\
+Antena          & $(0{,}5;\ 0{,}5)$ & $0^\circ$   & $(0;\ 2)$  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Na Listagem \ref{lst:composicao}, a matriz de cada peça é montada com o operador \texttt{@} (multiplicação de matrizes do NumPy), sempre na ordem $T \cdot R \cdot S$ da Equação \ref{eq:trs}. Mesmo quando uma transformação não é necessária, como a rotação do corpo e da antena ou a translação do corpo, ela foi mantida com valor neutro (ângulo 0 ou deslocamento $(0, 0)$). Assim todas as peças seguem o mesmo padrão, e alterar uma peça depois exige apenas trocar um valor.
+
+Por fim, as peças são reunidas na lista \texttt{matrizes}. Cada item guarda o nome da peça (usado na legenda), a sua matriz composta, a geometria original a ser transformada e a cor usada no desenho.
+
+\lstinputlisting[style=pythonstyle, firstline=93, lastline=122, firstnumber=93, caption={Composição das matrizes TRS de cada peça e lista de peças}, label={lst:composicao}]{code/desafio_satelite.py}
+
+\subsection{Aplicação das Transformações e Renderização}
+
+A última parte da função (Listagem \ref{lst:laco}) cria uma figura com dois gráficos lado a lado usando o comando \texttt{plt.subplots(1, 2)}. O gráfico \texttt{ax\_sro}, à esquerda, é usado para as peças originais, e o gráfico \texttt{ax\_sru}, à direita, para o satélite montado.
+
+O laço \texttt{for} percorre a lista \texttt{matrizes} e, para cada peça:
+
+\begin{enumerate}
+    \item imprime a matriz composta no terminal, arredondada para 4 casas decimais;
+    \item calcula os vértices da peça no SRU com a linha \texttt{vertices\_sru = matriz\_composta @ vertices\_sro}. Essa linha é exatamente a operação $P_{SRU} = M \cdot P_{SRO}$ da Equação \ref{eq:trs}, aplicada a todos os vértices de uma vez;
+    \item imprime os vértices resultantes no terminal;
+    \item desenha a peça original no gráfico da esquerda e a peça transformada no gráfico da direita.
+\end{enumerate}
+
+Depois do laço, os dois gráficos são configurados com \texttt{configurar\_plano}. O \texttt{plt.tight\_layout()} ajusta os espaçamentos da figura e o \texttt{plt.show()} abre a janela com o resultado. A legenda é criada dentro de \texttt{configurar\_plano}, e por isso essa função só é chamada depois que todas as peças já foram desenhadas.
+
+\lstinputlisting[style=pythonstyle, firstline=124, lastline=145, firstnumber=124, caption={Aplicação das matrizes e desenho das peças no SRO e no SRU}, label={lst:laco}]{code/desafio_satelite.py}
+
+\subsection{Execução do Programa}
+
+As duas últimas linhas do arquivo (Listagem \ref{lst:main}) fazem com que a função \texttt{desafio\_satelite} seja executada apenas quando o arquivo é rodado diretamente (\texttt{python desafio\_satelite.py}), e não quando ele é importado por outro script.
+
+\lstinputlisting[style=pythonstyle, firstline=148, lastline=149, firstnumber=148, caption={Ponto de entrada do programa}, label={lst:main}]{code/desafio_satelite.py}
+
+\section{Resultados}
+
+A Figura \ref{fig:resultado} mostra o resultado da execução. À esquerda, as peças estão todas sobrepostas na origem, como foram fornecidas. À direita, o satélite aparece montado e igual à imagem apresentada em aula.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/satelite_sro_sru.png}
+    \caption{Peças na origem (SRO) e satélite montado após as transformações (SRU).}
+    \label{fig:resultado}
+\end{figure}
+
+Os valores impressos no terminal confirmam as posições esperadas: o corpo vai de $-2$ a $2$ nos dois eixos, a antena tem base em $y = 2$ e ponta em $(0, 3)$, e os painéis ficam simétricos em relação ao eixo $y$. Por exemplo, as matrizes compostas dos dois painéis foram:
+
+\begin{equation}
+M_{painel\_esq} = \begin{bmatrix} 2{,}598 & -0{,}25 & -4 \\ 1{,}5 & 0{,}433 & 0 \\ 0 & 0 & 1 \end{bmatrix}
+\qquad
+M_{painel\_dir} = \begin{bmatrix} 2{,}598 & 0{,}25 & 4 \\ -1{,}5 & 0{,}433 & 0 \\ 0 & 0 & 1 \end{bmatrix}
+\end{equation}
+
+A única diferença entre elas é o sinal dos termos ligados ao seno e à translação em $x$, o que faz sentido, já que um painel é o espelho do outro.
+
+Para visualizar melhor a ordem das transformações, a Figura \ref{fig:passo} mostra o painel esquerdo depois de cada etapa. Primeiro a escala transforma o quadrado em uma barra; depois a rotação inclina a barra, ainda na origem; e só no final a translação leva o painel para o lugar certo.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/painel_passo_a_passo.png}
+    \caption{Painel esquerdo após cada etapa: (a) original, (b) escala, (c) rotação e (d) translação. O tracejado mostra o quadrado original.}
+    \label{fig:passo}
+\end{figure}
+
+\section{Conclusão}
+
+O desafio mostrou na prática como montar uma cena a partir de peças simples modeladas na origem. Com apenas um quadrado e um triângulo, e mudando só os valores de escala, rotação e translação, foi possível montar o satélite completo.
+
+O uso de coordenadas homogêneas permitiu juntar as três transformações em uma única matriz por peça, o que deixou o código simples: cada peça precisa de apenas uma multiplicação para ir do SRO para o SRU. Também ficou claro que a ordem $T \cdot R \cdot S$ é importante, porque a escala e a rotação precisam acontecer enquanto a peça ainda está na origem.
+
+\begin{thebibliography}{9}
+
+\bibitem{rodrigo_transf}
+RODRIGO, Raulivan. \textbf{Transformações Gráficas: Transformações Geométricas}. Notas de Aula (08 a 12 - Transformações Gráficas.pdf). Departamento de Computação, Centro Federal de Educação Tecnológica de Minas Gerais (CEFET-MG), 2026.
+
+\bibitem{numpy_docs}
+NUMPY DEVELOPERS. \textbf{NumPy Documentation}. Disponível em: \url{https://numpy.org/doc/stable/}.
+
+\bibitem{matplotlib_docs}
+MATPLOTLIB DEVELOPMENT TEAM. \textbf{Matplotlib: Visualization with Python}. Disponível em: \url{https://matplotlib.org/stable/}.
+
+\end{thebibliography}
+
+\end{document}

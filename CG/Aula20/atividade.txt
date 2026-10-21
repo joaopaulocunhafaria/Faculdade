@@ -1,0 +1,383 @@
+CENTRO FEDERAL DE EDUCAÇÃO TECNOLÓGICA DE MINAS GERAIS - Campus Divinópolis
+Disciplina: Computação Gráfica - Prof. Raulivan Rodrigo
+Atividade de Revisão (até a aula 20) - 13/10/2026
+Aluno: ______________________________________________
+
+Convenção usada nas respostas: pontos como vetores-coluna em coordenadas
+homogêneas, P' = M · P (a mesma do OpenGL / glMultMatrixf).
+
+==========================================================================
+QUESTÃO 1 - Computação Gráfica x Visão Computacional x Processamento de Imagens
+==========================================================================
+
+As três áreas trabalham com imagens, mas diferem no que entra e no que sai:
+
+- Computação Gráfica (CG): DADOS -> IMAGEM. Parte de uma descrição
+  matemática/geométrica (vértices, polígonos, cores, luzes, câmera,
+  transformações) e sintetiza uma imagem. Ex.: desenhar um triângulo com
+  Bresenham, renderizar um cubo texturizado com OpenGL, jogos, CAD, filmes 3D.
+
+- Processamento de Imagens (PI): IMAGEM -> IMAGEM. Recebe uma imagem pronta e
+  devolve outra imagem modificada/melhorada: filtros, realce de contraste,
+  remoção de ruído, conversão RGB -> CMYK, chroma key (remover o fundo verde
+  pelo canal H do HSV), compressão.
+
+- Visão Computacional (VC): IMAGEM -> DADOS / INFORMAÇÃO. Analisa a imagem
+  para extrair significado: reconhecer objetos, rastrear movimento, ler placas,
+  reconstruir a geometria 3D da cena. É o "inverso" da CG (a CG gera a imagem a
+  partir do modelo; a VC tenta descobrir o modelo a partir da imagem).
+  Normalmente usa PI como etapa de pré-processamento (ex.: converter para HSV,
+  porque o Matiz não muda com a iluminação).
+
+==========================================================================
+QUESTÃO 2 - Representação rasterizada x vetorial (planta em vários tamanhos)
+==========================================================================
+
+- Raster (matricial / bitmap): a imagem é uma matriz de pixels com resolução
+  fixa (ex.: 1920x1080), cada pixel guardando uma cor (framebuffer, PNG, JPG).
+  Ao ampliar a planta para um painel grande, cada pixel é esticado: aparecem
+  serrilhado (aliasing) e borrão, as linhas perdem nitidez. Para imprimir bem
+  em tamanho grande seria preciso uma resolução enorme, o que gera arquivos
+  muito pesados. Reduzir também descarta informação.
+
+- Vetorial: a imagem é descrita por primitivas geométricas e equações (linhas
+  por dois pontos, círculos por centro e raio, polígonos, curvas), como no SVG
+  ou nos arquivos de CAD. A rasterização só acontece no momento de exibir ou
+  imprimir, na resolução do dispositivo de destino (SRD). Por isso a planta pode
+  ser ampliada ou reduzida (folha A4 ou painel gigante) sem perder qualidade,
+  com arquivo pequeno e com os elementos (paredes, cotas) ainda editáveis.
+
+Conclusão: para uma planta que precisa ser apresentada em vários tamanhos, a
+representação VETORIAL é a mais adequada. A rasterizada serve para imagens
+fotográficas e com muitos detalhes/texturas, mas fica presa à resolução em que
+foi gerada.
+(Exemplo das aulas: Aula4/arq.py rasteriza o círculo pixel a pixel, e
+Aula4/vetorizada.py descreve o mesmo círculo em SVG com <circle cx cy r>.)
+
+==========================================================================
+QUESTÃO 3 - Sistemas de cores RGB x CMYK
+==========================================================================
+
+RGB (Red, Green, Blue) - modelo ADITIVO:
+- Usado em dispositivos que EMITEM luz: monitores LCD/OLED, projetores, câmeras.
+- O ponto de partida (ausência de dados) é o preto (tela apagada). A luz
+  vermelha, a verde e a azul são somadas; as três no máximo resultam em branco.
+- Base biológica: teoria tricromática (cones S, M e L da retina).
+- Representação: C = (R, G, B), com 8 bits por canal (0 a 255), ou seja,
+  256^3 ≈ 16,7 milhões de cores (True Color). Pode ter o canal Alpha (RGBA).
+
+CMYK (Cyan, Magenta, Yellow, Key/Black) - modelo SUBTRATIVO:
+- Usado em impressão (tinta/pigmento sobre papel), que REFLETE luz.
+- O ponto de partida é o branco do papel, que reflete todo o espectro. Cada
+  pigmento absorve (subtrai) parte da luz: o ciano absorve o vermelho, o
+  magenta absorve o verde e o amarelo absorve o azul.
+- Em teoria C+M+Y = preto, mas na prática dá um marrom escuro. Por isso existe
+  o K (preto puro): pretos profundos, contornos nítidos e economia de tinta.
+- Valores normalmente em porcentagem (0% a 100%).
+
+Conversão RGB -> CMYK (vista em aula):
+  R' = R/255, G' = G/255, B' = B/255
+  K  = 1 - max(R', G', B')
+  C  = (1 - R' - K) / (1 - K)
+  M  = (1 - G' - K) / (1 - K)
+  Y  = (1 - B' - K) / (1 - K)
+
+Resumo: RGB = luz emitida, soma, preto -> branco, telas.
+        CMYK = luz refletida, subtração, branco -> preto, impressão.
+        (As cores primárias de um são as secundárias do outro.)
+
+==========================================================================
+QUESTÃO 4 - Matriz de transformação e as transformações geométricas
+==========================================================================
+
+Estrutura da matriz de transformação (coordenadas homogêneas)
+
+Com coordenadas homogêneas o ponto ganha uma dimensão extra W = 1:
+2D: P = [x y 1]^T (matriz 3x3)    3D: P = [x y z 1]^T (matriz 4x4)
+
+Isso transforma a translação (que era uma soma) em multiplicação. Assim TODAS
+as transformações viram multiplicação de matrizes e podem ser concatenadas em
+uma única matriz.
+
+              | a  b  c  Tx |     a..i  -> parte linear 3x3: escala, rotação,
+   M (4x4) =  | d  e  f  Ty |              reflexão e cisalhamento
+              | g  h  i  Tz |     Tx,Ty,Tz -> translação
+              | 0  0  0  1  |     última linha -> projeção (perspectiva);
+                                  o 1 final é o fator homogêneo W
+
+   P' = M · P,   e  M = T · R · S   (ordem clássica: primeiro escala,
+                                     depois rotação, por último translação)
+
+A ordem importa (multiplicação de matrizes não é comutativa). Para transformar
+em torno do centro do objeto (C = média dos vértices):
+   M = T(C) · R · T(-C)   (leva ao centro, transforma, devolve)
+
+a) TRANSLAÇÃO - move o objeto somando um deslocamento (Tx, Ty, Tz) a todos os
+   pontos, sem mudar forma, tamanho ou orientação.
+   x' = x + Tx,  y' = y + Ty,  z' = z + Tz
+
+        | 1 0 0 Tx |
+   T =  | 0 1 0 Ty |        2D:  | 1 0 Tx |
+        | 0 0 1 Tz |             | 0 1 Ty |
+        | 0 0 0 1  |             | 0 0 1  |
+
+b) ESCALA - muda o tamanho multiplicando as coordenadas por fatores
+   (Sx, Sy, Sz). Matriz diagonal.
+   S > 1 amplia, 0 < S < 1 reduz, Sx = Sy = Sz é escala uniforme e
+   Sx ≠ Sy deforma. Se o objeto não estiver na origem, ele também se desloca.
+   x' = x·Sx,  y' = y·Sy,  z' = z·Sz
+
+        | Sx 0  0  0 |
+   S =  | 0  Sy 0  0 |      2D:  | Sx 0  0 |
+        | 0  0  Sz 0 |           | 0  Sy 0 |
+        | 0  0  0  1 |           | 0  0  1 |
+
+c) ROTAÇÃO - gira o objeto de um ângulo θ em torno de um eixo que passa pela
+   origem (ângulos de Euler). O eixo de rotação fica inalterado e o sentido
+   positivo é anti-horário. As matrizes são ortonormais (R^-1 = R^T).
+
+   Em torno de Z (plano xy; é a rotação 2D):
+   x' = x·cosθ - y·senθ ;  y' = x·senθ + y·cosθ ;  z' = z
+         | cosθ -senθ  0  0 |
+   Rz =  | senθ  cosθ  0  0 |
+         |  0     0    1  0 |
+         |  0     0    0  1 |
+
+   Em torno de X (plano yz; x não muda):
+         | 1   0     0    0 |
+   Rx =  | 0  cosθ -senθ  0 |
+         | 0  senθ  cosθ  0 |
+         | 0   0     0    1 |
+
+   Em torno de Y (plano zx; y não muda; repare na troca de sinal do seno):
+         |  cosθ  0  senθ  0 |
+   Ry =  |   0    1   0    0 |
+         | -senθ  0  cosθ  0 |
+         |   0    0   0    1 |
+
+   Para girar em torno de um ponto qualquer (ex.: o centro do objeto):
+   M = T(C) · R · T(-C).
+
+d) REFLEXÃO (espelhamento) - gera a imagem espelhada do objeto em relação a um
+   eixo (2D) ou a um plano (3D). É uma escala com fator -1 na coordenada
+   perpendicular ao eixo/plano de reflexão (no script.py: glScalef(-1, 1, 1)).
+
+   2D:
+   Em relação ao eixo X (y -> -y):     | 1  0 0 |
+                                       | 0 -1 0 |
+                                       | 0  0 1 |
+   Em relação ao eixo Y (x -> -x):     |-1  0 0 |
+                                       | 0  1 0 |
+                                       | 0  0 1 |
+   Em relação à origem (x->-x, y->-y): |-1  0 0 |
+                                       | 0 -1 0 |
+                                       | 0  0 1 |
+   Em relação à reta y = x (troca x e y): | 0 1 0 |
+                                          | 1 0 0 |
+                                          | 0 0 1 |
+   3D:
+   Plano XY (z -> -z): diag(1, 1, -1, 1)
+   Plano YZ (x -> -x): diag(-1, 1, 1, 1)
+   Plano XZ (y -> -y): diag(1, -1, 1, 1)
+
+e) CISALHAMENTO (shear) - "inclina" o objeto: uma coordenada recebe um
+   acréscimo proporcional a outra. Quadrados viram paralelogramos, e retas
+   paralelas continuam paralelas.
+
+   2D:
+   Na direção X (proporcional a y): x' = x + Shx·y, y' = y
+       | 1 Shx 0 |
+       | 0  1  0 |
+       | 0  0  1 |
+   Na direção Y (proporcional a x): x' = x, y' = y + Shy·x
+       |  1  0 0 |
+       | Shy 1 0 |
+       |  0  0 1 |
+
+   3D (forma geral; cada termo fora da diagonal acopla dois eixos):
+        |  1   Shxy Shxz 0 |    x' = x + Shxy·y + Shxz·z
+   Sh = | Shyx  1   Shyz 0 |    y' = y + Shyx·x + Shyz·z
+        | Shzx Shzy  1   0 |    z' = z + Shzx·x + Shzy·y
+        |  0    0    0   1 |
+   Ex.: cisalhamento em X com fator 1,2 (script.py): x' = x + 1,2·y. No array
+   column-major do OpenGL esse 1,2 fica na 1ª posição da coluna 2.
+
+==========================================================================
+QUESTÃO 5 - Sistemas de coordenadas
+==========================================================================
+
+a) SRO - Sistema de Referência do Objeto (coordenadas locais/do modelo):
+   cada objeto é um "miniuniverso" próprio, com sua origem normalmente no
+   centro ou no pivô do objeto. Os vértices são modelados em relação a ele
+   (ex.: o satélite da Aula 12 modelado em torno de (0,0); o ator no camarim
+   levanta o braço em relação ao próprio corpo).
+
+b) SRU - Sistema de Referência do Universo (coordenadas do mundo): sistema
+   global da cena, em que todos os objetos são posicionados juntos, nas
+   unidades da aplicação (metros, mm, km...). A passagem SRO -> SRU é feita
+   pela matriz Model (T·R·S).
+
+c) SRN - Sistema de Referência Normalizado: sistema intermediário, independente
+   do dispositivo, em que as coordenadas visíveis são "espremidas" em um
+   intervalo padrão ([0,1] ou, na GPU/OpenGL, o cubo [-1,1] em cada eixo). O que
+   fica fora é descartado (clipping). SRU -> SRN é feito pela normalização /
+   projeção (ex.: glOrtho(-10,10,-10,10,-1,1)).
+
+d) UV - sistema de coordenadas de TEXTURA (também chamado ST). U é a horizontal
+   e V é a vertical da imagem, ambos de 0,0 a 1,0. (0,0) é o canto inferior
+   esquerdo e (1,1) o superior direito. Cada vértice recebe uma coordenada UV
+   que diz qual parte da imagem é "colada" nele, e a GPU interpola os valores
+   para os pixels intermediários. Por ser normalizado, independe da resolução
+   da imagem.
+
+e) SRD - Sistema de Referência do Dispositivo: coordenadas físicas do
+   dispositivo de saída, em pixels (ex.: 0..1920 x 0..1080), dependentes da
+   resolução. A transformação SRN -> SRD é a Viewport. Nela o eixo Y é
+   invertido, porque na tela a origem (0,0) fica no canto superior esquerdo.
+
+Pipeline: SRO --(Model)--> SRU --(View/Projeção/Normalização)--> SRN
+          --(Viewport)--> SRD    (o UV é usado à parte, para mapear texturas)
+
+==========================================================================
+QUESTÃO 6 - Demonstração matemática em Pa(1,3), Pb(3,7), Pc(5,3)
+==========================================================================
+
+Transformação escolhida: TRANSLAÇÃO com T = (Tx, Ty) = (2, 2), feita com
+coordenadas homogêneas (P' = T · P).
+
+            | 1 0 2 |
+   T =      | 0 1 2 |       Pa = [1 3 1]^T  Pb = [3 7 1]^T  Pc = [5 3 1]^T
+            | 0 0 1 |
+
+Pa' = T · Pa:
+   x' = 1·1 + 0·3 + 2·1 = 3
+   y' = 0·1 + 1·3 + 2·1 = 5
+   w' = 0·1 + 0·3 + 1·1 = 1             => Pa' = (3, 5)
+
+Pb' = T · Pb:
+   x' = 1·3 + 0·7 + 2·1 = 5
+   y' = 0·3 + 1·7 + 2·1 = 9
+   w' = 1                               => Pb' = (5, 9)
+
+Pc' = T · Pc:
+   x' = 1·5 + 0·3 + 2·1 = 7
+   y' = 0·5 + 1·3 + 2·1 = 5
+   w' = 1                               => Pc' = (7, 5)
+
+Na forma de matriz de vértices (MV' = T · MV):
+
+   | 1 0 2 |   | 1 3 5 |   | 3 5 7 |
+   | 0 1 2 | · | 3 7 3 | = | 5 9 5 |
+   | 0 0 1 |   | 1 1 1 |   | 1 1 1 |
+
+Resultado: Pa'(3,5), Pb'(5,9), Pc'(7,5). O triângulo andou 2 unidades em X e 2
+em Y, mantendo forma, tamanho e orientação. Verificação: a base Pa-Pc continua
+medindo 4 e a altura continua 4 (de y=5 até y=9).
+
+==========================================================================
+QUESTÃO 7 - Plano cartesiano x plano de tela (view / screen space)
+==========================================================================
+
+A principal diferença é a ORIGEM e o SENTIDO DO EIXO Y:
+
+- Plano cartesiano (matemático): a origem (0,0) fica no centro, ou no canto
+  inferior esquerdo quando se usa só o 1º quadrante. O eixo Y cresce para CIMA.
+  As coordenadas são reais (contínuas) e podem ser negativas.
+
+- Plano de tela (dispositivo / screen space): a origem (0,0) fica no canto
+  SUPERIOR ESQUERDO. O X cresce para a direita e o Y cresce para BAIXO. As
+  coordenadas são inteiras (índices de pixel), sempre positivas e limitadas
+  pela resolução (0..largura-1, 0..altura-1).
+
+O motivo é histórico: o feixe de elétrons dos monitores CRT varria a tela da
+esquerda para a direita e de cima para baixo, começando no canto superior
+esquerdo. É também como a matriz/framebuffer fica na memória (linha 0 = topo,
+img[y, x]). Por isso, ao passar do cartesiano para a tela é preciso inverter o Y
+(y_tela = altura - y). É o que a Viewport faz, e é a razão de, no braço
+robótico, ser preciso SUBTRAIR o seno da base para o braço "subir".
+
+==========================================================================
+QUESTÃO 8 - Shaders: definição e finalidade
+==========================================================================
+
+Definição: shaders são pequenos programas escritos em uma linguagem própria
+parecida com C (no OpenGL, a GLSL - OpenGL Shading Language). São compilados a
+partir do programa principal (CPU) e executados exclusivamente na GPU, em
+paralelo, por milhares de núcleos ao mesmo tempo.
+
+Finalidade: substituir o antigo Pipeline de Função Fixa (em que a placa só
+oferecia efeitos prontos, como "ligue a luz" ou "aplique neblina") pelo
+Pipeline PROGRAMÁVEL. Com ele o programador escreve como cada vértice é
+transformado e como cada pixel é colorido, e aproveita o paralelismo massivo
+da GPU, deixando a CPU livre para a lógica da aplicação (IA, física etc.).
+
+Principais tipos:
+- Vertex Shader: executa uma vez para cada VÉRTICE. Aplica as transformações
+  matriciais (Model, View, Projeção: translação, rotação, escala, perspectiva)
+  e define a posição final (gl_Position).
+- Fragment Shader: executa uma vez para cada FRAGMENTO/PIXEL gerado na
+  rasterização. Calcula a cor final: iluminação, sombras, texturas (amostragem
+  UV) e efeitos.
+
+Comunicação em GLSL: "in" (entrada vinda da etapa anterior), "out" (saída para
+a próxima etapa) e "uniform" (valor enviado pela CPU, igual para todos os
+vértices/pixels naquele quadro, como uma matriz de projeção ou o tempo
+u_tempo). Os dados dos vértices chegam pelo VBO (os bytes) e pelo VAO (como
+ler esses bytes, via layout(location = n)).
+
+==========================================================================
+QUESTÃO 9 - Projeção Perspectiva x Projeção Paralela Ortográfica
+==========================================================================
+
+Projeção é o processo de levar a cena 3D para o plano 2D de visualização.
+
+Projeção PERSPECTIVA:
+- Os projetores (raios) CONVERGEM para um único ponto, o centro de projeção (o
+  olho/câmera), a uma distância finita.
+- Objetos mais distantes aparecem MENORES (diminuição perspectiva), e retas
+  paralelas que não são paralelas ao plano de projeção convergem para pontos
+  de fuga.
+- O volume de visão é um tronco de pirâmide (frustum). A divisão por W
+  (coordenada homogênea) é que produz o efeito de profundidade.
+- Dá realismo, porque imita o olho humano e as câmeras: jogos, simulações, RV.
+  Ex.: gluPerspective(fov, aspecto, perto, longe) / matriz_perspectiva().
+- Não preserva medidas nem ângulos reais.
+
+Projeção PARALELA ORTOGRÁFICA:
+- O centro de projeção está no infinito: os projetores são PARALELOS entre si
+  e PERPENDICULARES ao plano de projeção.
+- O tamanho do objeto NÃO depende da distância: não há sensação de
+  profundidade e as retas paralelas continuam paralelas.
+- O volume de visão é um paralelepípedo (caixa). Ex.: glOrtho(-10,10,-10,10,-1,1).
+- Preserva medidas e proporções reais nas faces paralelas ao plano, por isso é
+  usada em desenho técnico, engenharia, arquitetura, CAD (vistas frontal,
+  lateral e superior) e em jogos/interfaces 2D.
+
+Resumo: a perspectiva prioriza o REALISMO (tamanho varia com a distância) e a
+ortográfica prioriza a PRECISÃO DAS MEDIDAS (tamanho constante).
+
+==========================================================================
+QUESTÃO 10 - O que é uma câmera virtual?
+==========================================================================
+
+A câmera virtual é a abstração matemática que define DE ONDE e COMO a cena 3D
+é observada, ou seja, qual parte do mundo (SRU) vai aparecer na imagem final e
+de que forma. Funciona como uma câmera fotográfica real e é definida por:
+
+- Parâmetros EXTRÍNSECOS (posição e orientação), que formam a matriz View:
+  * posição do olho (eye), ex.: (camera_x, camera_y, camera_z);
+  * ponto para onde olha (center/target);
+  * vetor "para cima" (up), que define a inclinação.
+  Ex.: gluLookAt(eye, center, up).
+- Parâmetros INTRÍNSECOS (a "lente"), que formam a matriz de Projeção:
+  * tipo de projeção (perspectiva ou ortográfica);
+  * campo de visão (FOV) e razão de aspecto (largura/altura);
+  * planos de recorte próximo (near) e distante (far), que delimitam o volume
+    de visão (frustum). O que está fora dele é recortado (clipping).
+
+Na prática a câmera não se move: a matriz View aplica ao MUNDO a transformação
+inversa da câmera. "Andar com a câmera para frente" é o mesmo que mover a cena
+para trás (ex.: view = matriz_translacao(0, 0, -3.5) = câmera recuada). O
+pipeline completo de um vértice é:
+
+   P_tela = Viewport · Projeção · View · Model · P_objeto
