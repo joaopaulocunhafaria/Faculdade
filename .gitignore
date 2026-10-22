@@ -19,3 +19,25 @@ makefile
 .ccls-cache
 .breakpoints
 *.nix
+#Python
+venv/
+.venv/
+sklearn-env/
+__pycache__/
+*.pyc
+
+#Repositorios git aninhados (possuem remote proprio)
+COMPILADORES/Compilador-MG/
+IA/ia-trabalho-2025-2/
+IA/KNN/ia-trabalho-2025-2/
+IC/IC-atividade3/
+IC/TrabalhoFinal/
+LFA/LFA-Automato/
+LFA/Mateus/
+LFA/Trabalho-Pratico-AFs/
+MHM/MHM_Trabalho_Final/
+SO/SO-SimuladorVonNeumann/
+SO/Trabalho-Final/SO-SimuladorVonNeumann/
+
+#Arquivo gerado com caminho Windows no nome
+SD/SD-v4/Chat_Middleware_Service/C:*
